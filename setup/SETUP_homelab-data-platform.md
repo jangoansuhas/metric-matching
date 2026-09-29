@@ -6,7 +6,7 @@
 
 Before this sheet, finish Steps 1–3 of [SETUP.md](../SETUP.md): Git, Python 3.12 and the `metric-review` work folder. You don't need to repeat the Jaffle Shop steps. The ✅ checks work the same way: if your screen doesn't match one, stop and email the coordinator.
 
-This project has no sample data in the repository. Instead, it includes small Python scripts that **generate** the data. You'll run them once, in Step 3, before building.
+This project has no sample data in its repository. It includes Python scripts that **generate** the data, but they don't produce identical files on every run. So that every reviewer queries exactly the same data, **you'll copy one fixed snapshot of their output** from this reviewer repository instead of running them.
 
 ---
 
@@ -24,81 +24,39 @@ git log -1 --format=%H
 
 **Stay inside the `homelab-data-platform` folder** unless a step says otherwise.
 
-## Step 2: Create the data-generation environment
+## Step 2: Locate the reviewer materials
 
-This is a separate environment used only to make the data.
+In the commands below, **`<MATERIALS>`** is the folder where you downloaded or cloned this reviewer repository, e.g. `~/metric-review/metric-matching`. Replace `<MATERIALS>` with that path when you type the commands.
 
-```bash
-# macOS / Linux
-python3.12 -m venv .venv-data
-source .venv-data/bin/activate
-pip install "faker==40.13.0" "pandas==3.0.2" "numpy==2.4.4"
-```
-```powershell
-# Windows
-py -3.12 -m venv .venv-data
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.venv-data\Scripts\Activate.ps1
-pip install "faker==40.13.0" "pandas==3.0.2" "numpy==2.4.4"
-```
+## Step 3: Copy the data snapshot
 
-The project's own README uses `uv`. These are the same versions its `uv.lock` pins, installed with `pip`.
-
-## Step 3: Generate the data
-
-**Run the four scripts in this order**, because the later ones read the first one's output. The `PYTHONHASHSEED=0` line matters: without it, one of the scripts produces different numbers on every run, and two reviewers would see different values.
+The snapshot is in this reviewer repository, in [`setup/data/homelab-data-platform/`](data/homelab-data-platform/). Its [NOTICE](data/homelab-data-platform/NOTICE.md) says how it was made. Copy its four CSV files into the project's `data_generation/output/` folder.
 
 ```bash
 # macOS / Linux
-cd data_generation
-mkdir -p output
-export PYTHONHASHSEED=0
-python -m generators.account_master
-python -m generators.subscription
-python -m generators.message_event
-python -m generators.revenue_monthly
+mkdir -p data_generation/output
+cp <MATERIALS>/setup/data/homelab-data-platform/*.csv data_generation/output/
+cd data_generation/output
+shasum -a 256 account_master.csv message_event.csv revenue_monthly.csv subscription_log.csv
+cd ../..
 ```
 ```powershell
 # Windows
-cd data_generation
-mkdir output -Force
-$env:PYTHONHASHSEED = "0"
-python -m generators.account_master
-python -m generators.subscription
-python -m generators.message_event
-python -m generators.revenue_monthly
+mkdir data_generation\output -Force
+Copy-Item <MATERIALS>\setup\data\homelab-data-platform\*.csv data_generation\output\
+Get-FileHash data_generation\output\*.csv -Algorithm SHA256
 ```
 
-Each script prints a line starting `Generated … records`. Some also print short summaries of the data; ignore them.
-
-✅ **Check:** compute the SHA-256 of two of the files:
-
-```bash
-# macOS / Linux
-shasum -a 256 output/account_master.csv output/revenue_monthly.csv
-```
-```powershell
-# Windows
-Get-FileHash output\account_master.csv, output\revenue_monthly.csv -Algorithm SHA256
-```
-
-They must be:
+✅ **Check:** the four hashes must be exactly:
 
 | File | SHA-256 |
 | --- | --- |
 | `account_master.csv` | `8e67691cc583795300c8b72dc24b59c61fc3d85402071118f4da0906e678679e` |
+| `message_event.csv` | `2a9b0283b8de5bd53ae57a88983e24f416a8f7432ad8ffccf726ff3ec84f85cc` |
 | `revenue_monthly.csv` | `75152f3997390ae9105c05771bbc7c0155f006fecb5e8644157ed796e9ba35be` |
+| `subscription_log.csv` | `00f8b32ae4e5acd102fe8ae17a9c5f047c082b7d27424c281400ed2fc4756261` |
 
-If `revenue_monthly.csv` differs, `PYTHONHASHSEED` wasn't set in that terminal. Set it, rerun the four scripts, and check again.
-
-The other two files, `subscription_log.csv` and `message_event.csv`, have a **different SHA-256 on every run**, because they contain randomly generated event IDs. That is expected.
-
-Then go back to the project folder and leave this environment:
-
-```bash
-cd ..
-deactivate
-```
+**Don't run the project's generator scripts.** Their output would differ from the snapshot. You may read them (`data_generation/generators/`) to understand how the data was made.
 
 ## Step 4: Create the dbt environment
 
@@ -113,6 +71,7 @@ pip install "dbt-core==1.12.5" "dbt-duckdb==1.11.0" "dbt-metricflow==0.15.0"
 ```powershell
 # Windows
 py -3.12 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .venv\Scripts\Activate.ps1
 pip install "dbt-core==1.12.5" "dbt-duckdb==1.11.0" "dbt-metricflow==0.15.0"
 ```
@@ -183,9 +142,9 @@ The query commands from SETUP.md Step 9 (`mf query`, `--explain` and `dbt show`)
 
 | Symptom | Likely cause and fix |
 | --- | --- |
-| `No files found that match the pattern` or `…output/….csv` | Step 3 was skipped, or dbt was run from the wrong folder. Run it from `dbt_project` (Step 6). |
+| `No files found that match the pattern` or `…output/….csv` | Step 3 was skipped, the CSVs were copied to the wrong folder, or dbt was run from the wrong folder. Run it from `dbt_project` (Step 6). |
 | `Could not find profile named 'dbt_project'` | `profiles.yml` is missing, misnamed, or not in `dbt_project/` (Step 5). |
-| `revenue_monthly.csv` hash doesn't match | `PYTHONHASHSEED` wasn't set (Step 3). |
+| A snapshot hash doesn't match | The file was changed or incompletely copied. Copy it again from the reviewer repository (Step 3). |
 | Anything else | Email the coordinator the step number, the command and the full error text. |
 
-**Don't edit any project file.** You create only the `output/` CSVs, `profiles.yml` and the two environments.
+**Don't edit any project file.** You add only the four snapshot CSVs in `data_generation/output/`, `profiles.yml` and the dbt environment.

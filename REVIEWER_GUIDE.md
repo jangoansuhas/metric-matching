@@ -39,7 +39,7 @@ For each **pair** of metrics in a packet, you record three things:
    - **Filters:** any `filter:` on the metric or measure.
    - **Time behaviour:** cumulative windows, offsets such as "previous month", and which time dimension is used.
    - **The SQL model:** open the model's SQL if you need to see how a column is computed.
-3. **Check the stated comparison scope.** Each pair in the packet has a **Compare at** line, such as "overall total and by month". Judge the pair at exactly that scope. Don't hunt for other groupings that would make the answer easier.
+3. **Check the stated comparison scope.** Each pair in the packet has one **Compare at** entry, such as "overall total" or "by month (`metric_time__month`)". Judge the pair at exactly that scope. Don't hunt for other groupings that would make the answer easier.
 4. **Optionally, run queries** to check your reading (§6). Record what you ran.
 5. **Choose a label (§4) and an evidence status (§5).** Write down the decisive files, lines and queries.
 6. **Record roughly how many minutes the pair took.**
@@ -83,12 +83,12 @@ Running queries is allowed, but numbers need care:
 
 ## 7. Order of work
 
-1. **Practice round:** [practice/CAL_PRACTICE_PACKET.md](practice/CAL_PRACTICE_PACKET.md), 3 pairs. It isn't scored. It exists to find confusing wording in this guide. Afterwards you may discuss the *rules*, but not the pairs, with the coordinator. Clarifications come to everyone in writing.
+1. **Practice round, done before SETUP.md:** [practice/README.md](practice/README.md), 3 pairs. It isn't scored. It uses the original practice packet unchanged, with its own instructions and worksheet (see that page). Send it before you run any SETUP.md query, because SETUP.md's examples show values for practice-round metrics. Afterwards you may discuss the *rules*, but not the pairs, with the coordinator. Clarifications come to everyone in writing.
 2. **Main round:** packets with pair codes like `P-01`, added later as new folders. Each has its own setup sheet.
 
 ## 8. Sending your worksheet
 
-1. **Make your worksheet:** copy [templates/REVIEWER_WORKSHEET.md](templates/REVIEWER_WORKSHEET.md) to a file outside this repository, e.g. `ReviewerB_CAL.md` in your work folder, and fill it in.
+1. **Make your worksheet:** copy [templates/REVIEWER_WORKSHEET.md](templates/REVIEWER_WORKSHEET.md) to a file outside this repository, e.g. `ReviewerB_batch1.md` in your work folder, and fill it in. For the practice round, use the worksheet inside the practice packet instead (see [practice/README.md](practice/README.md)).
 2. **Email it** to the coordinator as an attachment. The email timestamp records when it was finished.
 3. **Keep your own copy.** Don't edit it after sending.
 

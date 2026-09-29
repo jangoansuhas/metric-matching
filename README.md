@@ -8,7 +8,7 @@ You'll have been told your role by the coordinator.
 
 | Role | Code to use in every file | Read these, in this order |
 | --- | --- | --- |
-| Independent reviewer | **Reviewer B** | 1. this page → 2. [SETUP.md](SETUP.md) → 3. [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md) → 4. [practice/CAL_PRACTICE_PACKET.md](practice/CAL_PRACTICE_PACKET.md) |
+| Independent reviewer | **Reviewer B** | 1. this page → 2. [practice/README.md](practice/README.md) and the practice packet it links to. **Do and send the practice round first**: it needs no installation. → 3. [SETUP.md](SETUP.md) → 4. [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md) |
 | Adjudicator | **Adjudicator C** | 1. this page → 2. [SETUP.md](SETUP.md) → 3. [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md) (the rules the reviewers follow) → 4. [ADJUDICATOR_GUIDE.md](ADJUDICATOR_GUIDE.md) |
 
 **Never write your real name** in any file you send. Use your code.
@@ -35,8 +35,8 @@ Analytics projects built with **dbt** declare named business numbers called *met
 | `SETUP.md` | Step-by-step install: Git, Python, dbt, cloning and building the practice project, and running queries |
 | `REVIEWER_GUIDE.md` | How to review a pair, the six relationship labels, evidence status, how to use query results |
 | `ADJUDICATOR_GUIDE.md` | For the adjudicator only: how to resolve disagreements |
-| `setup/` | One setup sheet per held-out project, plus two helper scripts in `setup/tools/` for one of them |
-| `practice/` | The practice packet (3 pairs). Held-out packets will be added later as new folders. |
+| `setup/` | One setup sheet per held-out project, two helper scripts in `setup/tools/`, and a fixed data snapshot in `setup/data/` |
+| `practice/` | The original practice packet (3 pairs) and a note on how to use it. Held-out packets will be added later as new folders. |
 | `templates/` | Blank worksheet and decision-record templates to copy |
 
 ## Getting a copy of this repository
