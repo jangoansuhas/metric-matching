@@ -26,7 +26,7 @@ Record unclear rules, setup problems, broken links or anything else here.
 
 ## Declaration
 
-I completed this worksheet independently, using only the pinned sources, my local build made by following SETUP.md, and the official dbt documentation. I did not use any AI tool. I did not discuss these pairs with anyone before sending this worksheet. I did not edit any project file.
+I completed this worksheet independently, using only the pinned sources, my local builds made by following SETUP.md and the setup sheets, and the official dbt documentation. I did not use any AI tool. I did not discuss these pairs with anyone before sending this worksheet. I did not edit any project file, apart from the changes the setup sheets make.
 
 - Reviewer code: ________
 - Date: ________
