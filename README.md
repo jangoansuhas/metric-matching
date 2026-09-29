@@ -35,6 +35,7 @@ Analytics projects built with **dbt** declare named business numbers called *met
 | `SETUP.md` | Step-by-step install: Git, Python, dbt, cloning and building the practice project, and running queries |
 | `REVIEWER_GUIDE.md` | How to review a pair, the six relationship labels, evidence status, how to use query results |
 | `ADJUDICATOR_GUIDE.md` | For the adjudicator only: how to resolve disagreements |
+| `setup/` | One setup sheet per held-out project, plus two helper scripts in `setup/tools/` for one of them |
 | `practice/` | The practice packet (3 pairs). Held-out packets will be added later as new folders. |
 | `templates/` | Blank worksheet and decision-record templates to copy |
 

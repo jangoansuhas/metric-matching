@@ -24,8 +24,9 @@ For each **pair** of metrics in a packet, you record three things:
    - the pinned project files, via the packet's links or your local clone at the pinned commit;
    - the local database you built in SETUP.md;
    - the official dbt documentation at `docs.getdbt.com`.
-4. **Allowed commands:** the commands in SETUP.md, plus any `mf query`, `mf list`, `mf query --explain`, or read-only `dbt show --inline "select …"` against your local build.
-   - **Don't edit any project file.** Don't load other data, and don't change the commit.
+4. **Allowed commands:** the commands in SETUP.md and in the project's setup sheet in `setup/`, plus any `mf query`, `mf list`, `mf query --explain`, or read-only `dbt show --inline "select …"` against your local build.
+   - **Don't edit any project file.** Don't load data other than what the setup sheet says, and don't change the commit.
+   - **One exception.** For the revenue-intelligence project, the setup sheet has you run two scripts from `setup/tools/`. One loads that project's own generated data into DuckDB. The other changes 5 lines (`number(` → `decimal(`) so the project builds without Snowflake. These are the only allowed changes. For what a metric *means* in that project, read the pinned, unchanged files through the packet's links.
 5. **Don't commit to this repository.** Send your worksheet by email (§8).
 6. **Don't change a worksheet after sending it.** Send corrections as a separate, dated note.
 

@@ -229,4 +229,12 @@ The packet also gives GitHub links to the exact lines at the pinned commit. They
 
 ## Later projects
 
-Each held-out packet names its own project and commit. It comes with a short setup sheet that repeats Steps 4–9 with that project's own clone URL, commit, profile and check values.
+Each held-out packet names its project. **Set it up with its sheet in `setup/`.** Each sheet repeats Steps 4–9 with that project's own clone URL, commit, profile and check values. You only need Steps 1–3 of this page first.
+
+| Project | Setup sheet | What is different |
+| --- | --- | --- |
+| homelab-data-platform | [setup/SETUP_homelab-data-platform.md](setup/SETUP_homelab-data-platform.md) | You generate the data with the project's own scripts first. You **must** set `PYTHONHASHSEED=0`. |
+| revenue-intelligence | [setup/SETUP_revenue-intelligence.md](setup/SETUP_revenue-intelligence.md) | Written for Snowflake. Two helper scripts from `setup/tools/` load its own data into DuckDB and change 5 type names. |
+| supply-chain-analytics-dbt | [setup/SETUP_supply-chain-analytics.md](setup/SETUP_supply-chain-analytics.md) | Ships its own data and local profile. It needs the fewest steps. |
+
+These sheets were tested on Linux. The Windows commands haven't been tested yet: if one fails, email the coordinator.
