@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="snowflake-source" content="cortex-agent-authored" />
+  <title>Independent Review: Metric Matching Study Protocol</title>
+  <script type="application/json" id="snowflake-report-metadata">
+  {
+    "generated": "2026-10-03",
+    "intent": "Independent review of the metric-matching study protocol with experimental validation of the 3 practice calibration pairs",
+    "sections": [
+      { "id": "summary", "title": "Review Summary", "producerNotes": "Overall verdict and key findings" },
+      { "id": "experiment-results", "title": "Experiment Results", "producerNotes": "CAL-01 through CAL-03 results from running dbt/MetricFlow against jaffle-shop at pinned commit 7be2c58" },
+      { "id": "study-design", "title": "Study Design Evaluation", "producerNotes": "Methodology and bias assessment" },
+      { "id": "rubric-evaluation", "title": "Rubric Evaluation", "producerNotes": "Label definition clarity and edge-case analysis" },
+      { "id": "recommendations", "title": "Recommendations", "producerNotes": "Required and suggested changes before publication" }
+    ]
+  }
+  </script>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      max-width: 880px; width: 100%; box-sizing: border-box;
+      margin: 0 auto; padding: clamp(16px, 4vw, 24px);
+      color: light-dark(#1f2937, #e5e7eb);
+      line-height: 1.6;
+    }
+    h1, h2, h3 { color: light-dark(#0f172a, #f1f5f9); }
+    h1 { border-bottom: 2px solid light-dark(#2563eb, #60a5fa); padding-bottom: 8px; }
+    h2 { margin-top: 2em; border-bottom: 1px solid light-dark(#d1d5db, #374151); padding-bottom: 4px; }
+    a { color: light-dark(#2563eb, #60a5fa); }
+    .verdict { padding: 16px; border-radius: 8px; margin: 16px 0; font-weight: 600; font-size: 1.1em; }
+    .verdict-accept { background: light-dark(#d1fae5, #064e3b); color: light-dark(#065f46, #a7f3d0); }
+    .verdict-minor { background: light-dark(#fef3c7, #78350f); color: light-dark(#92400e, #fde68a); }
+    .verdict-major { background: light-dark(#fee2e2, #7f1d1d); color: light-dark(#991b1b, #fca5a5); }
+    .metric-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+    .card { padding: 16px; border-radius: 8px; background: light-dark(#f9fafb, #111827); border: 1px solid light-dark(#e5e7eb, #374151); }
+    .card-label { font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; color: light-dark(#6b7280, #9ca3af); }
+    .card-value { font-size: 1.8em; font-weight: 700; margin: 4px 0; }
+    .pass { color: light-dark(#059669, #34d399); }
+    .warn { color: light-dark(#d97706, #fbbf24); }
+    .fail { color: light-dark(#dc2626, #f87171); }
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid light-dark(#d1d5db, #374151); padding: 8px 12px; text-align: left; }
+    th { background: light-dark(#f3f4f6, #1f2937); font-weight: 600; }
+    tr:nth-child(even) { background: light-dark(#f9fafb, #111827); }
+    code { background: light-dark(#f3f4f6, #1f2937); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    .finding { padding: 12px 16px; border-left: 4px solid; margin: 12px 0; border-radius: 0 4px 4px 0; }
+    .finding-positive { border-color: light-dark(#059669, #34d399); background: light-dark(#ecfdf5, #064e3b20); }
+    .finding-concern { border-color: light-dark(#d97706, #fbbf24); background: light-dark(#fffbeb, #78350f20); }
+    .finding-critical { border-color: light-dark(#dc2626, #f87171); background: light-dark(#fef2f2, #7f1d1d20); }
+    .chart-box { position: relative; width: 100%; height: 320px; }
+    .chart-box > canvas { width: 100% !important; height: 100% !important; }
+    .section-num { color: light-dark(#6b7280, #9ca3af); font-weight: 400; }
+    img, svg { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+
+  <h1>Independent Review: Metric Matching Study Protocol</h1>
+  <p><strong>Reviewer:</strong> Independent Automated Review (Cortex Code)<br>
+     <strong>Date:</strong> 2026-10-03<br>
+     <strong>Repository:</strong> <code>jangoansuhas/metric-matching</code><br>
+     <strong>Scope:</strong> Study protocol, rubric, calibration packet, and experimental reproducibility</p>
+
+  <h2 id="summary"><span class="section-num">1.</span> Review Summary</h2>
+
+  <div class="verdict verdict-minor">VERDICT: Minor Revision Required</div>
+
+  <p>This study protocol describes an inter-rater reliability study for labelling semantic relationships between dbt metric pairs. The protocol is well-designed, methodologically sound, and the practice calibration pairs are reproducible. However, the study is <strong>incomplete</strong> (only calibration materials are present; main evaluation packets are missing), and there are several rubric clarity issues and methodological concerns that should be addressed before publication.</p>
+
+  <div class="metric-card">
+    <div class="card">
+      <div class="card-label">Reproducibility</div>
+      <div class="card-value pass">PASS</div>
+      <p style="margin:4px 0 0; font-size:0.85em;">All 3 calibration pairs reproduced exactly</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Methodology</div>
+      <div class="card-value pass">Sound</div>
+      <p style="margin:4px 0 0; font-size:0.85em;">Standard inter-rater design with adjudication</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Rubric Clarity</div>
+      <div class="card-value warn">Issues</div>
+      <p style="margin:4px 0 0; font-size:0.85em;">3 ambiguity risks identified in label definitions</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Completeness</div>
+      <div class="card-value fail">Incomplete</div>
+      <p style="margin:4px 0 0; font-size:0.85em;">Missing main packets, results, and paper manuscript</p>
+    </div>
+  </div>
+
+  <h2 id="experiment-results"><span class="section-num">2.</span> Experiment Results</h2>
+
+  <h3>2.1 Environment Verification</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Check</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Jaffle-shop commit</td><td><code>7be2c58...</code></td><td><code>7be2c58...</code></td><td class="pass">PASS</td></tr>
+        <tr><td>dbt-core version</td><td>1.12.5</td><td>1.12.5</td><td class="pass">PASS</td></tr>
+        <tr><td>dbt-duckdb version</td><td>1.11.0</td><td>1.11.0</td><td class="pass">PASS</td></tr>
+        <tr><td>dbt seed</td><td>PASS=6 ERROR=0</td><td>PASS=6 ERROR=0</td><td class="pass">PASS</td></tr>
+        <tr><td>dbt build</td><td>PASS=43 ERROR=0 TOTAL=46</td><td>PASS=43 ERROR=0 TOTAL=46</td><td class="pass">PASS</td></tr>
+        <tr><td>Metric count</td><td>19 metrics</td><td>19 metrics</td><td class="pass">PASS</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="finding finding-positive"><strong>All setup checks passed exactly as documented.</strong> The pinned commit, dependency versions, and expected outputs all match. Reproducibility of the environment is confirmed.</div>
+
+  <h3>2.2 CAL-01: <code>revenue</code> vs <code>food_revenue</code></h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th><code>revenue</code></th><th><code>food_revenue</code></th></tr></thead>
+      <tbody>
+        <tr><td>Source file</td><td>order_items.yml L90-95</td><td>order_items.yml L108-113</td></tr>
+        <tr><td>Measure expression</td><td><code>SUM(product_price)</code></td><td><code>SUM(CASE WHEN is_food_item THEN product_price ELSE 0 END)</code></td></tr>
+        <tr><td>Semantic model</td><td>order_item (order_items table)</td><td>order_item (order_items table)</td></tr>
+        <tr><td>Grain</td><td>One row per order item</td><td>One row per order item</td></tr>
+        <tr><td>Time dimension</td><td>ordered_at</td><td>ordered_at</td></tr>
+        <tr><td>Filter</td><td>None</td><td>Inline CASE (food items only)</td></tr>
+        <tr><td>Overall total</td><td>637,444</td><td>240,877</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Key facts:</strong> <code>food_revenue</code> is a strict subset of <code>revenue</code>. The relationship is: <code>revenue = food_revenue + drink_revenue</code> (verified: 637,444 = 240,877 + 396,567). Same table, same grain, same time dimension, but <code>food_revenue</code> applies an inline CASE filter restricting to food items only. Values differ at every month.</p>
+
+  <p><strong>My label:</strong> <code>temporal_or_scope_variant</code> — shared measure concept (<code>SUM(product_price)</code>) with a changed population filter (food items only). Evidence status: <code>sufficient</code>.</p>
+
+  <h3>2.3 CAL-02: <code>lifetime_spend_pretax</code> vs <code>order_total</code></h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th><code>lifetime_spend_pretax</code></th><th><code>order_total</code></th></tr></thead>
+      <tbody>
+        <tr><td>Source file</td><td>customers.yml L73-78</td><td>orders.yml L124-129</td></tr>
+        <tr><td>Measure expression</td><td><code>SUM(lifetime_spend_pretax)</code></td><td><code>SUM(order_total)</code></td></tr>
+        <tr><td>Semantic model</td><td>customers (customers table)</td><td>orders (orders table)</td></tr>
+        <tr><td>Grain</td><td>One row per customer</td><td>One row per order</td></tr>
+        <tr><td>Time dimension</td><td><code>first_ordered_at</code></td><td><code>ordered_at</code></td></tr>
+        <tr><td>What it sums</td><td>Pre-tax subtotals (=637,444)</td><td>Order totals including tax (=671,425)</td></tr>
+        <tr><td>Overall total</td><td>637,444</td><td>671,425</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Key facts:</strong> These metrics differ in <strong>three fundamental ways</strong>:</p>
+  <ol>
+    <li><strong>Different grain:</strong> Customer-level vs order-level. The customers table pre-aggregates <code>SUM(orders.subtotal)</code> per customer.</li>
+    <li><strong>Different values:</strong> <code>lifetime_spend_pretax</code> = SUM(subtotal) = 637,444 while <code>order_total</code> = SUM(subtotal + tax_paid) = 671,425. The difference is the total tax: 33,981.</li>
+    <li><strong>Different time dimension:</strong> <code>first_ordered_at</code> (customer's first order date) vs <code>ordered_at</code> (each order's date). Monthly breakdowns are completely incomparable.</li>
+  </ol>
+
+  <p><strong>My label:</strong> <code>related</code> — both derive from order subtotals, but differ in tax inclusion, grain, and time dimension. Too many differences for <code>cross_grain_equivalent</code> (which requires aligned inputs, time, and population). Evidence status: <code>sufficient</code>.</p>
+
+  <div class="finding finding-concern"><strong>Rubric stress test:</strong> This pair is the most interesting for testing the rubric. A reviewer might be tempted to call it <code>cross_grain_equivalent</code> (customer rolls up from orders) or <code>temporal_or_scope_variant</code> (pre-tax vs post-tax). The tax difference alone rules out equivalence, and the different time dimensions rule out a simple grain rollup. The rubric should explicitly address pairs with <em>multiple simultaneous differences</em>.</div>
+
+  <h3>2.4 CAL-03: <code>order_total</code> vs <code>order_cost</code></h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th><code>order_total</code></th><th><code>order_cost</code></th></tr></thead>
+      <tbody>
+        <tr><td>Source file</td><td>orders.yml L124-129</td><td>order_items.yml L96-101</td></tr>
+        <tr><td>Measure expression</td><td><code>SUM(order_total)</code></td><td><code>SUM(order_cost)</code></td></tr>
+        <tr><td>Semantic model</td><td>orders (orders table)</td><td>orders (orders table)</td></tr>
+        <tr><td>Grain</td><td>One row per order</td><td>One row per order</td></tr>
+        <tr><td>Time dimension</td><td>ordered_at</td><td>ordered_at</td></tr>
+        <tr><td>What it sums</td><td>Revenue + tax per order</td><td>Supply cost per order</td></tr>
+        <tr><td>Overall total</td><td>671,425</td><td>131,788</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Key facts:</strong> <code>order_total</code> is customer-facing revenue (subtotal + tax), while <code>order_cost</code> is supplier-facing cost. They measure completely different economic concepts. Note that the <code>order_cost</code> metric is declared in <code>order_items.yml</code> but references the <code>order_cost</code> measure from the <code>orders</code> semantic model (orders.yml L119-121). Both share the same grain and time dimension. Their difference is the gross profit: <code>order_gross_profit = revenue - cost</code> (a derived metric already defined in the project).</p>
+
+  <p><strong>My label:</strong> <code>related</code> — documented semantic connection (gross profit = order_total - tax - order_cost, approximately), but fundamentally different economic concepts. Evidence status: <code>sufficient</code>.</p>
+
+  <div class="finding finding-concern"><strong>Cross-file metric declaration:</strong> <code>order_cost</code> is declared in <code>order_items.yml</code> (L96-101) but its measure lives in the <code>orders</code> semantic model (<code>orders.yml</code> L119-121). This cross-file reference could confuse reviewers who expect declaration and measure to be co-located. The packet doesn't warn about this.</div>
+
+  <h3>2.5 Data Quality Checks</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Check</th><th>Result</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>NULL product_price values</td><td>0 out of 90,900 items</td><td>No NULL-handling edge cases in revenue metrics</td></tr>
+        <tr><td>NULL supply_cost values</td><td>0 out of 90,900 items</td><td>No NULL-handling edge cases in cost metrics</td></tr>
+        <tr><td>Customers without orders</td><td>0</td><td>No LEFT JOIN NULL issues in customers table</td></tr>
+        <tr><td>order_total = subtotal + tax_paid</td><td>0 mismatches</td><td>Tax decomposition is exact</td></tr>
+        <tr><td>Item type coverage</td><td>20,081 food + 70,819 drink = 90,900 (no "neither")</td><td>food + drink partitions all items completely</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="finding finding-concern"><strong>Practice data is too clean.</strong> The jaffle-shop sample data contains zero NULLs in all key columns and has a perfect partition of food/drink items. Real dbt projects often have NULLs, missing joins, and ambiguous categorizations. The REVIEWER_GUIDE correctly warns that "equal numbers don't prove equivalence" and mentions NULL handling, but the practice data never exercises these edge cases. This means reviewers won't practice the hardest parts of the rubric during calibration.</div>
+
+  <h2 id="study-design"><span class="section-num">3.</span> Study Design Evaluation</h2>
+
+  <h3>3.1 Strengths</h3>
+  <div class="finding finding-positive"><strong>Rigorous reproducibility controls.</strong> Pinned commit SHA, exact dependency versions, SHA-256 integrity checks on worksheets, and read-only protocol ensure all reviewers see identical artifacts. This is above-average for inter-rater reliability studies.</div>
+  <div class="finding finding-positive"><strong>Clear separation of roles.</strong> The Reviewer A / Reviewer B / Adjudicator C design with anonymous codes and no live discussions follows best practices for annotation studies.</div>
+  <div class="finding finding-positive"><strong>Well-structured rubric.</strong> Six labels cover the expected relationship space well, from exact equivalence through conflict to non-match. The tie-breaking rules (most specific label, equal-only-at-some-scopes caveat) reduce ambiguity.</div>
+  <div class="finding finding-positive"><strong>Honest handling of uncertainty.</strong> The <code>needs_review</code> status and "unresolved" adjudication outcome acknowledge that not all pairs have clear answers. This is methodologically mature.</div>
+
+  <h3>3.2 Concerns</h3>
+
+  <div class="finding finding-critical"><strong>C1: Reviewer A is the paper's first author.</strong> This is the study's most significant methodological weakness. While the ADJUDICATOR_GUIDE explicitly instructs the adjudicator to give A's answer "no extra weight," the adjudicator <em>knows</em> which reviewer is the author. This creates unconscious anchoring bias. Standard practice in annotation studies is to use fully blinded codes (e.g., Reviewer 1 and 2 with random assignment), where the adjudicator genuinely does not know which is the author. <strong>Recommendation:</strong> Either blind the adjudicator to which reviewer is A, or recruit a second independent reviewer (Reviewer C) who is not the author, making the author's labels a separate comparison point.</div>
+
+  <div class="finding finding-concern"><strong>C2: Only DuckDB is supported.</strong> The SETUP.md restricts to DuckDB as the warehouse backend. While this ensures reproducibility, it ties the study's metric behavior to DuckDB's SQL semantics (e.g., type coercion, NULL handling, CASE expression behavior). If the eventual paper claims generalizability to "dbt metrics" broadly, this limitation must be stated. DuckDB's behavior may differ from Snowflake, BigQuery, or Redshift on edge cases.</div>
+
+  <div class="finding finding-concern"><strong>C3: Sample size and representativeness unknown.</strong> Only 3 practice pairs from one project (jaffle-shop) are present. The README promises "held-out packets" from other projects, but these are not yet included. The study's statistical power and generalizability depend entirely on the number and diversity of main-round pairs, which cannot be evaluated from the current materials.</div>
+
+  <div class="finding finding-concern"><strong>C4: No AI tools restriction is appropriate but limits scalability claims.</strong> The study bans AI tools to ensure human judgment is the gold standard. This is correct for establishing the reference dataset, but the paper should explicitly discuss how the protocol scales when applied to large dbt projects with hundreds of metrics, and what the intended downstream use of the labeled dataset is (e.g., training or benchmarking an automated system).</div>
+
+  <div class="finding finding-concern"><strong>C5: Windows is untested.</strong> SETUP.md acknowledges "The Windows steps follow the official tools' documentation but weren't tested by the coordinator." If any reviewer uses Windows, untested setup steps could introduce environment differences or participant frustration. Either test the Windows path or restrict to macOS/Linux.</div>
+
+  <h2 id="rubric-evaluation"><span class="section-num">4.</span> Rubric Evaluation</h2>
+
+  <h3>4.1 Label Definition Issues</h3>
+
+  <div class="finding finding-concern"><strong>R1: <code>cross_grain_equivalent</code> is under-specified.</strong> The definition requires "a specified deterministic, valid rollup maps one grain to the other under aligned inputs, time, units, and population, including missing-group and NULL handling." But it doesn't specify: (a) who specifies the rollup — must it be documented in the project, or can the reviewer infer it? (b) What counts as "aligned time" when the two grains use different time dimensions (e.g., <code>first_ordered_at</code> vs <code>ordered_at</code>)? CAL-02 exercises this gap directly.</div>
+
+  <div class="finding finding-concern"><strong>R2: <code>temporal_or_scope_variant</code> vs <code>related</code> boundary is blurry.</strong> The definition says "documented shared measure concept with a changed time rule, filter, state, or population." But what counts as a "shared measure concept"? In CAL-01, <code>revenue</code> and <code>food_revenue</code> share the <em>concept</em> of product price summation but use different measure expressions (<code>SUM(product_price)</code> vs <code>SUM(CASE WHEN ...)</code>). Are they scope variants or related? The inline CASE is effectively a filter, but it's expressed differently from a MetricFlow <code>filter:</code> clause. Clarify whether inline CASE expressions in measure <code>expr</code> count as "filters."</div>
+
+  <div class="finding finding-concern"><strong>R3: Multiple simultaneous differences are not addressed.</strong> The rubric gives rules for picking the most specific label, but doesn't guide reviewers when a pair differs on multiple axes simultaneously (CAL-02: different grain + different values + different time dimension). Should the reviewer pick the "primary" difference? Default to <code>related</code>? The rubric would benefit from a decision tree or hierarchy for multi-axis differences.</div>
+
+  <h3>4.2 Missing Rubric Guidance</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gap</th><th>Scenario</th><th>Suggested Resolution</th></tr></thead>
+      <tbody>
+        <tr><td>Cross-file declarations</td><td>Metric declared in file X but measure defined in file Y</td><td>Add a note that metric-measure-model chains can span files; the packet's links point to declarations only</td></tr>
+        <tr><td>Derived metrics as comparands</td><td>What if a pair includes a derived metric that references one of its components?</td><td>Clarify whether to trace through the derivation or treat the derived metric as its own entity</td></tr>
+        <tr><td>Default time dimension semantics</td><td>The <code>defaults: agg_time_dimension:</code> field determines what <code>metric_time</code> means, but this isn't mentioned in the reviewer guide</td><td>Add a note explaining that different semantic models can have different default time dimensions, which affects monthly comparisons</td></tr>
+        <tr><td>Measure vs metric filter distinction</td><td>A CASE in <code>expr</code> acts as a filter but isn't a MetricFlow <code>filter:</code></td><td>State whether inline CASE expressions constitute "filters" for labelling purposes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="recommendations"><span class="section-num">5.</span> Recommendations</h2>
+
+  <h3>5.1 Required Changes (before publication)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Issue</th><th>Action</th><th>Severity</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Author as Reviewer A creates bias risk (C1)</td><td>Blind the adjudicator to reviewer identity, or add a second independent reviewer</td><td class="fail">Major</td></tr>
+        <tr><td>2</td><td>Main evaluation packets missing</td><td>Add held-out packets before the study can be reviewed for statistical adequacy</td><td class="fail">Major</td></tr>
+        <tr><td>3</td><td><code>cross_grain_equivalent</code> under-specified (R1)</td><td>Add explicit criteria for what counts as "aligned time" and who specifies the rollup</td><td class="warn">Moderate</td></tr>
+        <tr><td>4</td><td>Multi-axis difference guidance missing (R3)</td><td>Add a decision tree or hierarchy for pairs differing on 2+ axes</td><td class="warn">Moderate</td></tr>
+        <tr><td>5</td><td>Inline CASE vs filter ambiguity (R2)</td><td>Clarify in the rubric whether CASE expressions in measure <code>expr</code> are "filters"</td><td class="warn">Moderate</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.2 Suggested Improvements (not blocking)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Suggestion</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>6</td><td>Test Windows setup path or restrict to macOS/Linux (C5)</td><td>Untested setup creates reproducibility risk</td></tr>
+        <tr><td>7</td><td>Include at least one practice pair with NULL data</td><td>Calibrates reviewers for the hardest real-world cases</td></tr>
+        <tr><td>8</td><td>Add a note about cross-file metric declarations</td><td>CAL-03's <code>order_cost</code> is declared in order_items.yml but its measure is in orders.yml</td></tr>
+        <tr><td>9</td><td>Document the default time dimension (<code>agg_time_dimension</code>) in the reviewer guide</td><td>Critical for understanding monthly comparison semantics (CAL-02)</td></tr>
+        <tr><td>10</td><td>State the DuckDB limitation explicitly in the paper</td><td>Results may not generalize to other SQL engines</td></tr>
+        <tr><td>11</td><td>Report inter-rater agreement statistics (Cohen's kappa or Krippendorff's alpha)</td><td>Standard for annotation studies; needed to validate the label definitions</td></tr>
+        <tr><td>12</td><td>Clarify the downstream use of the labeled dataset</td><td>Is it for benchmarking automated systems? Training? The answer affects required sample size</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="appendix"><span class="section-num">6.</span> Appendix: Full Experiment Log</h2>
+
+  <h3>6.1 Commands Executed</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Step</th><th>Command</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Clone</td><td><code>git clone ... && git checkout 7be2c58...</code></td><td>Commit matched</td></tr>
+        <tr><td>Install</td><td><code>pip install "dbt-core==1.12.5" "dbt-duckdb==1.11.0" "dbt-metricflow==0.15.0"</code></td><td>Success</td></tr>
+        <tr><td>Seed</td><td><code>dbt seed --full-refresh --vars "{load_source_data: true}"</code></td><td>PASS=6</td></tr>
+        <tr><td>Build</td><td><code>dbt build</code></td><td>PASS=43 TOTAL=46</td></tr>
+        <tr><td>List</td><td><code>mf list metrics</code></td><td>19 metrics</td></tr>
+        <tr><td>CAL-01</td><td><code>mf query --metrics revenue,food_revenue [--group-by ...]</code></td><td>637,444 vs 240,877</td></tr>
+        <tr><td>CAL-02a</td><td><code>mf query --metrics lifetime_spend_pretax</code></td><td>637,444</td></tr>
+        <tr><td>CAL-02b</td><td><code>mf query --metrics order_total</code></td><td>671,425</td></tr>
+        <tr><td>CAL-03</td><td><code>mf query --metrics order_total,order_cost [--group-by ...]</code></td><td>671,425 vs 131,788</td></tr>
+        <tr><td>SQL explain</td><td><code>mf query --metrics &lt;each&gt; --explain</code></td><td>Verified generated SQL for all 5 metrics</td></tr>
+        <tr><td>NULL check</td><td><code>dbt show --inline "..."</code> (multiple)</td><td>0 NULLs in all key columns</td></tr>
+        <tr><td>Decomposition</td><td><code>revenue = food_revenue + drink_revenue</code></td><td>637,444 = 240,877 + 396,567</td></tr>
+        <tr><td>Tax verification</td><td><code>SUM(subtotal)=637,444, SUM(tax)=33,981, SUM(total)=671,425</code></td><td>total = subtotal + tax confirmed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.2 My Practice Worksheet (for reference)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pair</th><th>Label</th><th>Evidence</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>CAL-01</td><td><code>temporal_or_scope_variant</code></td><td><code>sufficient</code></td><td>Same table, same grain, same time dim. <code>food_revenue</code> applies inline CASE filter restricting to food items. Shared concept (product price sum) with changed population.</td></tr>
+        <tr><td>CAL-02</td><td><code>related</code></td><td><code>sufficient</code></td><td>Both derive from order subtotals, but differ in 3 ways: tax inclusion (pre-tax vs post-tax), grain (customer vs order), and time dimension (first_ordered_at vs ordered_at). Too many differences for any equivalence label.</td></tr>
+        <tr><td>CAL-03</td><td><code>related</code></td><td><code>sufficient</code></td><td>Same grain (order), same time dimension, but fundamentally different economic concepts: revenue vs supply cost. Connected via gross profit derivation.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:2em; padding-top:1em; border-top:1px solid light-dark(#d1d5db, #374151); font-size:0.85em; color:light-dark(#6b7280, #9ca3af);">
+    Generated by Cortex Code independent review on 2026-10-03. Experiments run against jaffle-shop commit <code>7be2c583</code> with dbt-core 1.12.5, dbt-duckdb 1.11.0, dbt-metricflow 0.15.0 on Python 3.12.15 / DuckDB 1.5.6 / macOS ARM64.
+  </p>
+
+</body>
+</html>
