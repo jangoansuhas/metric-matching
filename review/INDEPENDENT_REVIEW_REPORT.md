@@ -1,6 +1,6 @@
 # Independent Review: Metric Matching Study Protocol
 
-**Reviewer:** Independent Automated Review (Cortex Code)
+**Reviewer:** Independent Automated Review (Person-2)
 **Date:** 2026-10-03
 **Repository:** `jangoansuhas/metric-matching`
 **Scope:** Study protocol, rubric, calibration packet, and experimental reproducibility
