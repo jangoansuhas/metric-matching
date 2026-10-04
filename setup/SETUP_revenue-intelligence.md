@@ -99,6 +99,7 @@ pip install "dbt-core==1.12.5" "dbt-duckdb==1.11.0" "dbt-metricflow==0.15.0"
 ```powershell
 # Windows
 py -3.12 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass   # allows the next line, for this window only
 .venv\Scripts\Activate.ps1
 pip install "dbt-core==1.12.5" "dbt-duckdb==1.11.0" "dbt-metricflow==0.15.0"
 ```

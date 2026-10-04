@@ -2,7 +2,7 @@
 
 Please read all of this once before starting. You should already have finished [SETUP.md](SETUP.md).
 
-In every file you are **Reviewer B**. Don't write your real name anywhere.
+Use the role code the coordinator assigned you (**Reviewer B**, or **Adjudicator C** if you are the adjudicator) in every file you send. Don't write your real name anywhere.
 
 ---
 
@@ -83,7 +83,7 @@ Running queries is allowed, but numbers need care:
 
 ## 7. Order of work
 
-1. **Practice round, done before SETUP.md:** [practice/README.md](practice/README.md), 3 pairs. It isn't scored. It uses the original practice packet unchanged, with its own instructions and worksheet (see that page). Send it before you run any SETUP.md query, because SETUP.md's examples show values for practice-round metrics. Afterwards you may discuss the *rules*, but not the pairs, with the coordinator. Clarifications come to everyone in writing.
+1. **Practice round, done before SETUP.md:** [practice/README.md](practice/README.md), 3 pairs. It isn't scored. It uses the original practice packet unchanged, with its own instructions and worksheet (see that page). Send it before you run any SETUP.md query, because SETUP.md's examples show values for practice-round metrics. Afterwards you may discuss the *rules*, but not the pairs, with the coordinator. Clarifications come to everyone in writing; any dated, hashed clarification that accompanies a packet is part of the rulebook.
 2. **Main round:** packets with pair codes like `P-01`, added later as new folders. Each has its own setup sheet.
 
 ## 8. Sending your worksheet

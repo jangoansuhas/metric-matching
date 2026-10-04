@@ -1,6 +1,6 @@
 # Adjudicator guide: resolving reviewer disagreements
 
-Thank you for agreeing to adjudicate. Two reviewers, **A** and **B**, have each labelled the same metric pairs independently. Your job is to produce the **final label** for each pair, concentrating on the pairs where they disagree.
+Thank you for agreeing to adjudicate. Two reviewers have each labelled the same metric pairs independently. You will know them only as **Reviewer 1** and **Reviewer 2** — you are not told which reviewer is which. Your job is to produce the **final label** for each pair, concentrating on the pairs where they disagree.
 
 In every file you are **Adjudicator C**. Don't write your real name anywhere.
 
@@ -12,7 +12,7 @@ Before starting, read the [README](README.md), finish [SETUP.md](SETUP.md), and 
 
 You must:
 
-- not be Reviewer A or Reviewer B, and not have helped write the paper or build its method;
+- not be one of the two reviewers, and not have helped write the paper or build its method;
 - not have seen any automated or AI output for these pairs, including method results, tools' predictions and chatbot analyses;
 - be able to read dbt YAML and SQL.
 
@@ -28,14 +28,14 @@ If any of these isn't true, tell the coordinator and stop.
    - the two locked worksheets;
    - the written Q&A log of rulings.
 3. **Use the same rulebook.** Apply REVIEWER_GUIDE §4–§6, plus any written rulings in the Q&A log. Don't invent new categories.
-4. **Treat both reviewers equally.** Reviewer A is the paper's first author. That must give A's answer **no extra weight**. Judge only the evidence.
-5. **Questions go to both reviewers.** If you need a reviewer to clarify something, send the same written question to both A and B, and keep their written replies. Don't hold a live discussion with only one of them.
+4. **Treat both reviewers equally.** One of the two reviewers is the paper's first author, but you are not told which; give **neither** reviewer's answer extra weight. Judge only the evidence.
+5. **Questions go to both reviewers.** If you need a reviewer to clarify something, send the same written question to both reviewers, and keep their written replies. Don't hold a live discussion with only one of them.
 6. **Don't commit to this repository.** Send your decision record by email.
 
 ## 3. What you receive (from the coordinator, by email)
 
 - The packet ID and its SHA-256.
-- A's and B's **locked** worksheets, with their SHA-256 values.
+- The two reviewers' **locked** worksheets (Reviewer 1 and Reviewer 2), with their SHA-256 values.
 - The Q&A log.
 
 Check that the files' SHA-256 values match the ones the coordinator sent. If they don't, stop and report it.
@@ -57,7 +57,7 @@ Get-FileHash <file> -Algorithm SHA256
 | --- | --- |
 | **Full agreement** (same label **and** same evidence status) | Accept it. Skim the cited lines. Override only for a clear factual error, e.g. a cited line doesn't say what's claimed, and explain the override. |
 | **Same label, different evidence status** | Read the "missing evidence" notes. Decide whether a decisive fact really is missing (`needs_review`) or not (`sufficient`). |
-| **Different labels** | Review the pair yourself (REVIEWER_GUIDE §3, at the packet's stated scope), then read both reviewers' reasoning and queries. Pick A's label, B's label, or a third label if the evidence clearly supports it. Explain the decisive evidence. |
+| **Different labels** | Review the pair yourself (REVIEWER_GUIDE §3, at the packet's stated scope), then read both reviewers' reasoning and queries. Pick Reviewer 1's label, Reviewer 2's label, or a third label if the evidence clearly supports it. Explain the decisive evidence. |
 | **One or both left the label blank** | Decide whether the evidence supports a label. If it doesn't, leave it blank with `needs_review`. |
 | **Truly can't decide** | Mark it **`unresolved`** and explain why. Unresolved pairs are reported separately in the paper. That's an honest outcome, not a failure. |
 
@@ -78,7 +78,7 @@ Copy [templates/ADJUDICATOR_DECISION_RECORD.md](templates/ADJUDICATOR_DECISION_R
 
 ## 6. When you're done
 
-- Email the decision record to the coordinator and keep a copy. Don't change it after sending. Send any correction as a separate, dated note.
+- Email the decision record to the coordinator **by October 12, 2026**, and keep a copy. Don't change it after sending. Send any correction as a separate, dated note.
 - Your final labels are the study's reference labels. The coordinator will not edit them.
 
 ## 7. Practice pairs (if asked)

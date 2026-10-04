@@ -14,12 +14,13 @@ If any of these isn't true, tell the coordinator and stop.
 
 ## What you need
 
-- A computer with internet, **Git**, and **Python 3.10+**.
+- A computer with internet, **Git**, and **Python 3.12** (SETUP.md pins it exactly).
 - Total effort: about **2–4 hours** spread over the steps below. Most pairs will be agreements you can accept quickly; the disagreements are where your time goes.
 
 ## Phase 1 — Read and set up (can be done now; ~1–2 hours)
 
-1. Clone the repository: `git clone https://github.com/jangoansuhas/metric-matching.git`
+1. Clone the repository, branch `heldout-setup` (the same branch the reviewers use):
+   `git clone -b heldout-setup https://github.com/jangoansuhas/metric-matching.git`
 2. Read `README.md` (the study in one paragraph and the five rules).
 3. Follow `SETUP.md` top to bottom: pinned tool versions (`dbt-core 1.12.5`, `dbt-duckdb 1.11.0`, `dbt-metricflow 0.15.0`) and the practice-project build, then the three per-project sheets in `setup/`. If anything fails, email the coordinator the exact command and the last ~20 lines of output — don't improvise fixes.
 4. Read `REVIEWER_GUIDE.md` once — you apply exactly the same definitions and rules the reviewers used. Then read `ADJUDICATOR_GUIDE.md` — your full procedure.
@@ -41,7 +42,8 @@ Work through `ADJUDICATOR_GUIDE.md` §4's case table, pair by pair:
 - **Full agreement:** accept it; skim the cited lines. Override only for a clear factual error, and explain.
 - **Same label, different evidence status:** decide whether a decisive fact really is missing.
 - **Different labels:** review the pair yourself at the packet's stated scope, read both reasonings, and pick A's label, B's label, or a third label the evidence clearly supports. Explain the decisive evidence.
-- **Blank labels / truly can't decide:** decide, or mark `unresolved` and explain. Honest `unresolved` is a fine outcome.
+- **Blank labels:** decide whether the evidence supports a label; if it doesn't, leave it blank with `needs_review`.
+- **Truly can't decide:** mark `unresolved` and explain. Honest `unresolved` is a fine outcome.
 - For each disagreement, also give a **root cause** (`rubric_wording`, `missed_evidence`, `scope`, `value_interpretation`, `judgment`, `other`).
 
 Then: copy `templates/ADJUDICATOR_DECISION_RECORD.md` outside the repository, fill it in, and **email it to the coordinator**. Don't commit anything to the repository, and don't change the record after sending — corrections go in a separate, dated note.

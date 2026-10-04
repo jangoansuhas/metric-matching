@@ -4,13 +4,13 @@ Copy this file **outside** the repository, fill it in, and email it to the coord
 
 - Packet ID: ________
 - Packet SHA-256: ________
-- Reviewer A worksheet SHA-256: ________
-- Reviewer B worksheet SHA-256: ________
+- Reviewer 1 worksheet SHA-256: ________
+- Reviewer 2 worksheet SHA-256: ________
 - Hashes checked against the coordinator's values: yes / no
 - Date and time zone: ________
 - Active minutes: ________
 
-| Pair | A label / evidence | B label / evidence | Final label | Final evidence | Case (agree / evidence-only / different / blank / unresolved) | Root cause (if disagreement) | Decisive files, lines and queries | Rationale (1–3 sentences) |
+| Pair | Reviewer 1 label / evidence | Reviewer 2 label / evidence | Final label | Final evidence | Case (agree / evidence-only / different / blank / unresolved) | Root cause (if disagreement) | Decisive files, lines and queries | Rationale (1–3 sentences) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | | | |
 
@@ -26,7 +26,7 @@ For each: the date, the question, and both replies.
 
 ## Declaration
 
-I am neither Reviewer A nor Reviewer B. I did not see any automated or AI output for these pairs, and I did not use AI tools. I applied the shared rubric and gave neither reviewer's answer extra weight.
+I am not one of the two reviewers. I did not see any automated or AI output for these pairs, and I did not use AI tools. I applied the shared rubric and gave neither reviewer's answer extra weight.
 
 - Code: Adjudicator C
 - Date: ________

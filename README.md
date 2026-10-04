@@ -43,10 +43,10 @@ Analytics projects built with **dbt** declare named business numbers called *met
 
 ## Getting a copy of this repository
 
-This is a **private** repository, and you've been invited to it.
+This is a **public** repository; everything in it is open to read.
 
-- **Easiest option, no Git needed yet:** open the repository page on GitHub, click the green **Code** button, then **Download ZIP**, and unzip it anywhere. You can read every file in any text editor or in the browser.
-- **With Git (optional):** after accepting the invitation, you can `git clone` it. This needs GitHub login on your computer, for example [GitHub Desktop](https://desktop.github.com). Downloading the ZIP is enough.
+- **Easiest option, no Git needed yet:** open the repository page on GitHub, click the green **Code** button, then **Download ZIP**, and unzip it anywhere. You can read every file in any text editor or in the browser. Note: the ZIP is built from the default branch; the study materials live on branch `heldout-setup`, so if a ZIP file differs from what an instruction file says, use the browser links for that branch instead.
+- **With Git:** `git clone -b heldout-setup https://github.com/jangoansuhas/metric-matching.git` — no GitHub login needed (the repository is public).
 
 You **will** need Git for the public study projects themselves. [SETUP.md](SETUP.md) walks you through it.
 
