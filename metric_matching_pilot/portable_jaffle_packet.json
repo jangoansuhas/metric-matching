@@ -1,0 +1,2222 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "project": "jaffle_shop",
+    "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+    "input_sha256": {
+      "dbt_project.yml": "4ef498cd66a1f7badfde6d3d366ed908db07f598b9b63657ee89f7407c47f01c",
+      "models/marts/customers.yml": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+      "models/marts/locations.yml": "72f3543ae5a15ad2de7e961dff3646015e8da65cebffbfd0731de89f3f194969",
+      "models/marts/metricflow_time_spine.yml": "89c27b8d89b9df6069f69a3dd5601e0113fac458a8e352490fb2ec917c1715af",
+      "models/marts/order_items.yml": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+      "models/marts/orders.yml": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+      "models/marts/products.yml": "acd974cdbbfa7d0b5f5443b1482d3e33a603f0bf35b0b81dd62b52b3173d3026",
+      "models/marts/supplies.yml": "b07abbdb2cb46f918847ab00a3eb2e4a4734ee58d969c263f44e77df24f151a1",
+      "models/staging/__sources.yml": "10adce12d0a2c35b2c4e1e6039b02c903617ada4fc8eacc5a9a6e1cfc14b78dc",
+      "models/staging/stg_customers.yml": "f7d0a82bf5390ec52acf685f97f3586acc01bb3618d00d139c1e3803a87767c2",
+      "models/staging/stg_locations.yml": "3d2415cceb6ee5d9677458ef8c630549b2248fe1e09d8f8e24e3d3f223cd3725",
+      "models/staging/stg_order_items.yml": "9615aa52b7920f63d8c357df21c7f37fbef4259451dd063d7a3552587ec718bf",
+      "models/staging/stg_orders.yml": "65bada56817d47606654c64f33bcaef8e8bfb0a379eb0a4673ac20087e24ab1b",
+      "models/staging/stg_products.yml": "d27d88955037c0e6b2ce54010dcf73aab6e320fa4759e5b4c747019f80705294",
+      "models/staging/stg_supplies.yml": "df15043b6aa5a59497f96ceeaf35ddf112966435084f7a5868bc7c6e8d4d6b87"
+    },
+    "evidence_scope": "Development; pinned source model/metric YAML only; no compilation, rows or labels",
+    "yaml_inventory": "Git-tracked .yml/.yaml regular files under pinned dbt model-paths",
+    "model_paths": [
+      "models"
+    ]
+  },
+  "cards": [
+    {
+      "id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "metric_name": "average_order_value",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/customers.yml",
+        "start_line": 74,
+        "end_line": 81,
+        "document": 0,
+        "yaml_path": "metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "derived",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": "lifetime_spend_pretax / count_lifetime_orders",
+      "declared_filter": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "name": "count_lifetime_orders"
+          },
+          {
+            "name": "lifetime_spend_pretax"
+          }
+        ]
+      }
+    },
+    {
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "metric_name": "customers",
+      "grain": null,
+      "source_ref": "customers",
+      "value_expr": "customer_id",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "first_ordered_at",
+      "value_input_fields": [
+        "customer_id"
+      ],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/customers.yml",
+        "start_line": 51,
+        "end_line": 56,
+        "document": 0,
+        "yaml_path": "models[0].metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "count_distinct",
+      "syntactic_status": "simple_bare_field",
+      "declared_primary_columns": [
+        "customer_id"
+      ],
+      "declared_expression": "customer_id",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "metric_name": "count_lifetime_orders",
+      "grain": null,
+      "source_ref": "customers",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "first_ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/customers.yml",
+        "start_line": 57,
+        "end_line": 61,
+        "document": 0,
+        "yaml_path": "models[0].metrics[1]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "customer_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "metric_name": "lifetime_spend_pretax",
+      "grain": null,
+      "source_ref": "customers",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "first_ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/customers.yml",
+        "start_line": 62,
+        "end_line": 66,
+        "document": 0,
+        "yaml_path": "models[0].metrics[2]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "customer_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "metric_name": "lifetime_spend",
+      "grain": null,
+      "source_ref": "customers",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "first_ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/customers.yml",
+        "start_line": 67,
+        "end_line": 71,
+        "document": 0,
+        "yaml_path": "models[0].metrics[3]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "customer_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "metric_name": "average_tax_rate",
+      "grain": null,
+      "source_ref": "locations",
+      "value_expr": "tax_rate",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "opened_date",
+      "value_input_fields": [
+        "tax_rate"
+      ],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/locations.yml",
+        "start_line": 21,
+        "end_line": 26,
+        "document": 0,
+        "yaml_path": "models[0].metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_absent_from_model_yaml_columns",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "average",
+      "syntactic_status": "simple_bare_field",
+      "declared_primary_columns": [
+        "location_id"
+      ],
+      "declared_expression": "tax_rate",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "metric_name": "food_revenue_pct",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 67,
+        "end_line": 72,
+        "document": 0,
+        "yaml_path": "metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "ratio",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {
+        "numerator": "food_revenue",
+        "denominator": "revenue"
+      }
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "metric_name": "drink_revenue_pct",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 73,
+        "end_line": 78,
+        "document": 0,
+        "yaml_path": "metrics[1]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "ratio",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {
+        "numerator": "drink_revenue",
+        "denominator": "revenue"
+      }
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "metric_name": "revenue_growth_mom",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 81,
+        "end_line": 91,
+        "document": 0,
+        "yaml_path": "metrics[2]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "derived",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": "(current_revenue - revenue_prev_month)*100/revenue_prev_month",
+      "declared_filter": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "name": "revenue",
+            "alias": "current_revenue"
+          },
+          {
+            "name": "revenue",
+            "offset_window": "1 month",
+            "alias": "revenue_prev_month"
+          }
+        ]
+      }
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "metric_name": "order_gross_profit",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 92,
+        "end_line": 100,
+        "document": 0,
+        "yaml_path": "metrics[3]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "derived",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": "revenue - cost",
+      "declared_filter": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "name": "revenue"
+          },
+          {
+            "name": "order_cost",
+            "alias": "cost"
+          }
+        ]
+      }
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "metric_name": "cumulative_revenue",
+      "grain": null,
+      "source_ref": null,
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 103,
+        "end_line": 107,
+        "document": 0,
+        "yaml_path": "metrics[4]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "metric_dependencies_not_resolved",
+        "period_not_resolved",
+        "source_relation_not_resolved",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "cumulative",
+      "aggregation": null,
+      "syntactic_status": "non_simple_unresolved",
+      "declared_primary_columns": [],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {
+        "input_metric": "revenue"
+      }
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "metric_name": "revenue",
+      "grain": null,
+      "source_ref": "order_items",
+      "value_expr": "product_price",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [
+        "product_price"
+      ],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 40,
+        "end_line": 45,
+        "document": 0,
+        "yaml_path": "models[0].metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_absent_from_model_yaml_columns",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_bare_field",
+      "declared_primary_columns": [
+        "order_item_id"
+      ],
+      "declared_expression": "product_price",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "metric_name": "food_revenue",
+      "grain": null,
+      "source_ref": "order_items",
+      "value_expr": "case when is_food_item then product_price else 0 end",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 46,
+        "end_line": 51,
+        "document": 0,
+        "yaml_path": "models[0].metrics[1]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "expression_requires_parser",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_unsupported_expression",
+      "declared_primary_columns": [
+        "order_item_id"
+      ],
+      "declared_expression": "case when is_food_item then product_price else 0 end",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "metric_name": "drink_revenue",
+      "grain": null,
+      "source_ref": "order_items",
+      "value_expr": "case when is_drink_item then product_price else 0 end",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 52,
+        "end_line": 57,
+        "document": 0,
+        "yaml_path": "models[0].metrics[2]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "expression_requires_parser",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_unsupported_expression",
+      "declared_primary_columns": [
+        "order_item_id"
+      ],
+      "declared_expression": "case when is_drink_item then product_price else 0 end",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "metric_name": "median_revenue",
+      "grain": null,
+      "source_ref": "order_items",
+      "value_expr": "product_price",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [
+        "product_price"
+      ],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/order_items.yml",
+        "start_line": 58,
+        "end_line": 63,
+        "document": 0,
+        "yaml_path": "models[0].metrics[3]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_absent_from_model_yaml_columns",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "median",
+      "syntactic_status": "simple_bare_field",
+      "declared_primary_columns": [
+        "order_item_id"
+      ],
+      "declared_expression": "product_price",
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "metric_name": "order_total",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 61,
+        "end_line": 65,
+        "document": 0,
+        "yaml_path": "models[0].metrics[0]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "metric_name": "orders",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": "1",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 66,
+        "end_line": 71,
+        "document": 0,
+        "yaml_path": "models[0].metrics[1]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_numeric_constant",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": 1,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "metric_name": "new_customer_orders",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": "1",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 72,
+        "end_line": 79,
+        "document": 0,
+        "yaml_path": "models[0].metrics[2]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "filter_not_resolved",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_numeric_constant",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__customer_order_number') }} = 1\n",
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "metric_name": "large_orders",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": "1",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 80,
+        "end_line": 87,
+        "document": 0,
+        "yaml_path": "models[0].metrics[3]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "filter_not_resolved",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_numeric_constant",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__order_total_dim') }} >= 20\n",
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[4]",
+      "metric_name": "food_orders",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": "1",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 88,
+        "end_line": 95,
+        "document": 0,
+        "yaml_path": "models[0].metrics[4]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "filter_not_resolved",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_numeric_constant",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__is_food_order') }} = true\n",
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[5]",
+      "metric_name": "drink_orders",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": "1",
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 96,
+        "end_line": 103,
+        "document": 0,
+        "yaml_path": "models[0].metrics[5]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "filter_not_resolved",
+        "grain_not_verified",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_numeric_constant",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__is_drink_order') }} = true\n",
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[6]",
+      "metric_name": "tax_paid",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 104,
+        "end_line": 108,
+        "document": 0,
+        "yaml_path": "models[0].metrics[6]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    },
+    {
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[7]",
+      "metric_name": "order_cost",
+      "grain": null,
+      "source_ref": "orders",
+      "value_expr": null,
+      "where_expr": null,
+      "period_expr": null,
+      "segment_expr": null,
+      "group_by": null,
+      "time_key": "ordered_at",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/orders.yml",
+        "start_line": 109,
+        "end_line": 113,
+        "document": 0,
+        "yaml_path": "models[0].metrics[7]"
+      },
+      "compiled_location": null,
+      "review_flags": [
+        "compiled_sql_unavailable",
+        "declared_time_key_not_period",
+        "field_lineage_not_traced",
+        "grain_not_verified",
+        "implicit_expression_not_resolved",
+        "period_not_resolved",
+        "source_ref_declared_only",
+        "source_yaml_only"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      },
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "syntactic_status": "simple_implicit_expression",
+      "declared_primary_columns": [
+        "order_id"
+      ],
+      "declared_expression": null,
+      "declared_filter": null,
+      "declared_dependencies": {}
+    }
+  ],
+  "pairs": [
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[4]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[5]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    },
+    {
+      "left_id": "models/marts/orders.yml#doc[0].models[0].metrics[6]",
+      "right_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+    }
+  ]
+}

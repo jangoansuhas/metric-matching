@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUDzsC69yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/DaniilMai/gtm-semantic-layer/git/refs/heads/main",
+  "object": {
+    "sha": "f777fcf64ec9c8250aa824f55055c6249a11c2d7",
+    "type": "commit",
+    "url": "https://api.github.com/repos/DaniilMai/gtm-semantic-layer/git/commits/f777fcf64ec9c8250aa824f55055c6249a11c2d7"
+  }
+}

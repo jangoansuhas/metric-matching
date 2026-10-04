@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOSRFIbq9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Trevor-Elliott-Hansen/tpch-snowflake-dbt/git/refs/heads/main",
+  "object": {
+    "sha": "125d795664ea2f866897047c7ed38fd41c5218d9",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Trevor-Elliott-Hansen/tpch-snowflake-dbt/git/commits/125d795664ea2f866897047c7ed38fd41c5218d9"
+  }
+}

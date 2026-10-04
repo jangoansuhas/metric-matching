@@ -1,0 +1,186 @@
+{
+  "fixture": "publicly shareable, synthetic SQLite rows",
+  "method": "hand-authored cards; hand-selected pairs; guarded decisions; finite sample reconciliation",
+  "results": [
+    {
+      "pair_id": "P1_alias",
+      "left": "opportunity_booking_arr_usd",
+      "right": "total_opportunity_booking_arr_usd",
+      "left_evidence": "sql/metric_views.sql:opportunity_booking_arr_usd",
+      "right_evidence": "sql/metric_views.sql:total_opportunity_booking_arr_usd",
+      "equal_sample_values": true,
+      "sample_differences": [],
+      "left_values": {
+        "O1": 100,
+        "O2": 50,
+        "O3": 70,
+        "O5": 0
+      },
+      "right_values": {
+        "O1": 100,
+        "O2": 50,
+        "O3": 70,
+        "O5": 0
+      },
+      "label": "direct_equivalent",
+      "reason": "Cards identify one source measure and aligned rules; sample rows agree"
+    },
+    {
+      "pair_id": "P2_rollup",
+      "left": "account_net_revenue",
+      "right": "crm_revenue_net",
+      "left_evidence": "sql/metric_views.sql:account_net_revenue",
+      "right_evidence": "sql/metric_views.sql:crm_revenue_net_rollup",
+      "equal_sample_values": true,
+      "sample_differences": [],
+      "left_values": {
+        "R1": 150,
+        "R2": 70
+      },
+      "right_values": {
+        "R1": 150,
+        "R2": 70
+      },
+      "mapping_violations": [],
+      "mapping_evidence": "sql/metric_views.sql:crm_revenue_net_rollup",
+      "label": "provisional_cross_grain_equivalent",
+      "reason": "One mapping per eligible opportunity and matching sample rollup; source rules and historical snapshots still need independent validation"
+    },
+    {
+      "pair_id": "P3_live_vs_booking",
+      "left": "product_arr_usd",
+      "right": "product_booking_arr_usd",
+      "left_evidence": "sql/metric_views.sql:product_arr_usd",
+      "right_evidence": "sql/metric_views.sql:product_booking_arr_usd",
+      "equal_sample_values": false,
+      "sample_differences": [
+        {
+          "entity_key": "P1",
+          "left": 120,
+          "right": 100
+        }
+      ],
+      "left_values": {
+        "P1": 120,
+        "P2": 50
+      },
+      "right_values": {
+        "P1": 100,
+        "P2": 50
+      },
+      "label": "temporal_or_scope_variant",
+      "reason": "Annotated rules differ: business_state, time_rule, filters"
+    },
+    {
+      "pair_id": "P4_filter_change",
+      "left": "pipeline_arr",
+      "right": "pipeline_arr",
+      "left_evidence": "sql/metric_views.sql:pipeline_arr_v0",
+      "right_evidence": "sql/metric_views.sql:pipeline_arr_v1",
+      "equal_sample_values": false,
+      "sample_differences": [
+        {
+          "entity_key": "O1",
+          "left": null,
+          "right": 100
+        },
+        {
+          "entity_key": "O2",
+          "left": null,
+          "right": 50
+        },
+        {
+          "entity_key": "O3",
+          "left": null,
+          "right": 70
+        }
+      ],
+      "left_values": {
+        "O5": 90
+      },
+      "right_values": {
+        "O1": 100,
+        "O2": 50,
+        "O3": 70,
+        "O5": 90
+      },
+      "label": "candidate_definition_drift",
+      "reason": "Simulated version change; changed signature fields: filters",
+      "changed_fields": [
+        "filters"
+      ],
+      "downstream_models": [
+        "executive_forecast",
+        "sales_pipeline_dashboard"
+      ]
+    },
+    {
+      "pair_id": "P5_fanout",
+      "left": "account_net_revenue",
+      "right": "crm_revenue_net_bad_mapping",
+      "left_evidence": "sql/metric_views.sql:account_net_revenue",
+      "right_evidence": "sql/metric_views.sql:crm_revenue_net_fanout",
+      "equal_sample_values": false,
+      "sample_differences": [
+        {
+          "entity_key": "R1",
+          "left": 150,
+          "right": 250
+        }
+      ],
+      "left_values": {
+        "R1": 150,
+        "R2": 70
+      },
+      "right_values": {
+        "R1": 250,
+        "R2": 70
+      },
+      "mapping_violations": [
+        {
+          "entity_key": "O1",
+          "mappings": 2
+        }
+      ],
+      "mapping_evidence": "sql/metric_views.sql:crm_revenue_net_fanout",
+      "label": "needs_review",
+      "reason": "Eligible detail rows lack exactly one hierarchy mapping"
+    },
+    {
+      "pair_id": "P6_missing_time",
+      "left": "account_net_revenue",
+      "right": "account_net_revenue_undocumented",
+      "left_evidence": "sql/metric_views.sql:account_net_revenue",
+      "right_evidence": "sql/metric_views.sql:account_net_revenue_undocumented",
+      "equal_sample_values": true,
+      "sample_differences": [],
+      "left_values": {
+        "R1": 150,
+        "R2": 70
+      },
+      "right_values": {
+        "R1": 150,
+        "R2": 70
+      },
+      "label": "needs_review",
+      "reason": "Missing card fields: right.time_rule"
+    },
+    {
+      "pair_id": "P7_equal_counts",
+      "left": "number_of_customers",
+      "right": "num_of_products",
+      "left_evidence": "sql/metric_views.sql:number_of_customers",
+      "right_evidence": "sql/metric_views.sql:num_of_products",
+      "equal_sample_values": true,
+      "sample_differences": [],
+      "left_values": {
+        "all": 2
+      },
+      "right_values": {
+        "all": 2
+      },
+      "label": "non_match",
+      "reason": "Distinct annotated business concepts; sample counts may coincide"
+    }
+  ]
+}

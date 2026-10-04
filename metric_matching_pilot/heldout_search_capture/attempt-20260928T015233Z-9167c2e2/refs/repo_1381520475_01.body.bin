@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUlhUW69yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/razornne/metrics-mcp/git/refs/heads/main",
+  "object": {
+    "sha": "83f164cfdc6c739b873e3f3694f5110900f6f089",
+    "type": "commit",
+    "url": "https://api.github.com/repos/razornne/metrics-mcp/git/commits/83f164cfdc6c739b873e3f3694f5110900f6f089"
+  }
+}

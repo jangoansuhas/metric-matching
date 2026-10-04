@@ -1,0 +1,12 @@
+Using Python 3.12.14 environment at: venv
+Resolved 65 packages in 22.21s
+   Building halo==0.0.31
+      Built halo==0.0.31
+Prepared 6 packages in 1.18s
+Installed 6 packages in 3ms
+ + dbt-metricflow==0.15.0
+ + halo==0.0.31
+ + log-symbols==0.0.14
+ + spinners==0.0.24
+ + termcolor==3.3.0
+ + update-checker==0.18.0

@@ -1,0 +1,156 @@
+{
+  "candidate_id": "POS-001",
+  "corpus": "sidequery/jaffle-shop-sidemantic",
+  "semantic_commit": "8686fe3ea0fd4ceffa08e523a422331bd228ac32",
+  "dbt_submodule_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+  "pair": [
+    "orders.subtotal (MetricFlow measure, order grain)",
+    "order_items.revenue (Cube measure, item grain)"
+  ],
+  "time_rule": "MetricFlow defaults to ordered_at at day grain; Cube exposes ordered_at as a time dimension inherited from the order join and must be explicitly grouped by that day",
+  "transformation": "For order-level equivalence, LEFT JOIN each order to SUM(item.product_price) GROUP BY item.order_id, COALESCE missing item sums to 0, and compare with order.subtotal; for daily totals, sum each measure by the aligned orders.ordered_at date",
+  "sample": {
+    "orders": 61948,
+    "items": 90900,
+    "products": 10,
+    "orders_without_items": 483,
+    "orders_with_null_sensitive_item_subtotal_mismatch": 483,
+    "orders_with_coalesced_item_subtotal_mismatch": 0,
+    "dates_compared": 365,
+    "dates_with_different_values": 0,
+    "sum_order_subtotal_cents": 63744400,
+    "sum_item_price_cents": 63744400,
+    "missing_order_items": 0,
+    "missing_product_items": 0,
+    "duplicate_keys": {
+      "order_ids": 0,
+      "item_ids": 0,
+      "product_skus": 0
+    }
+  },
+  "source_evidence": [
+    {
+      "repository": "semantic",
+      "path": "models/metricflow/orders.yml",
+      "line": 12,
+      "snippet": "agg_time_dimension: ordered_at"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/metricflow/orders.yml",
+      "line": 55,
+      "snippet": "name: subtotal"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/metricflow/orders.yml",
+      "line": 57,
+      "snippet": "expr: subtotal"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/cube/order_items.yml",
+      "line": 3,
+      "snippet": "sql_table: main.order_items"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/cube/order_items.yml",
+      "line": 28,
+      "snippet": "name: revenue"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/cube/order_items.yml",
+      "line": 29,
+      "snippet": "sql: product_price"
+    },
+    {
+      "repository": "semantic",
+      "path": "models/cube/order_items.yml",
+      "line": 48,
+      "snippet": "relationship: many_to_one"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/orders.sql",
+      "line": 21,
+      "snippet": "sum(product_price) as order_items_subtotal"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/orders.sql",
+      "line": 48,
+      "snippet": "order_items_summary.order_items_subtotal"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/order_items.sql",
+      "line": 46,
+      "snippet": "orders.ordered_at"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/order_items.sql",
+      "line": 49,
+      "snippet": "products.product_price"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/order_items.sql",
+      "line": 57,
+      "snippet": "left join orders on order_items.order_id = orders.order_id"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/order_items.sql",
+      "line": 59,
+      "snippet": "left join products on order_items.product_id = products.product_id"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/marts/orders.yml",
+      "line": 6,
+      "snippet": "order_items_subtotal = subtotal"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/staging/stg_orders.sql",
+      "line": 22,
+      "snippet": "cents_to_dollars('subtotal')"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/staging/stg_orders.sql",
+      "line": 27,
+      "snippet": "as ordered_at"
+    },
+    {
+      "repository": "dbt",
+      "path": "models/staging/stg_products.sql",
+      "line": 23,
+      "snippet": "cents_to_dollars('price')"
+    },
+    {
+      "repository": "dbt",
+      "path": "macros/cents_to_dollars.sql",
+      "line": 7,
+      "snippet": "default__cents_to_dollars"
+    },
+    {
+      "repository": "dbt",
+      "path": "macros/cents_to_dollars.sql",
+      "line": 8,
+      "snippet": "100)::numeric(16, 2)"
+    }
+  ],
+  "status": "conditional_cross_grain_candidate_daily_equality_order_equality_requires_coalesce_not_gold",
+  "limits": [
+    "This raw-seed stage reads the YAML definitions without executing them; the companion Sidemantic check runs both measures through one translating engine, not the two native runtimes.",
+    "Orders with no items have subtotal 0 but no grouped item row; SUM(item.price) is NULL until an outer join and COALESCE are applied.",
+    "The declared dbt equality test uses ordinary SQL equality and can pass NULL comparisons; the companion materialized check demonstrates this, so a null-aware test is required.",
+    "This source-only check does not compile the adapter-dispatched currency macro; see the companion materialized dbt check.",
+    "Finite rows and declared joins cannot prove cardinality for future or unseen data.",
+    "The repo is an intentionally curated Jaffle Shop demonstration, not independent industrial duplication."
+  ]
+}

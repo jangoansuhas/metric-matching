@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOOcZWha9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/jnrushy/metrics-yaml-generator/git/refs/heads/main",
+  "object": {
+    "sha": "4cf41e757ef167aa79c0660a59659241d24766fb",
+    "type": "commit",
+    "url": "https://api.github.com/repos/jnrushy/metrics-yaml-generator/git/commits/4cf41e757ef167aa79c0660a59659241d24766fb"
+  }
+}

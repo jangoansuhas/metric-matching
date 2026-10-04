@@ -1,0 +1,1281 @@
+{
+  "schema_version": 1,
+  "algorithm_version": "development_name_baselines_v1",
+  "purpose": "development_only_candidate_retrieval_diagnostics",
+  "relationship_classification": "not_performed",
+  "evaluation_status": "selected_cases_not_held_out_gold_no_effectiveness_estimate",
+  "input_scope": "metric name only, excluding query itself; never model, source expression, labels, or pair hints",
+  "methods": {
+    "exact": "1 iff normalized ordered name tokens are identical, else 0",
+    "token_jaccard": "|unique token intersection| / |unique token union|",
+    "jaro_winkler": "standard Jaro; Winkler prefix up to 4, scale 0.1 only if Jaro >= 0.7",
+    "soundex": "1 iff four-character American Soundex codes of concatenated name tokens agree, else 0"
+  },
+  "normalization": "ASCII alphanumeric tokens, casefold, split camel case and nonalphanumeric separators; Jaro-Winkler uses space-joined tokens; Soundex ignores digits",
+  "score_precision": "round to six decimals before ranking; positive score > 0; ties share a rank range, zero-score targets are unranked",
+  "source_sha256": {
+    "public_corpus_report.json": "46911e1263b82d38490548d9fee58f38c7d432ec9c8e98079072e39d46d025cb",
+    "public_pair_proposals.json": "3dc049b84ac60ccd8b67992e91b48a43f15fd20194f6c32a8816948447acfdd0",
+    "public_second_review.json": "7ca9b53f93ff56084675407556fabeaebd494f81758c487bc289ed0042b3c08b",
+    "cards.json": "26a3ed9f8cfec2c25d16694dde0ae3c5663b3baa6803c1a5ff7dd75c6a796379",
+    "pairs.json": "e953a452319e87929d5d9acf4a7e2e30a558c5c3fcaa0ebcbf3c30aa2af11ac8",
+    "expected.json": "ae24c93b681c211efa3edc0d5d614773e106ec68a126914d798416421abee942",
+    "public_positive_candidate.json": "6e8afd3be025aa257edf53d1a5db1466b8fce27113c127e2610622fff2435e3b"
+  },
+  "cohorts": {
+    "public_jaffle": {
+      "corpus": "dbt-labs/jaffle-shop",
+      "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+      "inventory_source": "public_corpus_report.json:metrics",
+      "inventory_size": 23,
+      "extraction_status_counts": {
+        "needs_review": 16,
+        "partial_signature": 7
+      },
+      "selection_source": "public_pair_proposals.json:pairs",
+      "selected_pairs": [
+        {
+          "id": "JS-001",
+          "left": "orders.order_total",
+          "right": "order_items.revenue",
+          "left_name": "order_total",
+          "right_name": "revenue",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.333333
+                },
+                {
+                  "id": "average_order_value",
+                  "score": 0.25
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.25
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.489177,
+              "rank_range": [
+                13,
+                13
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.880455
+                },
+                {
+                  "id": "orders.orders",
+                  "score": 0.857576
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.675084
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "order_gross_profit",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.orders",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "JS-002",
+          "left": "orders.orders",
+          "right": "orders.new_customer_orders",
+          "left_name": "orders",
+          "right_name": "new_customer_orders",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.333333,
+              "rank_range": [
+                4,
+                5
+              ],
+              "positive_score_candidates": 5,
+              "top_three_positive": [
+                {
+                  "id": "orders.drink_orders",
+                  "score": 0.5
+                },
+                {
+                  "id": "orders.food_orders",
+                  "score": 0.5
+                },
+                {
+                  "id": "orders.large_orders",
+                  "score": 0.5
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.459064,
+              "rank_range": [
+                19,
+                19
+              ],
+              "positive_score_candidates": 21,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.92
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.866667
+                },
+                {
+                  "id": "orders.order_total",
+                  "score": 0.857576
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "order_gross_profit",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_total",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "JS-003",
+          "left": "orders.orders",
+          "right": "orders.large_orders",
+          "left_name": "orders",
+          "right_name": "large_orders",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.5,
+              "rank_range": [
+                1,
+                3
+              ],
+              "positive_score_candidates": 5,
+              "top_three_positive": [
+                {
+                  "id": "orders.drink_orders",
+                  "score": 0.5
+                },
+                {
+                  "id": "orders.food_orders",
+                  "score": 0.5
+                },
+                {
+                  "id": "orders.large_orders",
+                  "score": 0.5
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.583333,
+              "rank_range": [
+                5,
+                6
+              ],
+              "positive_score_candidates": 21,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.92
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.866667
+                },
+                {
+                  "id": "orders.order_total",
+                  "score": 0.857576
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "order_gross_profit",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_total",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "JS-004",
+          "left": "order_items.revenue",
+          "right": "order_items.food_revenue",
+          "left_name": "revenue",
+          "right_name": "food_revenue",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.5,
+              "rank_range": [
+                1,
+                4
+              ],
+              "positive_score_candidates": 7,
+              "top_three_positive": [
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.5
+                },
+                {
+                  "id": "order_items.drink_revenue",
+                  "score": 0.5
+                },
+                {
+                  "id": "order_items.food_revenue",
+                  "score": 0.5
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.861111,
+              "rank_range": [
+                2,
+                2
+              ],
+              "positive_score_candidates": 21,
+              "top_three_positive": [
+                {
+                  "id": "revenue_growth_mom",
+                  "score": 0.877778
+                },
+                {
+                  "id": "order_items.food_revenue",
+                  "score": 0.861111
+                },
+                {
+                  "id": "food_revenue_pct",
+                  "score": 0.8125
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            }
+          }
+        },
+        {
+          "id": "JS-005",
+          "left": "order_items.food_revenue",
+          "right": "order_items.drink_revenue",
+          "left_name": "food_revenue",
+          "right_name": "drink_revenue",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.333333,
+              "rank_range": [
+                3,
+                6
+              ],
+              "positive_score_candidates": 8,
+              "top_three_positive": [
+                {
+                  "id": "food_revenue_pct",
+                  "score": 0.666667
+                },
+                {
+                  "id": "order_items.revenue",
+                  "score": 0.5
+                },
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.333333
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.777066,
+              "rank_range": [
+                4,
+                4
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "food_revenue_pct",
+                  "score": 0.95
+                },
+                {
+                  "id": "order_items.revenue",
+                  "score": 0.861111
+                },
+                {
+                  "id": "orders.food_orders",
+                  "score": 0.843939
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "food_revenue_pct",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "JS-006",
+          "left": "order_items.revenue",
+          "right": "order_items.median_revenue",
+          "left_name": "revenue",
+          "right_name": "median_revenue",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.5,
+              "rank_range": [
+                1,
+                4
+              ],
+              "positive_score_candidates": 7,
+              "top_three_positive": [
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.5
+                },
+                {
+                  "id": "order_items.drink_revenue",
+                  "score": 0.5
+                },
+                {
+                  "id": "order_items.food_revenue",
+                  "score": 0.5
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.535714,
+              "rank_range": [
+                11,
+                11
+              ],
+              "positive_score_candidates": 21,
+              "top_three_positive": [
+                {
+                  "id": "revenue_growth_mom",
+                  "score": 0.877778
+                },
+                {
+                  "id": "order_items.food_revenue",
+                  "score": 0.861111
+                },
+                {
+                  "id": "food_revenue_pct",
+                  "score": 0.8125
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            }
+          }
+        },
+        {
+          "id": "JS-007",
+          "left": "customers.customers",
+          "right": "orders.orders",
+          "left_name": "customers",
+          "right_name": "orders",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "jaro_winkler": {
+              "score": 0.444444,
+              "rank_range": [
+                12,
+                12
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "orders.new_customer_orders",
+                  "score": 0.624147
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.614815
+                },
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.611111
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            }
+          }
+        },
+        {
+          "id": "JS-008",
+          "left": "customers.lifetime_spend",
+          "right": "customers.lifetime_spend_pretax",
+          "left_name": "lifetime_spend",
+          "right_name": "lifetime_spend_pretax",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.666667,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 2,
+              "top_three_positive": [
+                {
+                  "id": "customers.lifetime_spend_pretax",
+                  "score": 0.666667
+                },
+                {
+                  "id": "customers.count_lifetime_orders",
+                  "score": 0.25
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.933333,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "customers.lifetime_spend_pretax",
+                  "score": 0.933333
+                },
+                {
+                  "id": "customers.count_lifetime_orders",
+                  "score": 0.656746
+                },
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.584656
+                }
+              ]
+            },
+            "soundex": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "customers.lifetime_spend_pretax",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "JS-009",
+          "left": "customers.customers",
+          "right": "locations.average_tax_rate",
+          "left_name": "customers",
+          "right_name": "average_tax_rate",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "jaro_winkler": {
+              "score": 0.340278,
+              "rank_range": [
+                19,
+                19
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "orders.new_customer_orders",
+                  "score": 0.624147
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.614815
+                },
+                {
+                  "id": "cumulative_revenue",
+                  "score": 0.611111
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            }
+          }
+        },
+        {
+          "id": "JS-010",
+          "left": "orders.order_total",
+          "right": "customers.lifetime_spend",
+          "left_name": "order_total",
+          "right_name": "lifetime_spend",
+          "candidate_count": 22,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.333333
+                },
+                {
+                  "id": "average_order_value",
+                  "score": 0.25
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.25
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.38456,
+              "rank_range": [
+                21,
+                21
+              ],
+              "positive_score_candidates": 22,
+              "top_three_positive": [
+                {
+                  "id": "orders.order_cost",
+                  "score": 0.880455
+                },
+                {
+                  "id": "orders.orders",
+                  "score": 0.857576
+                },
+                {
+                  "id": "order_gross_profit",
+                  "score": 0.675084
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "order_gross_profit",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.order_cost",
+                  "score": 1.0
+                },
+                {
+                  "id": "orders.orders",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "synthetic_fixture": {
+      "inventory_source": "cards.json (hand-authored cards)",
+      "inventory_size": 12,
+      "selection_source": "pairs.json:pairs",
+      "selected_pairs": [
+        {
+          "id": "P1_alias",
+          "left": "booking_alias_a",
+          "right": "booking_alias_b",
+          "left_name": "opportunity_booking_arr_usd",
+          "right_name": "total_opportunity_booking_arr_usd",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.8,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 5,
+              "top_three_positive": [
+                {
+                  "id": "booking_alias_b",
+                  "score": 0.8
+                },
+                {
+                  "id": "product_booked",
+                  "score": 0.6
+                },
+                {
+                  "id": "product_live",
+                  "score": 0.4
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.797419,
+              "rank_range": [
+                2,
+                2
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "product_booked",
+                  "score": 0.817575
+                },
+                {
+                  "id": "booking_alias_b",
+                  "score": 0.797419
+                },
+                {
+                  "id": "product_live",
+                  "score": 0.680152
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            }
+          }
+        },
+        {
+          "id": "P2_rollup",
+          "left": "account_arr",
+          "right": "opportunity_arr_rollup",
+          "left_name": "account_net_revenue",
+          "right_name": "crm_revenue_net",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.5,
+              "rank_range": [
+                2,
+                2
+              ],
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.75
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.5
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.333333
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.709267,
+              "rank_range": [
+                2,
+                2
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.91875
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.709267
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.60893
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "P3_live_vs_booking",
+          "left": "product_live",
+          "right": "product_booked",
+          "left_name": "product_arr_usd",
+          "right_name": "product_booking_arr_usd",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.75,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 5,
+              "top_three_positive": [
+                {
+                  "id": "product_booked",
+                  "score": 0.75
+                },
+                {
+                  "id": "booking_alias_a",
+                  "score": 0.4
+                },
+                {
+                  "id": "booking_alias_b",
+                  "score": 0.333333
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.910435,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "product_booked",
+                  "score": 0.910435
+                },
+                {
+                  "id": "booking_alias_a",
+                  "score": 0.680152
+                },
+                {
+                  "id": "pipeline_v0",
+                  "score": 0.583333
+                }
+              ]
+            },
+            "soundex": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "product_booked",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "P4_filter_change",
+          "left": "pipeline_v0",
+          "right": "pipeline_v1",
+          "left_name": "pipeline_arr",
+          "right_name": "pipeline_arr",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "pipeline_v1",
+                  "score": 1.0
+                }
+              ]
+            },
+            "token_jaccard": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 5,
+              "top_three_positive": [
+                {
+                  "id": "pipeline_v1",
+                  "score": 1.0
+                },
+                {
+                  "id": "product_live",
+                  "score": 0.25
+                },
+                {
+                  "id": "booking_alias_a",
+                  "score": 0.2
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "pipeline_v1",
+                  "score": 1.0
+                },
+                {
+                  "id": "booking_alias_a",
+                  "score": 0.583333
+                },
+                {
+                  "id": "product_live",
+                  "score": 0.583333
+                }
+              ]
+            },
+            "soundex": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "pipeline_v1",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "P5_fanout",
+          "left": "account_arr",
+          "right": "opportunity_arr_fanout",
+          "left_name": "account_net_revenue",
+          "right_name": "crm_revenue_net_bad_mapping",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.333333,
+              "rank_range": [
+                3,
+                3
+              ],
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.75
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.5
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.333333
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.60893,
+              "rank_range": [
+                3,
+                3
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.91875
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.709267
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.60893
+                }
+              ]
+            },
+            "soundex": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "P6_missing_time",
+          "left": "account_arr",
+          "right": "account_arr_unknown_time",
+          "left_name": "account_net_revenue",
+          "right_name": "account_net_revenue_undocumented",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.75,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 3,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.75
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.5
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.333333
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.91875,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 0.91875
+                },
+                {
+                  "id": "opportunity_arr_rollup",
+                  "score": 0.709267
+                },
+                {
+                  "id": "opportunity_arr_fanout",
+                  "score": 0.60893
+                }
+              ]
+            },
+            "soundex": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "account_arr_unknown_time",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "P7_equal_counts",
+          "left": "customer_count",
+          "right": "product_count",
+          "left_name": "number_of_customers",
+          "right_name": "num_of_products",
+          "candidate_count": 11,
+          "methods": {
+            "exact": {
+              "score": 0.0,
+              "rank_range": null,
+              "positive_score_candidates": 0,
+              "top_three_positive": []
+            },
+            "token_jaccard": {
+              "score": 0.2,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "product_count",
+                  "score": 0.2
+                }
+              ]
+            },
+            "jaro_winkler": {
+              "score": 0.82341,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 11,
+              "top_three_positive": [
+                {
+                  "id": "product_count",
+                  "score": 0.82341
+                },
+                {
+                  "id": "product_booked",
+                  "score": 0.564995
+                },
+                {
+                  "id": "product_live",
+                  "score": 0.564327
+                }
+              ]
+            },
+            "soundex": {
+              "score": 1.0,
+              "rank_range": [
+                1,
+                1
+              ],
+              "positive_score_candidates": 1,
+              "top_three_positive": [
+                {
+                  "id": "product_count",
+                  "score": 1.0
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "conditional_pair_only": {
+    "id": "POS-001",
+    "left": "orders.subtotal",
+    "right": "order_items.revenue",
+    "methods": {
+      "exact": 0.0,
+      "token_jaccard": 0.0,
+      "jaro_winkler": 0.0,
+      "soundex": 0.0
+    },
+    "rank_range": null,
+    "reason_no_rank": "No complete semantic-project metric inventory in the supplied source",
+    "semantic_commit": "8686fe3ea0fd4ceffa08e523a422331bd228ac32",
+    "dbt_submodule_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+    "source_status": "conditional_cross_grain_candidate_daily_equality_order_equality_requires_coalesce_not_gold",
+    "source_conditions": {
+      "daily_dates_compared": 365,
+      "daily_dates_with_different_values": 0,
+      "orders_without_items_requiring_coalesce": 483
+    }
+  },
+  "illustrations": [
+    {
+      "id": "JS-008",
+      "role": "hard negative for unconditional equivalence",
+      "label_provenance": "public_pair_proposals.json and user-submitted public_second_review.json both say related; no independent gold",
+      "observation": "lifetime_spend versus lifetime_spend_pretax share name tokens but differ in tax inclusion"
+    },
+    {
+      "id": "P4_filter_change",
+      "role": "synthetic same-name hard negative for unchanged definition",
+      "label_provenance": "expected.json: candidate_definition_drift, hand-authored cards.json",
+      "observation": "pipeline_arr v0/v1 have the same name but different stage filters"
+    },
+    {
+      "id": "POS-001",
+      "role": "conditional positive case study, not gold",
+      "label_provenance": "public_positive_candidate.json, pinned semantic and dbt revisions",
+      "observation": "orders.subtotal and order_items.revenue match on aligned sample days; order-grain comparison requires an outer join and COALESCE for zero-item orders"
+    }
+  ],
+  "limits": [
+    "The ten public pairs were selected for review; the other inventory pairs have not all been judged. No Recall@k or retrieval accuracy follows.",
+    "The seven fixture pairs and cards were constructed by hand. Do not pool them with naturally occurring public cases as a benchmark.",
+    "A positive lexical score signals a candidate, not equivalence; a zero score cannot rule out conditional equivalence.",
+    "POS-001 has no complete same-project candidate inventory here, so its pair score has no rank; finite observed equality and one translating engine do not establish native cross-engine or future equality."
+  ]
+}

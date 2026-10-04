@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDORycYiq9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/flyersworder/agentic-data-contracts/git/refs/heads/main",
+  "object": {
+    "sha": "c6507ea566699cf6b364f03942fdc2cfe7101108",
+    "type": "commit",
+    "url": "https://api.github.com/repos/flyersworder/agentic-data-contracts/git/commits/c6507ea566699cf6b364f03942fdc2cfe7101108"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/master",
+  "node_id": "REF_kwDOTpq-3rFyZWZzL2hlYWRzL21hc3Rlcg",
+  "url": "https://api.github.com/repos/joeybiotti/d_classified/git/refs/heads/master",
+  "object": {
+    "sha": "0ebfbf8e697a4a9fa50da6e42aacb9368c964d26",
+    "type": "commit",
+    "url": "https://api.github.com/repos/joeybiotti/d_classified/git/commits/0ebfbf8e697a4a9fa50da6e42aacb9368c964d26"
+  }
+}

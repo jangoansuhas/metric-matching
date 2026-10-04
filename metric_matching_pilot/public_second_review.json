@@ -1,0 +1,19 @@
+{
+  "source": {
+    "filename": "Pasted markdown(5).md",
+    "library_file_id": "libfile_2fb3d91e705c8191b72c7842414bde39",
+    "independence": "claimed in submission; not independently verified"
+  },
+  "labels": {
+    "JS-001": "cross_grain_equivalent",
+    "JS-002": "temporal_or_scope_variant",
+    "JS-003": "temporal_or_scope_variant",
+    "JS-004": "temporal_or_scope_variant",
+    "JS-005": "related",
+    "JS-006": "related",
+    "JS-007": "non_match",
+    "JS-008": "related",
+    "JS-009": "non_match",
+    "JS-010": "cross_grain_equivalent"
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "pyyaml_version": "6.0.3",
+  "scope": "extraction from source SQL and native metric YAML; no compilation, rows, or classification",
+  "sql_model_count": 13,
+  "sql_fixture_grammar_count": 0,
+  "metric_count": 23,
+  "metric_type_counts": {
+    "cumulative": 1,
+    "derived": 3,
+    "ratio": 2,
+    "simple": 17
+  },
+  "yaml_status_counts": {
+    "needs_review": 16,
+    "partial_signature": 7
+  },
+  "sql_models": [
+    {
+      "path": "models/marts/customers.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/locations.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/metricflow_time_spine.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/order_items.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/orders.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/products.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/marts/supplies.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_customers.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_locations.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_order_items.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_orders.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_products.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    },
+    {
+      "path": "models/staging/stg_supplies.sql",
+      "fixture_view_declarations": 0,
+      "status": "needs_review",
+      "reason": "No CREATE VIEW declaration; dbt model SQL needs its own grammar or compilation"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "customers",
+      "model": "customers",
+      "metric_type": "simple",
+      "aggregation": "count_distinct",
+      "expression": "customer_id",
+      "filter": null,
+      "evidence_location": "models/marts/customers.yml",
+      "source_measure": "customers.customer_id",
+      "grain_key": "customer_id",
+      "time_dimension": "first_ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    },
+    {
+      "name": "count_lifetime_orders",
+      "model": "customers",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "count_lifetime_orders",
+      "filter": null,
+      "evidence_location": "models/marts/customers.yml",
+      "source_measure": "customers.count_lifetime_orders",
+      "grain_key": "customer_id",
+      "time_dimension": "first_ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    },
+    {
+      "name": "lifetime_spend_pretax",
+      "model": "customers",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "lifetime_spend_pretax",
+      "filter": null,
+      "evidence_location": "models/marts/customers.yml",
+      "source_measure": "customers.lifetime_spend_pretax",
+      "grain_key": "customer_id",
+      "time_dimension": "first_ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    },
+    {
+      "name": "lifetime_spend",
+      "model": "customers",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "lifetime_spend",
+      "filter": null,
+      "evidence_location": "models/marts/customers.yml",
+      "source_measure": "customers.lifetime_spend",
+      "grain_key": "customer_id",
+      "time_dimension": "first_ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    },
+    {
+      "name": "average_order_value",
+      "model": null,
+      "metric_type": "derived",
+      "aggregation": null,
+      "expression": "lifetime_spend_pretax / count_lifetime_orders",
+      "filter": null,
+      "evidence_location": "models/marts/customers.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": [
+        {
+          "name": "count_lifetime_orders"
+        },
+        {
+          "name": "lifetime_spend_pretax"
+        }
+      ]
+    },
+    {
+      "name": "average_tax_rate",
+      "model": "locations",
+      "metric_type": "simple",
+      "aggregation": "average",
+      "expression": "tax_rate",
+      "filter": null,
+      "evidence_location": "models/marts/locations.yml",
+      "source_measure": "locations.tax_rate",
+      "grain_key": "location_id",
+      "time_dimension": "opened_date",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Expression column is absent from this model's YAML column metadata"
+      ]
+    },
+    {
+      "name": "revenue",
+      "model": "order_items",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "product_price",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": "order_items.product_price",
+      "grain_key": "order_item_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Expression column is absent from this model's YAML column metadata"
+      ]
+    },
+    {
+      "name": "food_revenue",
+      "model": "order_items",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "case when is_food_item then product_price else 0 end",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": "order_item_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Complex expression requires SQL expression parser"
+      ]
+    },
+    {
+      "name": "drink_revenue",
+      "model": "order_items",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "case when is_drink_item then product_price else 0 end",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": "order_item_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Complex expression requires SQL expression parser"
+      ]
+    },
+    {
+      "name": "median_revenue",
+      "model": "order_items",
+      "metric_type": "simple",
+      "aggregation": "median",
+      "expression": "product_price",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": "order_items.product_price",
+      "grain_key": "order_item_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Expression column is absent from this model's YAML column metadata"
+      ]
+    },
+    {
+      "name": "food_revenue_pct",
+      "model": null,
+      "metric_type": "ratio",
+      "aggregation": null,
+      "expression": null,
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": null
+    },
+    {
+      "name": "drink_revenue_pct",
+      "model": null,
+      "metric_type": "ratio",
+      "aggregation": null,
+      "expression": null,
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": null
+    },
+    {
+      "name": "revenue_growth_mom",
+      "model": null,
+      "metric_type": "derived",
+      "aggregation": null,
+      "expression": "(current_revenue - revenue_prev_month)*100/revenue_prev_month",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": [
+        {
+          "name": "revenue",
+          "alias": "current_revenue"
+        },
+        {
+          "name": "revenue",
+          "offset_window": "1 month",
+          "alias": "revenue_prev_month"
+        }
+      ]
+    },
+    {
+      "name": "order_gross_profit",
+      "model": null,
+      "metric_type": "derived",
+      "aggregation": null,
+      "expression": "revenue - cost",
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": [
+        {
+          "name": "revenue"
+        },
+        {
+          "name": "order_cost",
+          "alias": "cost"
+        }
+      ]
+    },
+    {
+      "name": "cumulative_revenue",
+      "model": null,
+      "metric_type": "cumulative",
+      "aggregation": null,
+      "expression": null,
+      "filter": null,
+      "evidence_location": "models/marts/order_items.yml",
+      "source_measure": null,
+      "grain_key": null,
+      "time_dimension": null,
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Derived, ratio, or cumulative metric requires dependency/expression resolution"
+      ],
+      "inputs": "revenue"
+    },
+    {
+      "name": "order_total",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "order_total",
+      "filter": null,
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": "orders.order_total",
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    },
+    {
+      "name": "orders",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": 1,
+      "filter": null,
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": null,
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ],
+      "expression_kind": "constant_one"
+    },
+    {
+      "name": "new_customer_orders",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": 1,
+      "filter": "{{ Dimension('order_id__customer_order_number') }} = 1\n",
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": null,
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Metric filter contains unresolved dbt/MetricFlow template"
+      ],
+      "expression_kind": "constant_one"
+    },
+    {
+      "name": "large_orders",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": 1,
+      "filter": "{{ Dimension('order_id__order_total_dim') }} >= 20\n",
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": null,
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Metric filter contains unresolved dbt/MetricFlow template"
+      ],
+      "expression_kind": "constant_one"
+    },
+    {
+      "name": "food_orders",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": 1,
+      "filter": "{{ Dimension('order_id__is_food_order') }} = true\n",
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": null,
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Metric filter contains unresolved dbt/MetricFlow template"
+      ],
+      "expression_kind": "constant_one"
+    },
+    {
+      "name": "drink_orders",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": 1,
+      "filter": "{{ Dimension('order_id__is_drink_order') }} = true\n",
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": null,
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Metric filter contains unresolved dbt/MetricFlow template"
+      ],
+      "expression_kind": "constant_one"
+    },
+    {
+      "name": "tax_paid",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "tax_paid",
+      "filter": null,
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": "orders.tax_paid",
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "needs_review",
+      "reasons": [
+        "Expression column is absent from this model's YAML column metadata"
+      ]
+    },
+    {
+      "name": "order_cost",
+      "model": "orders",
+      "metric_type": "simple",
+      "aggregation": "sum",
+      "expression": "order_cost",
+      "filter": null,
+      "evidence_location": "models/marts/orders.yml",
+      "source_measure": "orders.order_cost",
+      "grain_key": "order_id",
+      "time_dimension": "ordered_at",
+      "unit": null,
+      "business_state": null,
+      "status": "partial_signature",
+      "reasons": [
+        "Business state, unit, and column lineage through model SQL are unverified"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-29T20:18:57Z",
+  "scope": "Fixed-hash eligibility and frozen-adapter coverage only; no pair comparison, value execution, method output, or human label",
+  "inputs_sha256": {
+    "search_manifest": "6404c6aa719456abb4b28a82198c695f09ded48bbb442347fa0b7fdedc7db10f",
+    "queue": "3ffb00fa94642fb27574c156ba0e8412bd493483fda5902602d48ea69119b472",
+    "source_screen_amendment": "c68fdd0cb0fd1a204d56e1034e83a6e5400e3c37f5cf6e746200dcf265e8dc87",
+    "frozen_metricflow_adapter": "7b90ef37dfb1cce9c0a15f211ef89fb56106a0f1eb8817ed0ae405ad05ce09fe"
+  },
+  "screens": [
+    {
+      "rank": 1,
+      "repository_id": 1370796400,
+      "project_key": "vjlepro/dbt-marketing-analytics@fe3c96d364d7e5d7c6c0f2c60139e212a0ee1546",
+      "sort_digest": "06963fa7e657a657cbdfb27803a9e2247939bec330c8ce57a4da5da08e6ffc49",
+      "source_access": "pinned_commit_verified",
+      "decision": "selected",
+      "reason": "Versioned dbt/SQL and two source-linked numeric aggregate outputs; no identified shared development family or rank-2 dataset",
+      "independence_evidence": "provisional_no_documented_overlap; eight seed hashes differ from checked development CSVs",
+      "eligible_numeric_outputs_confirmed_lower_bound": 2,
+      "complete_numeric_output_denominator": null,
+      "evidence_report": "source_screen_rank01.md",
+      "adapter": {
+        "parse_exit": 0,
+        "declared_metricflow_metrics": 0,
+        "generated_metricflow_queries": 0,
+        "source_sql_aggregate_outputs_targeted": 0,
+        "interpretation": "format coverage gap; zero declared-metric denominator, not a compile failure rate",
+        "artifact": "heldout_screen/rank01_adapter (local screening artifact, excluded from pilot ZIP)"
+      },
+      "threat": "Synthetic portfolio demonstration, not observed industrial deployment; no repository license found"
+    },
+    {
+      "rank": 2,
+      "repository_id": 1313357979,
+      "project_key": "lgidon/github-stats@d954b63e328cb19e8441e0dd561a491717461534",
+      "sort_digest": "07c63b5df5ba1e28a676072768f79802c48aac264d34498e5e3f956b817bd2b1",
+      "source_access": "pinned_commit_verified",
+      "decision": "selected",
+      "reason": "Versioned dbt/SQL and three source-linked numeric aggregate outputs; no identified shared development family or rank-1 dataset",
+      "independence_evidence": "provisional_no_documented_overlap; checked data blobs differ bytewise from checked development files",
+      "eligible_numeric_outputs_confirmed_lower_bound": 3,
+      "complete_numeric_output_denominator": null,
+      "evidence_report": "source_screen_rank02.md",
+      "adapter": {
+        "parse_exit": null,
+        "declared_metricflow_metrics": null,
+        "generated_metricflow_queries": null,
+        "source_sql_aggregate_outputs_targeted": 0,
+        "failure_class": "project_layout_root_only",
+        "interpretation": "Adapter exited before dependencies or parse; no compilation denominator measured",
+        "artifact": "heldout_screen/rank02_adapter (local screening artifact, excluded from pilot ZIP)"
+      },
+      "threat": "Public dashboard pipeline and claimed demo; live use not independently verified; third-party data rights not established"
+    }
+  ],
+  "stop": {
+    "decision_at_utc": "2026-09-29T20:18:57Z",
+    "reason": "first_two_eligible_by_frozen_source_rule",
+    "screened_contiguous_prefix": 2,
+    "selected_ranks": [1, 2],
+    "unopened_tail": 60
+  },
+  "later_gate": "Complete and hash each selected project's source-defined numeric-output inventory and unordered pair frame; hold pair draw, method execution and labeling for two qualified independent reviewers, a distinct adjudicator and committed 24-person-hour core."
+}

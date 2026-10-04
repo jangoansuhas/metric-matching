@@ -1,0 +1,29 @@
+{
+  "schema_version": 6,
+  "scope": "public_development_only_compiled_metric_trace_and_common_i1_packet",
+  "previous_addendum_sha256": "67230393600430755690011b90f89698c8899bcf56b0f7c6952c86a4b85c1599",
+  "files_sha256": {
+    "freeze_development_revision_v6.py": "24ce45288af97991e9e2b6b35249dcbee531d05a59952707c376e5a4e38c406a",
+    "generic_v6_preimplementation_contract.md": "7dd985de6afbce77ff0201e4b8cee0ca0f8e9601a90145a18bcbba5360a30f19",
+    "generic_metric_expression_trace.py": "0f480b24a8e067ffb69ebe4734a643dd3164c57d63db576ebb8a881e7de22925",
+    "generic_metric_expression_trace_report.json": "0c727e08f3bd4f02bab3b475771c8299aef16145bc85432c94e5e250d0861d5c",
+    "generic_metric_expression_trace_report.md": "4cf4951fa2d2d81d9e84cd812d83d59e3830bf2077857668f5e09b611e9fb19a",
+    "generic_i1_same_input.py": "356e685f6fe49a211ab4c8ca1ce1485c141e7a4011bd371e3182a8d9f504b07c",
+    "generic_i1_same_input_report.json": "b0cef40239ebe06706339b397fa2887105cd92614d2ca2e9b303adc838989318",
+    "generic_i1_same_input_report.md": "bb8e7cc794807bf1042530aa08c63bcfedd0540d000e2a8b126dbe5c452a2b65",
+    "generic_v6_independent_review_20260928.md": "66f60f3c8253804f1ef7414e01d1e2fe62996ee962518aa21b590f9f14c15f2c"
+  },
+  "trace_manifest_sha256": "1467a9a6a71de14f196adbab89927083adcc2b9f680f7e9b6256a0720b40fb24",
+  "trace_report_sha256": "0c727e08f3bd4f02bab3b475771c8299aef16145bc85432c94e5e250d0861d5c",
+  "all_pair_ids_sha256": "67cb4648a0a8f866869208db451d7384f86a9bb38e65126de08e4da0114812b2",
+  "shared_i1_packet_sha256": "936fdd4ce9a06189e2d35f05587e6894c74074eb7059844f76c6f09fca35c2de",
+  "coverage": {
+    "declared_ids": 32,
+    "all_pairs": 496,
+    "compiled_metric_expressions_verified": 0,
+    "semantic_decisions_per_i1_method": 0
+  },
+  "heldout_gate": "blocked_compiled_metric_expression_and_same_revision_build_verification_missing",
+  "reason": "Record complete emitted-ID packet plumbing and abstention, not effectiveness, human labels, or method superiority.",
+  "recorded_at_utc": "2026-09-28T04:00:33+00:00"
+}

@@ -1,0 +1,1370 @@
+{
+  "cards": [
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": "lifetime_spend_pretax / count_lifetime_orders",
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "name": "count_lifetime_orders",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/customers.sql"
+          ],
+          "target_card_id": "models/marts/customers.yml#doc[0].models[0].metrics[1]"
+        },
+        {
+          "name": "lifetime_spend_pretax",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/customers.sql"
+          ],
+          "target_card_id": "models/marts/customers.yml#doc[0].models[0].metrics[2]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/customers.yml#doc[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/customers.sql"
+      ],
+      "metric_name": "average_order_value",
+      "metric_type": "derived",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 81,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "start_line": 74,
+        "yaml_path": "metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "count_distinct",
+      "declared_expression": "customer_id",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/customers.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/customers.sql"
+      ],
+      "metric_name": "customers",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 56,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "start_line": 51,
+        "yaml_path": "models[0].metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/customers.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[1]",
+      "linked_source_sql_paths": [
+        "models/marts/customers.sql"
+      ],
+      "metric_name": "count_lifetime_orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 61,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "start_line": 57,
+        "yaml_path": "models[0].metrics[1]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/customers.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[2]",
+      "linked_source_sql_paths": [
+        "models/marts/customers.sql"
+      ],
+      "metric_name": "lifetime_spend_pretax",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 66,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "start_line": 62,
+        "yaml_path": "models[0].metrics[2]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/customers.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/customers.yml#doc[0].models[0].metrics[3]",
+      "linked_source_sql_paths": [
+        "models/marts/customers.sql"
+      ],
+      "metric_name": "lifetime_spend",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 71,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "start_line": 67,
+        "yaml_path": "models[0].metrics[3]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "average",
+      "declared_expression": "tax_rate",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/locations.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/locations.yml#doc[0].models[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/locations.sql"
+      ],
+      "metric_name": "average_tax_rate",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 26,
+        "path": "models/marts/locations.yml",
+        "sha256": "72f3543ae5a15ad2de7e961dff3646015e8da65cebffbfd0731de89f3f194969",
+        "start_line": 21,
+        "yaml_path": "models[0].metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "No division, zero-denominator, or NULL behavior inferred from numerator/denominator names.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "name": "food_revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "numerator",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]"
+        },
+        {
+          "name": "revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "denominator",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "food_revenue_pct",
+      "metric_type": "ratio",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 72,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 67,
+        "yaml_path": "metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "No division, zero-denominator, or NULL behavior inferred from numerator/denominator names.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "name": "drink_revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "numerator",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]"
+        },
+        {
+          "name": "revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "denominator",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].metrics[1]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "drink_revenue_pct",
+      "metric_type": "ratio",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 78,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 73,
+        "yaml_path": "metrics[1]"
+      }
+    },
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "offset_window is YAML only; period alignment is unresolved.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": "(current_revenue - revenue_prev_month)*100/revenue_prev_month",
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "alias": "current_revenue",
+          "name": "revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        },
+        {
+          "alias": "revenue_prev_month",
+          "name": "revenue",
+          "offset_window": "1 month",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].metrics[2]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "revenue_growth_mom",
+      "metric_type": "derived",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 91,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 81,
+        "yaml_path": "metrics[2]"
+      }
+    },
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": "revenue - cost",
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "name": "revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        },
+        {
+          "alias": "cost",
+          "name": "order_cost",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/orders.sql"
+          ],
+          "target_card_id": "models/marts/orders.yml#doc[0].models[0].metrics[7]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].metrics[3]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql",
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "order_gross_profit",
+      "metric_type": "derived",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 100,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 92,
+        "yaml_path": "metrics[3]"
+      }
+    },
+    {
+      "anchor_rule": "unique_yaml_metric_dependencies_to_nested_model_sql",
+      "blockers": [
+        "Dependency links do not establish the metric SQL shape or result semantics.",
+        "No accumulation window, time period, or ordering inferred from input_metric.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "dependency_sources_only",
+      "declared_aggregation": null,
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [
+        {
+          "name": "revenue",
+          "resolution": "unique_yaml_metric",
+          "role": "input_metric",
+          "source_sql_paths": [
+            "models/marts/order_items.sql"
+          ],
+          "target_card_id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]"
+        }
+      ],
+      "direct_source_sql_path": null,
+      "expression_status": "non_simple_shape_not_inferred",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].metrics[4]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "cumulative_revenue",
+      "metric_type": "cumulative",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 107,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 103,
+        "yaml_path": "metrics[4]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": "product_price",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/order_items.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "revenue",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 45,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 40,
+        "yaml_path": "models[0].metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": "case when is_food_item then product_price else 0 end",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/order_items.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[1]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "food_revenue",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 51,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 46,
+        "yaml_path": "models[0].metrics[1]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": "case when is_drink_item then product_price else 0 end",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/order_items.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[2]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "drink_revenue",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 57,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 52,
+        "yaml_path": "models[0].metrics[2]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "median",
+      "declared_expression": "product_price",
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/order_items.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/order_items.yml#doc[0].models[0].metrics[3]",
+      "linked_source_sql_paths": [
+        "models/marts/order_items.sql"
+      ],
+      "metric_name": "median_revenue",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 63,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "start_line": 58,
+        "yaml_path": "models[0].metrics[3]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[0]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "order_total",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 65,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 61,
+        "yaml_path": "models[0].metrics[0]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Declared YAML expr is not compiled or verified against model output fields.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_explicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": 1,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "none_declared",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[1]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 71,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 66,
+        "yaml_path": "models[0].metrics[1]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Unsupported YAML Jinja filter; it is not evaluated or replaced with a column.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_filter_jinja_blocked",
+      "declared_aggregation": "sum",
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__customer_order_number') }} = 1\n",
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "rejected_unsupported_jinja",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[2]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "new_customer_orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 79,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 72,
+        "yaml_path": "models[0].metrics[2]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Unsupported YAML Jinja filter; it is not evaluated or replaced with a column.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_filter_jinja_blocked",
+      "declared_aggregation": "sum",
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__order_total_dim') }} >= 20\n",
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "rejected_unsupported_jinja",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[3]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "large_orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 87,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 80,
+        "yaml_path": "models[0].metrics[3]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Unsupported YAML Jinja filter; it is not evaluated or replaced with a column.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_filter_jinja_blocked",
+      "declared_aggregation": "sum",
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__is_food_order') }} = true\n",
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "rejected_unsupported_jinja",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[4]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "food_orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 95,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 88,
+        "yaml_path": "models[0].metrics[4]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "Unsupported YAML Jinja filter; it is not evaluated or replaced with a column.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_filter_jinja_blocked",
+      "declared_aggregation": "sum",
+      "declared_expression": 1,
+      "declared_filter": "{{ Dimension('order_id__is_drink_order') }} = true\n",
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "explicit_yaml_only",
+      "filter_status": "rejected_unsupported_jinja",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[5]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "drink_orders",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 103,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 96,
+        "yaml_path": "models[0].metrics[5]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[6]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "tax_paid",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 108,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 104,
+        "yaml_path": "models[0].metrics[6]"
+      }
+    },
+    {
+      "anchor_rule": "nested_yaml_model_name_unique_adjacent_sql",
+      "blockers": [
+        "YAML omits expr; aggregation input and metric SQL shape are not inferred.",
+        "No commit-verified compiled SQL; output fields and semantic behavior are unverified."
+      ],
+      "compiled_evidence_verified": false,
+      "compiled_sql": null,
+      "coverage": "direct_source_sql_implicit_expr",
+      "declared_aggregation": "sum",
+      "declared_expression": null,
+      "declared_filter": null,
+      "dependency_links": [],
+      "direct_source_sql_path": "models/marts/orders.sql",
+      "expression_status": "omitted_no_shape_inference",
+      "filter_status": "none_declared",
+      "id": "models/marts/orders.yml#doc[0].models[0].metrics[7]",
+      "linked_source_sql_paths": [
+        "models/marts/orders.sql"
+      ],
+      "metric_name": "order_cost",
+      "metric_type": "simple",
+      "not_claimed": [
+        "output_grain",
+        "period",
+        "join_cardinality",
+        "null_policy",
+        "filter_resolution",
+        "output_field_lineage",
+        "metric_query_sql"
+      ],
+      "yaml_evidence": {
+        "document": 0,
+        "end_line": 113,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "start_line": 109,
+        "yaml_path": "models[0].metrics[7]"
+      }
+    }
+  ],
+  "counts": {
+    "by_coverage": {
+      "dependency_sources_only": 6,
+      "direct_source_sql_explicit_expr": 7,
+      "direct_source_sql_filter_jinja_blocked": 4,
+      "direct_source_sql_implicit_expr": 6
+    },
+    "source_sql_dependency_only_links": 6,
+    "source_sql_direct_links": 17,
+    "unlinked": 0,
+    "verified_compiled_sources": 0,
+    "yaml_metrics": 23
+  },
+  "generated_decisions": [],
+  "interpretation": [
+    "A direct link identifies a pinned raw model SQL file via the model-path and same-directory YAML model name; it is not compiled SQL.",
+    "A dependency link identifies uniquely named YAML metric inputs and their raw model SQL files; it does not assign the parent metric a source relation.",
+    "Only literal single-argument ref(...) and literal source(...) calls are inventoried as graph edges; source(...) is not a physical relation resolution.",
+    "Other Jinja, including Dimension(...) filters and SQL macros, is rejected as unresolved; a ref edge is not a rendered query.",
+    "A declared expr remains YAML evidence. Missing expr never implies a column or aggregate expression; ratio, derived, and cumulative shape is not materialized.",
+    "Descriptions, entity keys, tests, saved queries, and the packet's pairs are not proof of grain, period, JOIN cardinality, NULL behavior, or filter semantics."
+  ],
+  "offline_tooling": {
+    "blockers": [
+      "dbt CLI and dbt-core are unavailable in the current Python environment.",
+      "Pinned project packages are not installed locally.",
+      "No local manifest.json exists."
+    ],
+    "compile_attempted": false,
+    "compiled_artifact_policy": "An unaccompanied target artifact cannot establish a pinned commit; none is accepted.",
+    "dbt_cli_available": false,
+    "dbt_core_importable": false,
+    "dbt_packages_directory_present": false,
+    "manifest_present": false
+  },
+  "provenance": {
+    "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+    "heldout_sources_inspected": false,
+    "input_sha256": {
+      "dbt_project.yml": "4ef498cd66a1f7badfde6d3d366ed908db07f598b9b63657ee89f7407c47f01c",
+      "models/marts/customers.yml": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+      "models/marts/locations.yml": "72f3543ae5a15ad2de7e961dff3646015e8da65cebffbfd0731de89f3f194969",
+      "models/marts/metricflow_time_spine.yml": "89c27b8d89b9df6069f69a3dd5601e0113fac458a8e352490fb2ec917c1715af",
+      "models/marts/order_items.yml": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+      "models/marts/orders.yml": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+      "models/marts/products.yml": "acd974cdbbfa7d0b5f5443b1482d3e33a603f0bf35b0b81dd62b52b3173d3026",
+      "models/marts/supplies.yml": "b07abbdb2cb46f918847ab00a3eb2e4a4734ee58d969c263f44e77df24f151a1",
+      "models/staging/__sources.yml": "10adce12d0a2c35b2c4e1e6039b02c903617ada4fc8eacc5a9a6e1cfc14b78dc",
+      "models/staging/stg_customers.yml": "f7d0a82bf5390ec52acf685f97f3586acc01bb3618d00d139c1e3803a87767c2",
+      "models/staging/stg_locations.yml": "3d2415cceb6ee5d9677458ef8c630549b2248fe1e09d8f8e24e3d3f223cd3725",
+      "models/staging/stg_order_items.yml": "9615aa52b7920f63d8c357df21c7f37fbef4259451dd063d7a3552587ec718bf",
+      "models/staging/stg_orders.yml": "65bada56817d47606654c64f33bcaef8e8bfb0a379eb0a4673ac20087e24ab1b",
+      "models/staging/stg_products.yml": "d27d88955037c0e6b2ce54010dcf73aab6e320fa4759e5b4c747019f80705294",
+      "models/staging/stg_supplies.yml": "df15043b6aa5a59497f96ceeaf35ddf112966435084f7a5868bc7c6e8d4d6b87"
+    },
+    "model_paths": [
+      "models"
+    ],
+    "packet_path": "metric_matching_pilot/portable_jaffle_packet.json",
+    "packet_sha256": "ab52ee843d139dd5dccde3dc04c63dddac6a8e8a4a276f4f5cb465a27dfdf5b6",
+    "project": "jaffle_shop",
+    "source_selection": "All blobs read by immutable commit ID; project/YAML hashes verified against packet inventory; raw SQL hashes recorded independently in this report"
+  },
+  "review_and_freeze_required_for_any_decisions": true,
+  "schema_version": 1,
+  "scope": "exploratory_development_addendum_only",
+  "sql_source_catalog": {
+    "models/marts/customers.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        58
+      ],
+      "literal_ref_edges": [
+        {
+          "line": 5,
+          "ref": "stg_customers",
+          "sql_path": "models/staging/stg_customers.sql",
+          "status": "unique_model_path"
+        },
+        {
+          "line": 11,
+          "ref": "orders",
+          "sql_path": "models/marts/orders.sql",
+          "status": "unique_model_path"
+        }
+      ],
+      "path": "models/marts/customers.sql",
+      "sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3",
+      "source_calls": [],
+      "unsupported_jinja": []
+    },
+    "models/marts/locations.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        9
+      ],
+      "literal_ref_edges": [
+        {
+          "line": 5,
+          "ref": "stg_locations",
+          "sql_path": "models/staging/stg_locations.sql",
+          "status": "unique_model_path"
+        }
+      ],
+      "path": "models/marts/locations.sql",
+      "sha256": "a782e7cd9b6ecee5bb0160d08c54af0f8208df1ec41eedcc09fd46d5b811bf04",
+      "source_calls": [],
+      "unsupported_jinja": []
+    },
+    "models/marts/order_items.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        66
+      ],
+      "literal_ref_edges": [
+        {
+          "line": 5,
+          "ref": "stg_order_items",
+          "sql_path": "models/staging/stg_order_items.sql",
+          "status": "unique_model_path"
+        },
+        {
+          "line": 12,
+          "ref": "stg_orders",
+          "sql_path": "models/staging/stg_orders.sql",
+          "status": "unique_model_path"
+        },
+        {
+          "line": 18,
+          "ref": "stg_products",
+          "sql_path": "models/staging/stg_products.sql",
+          "status": "unique_model_path"
+        },
+        {
+          "line": 24,
+          "ref": "stg_supplies",
+          "sql_path": "models/staging/stg_supplies.sql",
+          "status": "unique_model_path"
+        }
+      ],
+      "path": "models/marts/order_items.sql",
+      "sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639",
+      "source_calls": [],
+      "unsupported_jinja": []
+    },
+    "models/marts/orders.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        77
+      ],
+      "literal_ref_edges": [
+        {
+          "line": 5,
+          "ref": "stg_orders",
+          "sql_path": "models/staging/stg_orders.sql",
+          "status": "unique_model_path"
+        },
+        {
+          "line": 11,
+          "ref": "order_items",
+          "sql_path": "models/marts/order_items.sql",
+          "status": "unique_model_path"
+        }
+      ],
+      "path": "models/marts/orders.sql",
+      "sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b",
+      "source_calls": [],
+      "unsupported_jinja": []
+    },
+    "models/staging/stg_customers.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        23
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_customers.sql",
+      "sha256": "dd23b85696edfd88a570941770ff440ebc2998c9926ce1500823fb0761809021",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_customers"
+        }
+      ],
+      "unsupported_jinja": []
+    },
+    "models/staging/stg_locations.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        29
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_locations.sql",
+      "sha256": "4fa2d23f56fe06816ae55f95d4674b35216a62d27a6182a46aa3bb229ced4d11",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_stores"
+        }
+      ],
+      "unsupported_jinja": [
+        {
+          "line": 23,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ dbt.date_trunc('day', 'opened_at') }}"
+        }
+      ]
+    },
+    "models/staging/stg_order_items.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        22
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_order_items.sql",
+      "sha256": "102a386f0423d233aae94e6312cc028470aacc120df5692532296a2d8ed61b04",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_items"
+        }
+      ],
+      "unsupported_jinja": []
+    },
+    "models/staging/stg_orders.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        33
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_orders.sql",
+      "sha256": "9b1b41c48e4463f736d9304a898da2d979b29b9377f1576951f959ff5cc7c327",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_orders"
+        }
+      ],
+      "unsupported_jinja": [
+        {
+          "line": 22,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ cents_to_dollars('subtotal') }}"
+        },
+        {
+          "line": 23,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ cents_to_dollars('tax_paid') }}"
+        },
+        {
+          "line": 24,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ cents_to_dollars('order_total') }}"
+        },
+        {
+          "line": 27,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ dbt.date_trunc('day','ordered_at') }}"
+        }
+      ]
+    },
+    "models/staging/stg_products.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        34
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_products.sql",
+      "sha256": "062c753f5014b17e4df4266503cf6f48f191b95aa86f3ddeada063ed844d5cd6",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_products"
+        }
+      ],
+      "unsupported_jinja": [
+        {
+          "line": 23,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ cents_to_dollars('price') }}"
+        }
+      ]
+    },
+    "models/staging/stg_supplies.sql": {
+      "kind": "pinned_uncompiled_source_sql",
+      "line_span": [
+        1,
+        31
+      ],
+      "literal_ref_edges": [],
+      "path": "models/staging/stg_supplies.sql",
+      "sha256": "1835f7e81a9116987eedf053b3630e26cff26dbcac38f6a5895c51f181bec5a4",
+      "source_calls": [
+        {
+          "line": 5,
+          "source_name": "ecom",
+          "status": "declaration_only_physical_relation_unresolved",
+          "table_name": "raw_supplies"
+        }
+      ],
+      "unsupported_jinja": [
+        {
+          "line": 14,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ dbt_utils.generate_surrogate_key(['id', 'sku']) }}"
+        },
+        {
+          "line": 22,
+          "reason": "unsupported_jinja",
+          "snippet": "{{ cents_to_dollars('cost') }}"
+        }
+      ]
+    }
+  }
+}

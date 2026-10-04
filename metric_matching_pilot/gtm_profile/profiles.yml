@@ -1,0 +1,10 @@
+# Local reproduction profile for jross21/gtm-funnel-analytics.
+# DuckDB 1.4.4's Python wheel has ICU built in, so no extension download is needed.
+arcline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', 'arcline.duckdb') }}"
+      schema: main
+      threads: 4

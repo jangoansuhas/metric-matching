@@ -1,0 +1,953 @@
+{
+  "schema_version": 1,
+  "kind": "metadata_only_hash_screen_queue_not_eligibility_or_selection",
+  "recorded_date_utc": "2026-09-29",
+  "source_manifest": "heldout_search_capture/attempt-20260928T020324Z-1c3dd1fe/manifest.json",
+  "source_manifest_sha256": "6404c6aa719456abb4b28a82198c695f09ded48bbb442347fa0b7fdedc7db10f",
+  "sort_rule": "ascending SHA-256 hex of UTF-8 lowercase owner/repo@manifest_head_sha; project_key tie break",
+  "candidate_count": 62,
+  "candidates": [
+    {
+      "repository_id": 1370796400,
+      "project_key": "vjlepro/dbt-marketing-analytics@fe3c96d364d7e5d7c6c0f2c60139e212a0ee1546",
+      "sort_sha256": "06963fa7e657a657cbdfb27803a9e2247939bec330c8ce57a4da5da08e6ffc49",
+      "query_rank_occurrences": [
+        [
+          2,
+          8
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 1
+    },
+    {
+      "repository_id": 1313357979,
+      "project_key": "lgidon/github-stats@d954b63e328cb19e8441e0dd561a491717461534",
+      "sort_sha256": "07c63b5df5ba1e28a676072768f79802c48aac264d34498e5e3f956b817bd2b1",
+      "query_rank_occurrences": [
+        [
+          1,
+          6
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 2
+    },
+    {
+      "repository_id": 1045299554,
+      "project_key": "ericokuma/my-rill-project100@3eea78d0a4e56bc3fc1e2f488517159e3e16dbe9",
+      "sort_sha256": "0d932494065a47199630ccc765fb6f3ade765b9bef7449fa27d63b6955aaa413",
+      "query_rank_occurrences": [
+        [
+          3,
+          3
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 3
+    },
+    {
+      "repository_id": 1380039216,
+      "project_key": "lakeonn/people_analytics_pipeline@2ab1e5b1b47cc2c661025ac7e07383ae484306d9",
+      "sort_sha256": "0fd41bdce782bdb8d21df57ab0b89bd369c361f008b36d91e11cb98dcc63271e",
+      "query_rank_occurrences": [
+        [
+          1,
+          30
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 4
+    },
+    {
+      "repository_id": 1309506241,
+      "project_key": "rho-lall/odoo-2-dbt@a9df31c0832616c8faf45dfe50000d5a5dbbf3c9",
+      "sort_sha256": "11c4916f41fe71d78081a1315abd193c3e60d4dc047aa5aa33013c4eaedab90d",
+      "query_rank_occurrences": [
+        [
+          2,
+          27
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 5
+    },
+    {
+      "repository_id": 1319616528,
+      "project_key": "vivek-dev-web/dbt_saas_analytics@c39bf0cb673e2952a5fbc5084c0006983c172b0e",
+      "sort_sha256": "143f47eeff1a7ae3c200c13d55bab5a5776de50e48b1df7d080a8e3adf8ca234",
+      "query_rank_occurrences": [
+        [
+          2,
+          25
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 6
+    },
+    {
+      "repository_id": 1366442079,
+      "project_key": "ramaraweera/fabric-gaming-marketing-analytics@cd82662685eab7d166a4aa8253130c176514706f",
+      "sort_sha256": "151ea65ed5661603fdf59704451455cd0d49b883f1be79c47f1f32d3bd2c956d",
+      "query_rank_occurrences": [
+        [
+          2,
+          9
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 7
+    },
+    {
+      "repository_id": 1353993213,
+      "project_key": "talcaldeg/olist-retail@2a97c3d9e1344c9d83b8527e79e2114aa3c8e615",
+      "sort_sha256": "16e582205588d7a921b53dbcc2898be065281412ee881c2ba77ba95b7ef39998",
+      "query_rank_occurrences": [
+        [
+          1,
+          12
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 8
+    },
+    {
+      "repository_id": 348550042,
+      "project_key": "isgasho/teleport-1@153ac319fe8999f16379213f0dc5181abfb984d8",
+      "sort_sha256": "1769b766aa845bcc276f385bf95d6291a74e37295e3294b0be767b4f8ce491ab",
+      "query_rank_occurrences": [
+        [
+          3,
+          5
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 9
+    },
+    {
+      "repository_id": 1330035407,
+      "project_key": "sfc-gh-dhunt/cinder-webhooks-dbt-demo@a0b686e1e713462181a79c498877ee04c65cd5f2",
+      "sort_sha256": "18c630e864ce8bbce1654688886bd93d80031409297a15381182b4303d25f183",
+      "query_rank_occurrences": [
+        [
+          2,
+          21
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 10
+    },
+    {
+      "repository_id": 1230988146,
+      "project_key": "jmperafan/ztc-analytics@0d04fd69117cf7d403e0880a0282ed50e48c5861",
+      "sort_sha256": "193e4da3ab05c161dad54b6d9d90b9a03d7fed4477df0d56ef9f5277b50a7227",
+      "query_rank_occurrences": [
+        [
+          1,
+          18
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 11
+    },
+    {
+      "repository_id": 1345966162,
+      "project_key": "mariyasusancyriac/metricmind@03d2c070493052a621c30b66bbc2c4551823ab2c",
+      "sort_sha256": "1b45d3896b25d97e7515d1078de5528c7df31a35a3a1b87c5850441c6eae93df",
+      "query_rank_occurrences": [
+        [
+          1,
+          4
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 12
+    },
+    {
+      "repository_id": 1352141262,
+      "project_key": "jaideepgupta/dbt-cheatsheet@33a3f430c9fefb04836be2f2942dbdd3510045fd",
+      "sort_sha256": "1c525b2fafd50398ec0240e25de6235befe55e8ba45bf9d4dbeb468f69959b26",
+      "query_rank_occurrences": [
+        [
+          2,
+          11
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 13
+    },
+    {
+      "repository_id": 1379295675,
+      "project_key": "feliperego/dbtbigquery@3d99f45cbb81f69c6a7475af6aa3f8e936669807",
+      "sort_sha256": "1c7857df60bde0ba9dac807d55a3130c41177642601b85548332891a802cfac5",
+      "query_rank_occurrences": [
+        [
+          1,
+          15
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 14
+    },
+    {
+      "repository_id": 1309620849,
+      "project_key": "athmikakavali7/retail-data-engineering-platform@fa09a9f29bb31dd06b417e8a346fb2bb3cef3d82",
+      "sort_sha256": "1e56886eed902da5e7b57e374368dea50a019d68572f9d2f8038814a08914456",
+      "query_rank_occurrences": [
+        [
+          2,
+          20
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 15
+    },
+    {
+      "repository_id": 1384271569,
+      "project_key": "sdiarbi/walmart-dbt-snowflake@2aa21e162ab31d368f3c7c584b6eeb0d26d14bb1",
+      "sort_sha256": "20cd840e04d2410fa390a49af15f619c912de6f2989fb1269abada27fe4c30ce",
+      "query_rank_occurrences": [
+        [
+          1,
+          24
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 16
+    },
+    {
+      "repository_id": 1240607901,
+      "project_key": "ajibola-komo/finflow-product-analytics-engineering-platform@5d2d155958bdc6553d663f2ea5bf7baa5a18a1d4",
+      "sort_sha256": "270f80b448270854656a5bf7395a2fd348065e7057975d6b83da53fd67c9e059",
+      "query_rank_occurrences": [
+        [
+          1,
+          7
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 17
+    },
+    {
+      "repository_id": 1381577938,
+      "project_key": "vineethyadav110/data-quality-canonical-metrics-platform@b424be64854d11ad6e884fcd36d27f75ebc48b25",
+      "sort_sha256": "2d48831aa5f803d486584bc6262f06242dc5d62d1e8af0cc6e900016c821f4bb",
+      "query_rank_occurrences": [
+        [
+          1,
+          25
+        ]
+      ],
+      "fork": false,
+      "is_template": true,
+      "mirror_url": null,
+      "hash_rank": 18
+    },
+    {
+      "repository_id": 1391120456,
+      "project_key": "zahra2105/olist-analytics-dbt@a4d1b94b764cd1894f10cf5041442257bcea9e84",
+      "sort_sha256": "34591a1a0a5d29b6bc0609ab0536ccc8276506f800f2f97cda015fea8a1c8ce6",
+      "query_rank_occurrences": [
+        [
+          1,
+          2
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 19
+    },
+    {
+      "repository_id": 969299589,
+      "project_key": "jnrushy/metrics-yaml-generator@4cf41e757ef167aa79c0660a59659241d24766fb",
+      "sort_sha256": "34641f7141611388069c0df0a78f2c3ca4cc0ad5b185c41159c3e5ee8e7556b8",
+      "query_rank_occurrences": [
+        [
+          3,
+          4
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 20
+    },
+    {
+      "repository_id": 1275668512,
+      "project_key": "vignesh-hariharan/salesforce-analytics-pipeline@161c1cd72ac3f4c6b4aa8409cdde5fa2e91cc9a1",
+      "sort_sha256": "3b024f64b04926914a5626c32ff127137878c4fff6debd90a0edfe9a9b1f587d",
+      "query_rank_occurrences": [
+        [
+          1,
+          23
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 21
+    },
+    {
+      "repository_id": 1338620672,
+      "project_key": "methunt/pbi-bigquery-dbt-cost-observability@a929583ca764cb40f48cd9c4ac6fd27ebcfb035d",
+      "sort_sha256": "3b88947323ca7e1a204d3aff77b2a925e9df251d67cf9be4a3e3231647f5d1f6",
+      "query_rank_occurrences": [
+        [
+          2,
+          16
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 22
+    },
+    {
+      "repository_id": 1069896772,
+      "project_key": "sidequery/sidemantic@9bdc7044b491c1e3116e57b88164b62bc0421294",
+      "sort_sha256": "3bbaba3be490105064a8bfde82f0b1d2e48f4f339d7e1a52a4173c965305b5a7",
+      "query_rank_occurrences": [
+        [
+          3,
+          2
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 23
+    },
+    {
+      "repository_id": 1343106066,
+      "project_key": "richardfellows/reporting-platform-local@f88796c666b2ed050a3cab36b498620555cc27eb",
+      "sort_sha256": "3fc148905323de4ac1701290e07937232eec93a4fcf92fd3712b7f812ee2d0ab",
+      "query_rank_occurrences": [
+        [
+          1,
+          14
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 24
+    },
+    {
+      "repository_id": 1387833222,
+      "project_key": "oneryalcin/hunch@f173adce668ecd3f312d85f21d2a5e6d163add6e",
+      "sort_sha256": "4589fa04fd8d444617198409d6e374a0c0b0b03f81d84e6af72dded2ca715b08",
+      "query_rank_occurrences": [
+        [
+          2,
+          2
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 25
+    },
+    {
+      "repository_id": 688175888,
+      "project_key": "jshort805/noaa-ocean-data-pipeline@8c82a0e6bb2de4d24c47eba656f0bf58597011f2",
+      "sort_sha256": "45bb31b362ccd110eb955a5e113c9ed5bcbbc5a437e08761eaf6fcbcf32e0a93",
+      "query_rank_occurrences": [
+        [
+          1,
+          16
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 26
+    },
+    {
+      "repository_id": 1361517724,
+      "project_key": "bhavyachenreddy/metricmind@a3179286c4c5a776e3a0cbac74b234b2d09a2357",
+      "sort_sha256": "482e9dc87a6b277dc7dd0ab6d7bde71a709f9325a330b02361c9e1777dcd800a",
+      "query_rank_occurrences": [
+        [
+          1,
+          21
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 27
+    },
+    {
+      "repository_id": 1309763259,
+      "project_key": "gulmezeren2-byte/ossie-guard@8bc4078a81d38cc78e0ec092532dfedffedee45c",
+      "sort_sha256": "4b3b0a3cd63817847fdb284e3fbacedcb180a7af43dfe7d3ffd609d745576bf3",
+      "query_rank_occurrences": [
+        [
+          2,
+          26
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 28
+    },
+    {
+      "repository_id": 1380814465,
+      "project_key": "rithvikillandula/reporting-change-impact-graph@28dc874ca38ce0e0c5206d8056e67b87224928b5",
+      "sort_sha256": "526b34868b6e7852d4729341d2cc1c35a35c01156b0bb68ebe350fbe93047e82",
+      "query_rank_occurrences": [
+        [
+          1,
+          29
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 29
+    },
+    {
+      "repository_id": 1327500570,
+      "project_key": "kunalsenani/clinic-analytics-platform@2f92e2c8819de1ce9ad4f67414bed6fd32c8e547",
+      "sort_sha256": "5545ee19e2d04e6c005989d91168cb50b37f1cc60741fefc9b4a8e3075f8026b",
+      "query_rank_occurrences": [
+        [
+          2,
+          24
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 30
+    },
+    {
+      "repository_id": 288548779,
+      "project_key": "fivetran/dbt_ad_reporting@f84aef71d577f834a1ba63ba9f88b3feac8099c7",
+      "sort_sha256": "5dc1e8c70ec91370055517b0375b5d4251acace0d234d35d00ca4805b33588ca",
+      "query_rank_occurrences": [
+        [
+          1,
+          17
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 31
+    },
+    {
+      "repository_id": 1382369194,
+      "project_key": "mekala27-45/northstar@f54c80a79a9d74f023b0a2a7e9b37075f782f53b",
+      "sort_sha256": "65a10ac68dbc278727793df598e41618bbf1e8ef330eafe3fff0752ea8c8d725",
+      "query_rank_occurrences": [
+        [
+          1,
+          26
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 32
+    },
+    {
+      "repository_id": 1318764254,
+      "project_key": "joeybiotti/d_classified@0ebfbf8e697a4a9fa50da6e42aacb9368c964d26",
+      "sort_sha256": "6bb8d9d247988d222236754047f40b3e86a74ecabb054973715243738218ddee",
+      "query_rank_occurrences": [
+        [
+          2,
+          18
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 33
+    },
+    {
+      "repository_id": 1353313545,
+      "project_key": "jadoon200/themis@0a53855c38e2323265e3c2b12e37796f6c20520f",
+      "sort_sha256": "75e6e75f183639320c9ebae9e06d22ab97c8cae35432c5e1131b6a6890487896",
+      "query_rank_occurrences": [
+        [
+          2,
+          1
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 34
+    },
+    {
+      "repository_id": 1388707676,
+      "project_key": "25andresbernal/semantic-model-kit@37022e7eab950fd962aad548c18845e5eb0d0ca6",
+      "sort_sha256": "7839a2c0c15575606d94ea998e505bd8325b6c9f3d0b3a25adc3f1a0439e42c6",
+      "query_rank_occurrences": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 35
+    },
+    {
+      "repository_id": 1325910239,
+      "project_key": "morzecrew/bloomery@dc363fa09a4a67bd23017ef116f73dfa36c15bb1",
+      "sort_sha256": "78fd9c3f2d39d97e4f00503e6c8abb5cebdab112fe7484982ffa8b4524b73749",
+      "query_rank_occurrences": [
+        [
+          1,
+          5
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 36
+    },
+    {
+      "repository_id": 1381520475,
+      "project_key": "razornne/metrics-mcp@83f164cfdc6c739b873e3f3694f5110900f6f089",
+      "sort_sha256": "7b0cc76f943df1e2f88a6a8cbe849e5f43cb20e9f736a4982fa5024cbcad0929",
+      "query_rank_occurrences": [
+        [
+          1,
+          28
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 37
+    },
+    {
+      "repository_id": 1341496417,
+      "project_key": "skillio-ai/brightfell-dbt@2effeca749cb1151478e901d389715858a15e916",
+      "sort_sha256": "7f6b5ce039f52763557828fa9ce2a34704307c578f116aef104e4b6a5ba1a44e",
+      "query_rank_occurrences": [
+        [
+          2,
+          15
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 38
+    },
+    {
+      "repository_id": 1317338989,
+      "project_key": "abdulrahman-albeladi/real-estate-analytics-mart@14338e3f2297e85ca6ef6f433f25ebc1ea4853dd",
+      "sort_sha256": "8a81f66676cb20807d3b49360d53d36ad9481d6bb2023b52aa1c282e3f330b19",
+      "query_rank_occurrences": [
+        [
+          2,
+          14
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 39
+    },
+    {
+      "repository_id": 1309606967,
+      "project_key": "sreshtalluri/omni-take-home@cfcd69fc08d255e08895498a8406895951e1792a",
+      "sort_sha256": "8df3cac0766038b1b38198dfcb7d504d4bdfd29ef89c2a82f65742b423b64b7d",
+      "query_rank_occurrences": [
+        [
+          2,
+          29
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 40
+    },
+    {
+      "repository_id": 1376352072,
+      "project_key": "ddundee24/cfb-transfer-portal-pipeline@63982fe2d55636ad0fed2f23cb93cfc3cbb38061",
+      "sort_sha256": "904d5c8612dd5d031ab2d33db69ffc2431c8f28f2f7cc453f72dffff890ed69c",
+      "query_rank_occurrences": [
+        [
+          1,
+          27
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 41
+    },
+    {
+      "repository_id": 1384441412,
+      "project_key": "nawyaunnam/supply-chain-analytics-control-tower@49dfb28ba88852ae1d188d9ccb20a5fdda34c102",
+      "sort_sha256": "912f1d2a8a6574b12e2a262aa277059af66c198ccd9af8ae361bca834f1451c4",
+      "query_rank_occurrences": [
+        [
+          1,
+          20
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 42
+    },
+    {
+      "repository_id": 1314461775,
+      "project_key": "jaganadhg/ontology_book_it1@6fb56ebd5d4d6a3f8b629a0aa4665dd28535dcbf",
+      "sort_sha256": "919db8a4fad72e557491773b8bad32d1d49ec16c53b9f1165f1ab4e597b38d34",
+      "query_rank_occurrences": [
+        [
+          2,
+          28
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 43
+    },
+    {
+      "repository_id": 1279645599,
+      "project_key": "raintree-technology/policystrata@420dc2b6033a5b92ed132f0d328220b23cedd89b",
+      "sort_sha256": "935c4c6bc3e53abafd55722517cde7f4c25c61a7f4e329681640f85fa0a68336",
+      "query_rank_occurrences": [
+        [
+          2,
+          12
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 44
+    },
+    {
+      "repository_id": 1225869422,
+      "project_key": "trevor-elliott-hansen/tpch-snowflake-dbt@125d795664ea2f866897047c7ed38fd41c5218d9",
+      "sort_sha256": "942fcc689d10faf3213b53cb7c6083eb77f89d75ab45ec14ef5351178902e250",
+      "query_rank_occurrences": [
+        [
+          2,
+          17
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 45
+    },
+    {
+      "repository_id": 1373913344,
+      "project_key": "tkaushik015/private-markets-bi@5f824b4ea71f1b55986920aef44f81d734de771f",
+      "sort_sha256": "955c5a5df595e1ad7f1b939344cccd905d2b2eb8e92a0a4870130cfe0f7d133f",
+      "query_rank_occurrences": [
+        [
+          2,
+          7
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 46
+    },
+    {
+      "repository_id": 1319197496,
+      "project_key": "api-evangelist/rill-data@be540b5206a5f6f839e72d9fb30c30bb6cd8870d",
+      "sort_sha256": "a2787956b5005bfca9fe334e07514a38528a87db7c924ea0940801362c0c423c",
+      "query_rank_occurrences": [
+        [
+          3,
+          1
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 47
+    },
+    {
+      "repository_id": 1346169867,
+      "project_key": "daniilmai/gtm-semantic-layer@f777fcf64ec9c8250aa824f55055c6249a11c2d7",
+      "sort_sha256": "a53cc0c75a45d2b2b540c25263ab4d8434061e693175130145a58285fc05778c",
+      "query_rank_occurrences": [
+        [
+          2,
+          13
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 48
+    },
+    {
+      "repository_id": 1380645601,
+      "project_key": "marckolsondumarsais18-lang/northstar-saas-analytics@8edc3dd9f369ad89a0507bed858ae381284b7819",
+      "sort_sha256": "a5c5d02b1397a0a529a1c8775c9778602abff1cc1e6ddb43a11ce9799f2b9514",
+      "query_rank_occurrences": [
+        [
+          1,
+          8
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 49
+    },
+    {
+      "repository_id": 1362720117,
+      "project_key": "dudamsharwani-max/subscription-semantic-layer@3d8c32b7172f3b0141e80a6147034ed264fa3ef5",
+      "sort_sha256": "a7306bc66d988a1b30741a2760256eb3641ab3fb66b5f2c95c2e2d5818596e41",
+      "query_rank_occurrences": [
+        [
+          2,
+          10
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 50
+    },
+    {
+      "repository_id": 1383972649,
+      "project_key": "nawyaunnam/saas-revenue-product-intelligence@6a9498320f813caa204e5874da7dc4f22013d75d",
+      "sort_sha256": "a998bb2eaf57a66f2a0bcdad0943067a268e90f5c43682306e44d303c4823606",
+      "query_rank_occurrences": [
+        [
+          1,
+          19
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 51
+    },
+    {
+      "repository_id": 1380156550,
+      "project_key": "823338779/metric_platform-dbt-infra@bd8b10e1f3456f5553760b57779ae621a10eaa45",
+      "sort_sha256": "b7971d8ddc1d7b9917b2925c20d21c22a9acfb642b220504350aaaa3b3795a5f",
+      "query_rank_occurrences": [
+        [
+          1,
+          11
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 52
+    },
+    {
+      "repository_id": 1384816771,
+      "project_key": "emkwambe/ecommerce-funnel-analytics@b9752f9599547b17fe2f1c89ec1e951373040221",
+      "sort_sha256": "bdd90c175fcbe8ddf75274a116dc064897e91de153f490c70115fd0f7a2705ab",
+      "query_rank_occurrences": [
+        [
+          1,
+          1
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 53
+    },
+    {
+      "repository_id": 1300918636,
+      "project_key": "sriramsripada20s/banking-analytics-platform-aws-snowflake@43fa51e06536567f9347f7a857115b00f74e027b",
+      "sort_sha256": "bf05cee4749ac38ed0754afe11df7306cc06fb93780a9e444eef638bd6ed2968",
+      "query_rank_occurrences": [
+        [
+          2,
+          30
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 54
+    },
+    {
+      "repository_id": 1357849525,
+      "project_key": "maniprabha20/ordermetrics360@c45d54c4d847c02df33f5bd1c2b540c0657e90c9",
+      "sort_sha256": "d223087293ddf19c7b7f5fcef53fe4dd75052df97905a30de44318d664feee08",
+      "query_rank_occurrences": [
+        [
+          1,
+          22
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 55
+    },
+    {
+      "repository_id": 1295576480,
+      "project_key": "rj1224/semantic-trust@3d7cd5f49a4ec5b27ecd416217e0996b551e3f2a",
+      "sort_sha256": "d4739705d22e9efa963676692ee883bede4227adfac30e075429c82bac13c278",
+      "query_rank_occurrences": [
+        [
+          2,
+          23
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 56
+    },
+    {
+      "repository_id": 1390936642,
+      "project_key": "herui03/ecommerce-decision-analytics@131d86b53023a1e0c8868db908e88ed29b5f5eee",
+      "sort_sha256": "d98ae0b3bf829f0da115ed65bdff7455c09c655ab9fe11e264c24447aae759d7",
+      "query_rank_occurrences": [
+        [
+          1,
+          3
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 57
+    },
+    {
+      "repository_id": 1207866214,
+      "project_key": "matu94/yt-sf-agentic@3d10c4a3268fc6f4eef8064b86c7d6acf843752e",
+      "sort_sha256": "e0986f1fa79ffe53d90000630018e347c8fabd59e096eb2328378fa02624e1cf",
+      "query_rank_occurrences": [
+        [
+          1,
+          13
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 58
+    },
+    {
+      "repository_id": 1378327545,
+      "project_key": "hussam-arif/ar-credit-risk-demo@a57b34353228dee68f3bb7d967beeafeb54236a0",
+      "sort_sha256": "e5f315ddd42fc5dc36a9c195aaab58ac899deeb4709232b33adeac586ed22b61",
+      "query_rank_occurrences": [
+        [
+          2,
+          6
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 59
+    },
+    {
+      "repository_id": 1334382692,
+      "project_key": "jumma786/marketing-attribution-modelling@b1d24b61e41374dc136dbd757ff44a280b27da87",
+      "sort_sha256": "ea50da4432d098dec2595d88100ba78115784cae513c9720dbd95d810bb01bfe",
+      "query_rank_occurrences": [
+        [
+          2,
+          19
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 60
+    },
+    {
+      "repository_id": 1300875674,
+      "project_key": "echoenv/semanticdf@3e239a9e6ec3d79d7ffacd1e5e2c2ad3a928253b",
+      "sort_sha256": "eab7c529f18574a9952bffe9305ebe65e183596c99f7cd20bd610444ab923215",
+      "query_rank_occurrences": [
+        [
+          2,
+          22
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 61
+    },
+    {
+      "repository_id": 1193744522,
+      "project_key": "flyersworder/agentic-data-contracts@c6507ea566699cf6b364f03942fdc2cfe7101108",
+      "sort_sha256": "f0d8365069ec979808dbdba712aaafb6dd5c2e8a9132c7c347b7db9493a51d22",
+      "query_rank_occurrences": [
+        [
+          1,
+          9
+        ]
+      ],
+      "fork": false,
+      "is_template": false,
+      "mirror_url": null,
+      "hash_rank": 62
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOP8VURK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/sidequery/sidemantic/git/refs/heads/main",
+  "object": {
+    "sha": "9bdc7044b491c1e3116e57b88164b62bc0421294",
+    "type": "commit",
+    "url": "https://api.github.com/repos/sidequery/sidemantic/git/commits/9bdc7044b491c1e3116e57b88164b62bc0421294"
+  }
+}

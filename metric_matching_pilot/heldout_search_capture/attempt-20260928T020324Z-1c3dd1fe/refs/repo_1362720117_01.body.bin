@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUTl1da9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/dudamsharwani-max/subscription-semantic-layer/git/refs/heads/main",
+  "object": {
+    "sha": "3d8c32b7172f3b0141e80a6147034ed264fa3ef5",
+    "type": "commit",
+    "url": "https://api.github.com/repos/dudamsharwani-max/subscription-semantic-layer/git/commits/3d8c32b7172f3b0141e80a6147034ed264fa3ef5"
+  }
+}

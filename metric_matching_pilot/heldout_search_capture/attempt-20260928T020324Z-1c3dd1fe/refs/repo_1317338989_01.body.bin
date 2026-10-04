@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOToT_ba9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Abdulrahman-Albeladi/real-estate-analytics-mart/git/refs/heads/main",
+  "object": {
+    "sha": "14338e3f2297e85ca6ef6f433f25ebc1ea4853dd",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Abdulrahman-Albeladi/real-estate-analytics-mart/git/commits/14338e3f2297e85ca6ef6f433f25ebc1ea4853dd"
+  }
+}

@@ -1,0 +1,6 @@
+HTTP/1.1 403 Forbidden
+content-type: text/plain
+x-proxy-error: blocked-by-allowlist
+content-length: 24
+date: Mon, 28 Sep 2026 01:53:33 GMT
+

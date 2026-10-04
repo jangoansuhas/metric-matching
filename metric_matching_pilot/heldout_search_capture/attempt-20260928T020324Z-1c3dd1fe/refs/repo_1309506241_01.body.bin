@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTg16wa9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Rho-Lall/odoo-2-dbt/git/refs/heads/main",
+  "object": {
+    "sha": "a9df31c0832616c8faf45dfe50000d5a5dbbf3c9",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Rho-Lall/odoo-2-dbt/git/commits/a9df31c0832616c8faf45dfe50000d5a5dbbf3c9"
+  }
+}

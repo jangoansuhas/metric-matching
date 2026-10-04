@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUJgJzq9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Jaideepgupta/dbt-cheatsheet/git/refs/heads/main",
+  "object": {
+    "sha": "33a3f430c9fefb04836be2f2942dbdd3510045fd",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Jaideepgupta/dbt-cheatsheet/git/commits/33a3f430c9fefb04836be2f2942dbdd3510045fd"
+  }
+}

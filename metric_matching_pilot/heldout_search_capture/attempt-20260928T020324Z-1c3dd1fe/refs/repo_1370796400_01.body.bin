@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUbSxcK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/vjlepro/dbt-marketing-analytics/git/refs/heads/main",
+  "object": {
+    "sha": "fe3c96d364d7e5d7c6c0f2c60139e212a0ee1546",
+    "type": "commit",
+    "url": "https://api.github.com/repos/vjlepro/dbt-marketing-analytics/git/commits/fe3c96d364d7e5d7c6c0f2c60139e212a0ee1546"
+  }
+}

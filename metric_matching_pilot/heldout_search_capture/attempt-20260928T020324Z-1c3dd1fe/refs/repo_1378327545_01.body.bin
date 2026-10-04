@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUieb-a9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/hussam-arif/ar-credit-risk-demo/git/refs/heads/main",
+  "object": {
+    "sha": "a57b34353228dee68f3bb7d967beeafeb54236a0",
+    "type": "commit",
+    "url": "https://api.github.com/repos/hussam-arif/ar-credit-risk-demo/git/commits/a57b34353228dee68f3bb7d967beeafeb54236a0"
+  }
+}

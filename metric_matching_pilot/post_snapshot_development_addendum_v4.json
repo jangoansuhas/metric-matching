@@ -1,0 +1,30 @@
+{
+  "schema_version": 4,
+  "scope": "generic_SQL_source_inventory_and_same_input_diagnostics_development_only",
+  "previous_addendum_sha256": "a459a8d21725101fe9eb88aa34972550ba46f328d6d0208efc849d044b3d49c3",
+  "files_sha256": {
+    "freeze_development_revision_v4.py": "c8fd8a251101b7232c23fbb639f362758dcf9532ea11076c152e1e8edd4e5815",
+    "generic_sql_inventory.py": "1d01bf9d79cbe15ed27f5d8d8d0e43cde5f9c04df9ae906f23a223ae010af45c",
+    "generic_sql_fixture_negative.sql": "0cdf53a7542d6a5f2037e1c1daf0289b48046b44f5d65771d43d3e39b7464ff5",
+    "generic_sql_inventory_report.json": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+    "generic_sql_inventory_report.md": "a1ee5a752f0efd8b9d29259d70b8b3a7c3d10514d3d8927b6b56a0265a465077",
+    "generic_adapter_review_contract.md": "10e7110cc1b72753b968eb5674636d56754cbae593ea921123ddd3a58dbbaad4",
+    "generic_adapter_integration_gate.md": "5ef47e37c55e734ce94d31d924d4b59eab530a379e60729128403e6c2a9f0b21",
+    "generic_same_input_baselines.py": "9851bf85f2e3a187329a2f771946b9c21b336b769bfde6df7b16b2ff7eb2ea2f",
+    "generic_same_input_baselines_report.json": "d7c510a2f567372055d2b9952fd90315fd0ebaf9cc616af2416115feb3bddf3b",
+    "generic_same_input_baselines_report.md": "9d32967a1d78ecd77dc00f5561ae73aad894fbc1512d86e7c7faf7d09502d212",
+    "generic_same_input_baselines_review.md": "cfcef69f201fe021c107044514ab37d285dfb71a0065bd336b41ebc4817c9195"
+  },
+  "inventory_input_sha256": "6fe38b9546d251a01a2ed60128733f7267390554b0f49b4e8ba07322c466800b",
+  "baseline_pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb",
+  "coverage": {
+    "raw_views": 12,
+    "emitted_outputs": 24,
+    "raw_pairs": 276,
+    "development_metric_ids": 12,
+    "development_metric_pairs": 66
+  },
+  "heldout_gate": "blocked_generic_compiled_provenance_and_complete_metric_eligibility_missing",
+  "reason": "Record independently reviewed synthetic SQL inventory and same-input baseline diagnostic without implying gold or method superiority.",
+  "recorded_at_utc": "2026-09-28T02:49:56+00:00"
+}

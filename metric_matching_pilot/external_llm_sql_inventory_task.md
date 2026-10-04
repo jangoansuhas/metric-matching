@@ -1,0 +1,22 @@
+# External LLM task: development-only SQL metric inventory bridge
+
+**Superseded for the primary SANER paper on 2026-09-29. Do not send this task now.** The disclosed scope decision in `semantic_metric_cohort_reset_20260929.md` pauses this bridge; send `semantic_metric_frame_handoff_20260929.md` instead. This earlier design remains as a historical option if a separate SQL-output study is later chosen.
+
+Please implement one **separately versioned SQL/catalog output inventory bridge**, using only already inspected public development projects and small constructed fixtures. Bound the implementation to inventory and source provenance; do not build a relationship matcher or general SQL equivalence engine. The existing MetricFlow adapter at `metric_provenance_verification/inputs/run_adapter.py` SHA-256 `7b90ef37dfb1cce9c0a15f211ef89fb56106a0f1eb8817ed0ae405ad05ce09fe` must remain unchanged.
+
+## Inputs
+
+- `jross21/gtm-funnel-analytics` at commit `a71232c123a5fb78da9b52d4246950ee48591c00`: its root `metrics_catalog.yml` contains nine governed metric definitions implemented by `models/marts/metrics/fct_metric_values.sql`. This is **development**, not held-out.
+- `dbt-labs/jaffle-shop` at commit `7be2c5838dbdeca8e915d4e46db70e910753d7f6`: existing development parser and 19 declared MetricFlow metrics provide a cross-check for type/ID distinctions.
+- Existing development reports and the frozen adapter contract may be read. Construct small development fixtures for (i) two `SUM(...) AS alias` outputs with explicit `GROUP BY` scope, (ii) a single nested `dbt_project.yml`, and (iii) the ambiguous cases below. Do **not** open or use any repository from `public_pair_selection_queue.json` or `heldout_screen/`, any source-screen report, human worksheet, or relationship prediction. The two selected projects were source-screened before this bridge work; do not portray this as a pre-exposure confirmatory extractor.
+
+## Deliverables
+
+1. `extract_sql_metric_inventory.py`, a source-linked **inventory** adapter (no pair matcher). For each governed catalog metric or explicit numeric aggregate-query output it can safely identify, emit a stable `repo@commit/model/source-file/output-name/explicit-scope` ID, exact declaration and SQL line spans, output expression or unsupported reason, native grain/time/filter when stated, and evidence status. Preserve every discoverable declaration in the denominator even if SQL/Jinja cannot be resolved. Do not turn a raw numeric passthrough column or arbitrary runtime grouping into an extra metric. Locate a dbt project only when the root or a unique nested `dbt_project.yml` is unambiguous; otherwise mark the layout unresolved.
+2. A machine-readable inventory for each development project and a short report that separates (a) catalog/SQL outputs discovered, (b) source-to-expression links verified, (c) model SQL compiled, and (d) MetricFlow metric-query SQL generated. A successful `dbt parse` must not be counted as (d). No metric values, relationship labels, recall or accuracy.
+3. Small constructed checks for grouped raw aggregate aliases, nested project discovery, CTE alias collision, `SELECT *`, Jinja macro/unsupported SQL, and duplicate display names. Fail closed with `unknown` rather than guessing a source link. Do not write a broad parser when a case is unsupported; record it in the inventory.
+4. Exact reproduction commands, parser/dbt versions, pinned commits, source and output hashes, counts including failures, and a short limitation report. Return code and outputs as a ZIP with a SHA-256 manifest; a separate reviewer will audit it.
+
+## Acceptance boundary
+
+It must identify the nine GTM catalog declarations without silently discarding them; verified expression links may be fewer than nine. The constructed raw-SQL fixture must enumerate its two aggregate outputs once each at the declared group scope and keep ambiguous projections unresolved. It must leave the original 19 Jaffle Semantic Layer metrics and their existing generated SQL counts unchanged. The bridge may later be applied once to the **already source-screened** selections for descriptive coverage; disclose this chronology and all failures, and do not claim a wholly untouched extractor evaluation or tune pair decisions on these sources. AI assessment is technical development evidence, never human gold.

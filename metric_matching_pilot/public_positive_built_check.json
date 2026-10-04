@@ -1,0 +1,27 @@
+{
+  "candidate_id": "POS-001",
+  "semantic_commit": "8686fe3ea0fd4ceffa08e523a422331bd228ac32",
+  "dbt_submodule_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+  "dbt_version": "1.12.5",
+  "dbt_build_total_nodes": 52,
+  "dbt_declared_equality_test": {
+    "unique_id": "test.jaffle_shop.dbt_utils_expression_is_true_orders_order_items_subtotal_subtotal.b1416e07ec",
+    "status": "pass",
+    "failures": 0
+  },
+  "compiled_test_predicate": "where not(order_items_subtotal = subtotal)",
+  "duckdb": {
+    "orders": 61948,
+    "items": 90900,
+    "dates": 365,
+    "order_total": "637444.00",
+    "item_total": "637444.00",
+    "orders_without_items": 483,
+    "orders_mismatching_before_coalesce": 483,
+    "orders_mismatching_after_coalesce": 0,
+    "orders_mismatching_materialized_item_sum": 483,
+    "daily_mismatches": 0
+  },
+  "status": "dbt_build_exposes_483_null_vs_zero_cases_semantic_engines_unverified",
+  "inference": "The declared dbt expression test passes while 483 zero-subtotal orders have NULL item sums: SQL WHERE NOT(NULL = 0) filters them out. Use IS DISTINCT FROM or an explicit null-aware test. Conditional order-level equality requires a left join plus COALESCE; aligned daily totals match in the built sample."
+}

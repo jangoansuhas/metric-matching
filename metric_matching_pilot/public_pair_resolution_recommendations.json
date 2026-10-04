@@ -1,0 +1,46 @@
+{
+  "status": "analyst_recommendations_after_second_review_pending_joint_adjudication",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "decisions": [
+    {
+      "id": "JS-001", "recommended_label": "related",
+      "reason": "Reject unqualified cross-grain equality. Order item prices reconcile to pretax subtotal, while order_total adds tax. The pinned seeds differ by 3,398,137 cents overall, with nonzero tax on 61,465 orders."
+    },
+    {
+      "id": "JS-002", "recommended_label": "temporal_or_scope_variant",
+      "reason": "Agreed: first-customer-order filter restricts the same SUM(1) base order measure."
+    },
+    {
+      "id": "JS-003", "recommended_label": "temporal_or_scope_variant",
+      "reason": "Agreed: order-value threshold restricts the same SUM(1) base order measure."
+    },
+    {
+      "id": "JS-004", "recommended_label": "temporal_or_scope_variant",
+      "reason": "Agreed: food condition changes the population contributing product price to the same SUM measure."
+    },
+    {
+      "id": "JS-005", "recommended_label": "temporal_or_scope_variant",
+      "reason": "Apply the scope-variant rule consistently to two sibling category predicates over the same product_price SUM, even when neither category is a subset of the other. They are not interchangeable."
+    },
+    {
+      "id": "JS-006", "recommended_label": "related",
+      "reason": "Agreed: SUM versus MEDIAN changes the aggregation function over the same price column."
+    },
+    {
+      "id": "JS-007", "recommended_label": "related",
+      "reason": "The values count different entities, but the repository models a direct customer-to-order relationship and derives orders per customer. Under this taxonomy, that is related, not an unrelated nonmatch."
+    },
+    {
+      "id": "JS-008", "recommended_label": "related",
+      "reason": "Agreed on distinct tax-inclusive and pretax amounts. The model explicitly sums tax_paid; a location tax-rate reconstruction is unnecessary and has not been validated."
+    },
+    {
+      "id": "JS-009", "recommended_label": "non_match",
+      "reason": "Agreed: customer count and average store tax rate have unrelated entities and units."
+    },
+    {
+      "id": "JS-010", "recommended_label": "temporal_or_scope_variant",
+      "reason": "Revise the first analyst's needs_review label. All-time totals reconcile in the pinned seeds when every order maps to a customer, but default time dimensions are ordered_at versus first_ordered_at; daily values differ on all 365 sample dates. A cross-grain claim is conditional on dropping or aligning time and validating mapping."
+    }
+  ]
+}

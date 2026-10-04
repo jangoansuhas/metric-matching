@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/trunk",
+  "node_id": "MDM6UmVmMzQ4NTUwMDQyOnJlZnMvaGVhZHMvdHJ1bms=",
+  "url": "https://api.github.com/repos/isgasho/teleport-1/git/refs/heads/trunk",
+  "object": {
+    "sha": "153ac319fe8999f16379213f0dc5181abfb984d8",
+    "type": "commit",
+    "url": "https://api.github.com/repos/isgasho/teleport-1/git/commits/153ac319fe8999f16379213f0dc5181abfb984d8"
+  }
+}

@@ -1,0 +1,2582 @@
+{
+  "schema_version": 1,
+  "scope": "development_only_generic_create_view_source_inventory",
+  "parser": {
+    "package": "sqlglot",
+    "version": "30.20.0",
+    "dialect": "duckdb"
+  },
+  "input": {
+    "path": "sql/metric_views.sql",
+    "sha256": "6fe38b9546d251a01a2ed60128733f7267390554b0f49b4e8ba07322c466800b"
+  },
+  "coverage": {
+    "views": 12,
+    "outputs": 24,
+    "unordered_pairs": 276,
+    "unresolved_output_placeholders": 0,
+    "supported_aggregate_outputs": 4,
+    "recognized_aggregate_outputs": 6,
+    "output_failure_reasons": {
+      "join": 4,
+      "non_aggregate": 16
+    },
+    "pair_decisions": {
+      "abstain": 270,
+      "source_candidate": 1,
+      "source_difference": 5
+    },
+    "pair_reasons": {
+      "different_operator": 4,
+      "different_source_tables": 1,
+      "same_source_signature": 1,
+      "unsupported_output": 270
+    }
+  },
+  "views": [
+    {
+      "name": "opportunity_booking_arr_usd",
+      "line": 2,
+      "statement_sha256": "f25e20de45793995af73e1fe31f1a9803e1628c0bde6cc9033516a8ae063fe2d",
+      "status": "parsed"
+    },
+    {
+      "name": "total_opportunity_booking_arr_usd",
+      "line": 7,
+      "statement_sha256": "686145553941fa7430df40ce009ccb5b01eabd992bfbf656c23cc00123609f3c",
+      "status": "parsed"
+    },
+    {
+      "name": "account_net_revenue",
+      "line": 13,
+      "statement_sha256": "03186cc3757f8e20b3556eceb920fdc4893e305ead505f213d8c9d6e5796ffc4",
+      "status": "parsed"
+    },
+    {
+      "name": "crm_revenue_net_rollup",
+      "line": 19,
+      "statement_sha256": "89353bbc3dbe79d0c9570908c4f1fd691302d7f04826cb7a174c1e9485f165b3",
+      "status": "parsed"
+    },
+    {
+      "name": "crm_revenue_net_fanout",
+      "line": 27,
+      "statement_sha256": "89cbf5c4d34bc46249a862d32826bbcc9de8de3c2fc30d593ab4dba64cdb966d",
+      "status": "parsed"
+    },
+    {
+      "name": "account_net_revenue_undocumented",
+      "line": 35,
+      "statement_sha256": "9b075a0e7b315c98849c8aa3e03fa2a3a0c3eaa1b5b9ec1b3cdc0ca33b3d2e6b",
+      "status": "parsed"
+    },
+    {
+      "name": "product_arr_usd",
+      "line": 42,
+      "statement_sha256": "e3d1ed1edf419625cac3e4d5f421af00175ec378a210db1bc351525049a9143c",
+      "status": "parsed"
+    },
+    {
+      "name": "product_booking_arr_usd",
+      "line": 46,
+      "statement_sha256": "21c4ee09a85d2971510f4bcfbd2a0939a3dfbb60d6677ead8b0a75585d5290c3",
+      "status": "parsed"
+    },
+    {
+      "name": "pipeline_arr_v0",
+      "line": 51,
+      "statement_sha256": "d17fd2eac2b9853ee05a5a67e278e3e067ef3c7d257df76fb087907274041031",
+      "status": "parsed"
+    },
+    {
+      "name": "pipeline_arr_v1",
+      "line": 56,
+      "statement_sha256": "b983c0267b3331445740dcdb10d626a933b923b93ecc1051f548a9858131b951",
+      "status": "parsed"
+    },
+    {
+      "name": "number_of_customers",
+      "line": 62,
+      "statement_sha256": "5f8933990cc4aee2c197877bd8bcb967772b4c536340499d7bd0443d288f2c64",
+      "status": "parsed"
+    },
+    {
+      "name": "num_of_products",
+      "line": 65,
+      "statement_sha256": "af2d994b02d9f0ce50aeffb7493548b3653346fdbc967992aac847cede9f7528",
+      "status": "parsed"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "opportunity_booking_arr_usd.entity_key",
+      "view": "opportunity_booking_arr_usd",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 3,
+      "expression": "opportunity_id",
+      "expression_sha256": "b52b0bcf71197b55c9e8de3ef25e49af60ce5c514e5d375acd5f97751167c3fe",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "opportunity_booking_arr_usd.value",
+      "view": "opportunity_booking_arr_usd",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 3,
+      "expression": "booking_arr_usd",
+      "expression_sha256": "0e2819f696ace23313df7d3069f0d40dff7d22c791eb10526fbb2e6f6016a752",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "total_opportunity_booking_arr_usd.entity_key",
+      "view": "total_opportunity_booking_arr_usd",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 8,
+      "expression": "opportunity_id",
+      "expression_sha256": "b52b0bcf71197b55c9e8de3ef25e49af60ce5c514e5d375acd5f97751167c3fe",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "total_opportunity_booking_arr_usd.value",
+      "view": "total_opportunity_booking_arr_usd",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 8,
+      "expression": "booking_arr_usd",
+      "expression_sha256": "0e2819f696ace23313df7d3069f0d40dff7d22c791eb10526fbb2e6f6016a752",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "account_net_revenue.entity_key",
+      "view": "account_net_revenue",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 14,
+      "expression": "root_account_id",
+      "expression_sha256": "aa113bb62ba7a82e3db09dafa5d5dea858b8dd450e2fff9f4b53e4c75d99b3c7",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "account_arr_daily_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [
+        "root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "account_net_revenue.value",
+      "view": "account_net_revenue",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 14,
+      "expression": "SUM(net_arr_usd)",
+      "expression_sha256": "95861f0d72c89a9a61308c8416fdbdb20100d67da1df9b58616748fd037c8b9d",
+      "expression_ast": "Sum",
+      "ast_operator": "SUM",
+      "aggregate_argument": "net_arr_usd",
+      "aggregate_argument_ast": "Column",
+      "source_table_refs": [
+        "account_arr_daily_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [
+        "root_account_id"
+      ],
+      "status": "supported_aggregate",
+      "failure_reasons": [],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "crm_revenue_net_rollup.entity_key",
+      "view": "crm_revenue_net_rollup",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 20,
+      "expression": "h.root_account_id",
+      "expression_sha256": "efea613daf4f516bc603907c633b1401529a95a9330c7db5e1b542b9f30607b8",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "account_hierarchy",
+        "opportunity_snapshot"
+      ],
+      "where": "o.snapshot_date = '2026-09-26' AND o.stage IN (7, 8) AND o.is_fraud = 0",
+      "group_by": [
+        "h.root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "join"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "crm_revenue_net_rollup.value",
+      "view": "crm_revenue_net_rollup",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 20,
+      "expression": "SUM(o.arr_usd)",
+      "expression_sha256": "6b577b43ab16434911c68635bc600f2957a280468ae9ae06cba1bbcd08967012",
+      "expression_ast": "Sum",
+      "ast_operator": "SUM",
+      "aggregate_argument": "o.arr_usd",
+      "aggregate_argument_ast": "Column",
+      "source_table_refs": [
+        "account_hierarchy",
+        "opportunity_snapshot"
+      ],
+      "where": "o.snapshot_date = '2026-09-26' AND o.stage IN (7, 8) AND o.is_fraud = 0",
+      "group_by": [
+        "h.root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "join"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "crm_revenue_net_fanout.entity_key",
+      "view": "crm_revenue_net_fanout",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 28,
+      "expression": "h.root_account_id",
+      "expression_sha256": "efea613daf4f516bc603907c633b1401529a95a9330c7db5e1b542b9f30607b8",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "account_hierarchy_bad",
+        "opportunity_snapshot"
+      ],
+      "where": "o.snapshot_date = '2026-09-26' AND o.stage IN (7, 8) AND o.is_fraud = 0",
+      "group_by": [
+        "h.root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "join"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "crm_revenue_net_fanout.value",
+      "view": "crm_revenue_net_fanout",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 28,
+      "expression": "SUM(o.arr_usd)",
+      "expression_sha256": "6b577b43ab16434911c68635bc600f2957a280468ae9ae06cba1bbcd08967012",
+      "expression_ast": "Sum",
+      "ast_operator": "SUM",
+      "aggregate_argument": "o.arr_usd",
+      "aggregate_argument_ast": "Column",
+      "source_table_refs": [
+        "account_hierarchy_bad",
+        "opportunity_snapshot"
+      ],
+      "where": "o.snapshot_date = '2026-09-26' AND o.stage IN (7, 8) AND o.is_fraud = 0",
+      "group_by": [
+        "h.root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "join"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "account_net_revenue_undocumented.entity_key",
+      "view": "account_net_revenue_undocumented",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 36,
+      "expression": "root_account_id",
+      "expression_sha256": "aa113bb62ba7a82e3db09dafa5d5dea858b8dd450e2fff9f4b53e4c75d99b3c7",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "account_arr_daily_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [
+        "root_account_id"
+      ],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "account_net_revenue_undocumented.value",
+      "view": "account_net_revenue_undocumented",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 36,
+      "expression": "SUM(net_arr_usd)",
+      "expression_sha256": "95861f0d72c89a9a61308c8416fdbdb20100d67da1df9b58616748fd037c8b9d",
+      "expression_ast": "Sum",
+      "ast_operator": "SUM",
+      "aggregate_argument": "net_arr_usd",
+      "aggregate_argument_ast": "Column",
+      "source_table_refs": [
+        "account_arr_daily_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0",
+      "group_by": [
+        "root_account_id"
+      ],
+      "status": "supported_aggregate",
+      "failure_reasons": [],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "product_arr_usd.entity_key",
+      "view": "product_arr_usd",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 43,
+      "expression": "product_id",
+      "expression_sha256": "c3adad4f81b34615727672e6c2c72a20599dd4f80d7ee2939db0ee3db0ebb226",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "product_arr_live"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "product_arr_usd.value",
+      "view": "product_arr_usd",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 43,
+      "expression": "live_arr_usd",
+      "expression_sha256": "6a42c4f34d22ceeaba5a68e8410be86bf1a74370daa65505e6d4ab0bf84870f2",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "product_arr_live"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "product_booking_arr_usd.entity_key",
+      "view": "product_booking_arr_usd",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 47,
+      "expression": "product_id",
+      "expression_sha256": "c3adad4f81b34615727672e6c2c72a20599dd4f80d7ee2939db0ee3db0ebb226",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "product_booking_allocation"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "product_booking_arr_usd.value",
+      "view": "product_booking_arr_usd",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 47,
+      "expression": "booking_arr_usd",
+      "expression_sha256": "0e2819f696ace23313df7d3069f0d40dff7d22c791eb10526fbb2e6f6016a752",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "product_booking_allocation"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "pipeline_arr_v0.entity_key",
+      "view": "pipeline_arr_v0",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 52,
+      "expression": "opportunity_id",
+      "expression_sha256": "b52b0bcf71197b55c9e8de3ef25e49af60ce5c514e5d375acd5f97751167c3fe",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0 AND stage IN (1, 2, 3, 4, 5, 6)",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "pipeline_arr_v0.value",
+      "view": "pipeline_arr_v0",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 52,
+      "expression": "arr_usd",
+      "expression_sha256": "5663d9189019cf28cd35c55637f80be526a8f845605396bcdfcbc9de835eae48",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0 AND stage IN (1, 2, 3, 4, 5, 6)",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "pipeline_arr_v1.entity_key",
+      "view": "pipeline_arr_v1",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 57,
+      "expression": "opportunity_id",
+      "expression_sha256": "b52b0bcf71197b55c9e8de3ef25e49af60ce5c514e5d375acd5f97751167c3fe",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0 AND stage IN (1, 2, 3, 4, 5, 6, 7, 8)",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "pipeline_arr_v1.value",
+      "view": "pipeline_arr_v1",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 57,
+      "expression": "arr_usd",
+      "expression_sha256": "5663d9189019cf28cd35c55637f80be526a8f845605396bcdfcbc9de835eae48",
+      "expression_ast": "Column",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "opportunity_snapshot"
+      ],
+      "where": "snapshot_date = '2026-09-26' AND is_fraud = 0 AND stage IN (1, 2, 3, 4, 5, 6, 7, 8)",
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "number_of_customers.entity_key",
+      "view": "number_of_customers",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 63,
+      "expression": "'all'",
+      "expression_sha256": "b9e2cc2aa6a53c2f83a8a63999986a06dc7563c695b372f83b1303b9782526f6",
+      "expression_ast": "Literal",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "customer"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "number_of_customers.value",
+      "view": "number_of_customers",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 63,
+      "expression": "COUNT(*)",
+      "expression_sha256": "1464b4c5bc20377961e5849993a762c16d19ac1081eaec971d4a10800efd9b17",
+      "expression_ast": "Count",
+      "ast_operator": "COUNT",
+      "aggregate_argument": "*",
+      "aggregate_argument_ast": "Star",
+      "source_table_refs": [
+        "customer"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "supported_aggregate",
+      "failure_reasons": [],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "num_of_products.entity_key",
+      "view": "num_of_products",
+      "output_alias": "entity_key",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 66,
+      "expression": "'all'",
+      "expression_sha256": "b9e2cc2aa6a53c2f83a8a63999986a06dc7563c695b372f83b1303b9782526f6",
+      "expression_ast": "Literal",
+      "ast_operator": null,
+      "aggregate_argument": null,
+      "aggregate_argument_ast": null,
+      "source_table_refs": [
+        "product"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "abstain",
+      "failure_reasons": [
+        "non_aggregate"
+      ],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    },
+    {
+      "id": "num_of_products.value",
+      "view": "num_of_products",
+      "output_alias": "value",
+      "source_file": "sql/metric_views.sql",
+      "source_line": 66,
+      "expression": "COUNT(*)",
+      "expression_sha256": "1464b4c5bc20377961e5849993a762c16d19ac1081eaec971d4a10800efd9b17",
+      "expression_ast": "Count",
+      "ast_operator": "COUNT",
+      "aggregate_argument": "*",
+      "aggregate_argument_ast": "Star",
+      "source_table_refs": [
+        "product"
+      ],
+      "where": null,
+      "group_by": [],
+      "status": "supported_aggregate",
+      "failure_reasons": [],
+      "unknown_semantics": {
+        "grain": "unknown",
+        "time": "unknown",
+        "null_policy": "unknown",
+        "join_cardinality": "unknown",
+        "snapshot": "unknown"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "account_net_revenue.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "account_net_revenue_undocumented.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "account_net_revenue_undocumented.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "crm_revenue_net_fanout.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "crm_revenue_net_fanout.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "account_net_revenue_undocumented.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "account_net_revenue_undocumented.value",
+      "decision": "source_candidate",
+      "reason": "same_source_signature"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_fanout.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_fanout.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "num_of_products.value",
+      "decision": "source_difference",
+      "reason": "different_operator"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "number_of_customers.value",
+      "decision": "source_difference",
+      "reason": "different_operator"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "account_net_revenue_undocumented.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "crm_revenue_net_fanout.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "crm_revenue_net_fanout.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_fanout.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_fanout.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "num_of_products.value",
+      "decision": "source_difference",
+      "reason": "different_operator"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "number_of_customers.value",
+      "decision": "source_difference",
+      "reason": "different_operator"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "crm_revenue_net_fanout.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "crm_revenue_net_rollup.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "crm_revenue_net_rollup.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "num_of_products.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "num_of_products.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "number_of_customers.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "number_of_customers.value",
+      "decision": "source_difference",
+      "reason": "different_source_tables"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "number_of_customers.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v0.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "pipeline_arr_v0.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "pipeline_arr_v1.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "pipeline_arr_v1.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.entity_key",
+      "right_id": "product_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.entity_key",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "product_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_booking_arr_usd.entity_key",
+      "right_id": "product_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_booking_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_booking_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.entity_key",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "product_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    },
+    {
+      "left_id": "total_opportunity_booking_arr_usd.entity_key",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "decision": "abstain",
+      "reason": "unsupported_output"
+    }
+  ],
+  "limitations": [
+    "Source syntax only; no compiled dbt or dependency expansion.",
+    "Same source signature is a review candidate, not value equivalence.",
+    "A source difference is not a semantic contradiction; transformations may reconcile outputs.",
+    "Grain, time, NULL policy, join cardinality and snapshot are unknown.",
+    "Joins, CTEs, windows, nested queries and Jinja abstain.",
+    "Unparseable views receive one abstaining placeholder rather than guessed aliases; their true projection count remains unknown.",
+    "Pair completeness is over emitted output IDs, including placeholders; unknown projection arity cannot be inferred."
+  ],
+  "negative_fixture": {
+    "path": "generic_sql_fixture_negative.sql",
+    "sha256": "0cdf53a7542d6a5f2037e1c1daf0289b48046b44f5d65771d43d3e39b7464ff5",
+    "coverage": {
+      "views": 8,
+      "outputs": 12,
+      "unordered_pairs": 66,
+      "unresolved_output_placeholders": 2,
+      "supported_aggregate_outputs": 5,
+      "recognized_aggregate_outputs": 6,
+      "output_failure_reasons": {
+        "join": 2,
+        "non_aggregate": 3,
+        "unresolved_projection": 2,
+        "unsupported_jinja": 2
+      },
+      "pair_decisions": {
+        "abstain": 56,
+        "source_difference": 10
+      },
+      "pair_reasons": {
+        "different_argument": 1,
+        "different_operator": 8,
+        "different_source_tables": 1,
+        "unsupported_output": 56
+      }
+    },
+    "cases": [
+      {
+        "left_id": "sum_orders.value",
+        "right_id": "median_orders.value",
+        "decision": "source_difference",
+        "reason": "different_operator",
+        "left_expression": "SUM(amount)",
+        "right_expression": "MEDIAN(amount)",
+        "left_expression_ast": "Sum",
+        "right_expression_ast": "Median",
+        "left_argument_ast": "Column",
+        "right_argument_ast": "Column",
+        "left_null_policy": "unknown",
+        "right_null_policy": "unknown"
+      },
+      {
+        "left_id": "count_orders.value",
+        "right_id": "count_customers.value",
+        "decision": "source_difference",
+        "reason": "different_source_tables",
+        "left_expression": "COUNT(*)",
+        "right_expression": "COUNT(*)",
+        "left_expression_ast": "Count",
+        "right_expression_ast": "Count",
+        "left_argument_ast": "Star",
+        "right_argument_ast": "Star",
+        "left_null_policy": "unknown",
+        "right_null_policy": "unknown"
+      },
+      {
+        "left_id": "sum_orders.value",
+        "right_id": "sum_orders_coalesced.value",
+        "decision": "source_difference",
+        "reason": "different_argument",
+        "left_expression": "SUM(amount)",
+        "right_expression": "SUM(COALESCE(amount, 0))",
+        "left_expression_ast": "Sum",
+        "right_expression_ast": "Sum",
+        "left_argument_ast": "Column",
+        "right_argument_ast": "Coalesce",
+        "left_null_policy": "unknown",
+        "right_null_policy": "unknown"
+      }
+    ],
+    "unsupported_examples": [
+      {
+        "id": "joined_orders.value",
+        "failure_reasons": [
+          "join"
+        ]
+      },
+      {
+        "id": "templated_orders._unresolved_output_1",
+        "failure_reasons": [
+          "unresolved_projection",
+          "unsupported_jinja"
+        ]
+      },
+      {
+        "id": "templated_aliasless._unresolved_output_1",
+        "failure_reasons": [
+          "unresolved_projection",
+          "unsupported_jinja"
+        ]
+      }
+    ],
+    "interpretation": "AST differences are source evidence only; NULL behavior and value equivalence are not inferred."
+  }
+}

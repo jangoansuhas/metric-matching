@@ -1,0 +1,895 @@
+{
+  "source": {
+    "project": "jross21/gtm-funnel-analytics",
+    "commit": "a71232c123a5fb78da9b52d4246950ee48591c00",
+    "path": "models/marts/metrics/fct_metric_values.sql",
+    "method": "git show of pinned source SQL; no compiled SQL used"
+  },
+  "scope": "One unioned CTE in fct_metric_values.sql; single-CTE FROM and five positional outputs",
+  "counts": {
+    "union_all_branches": 11,
+    "extracted": 11,
+    "unsupported": 0,
+    "unknown_grain": 0,
+    "known_grains": {
+      "month": 2,
+      "window": 9
+    },
+    "grouping_sets_unexpanded": 8,
+    "jinja_unexpanded": 10,
+    "dbt_macro_unexpanded": 1,
+    "field_lineage_not_traced": 11
+  },
+  "jinja_declarations": {
+    "window_start": {
+      "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 10,
+        "end_line": 10
+      }
+    },
+    "window_end": {
+      "expression": "{% set window_end = \"cast('\" ~ var('analysis_period_end') ~ \"' as date)\" %}",
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 11,
+        "end_line": 11
+      }
+    }
+  },
+  "boundaries": [
+    "Expressions and WHERE clauses are copied, not evaluated or normalized for matching.",
+    "GROUPING SETS are marked, not expanded into per-segment/All rows.",
+    "Jinja sets, refs and dbt macros are not compiled; source CTE refs are identified syntactically.",
+    "Period key and BETWEEN time keys use narrow syntactic recognition; upstream time filters are not traced.",
+    "Column/field lineage, aggregation semantics, row cardinality and runtime data are not inferred.",
+    "Identical text or reconciled totals are not evidence of semantic equivalence."
+  ],
+  "branches": [
+    {
+      "ordinal": 1,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 29,
+        "end_line": 32
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "mql_volume",
+      "grain": "month",
+      "expressions": {
+        "metric_name": "'mql_volume'",
+        "grain": "'month'",
+        "period_start": "cohort_month",
+        "segment": "coalesce(segment, 'All')",
+        "value": "count(*)::double"
+      },
+      "period_time_key": "cohort_month",
+      "time_filter_keys": [],
+      "where": null,
+      "group_by": "grouping sets ((cohort_month, segment), (cohort_month))",
+      "grouping_sets": true,
+      "source_cte": "mqls",
+      "source_ref": "fct_mqls",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 13,
+        "end_line": 15
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 29,
+          "end_line": 30
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 31,
+          "end_line": 31
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 32,
+          "end_line": 32
+        }
+      },
+      "jinja_expressions": [],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {},
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 2,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 35,
+        "end_line": 37
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "mql_volume",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'mql_volume'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "count(*)::double"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": null,
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "mqls",
+      "source_ref": "fct_mqls",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 13,
+        "end_line": 15
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 14,
+        "end_line": 14
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 35,
+          "end_line": 35
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 36,
+          "end_line": 36
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 37,
+          "end_line": 37
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 3,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 41,
+        "end_line": 45
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "pipeline_created",
+      "grain": "month",
+      "expressions": {
+        "metric_name": "'pipeline_created'",
+        "grain": "'month'",
+        "period_start": "created_month",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round(sum(opp_amount), 2)"
+      },
+      "period_time_key": "created_month",
+      "time_filter_keys": [
+        "created_month"
+      ],
+      "where": "is_net_new_pipeline and created_month between {{ window_start }} and {{ window_end }}",
+      "group_by": "grouping sets ((created_month, segment), (created_month))",
+      "grouping_sets": true,
+      "source_cte": "opps",
+      "source_ref": "fct_opportunities",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 16,
+        "end_line": 18
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 41,
+          "end_line": 42
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 43,
+          "end_line": 43
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 44,
+          "end_line": 44
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 45,
+          "end_line": 45
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}",
+        "{{ window_end }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        },
+        "window_end": {
+          "expression": "{% set window_end = \"cast('\" ~ var('analysis_period_end') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 11,
+            "end_line": 11
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 4,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 48,
+        "end_line": 52
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "pipeline_created",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'pipeline_created'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round(sum(opp_amount), 2)"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [
+        "created_month"
+      ],
+      "where": "is_net_new_pipeline and created_month between {{ window_start }} and {{ window_end }}",
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "opps",
+      "source_ref": "fct_opportunities",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 16,
+        "end_line": 18
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 48,
+          "end_line": 49
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 50,
+          "end_line": 50
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 51,
+          "end_line": 51
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 52,
+          "end_line": 52
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}",
+        "{{ window_end }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        },
+        "window_end": {
+          "expression": "{% set window_end = \"cast('\" ~ var('analysis_period_end') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 11,
+            "end_line": 11
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 5,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 56,
+        "end_line": 61
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "win_rate",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'win_rate'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round((count(*) filter (where is_won))::double / nullif(count(*), 0), 4)"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "is_closed and opp_amount >= 1000\n      and {{ dbt.datediff('created_date', 'close_date', 'day') }} >= 7",
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "opps",
+      "source_ref": "fct_opportunities",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 16,
+        "end_line": 18
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 56,
+          "end_line": 57
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 58,
+          "end_line": 58
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 59,
+          "end_line": 60
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 61,
+          "end_line": 61
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}",
+        "{{ dbt.datediff('created_date', 'close_date', 'day') }}"
+      ],
+      "macro_calls_unexpanded": [
+        "{{ dbt.datediff('created_date', 'close_date', 'day') }}"
+      ],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded",
+        "dbt_macro_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 6,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 65,
+        "end_line": 69
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "avg_sales_cycle_days",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'avg_sales_cycle_days'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round(percentile_cont(0.5) within group (order by sales_cycle_days), 1)"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "is_won and sales_cycle_days is not null",
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "opps",
+      "source_ref": "fct_opportunities",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 16,
+        "end_line": 18
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 17,
+        "end_line": 17
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 65,
+          "end_line": 66
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 67,
+          "end_line": 67
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 68,
+          "end_line": 68
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 69,
+          "end_line": 69
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 7,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 73,
+        "end_line": 77
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "sla_compliance",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'sla_compliance'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round(avg(case when met_sla then 1.0 else 0.0 end), 4)"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "met_sla is not null",
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "leads",
+      "source_ref": "fct_leads",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 19,
+        "end_line": 21
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 73,
+          "end_line": 74
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 75,
+          "end_line": 75
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 76,
+          "end_line": 76
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 77,
+          "end_line": 77
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 8,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 81,
+        "end_line": 85
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "speed_to_lead_median_min",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'speed_to_lead_median_min'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "coalesce(segment, 'All')",
+        "value": "round(percentile_cont(0.5) within group (order by response_minutes), 1)"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "response_minutes is not null",
+      "group_by": "grouping sets ((segment), ())",
+      "grouping_sets": true,
+      "source_cte": "leads",
+      "source_ref": "fct_leads",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 19,
+        "end_line": 21
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 20,
+        "end_line": 20
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 81,
+          "end_line": 82
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 83,
+          "end_line": 83
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 84,
+          "end_line": 84
+        },
+        "group by": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 85,
+          "end_line": 85
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 9,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 89,
+        "end_line": 90
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "mql_to_sal_rate",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'mql_to_sal_rate'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "segment",
+        "value": "conversion_rate"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "stage = 'SAL'",
+      "group_by": null,
+      "grouping_sets": false,
+      "source_cte": "funnel",
+      "source_ref": "fct_funnel_conversion",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 22,
+        "end_line": 24
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 23,
+        "end_line": 23
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 89,
+          "end_line": 89
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 90,
+          "end_line": 90
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 90,
+          "end_line": 90
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 10,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 92,
+        "end_line": 93
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "sal_to_sql_rate",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'sal_to_sql_rate'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "segment",
+        "value": "conversion_rate"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "stage = 'SQL'",
+      "group_by": null,
+      "grouping_sets": false,
+      "source_cte": "funnel",
+      "source_ref": "fct_funnel_conversion",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 22,
+        "end_line": 24
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 23,
+        "end_line": 23
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 92,
+          "end_line": 92
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 93,
+          "end_line": 93
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 93,
+          "end_line": 93
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    },
+    {
+      "ordinal": 11,
+      "location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 95,
+        "end_line": 96
+      },
+      "parse_status": "extracted",
+      "review_status": "needs_review",
+      "metric_name": "sql_to_opp_rate",
+      "grain": "window",
+      "expressions": {
+        "metric_name": "'sql_to_opp_rate'",
+        "grain": "'window'",
+        "period_start": "{{ window_start }}",
+        "segment": "segment",
+        "value": "conversion_rate"
+      },
+      "period_time_key": null,
+      "time_filter_keys": [],
+      "where": "stage = 'Opportunity'",
+      "group_by": null,
+      "grouping_sets": false,
+      "source_cte": "funnel",
+      "source_ref": "fct_funnel_conversion",
+      "source_cte_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 22,
+        "end_line": 24
+      },
+      "source_ref_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 23,
+        "end_line": 23
+      },
+      "clause_locations": {
+        "select": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 95,
+          "end_line": 95
+        },
+        "from": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 96,
+          "end_line": 96
+        },
+        "where": {
+          "path": "models/marts/metrics/fct_metric_values.sql",
+          "start_line": 96,
+          "end_line": 96
+        }
+      },
+      "jinja_expressions": [
+        "{{ window_start }}"
+      ],
+      "macro_calls_unexpanded": [],
+      "jinja_set_definitions": {
+        "window_start": {
+          "expression": "{% set window_start = \"cast('\" ~ var('analysis_period_start') ~ \"' as date)\" %}",
+          "location": {
+            "path": "models/marts/metrics/fct_metric_values.sql",
+            "start_line": 10,
+            "end_line": 10
+          }
+        }
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "field_lineage": "not_traced"
+    }
+  ]
+}

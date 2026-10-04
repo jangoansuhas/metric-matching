@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTAkoIK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Vignesh-Hariharan/salesforce-analytics-pipeline/git/refs/heads/main",
+  "object": {
+    "sha": "161c1cd72ac3f4c6b4aa8409cdde5fa2e91cc9a1",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Vignesh-Hariharan/salesforce-analytics-pipeline/git/commits/161c1cd72ac3f4c6b4aa8409cdde5fa2e91cc9a1"
+  }
+}

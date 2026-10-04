@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUoJO0a9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/sdiarbi/walmart-dbt-snowflake/git/refs/heads/main",
+  "object": {
+    "sha": "2aa21e162ab31d368f3c7c584b6eeb0d26d14bb1",
+    "type": "commit",
+    "url": "https://api.github.com/repos/sdiarbi/walmart-dbt-snowflake/git/commits/2aa21e162ab31d368f3c7c584b6eeb0d26d14bb1"
+  }
+}

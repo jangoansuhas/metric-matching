@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUjZhu69yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/FelipeRego/dbtBigQuery/git/refs/heads/main",
+  "object": {
+    "sha": "3d99f45cbb81f69c6a7475af6aa3f8e936669807",
+    "type": "commit",
+    "url": "https://api.github.com/repos/FelipeRego/dbtBigQuery/git/commits/3d99f45cbb81f69c6a7475af6aa3f8e936669807"
+  }
+}

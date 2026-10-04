@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUoqgg69yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/emkwambe/ecommerce-funnel-analytics/git/refs/heads/main",
+  "object": {
+    "sha": "b9752f9599547b17fe2f1c89ec1e951373040221",
+    "type": "commit",
+    "url": "https://api.github.com/repos/emkwambe/ecommerce-funnel-analytics/git/commits/b9752f9599547b17fe2f1c89ec1e951373040221"
+  }
+}

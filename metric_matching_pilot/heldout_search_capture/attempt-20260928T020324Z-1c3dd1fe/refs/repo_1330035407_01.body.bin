@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOT0a6z69yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/sfc-gh-dhunt/cinder-webhooks-dbt-demo/git/refs/heads/main",
+  "object": {
+    "sha": "a0b686e1e713462181a79c498877ee04c65cd5f2",
+    "type": "commit",
+    "url": "https://api.github.com/repos/sfc-gh-dhunt/cinder-webhooks-dbt-demo/git/commits/a0b686e1e713462181a79c498877ee04c65cd5f2"
+  }
+}

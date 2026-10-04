@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "scope": "development_implementation_snapshot_not_heldout_registration_or_accuracy",
+  "packet_sha256": "7fffd7366e333f907c70938544b92c07a0fb22c29845b7aaf20c7d319c1d5aed",
+  "cards": 11,
+  "unordered_pairs": 55,
+  "files_sha256": {
+    "freeze_development_snapshot.py": "edd243ded8db88d14196ec1219b4025cd2bd55d8a9abb7d15c650ac0f20dfa04",
+    "heldout_sampling_protocol.md": "dd32705d127600d1a429e343138fd6875a529ff23262c232589c4e520c10f207",
+    "evaluation_contract.md": "ae3646753aa10de92c6590c275bbd5bde4ce0c3e97b22f91df9ae9a9a4d06829",
+    "annotation_schema.json": "de0a6365dcaebc8ccc8725d2715df416355055d7655ee123a84ab687f07d7d1b",
+    "conditional_method_contract.md": "aef61a148e6b815fae4628253890c029350c5564c03c91e5f49f99ca2f3661ee",
+    "extract_dbt_metric_branches.py": "86739cc079281aafde0257e7b7200af3dbbe844ed93613840cc8ad94fb4ea520",
+    "trace_compiled_metric_fields.py": "46d64b0ae3b9971e52ed17a1d20835e2e2d095df21b3f0aef9f407f1e454c567",
+    "build_conditional_evidence.py": "53f3e40ca14c1085952833105983712e31969c5358be6265ed7ee287ac3122f8",
+    "conditional_evidence_packet.json": "7fffd7366e333f907c70938544b92c07a0fb22c29845b7aaf20c7d319c1d5aed",
+    "normalized_sql_lineage_baseline.py": "020d70164f5789efb2ff1d64ea754601ee56419f5ae969811ed4f8099c14b584",
+    "normalized_sql_lineage_report.json": "b1845b0d82e940254866fc329402615156de44c76eccec66963eda88410f6818",
+    "constraint_aware_baseline.py": "e0478e86093bbb4e0f22bc12a251bcb1eadf5be52866bfb74379fac27e607b9d",
+    "constraint_aware_report.json": "a234cc4aab0a25694fd557f0b3397ae185b4ff20fd98b5fd21d3db62e4d141f2",
+    "conditional_decision_method.py": "8e7054c5030011140d827f4724c43df6701f8e2390ec249304fa92795739796f",
+    "conditional_decision_report.json": "ccf46e857c2efafd11aded15b57c6b156d412ba0303483cdafd7b3a4742454ae",
+    "compare_conditional_development.py": "780afe1ea28d3197579181b9cfab2e36418dd58ddb6e323f5576d351cfce2eb0",
+    "conditional_development_comparison.json": "6e7e90d057cba8d7e397111196c60d7e67e032b7012d1fa956c472e562df6c68"
+  },
+  "methods": {
+    "normalized_sql_lineage_baseline": {
+      "file": "normalized_sql_lineage_report.json",
+      "counts": {
+        "total": 55,
+        "by_decision": {
+          "abstain": 50,
+          "related_candidate": 3,
+          "scope_variant_candidate": 2
+        },
+        "by_evidence_status": {
+          "needs_review": 55
+        }
+      },
+      "needs_review": 55
+    },
+    "constraint_aware_full_context_v2": {
+      "file": "constraint_aware_report.json",
+      "counts": {
+        "total": 55,
+        "by_decision": {
+          "direct_candidate": 0,
+          "conditional_candidate": 2,
+          "scope_variant_candidate": 0,
+          "related_candidate": 3,
+          "abstain": 50
+        },
+        "by_evidence_status": {
+          "sufficient_for_source_candidate": 0,
+          "needs_review": 55
+        }
+      },
+      "needs_review": 55
+    },
+    "proposed_conditional_explanation": {
+      "file": "conditional_decision_report.json",
+      "counts": {
+        "abstain": 53,
+        "conditional_candidate": 2,
+        "direct_candidate": 0,
+        "related_candidate": 0,
+        "scope_variant_candidate": 0
+      },
+      "needs_review": 55
+    }
+  },
+  "input_budgets": {
+    "full_context": "identical I1 packet bytes for all three classifiers; every one of 55 pairs",
+    "name_only": "earlier I0 rankers are separate limited-input diagnostics",
+    "rows": "GTM/Jaffle observations checked only after method outputs; no row access in classifier",
+    "llm": "not run in this same-input comparison; no prompt or API budget frozen"
+  },
+  "fixed_decision_rules": {
+    "relationship_output": "direct/conditional/scope/related candidate or abstain, never unconditional equivalence",
+    "evidence_output": "needs_review for all 55 development results",
+    "conditional_rollup": "source-linked additive month to window candidate only when grouping loses the month key one-to-one; unresolved time, row membership, NULL/zero, grouping levels, rounding, units and snapshot remain conditions",
+    "thresholds": "none; deterministic source/shape gates for these classifiers"
+  },
+  "holdout_readiness": {
+    "status": "blocked_pending_selection_manifest_and_generic_adapter",
+    "why": "The packet builder and classifiers currently require 11 GTM-specific cards and 55 pairs; no generic new-project extraction/classification path or held-out search frame is frozen.",
+    "rule": "Any code/decision revision after this snapshot needs a dated new freeze, reason and development-only verification before opening held-out source; once opened, preserve the original snapshot and report protocol deviations."
+  },
+  "recorded_at_utc": "2026-09-28T01:39:39+00:00"
+}

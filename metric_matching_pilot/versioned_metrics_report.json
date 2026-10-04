@@ -1,0 +1,252 @@
+{
+  "project": "rill-openrtb-prog-ads",
+  "before_commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+  "after_commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+  "method": "Rill metrics-view YAML scalar expression subset; exact (view,measure) ID linking across adjacent commits",
+  "candidate_generation": {
+    "old_count": 16,
+    "new_count": 16,
+    "linked_exact_id": 16,
+    "removed_or_unlinked": [],
+    "added_or_unlinked": [],
+    "rename_detection": "unsupported",
+    "cross_view_equivalence_retrieval": "unsupported"
+  },
+  "changes": [
+    {
+      "view": "bids_metrics",
+      "measure": "ctr",
+      "before": {
+        "view": "bids_metrics",
+        "measure": "ctr",
+        "expression": "sum(click_reg_cnt)*1.0/sum(imp_cnt)",
+        "model": "bids_data_model",
+        "time_column": "__time",
+        "smallest_time_grain": "hour",
+        "format_preset": "percentage",
+        "location": {
+          "commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+          "path": "rill-openrtb-prog-ads/metrics/bids_metrics.yaml",
+          "line": 39
+        },
+        "lineage": {
+          "status": "model_level_only",
+          "model": "bids_data_model",
+          "model_path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+          "declared_sources": [
+            {
+              "source": "bids_data_raw",
+              "location": {
+                "commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+                "path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+                "line": 5
+              }
+            }
+          ],
+          "clock_relative_time_detected": false,
+          "field_lineage": "needs_review: model has SQL CTEs/star projections; no column mapping or join-cardinality proof"
+        },
+        "unresolved": [
+          "business_population",
+          "unit_beyond_format_hint",
+          "join_cardinality",
+          "field_level_lineage",
+          "observed_values"
+        ]
+      },
+      "after": {
+        "view": "bids_metrics",
+        "measure": "ctr",
+        "expression": "sum(click_reg_cnt)*1.0/nullif(sum(imp_cnt),0)",
+        "model": "bids_data_model",
+        "time_column": "__time",
+        "smallest_time_grain": "hour",
+        "format_preset": "percentage",
+        "location": {
+          "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+          "path": "rill-openrtb-prog-ads/metrics/bids_metrics.yaml",
+          "line": 39
+        },
+        "lineage": {
+          "status": "model_level_only",
+          "model": "bids_data_model",
+          "model_path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+          "declared_sources": [
+            {
+              "source": "bids_data_raw",
+              "location": {
+                "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+                "path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+                "line": 5
+              }
+            }
+          ],
+          "clock_relative_time_detected": false,
+          "field_lineage": "needs_review: model has SQL CTEs/star projections; no column mapping or join-cardinality proof"
+        },
+        "unresolved": [
+          "business_population",
+          "unit_beyond_format_hint",
+          "join_cardinality",
+          "field_level_lineage",
+          "observed_values"
+        ]
+      },
+      "decision": {
+        "kind": "zero_denominator_guard_added",
+        "denominator": "sum(imp_cnt)",
+        "input_domain": "sum(imp_cnt) = 0 after grouping",
+        "nonzero_domain": "Expressions algebraically identical if other inputs and numeric semantics agree",
+        "zero_domain": "New expression returns NULL; old division-by-zero result is engine-specific",
+        "observed_row_impact": "needs_review: source data and native runtime not executed"
+      },
+      "declared_dashboard_consumers": [
+        {
+          "kind": "wildcard_potential",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/bids_explore.yaml",
+            "line": 10
+          }
+        },
+        {
+          "kind": "explicit_declaration",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/bids_explore.yaml",
+            "line": 34
+          }
+        },
+        {
+          "kind": "explicit_declaration",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/executive_overview.yaml",
+            "line": 111
+          }
+        }
+      ]
+    },
+    {
+      "view": "bids_metrics",
+      "measure": "ecpm",
+      "before": {
+        "view": "bids_metrics",
+        "measure": "ecpm",
+        "expression": "sum(media_spend_usd)*1.0/1000/sum(imp_cnt)",
+        "model": "bids_data_model",
+        "time_column": "__time",
+        "smallest_time_grain": "hour",
+        "format_preset": "currency_usd",
+        "location": {
+          "commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+          "path": "rill-openrtb-prog-ads/metrics/bids_metrics.yaml",
+          "line": 64
+        },
+        "lineage": {
+          "status": "model_level_only",
+          "model": "bids_data_model",
+          "model_path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+          "declared_sources": [
+            {
+              "source": "bids_data_raw",
+              "location": {
+                "commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+                "path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+                "line": 5
+              }
+            }
+          ],
+          "clock_relative_time_detected": false,
+          "field_lineage": "needs_review: model has SQL CTEs/star projections; no column mapping or join-cardinality proof"
+        },
+        "unresolved": [
+          "business_population",
+          "unit_beyond_format_hint",
+          "join_cardinality",
+          "field_level_lineage",
+          "observed_values"
+        ]
+      },
+      "after": {
+        "view": "bids_metrics",
+        "measure": "ecpm",
+        "expression": "sum(media_spend_usd)*1.0/1000/nullif(sum(imp_cnt),0)",
+        "model": "bids_data_model",
+        "time_column": "__time",
+        "smallest_time_grain": "hour",
+        "format_preset": "currency_usd",
+        "location": {
+          "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+          "path": "rill-openrtb-prog-ads/metrics/bids_metrics.yaml",
+          "line": 64
+        },
+        "lineage": {
+          "status": "model_level_only",
+          "model": "bids_data_model",
+          "model_path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+          "declared_sources": [
+            {
+              "source": "bids_data_raw",
+              "location": {
+                "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+                "path": "rill-openrtb-prog-ads/models/bids_data_model.sql",
+                "line": 5
+              }
+            }
+          ],
+          "clock_relative_time_detected": false,
+          "field_lineage": "needs_review: model has SQL CTEs/star projections; no column mapping or join-cardinality proof"
+        },
+        "unresolved": [
+          "business_population",
+          "unit_beyond_format_hint",
+          "join_cardinality",
+          "field_level_lineage",
+          "observed_values"
+        ]
+      },
+      "decision": {
+        "kind": "zero_denominator_guard_added",
+        "denominator": "sum(imp_cnt)",
+        "input_domain": "sum(imp_cnt) = 0 after grouping",
+        "nonzero_domain": "Expressions algebraically identical if other inputs and numeric semantics agree",
+        "zero_domain": "New expression returns NULL; old division-by-zero result is engine-specific",
+        "observed_row_impact": "needs_review: source data and native runtime not executed"
+      },
+      "declared_dashboard_consumers": [
+        {
+          "kind": "wildcard_potential",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/bids_explore.yaml",
+            "line": 10
+          }
+        },
+        {
+          "kind": "explicit_declaration",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/bids_explore.yaml",
+            "line": 39
+          }
+        },
+        {
+          "kind": "explicit_declaration",
+          "location": {
+            "commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+            "path": "rill-openrtb-prog-ads/dashboards/executive_overview.yaml",
+            "line": 112
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No metric values or remote parquet queried",
+    "No native Rill runtime executed",
+    "Dashboard declarations show potential consumers, not actual use or affected users",
+    "Model-level source recognition does not prove field lineage, population, or join cardinality",
+    "No evaluation on unseen repositories and no matching accuracy measurement"
+  ]
+}

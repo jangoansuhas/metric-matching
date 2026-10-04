@@ -1,0 +1,100 @@
+{
+  "public_projects": [
+    "jross21/gtm-funnel-analytics",
+    "rilldata/rill-examples"
+  ],
+  "gtm": {
+    "commit": "a71232c123a5fb78da9b52d4246950ee48591c00",
+    "corpus_kind": "synthetic and explicitly designed for metric reconciliation",
+    "dbt_result_counts": {
+      "success": 44,
+      "pass": 111,
+      "no-op": 8
+    },
+    "monthly_to_window": [
+      {
+        "segment": "All",
+        "monthly_rows": 7,
+        "monthly_total": "6884381.39",
+        "window_value": "6884381.39",
+        "difference": "0.0"
+      },
+      {
+        "segment": "Enterprise",
+        "monthly_rows": 6,
+        "monthly_total": "2566701.9",
+        "window_value": "2566701.9",
+        "difference": "0.0"
+      },
+      {
+        "segment": "Mid-Market",
+        "monthly_rows": 7,
+        "monthly_total": "2717736.87",
+        "window_value": "2717736.87",
+        "difference": "0.0"
+      },
+      {
+        "segment": "SMB",
+        "monthly_rows": 7,
+        "monthly_total": "1599942.62",
+        "window_value": "1599942.62",
+        "difference": "0.0"
+      }
+    ],
+    "canonical_alias": {
+      "source_value": "6884381.39",
+      "reconciliation_variant": "6884381.39",
+      "reconciliation_canonical": "6884381.39",
+      "difference": "0.0"
+    },
+    "noncanonical_pipeline_variants_with_nonzero_delta": 4,
+    "source_links": {
+      "catalog": "https://github.com/jross21/gtm-funnel-analytics/blob/a71232c123a5fb78da9b52d4246950ee48591c00/metrics_catalog.yml#L38",
+      "monthly": "https://github.com/jross21/gtm-funnel-analytics/blob/a71232c123a5fb78da9b52d4246950ee48591c00/models/marts/metrics/fct_metric_values.sql#L41",
+      "window": "https://github.com/jross21/gtm-funnel-analytics/blob/a71232c123a5fb78da9b52d4246950ee48591c00/models/marts/metrics/fct_metric_values.sql#L48",
+      "alias": "https://github.com/jross21/gtm-funnel-analytics/blob/a71232c123a5fb78da9b52d4246950ee48591c00/models/marts/reconciliation/rpt_metric_reconciliation.sql#L57"
+    },
+    "interpretation": "Cross-grain reconciliation of two computations of the same KPI, plus a direct downstream alias; these are designed development positives, not independent enterprise duplicates or held-out gold labels."
+  },
+  "rill": {
+    "head": "c35c312174431273726a1d6cfc030717babe5a88",
+    "before_commit": "3516d3d144979d23ceded2a1a72efcbddd452800",
+    "after_commit": "10a9bce8f0181623d8c596fbed7df37244666cc4",
+    "expression_changes": {
+      "ctr": {
+        "before": "sum(click_reg_cnt)*1.0/sum(imp_cnt)",
+        "after": "sum(click_reg_cnt)*1.0/nullif(sum(imp_cnt),0)",
+        "before_link": "https://github.com/rilldata/rill-examples/blob/3516d3d144979d23ceded2a1a72efcbddd452800/rill-openrtb-prog-ads/metrics/bids_metrics.yaml#L39",
+        "after_link": "https://github.com/rilldata/rill-examples/blob/10a9bce8f0181623d8c596fbed7df37244666cc4/rill-openrtb-prog-ads/metrics/bids_metrics.yaml#L39"
+      },
+      "ecpm": {
+        "before": "sum(media_spend_usd)*1.0/1000/sum(imp_cnt)",
+        "after": "sum(media_spend_usd)*1.0/1000/nullif(sum(imp_cnt),0)",
+        "before_link": "https://github.com/rilldata/rill-examples/blob/3516d3d144979d23ceded2a1a72efcbddd452800/rill-openrtb-prog-ads/metrics/bids_metrics.yaml#L64",
+        "after_link": "https://github.com/rilldata/rill-examples/blob/10a9bce8f0181623d8c596fbed7df37244666cc4/rill-openrtb-prog-ads/metrics/bids_metrics.yaml#L64"
+      }
+    },
+    "duckdb_1_4_4_constructed_demo": [
+      {
+        "numerator": 3,
+        "denominator": 4,
+        "without_guard": "0.75",
+        "with_guard": "0.75"
+      },
+      {
+        "numerator": 1,
+        "denominator": 0,
+        "without_guard": "inf",
+        "with_guard": null
+      },
+      {
+        "numerator": 0,
+        "denominator": 0,
+        "without_guard": "nan",
+        "with_guard": null
+      }
+    ],
+    "status": "real_commit_changes_zero_denominator_behavior_source_verified_data_unexecuted",
+    "limit": "The Rill parquet sources were not loaded; this DuckDB fixture illustrates the expression-level behavior, not observed production rows or a Rill runtime result."
+  }
+}

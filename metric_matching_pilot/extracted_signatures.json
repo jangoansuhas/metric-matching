@@ -1,0 +1,248 @@
+[
+  {
+    "view": "opportunity_booking_arr_usd",
+    "evidence_location": "sql/metric_views.sql:opportunity_booking_arr_usd",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "opportunity_snapshot.booking_arr_usd",
+    "grain_key": "opportunity_snapshot.opportunity_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "total_opportunity_booking_arr_usd",
+    "evidence_location": "sql/metric_views.sql:total_opportunity_booking_arr_usd",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "opportunity_snapshot.booking_arr_usd",
+    "grain_key": "opportunity_snapshot.opportunity_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "account_net_revenue",
+    "evidence_location": "sql/metric_views.sql:account_net_revenue",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "SUM",
+    "source_measure": "account_arr_daily_snapshot.net_arr_usd",
+    "grain_key": "account_arr_daily_snapshot.root_account_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "crm_revenue_net_rollup",
+    "evidence_location": "sql/metric_views.sql:crm_revenue_net_rollup",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Join cardinality not proven by SQL syntax"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": {
+      "table": "account_hierarchy",
+      "on": "h.account_id = o.account_id",
+      "cardinality": null
+    },
+    "aggregation": "SUM",
+    "source_measure": "opportunity_snapshot.arr_usd",
+    "grain_key": "account_hierarchy.root_account_id",
+    "filters": [
+      "o.snapshot_date = '2026-09-26'",
+      "o.stage IN (7, 8)",
+      "o.is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "crm_revenue_net_fanout",
+    "evidence_location": "sql/metric_views.sql:crm_revenue_net_fanout",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Join cardinality not proven by SQL syntax"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": {
+      "table": "account_hierarchy_bad",
+      "on": "h.account_id = o.account_id",
+      "cardinality": null
+    },
+    "aggregation": "SUM",
+    "source_measure": "opportunity_snapshot.arr_usd",
+    "grain_key": "account_hierarchy_bad.root_account_id",
+    "filters": [
+      "o.snapshot_date = '2026-09-26'",
+      "o.stage IN (7, 8)",
+      "o.is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "account_net_revenue_undocumented",
+    "evidence_location": "sql/metric_views.sql:account_net_revenue_undocumented",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "SUM",
+    "source_measure": "account_arr_daily_snapshot.net_arr_usd",
+    "grain_key": "account_arr_daily_snapshot.root_account_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "product_arr_usd",
+    "evidence_location": "sql/metric_views.sql:product_arr_usd",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Snapshot or event-time rule unavailable from this SELECT"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "product_arr_live.live_arr_usd",
+    "grain_key": "product_arr_live.product_id",
+    "filters": [],
+    "time_rule": null
+  },
+  {
+    "view": "product_booking_arr_usd",
+    "evidence_location": "sql/metric_views.sql:product_booking_arr_usd",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Snapshot or event-time rule unavailable from this SELECT"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "product_booking_allocation.booking_arr_usd",
+    "grain_key": "product_booking_allocation.product_id",
+    "filters": [],
+    "time_rule": null
+  },
+  {
+    "view": "pipeline_arr_v0",
+    "evidence_location": "sql/metric_views.sql:pipeline_arr_v0",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "opportunity_snapshot.arr_usd",
+    "grain_key": "opportunity_snapshot.opportunity_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0",
+      "stage IN (1, 2, 3, 4, 5, 6)"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "pipeline_arr_v1",
+    "evidence_location": "sql/metric_views.sql:pipeline_arr_v1",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "PASSTHROUGH",
+    "source_measure": "opportunity_snapshot.arr_usd",
+    "grain_key": "opportunity_snapshot.opportunity_id",
+    "filters": [
+      "snapshot_date = '2026-09-26'",
+      "is_fraud = 0",
+      "stage IN (1, 2, 3, 4, 5, 6, 7, 8)"
+    ],
+    "time_rule": "snapshot_2026-09-26"
+  },
+  {
+    "view": "number_of_customers",
+    "evidence_location": "sql/metric_views.sql:number_of_customers",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Snapshot or event-time rule unavailable from this SELECT"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "COUNT",
+    "source_measure": "customer.*",
+    "grain_key": "global",
+    "filters": [],
+    "time_rule": null
+  },
+  {
+    "view": "num_of_products",
+    "evidence_location": "sql/metric_views.sql:num_of_products",
+    "status": "partial_signature",
+    "reason": [
+      "Business state and unit require external metadata",
+      "Snapshot or event-time rule unavailable from this SELECT"
+    ],
+    "business_state": null,
+    "unit": null,
+    "join_cardinality": null,
+    "join": null,
+    "aggregation": "COUNT",
+    "source_measure": "product.*",
+    "grain_key": "global",
+    "filters": [],
+    "time_rule": null
+  }
+]

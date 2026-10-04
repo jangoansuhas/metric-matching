@@ -1,0 +1,9 @@
+{
+  "P1_alias": {"label": "direct_equivalent", "equal_sample_values": true},
+  "P2_rollup": {"label": "provisional_cross_grain_equivalent", "equal_sample_values": true, "mapping_violations": []},
+  "P3_live_vs_booking": {"label": "temporal_or_scope_variant", "equal_sample_values": false},
+  "P4_filter_change": {"label": "candidate_definition_drift", "equal_sample_values": false, "downstream_models": ["executive_forecast", "sales_pipeline_dashboard"]},
+  "P5_fanout": {"label": "needs_review", "equal_sample_values": false, "mapping_violations": [{"entity_key": "O1", "mappings": 2}]},
+  "P6_missing_time": {"label": "needs_review", "equal_sample_values": true},
+  "P7_equal_counts": {"label": "non_match", "equal_sample_values": true}
+}

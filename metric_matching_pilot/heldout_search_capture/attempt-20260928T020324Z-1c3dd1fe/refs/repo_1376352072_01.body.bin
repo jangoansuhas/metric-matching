@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUgl3SK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/ddundee24/cfb-transfer-portal-pipeline/git/refs/heads/main",
+  "object": {
+    "sha": "63982fe2d55636ad0fed2f23cb93cfc3cbb38061",
+    "type": "commit",
+    "url": "https://api.github.com/repos/ddundee24/cfb-transfer-portal-pipeline/git/commits/63982fe2d55636ad0fed2f23cb93cfc3cbb38061"
+  }
+}

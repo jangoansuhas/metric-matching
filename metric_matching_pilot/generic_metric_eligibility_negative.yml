@@ -1,0 +1,21 @@
+models:
+  - name: synthetic_example
+    columns:
+      - name: entity_key
+        data_type: integer
+        entity: {type: primary}
+      - name: value
+        data_type: numeric
+    metrics:
+      - name: declared_total
+        type: simple
+        agg: sum
+        expr: amount
+      - name: templated_value
+        type: simple
+        agg: sum
+        expr: "{{ ambiguous_projection() }}"
+    measures:
+      - name: declared_total
+        agg: sum
+        expr: amount

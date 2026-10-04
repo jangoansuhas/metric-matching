@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUugCQq9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/herui03/ecommerce-decision-analytics/git/refs/heads/main",
+  "object": {
+    "sha": "131d86b53023a1e0c8868db908e88ed29b5f5eee",
+    "type": "commit",
+    "url": "https://api.github.com/repos/herui03/ecommerce-decision-analytics/git/commits/131d86b53023a1e0c8868db908e88ed29b5f5eee"
+  }
+}

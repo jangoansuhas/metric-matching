@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-09-28T01:40:53Z",
+  "status": "predeclared_query_design_no_search_results_or_heldout_source_inspected",
+  "development_snapshot_file": "development_snapshot_freeze.json",
+  "search_surface": "GitHub REST repository search metadata (subject to verified availability)",
+  "queries_in_order": [
+    "dbt metric",
+    "dbt semantic model",
+    "rill metrics"
+  ],
+  "fixed_request_parameters": {
+    "endpoint": "GET /search/repositories",
+    "sort": "updated",
+    "order": "desc",
+    "per_page": 30,
+    "pages_per_query": [1],
+    "authentication": "record whether anonymous or authenticated; never publish a token"
+  },
+  "before_opening_any_new_repository_source": [
+    "Capture exact raw response bytes, UTC request/response times, full result order and response SHA-256 for every fixed query/page; record total_count, incomplete_results, HTTP status and any truncation/rate limit.",
+    "Collect owner/repo, repository URL, fork flag, default branch, last update, and pinned HEAD SHA by a metadata-only GitHub ref/commit endpoint for every result; record unavailable refs and timing.",
+    "Save a dated immutable search-result manifest with a hash and link this precommit and development snapshot. Preserve duplicated results and original ranks across queries.",
+    "If a query/page or required HEAD metadata cannot be captured faithfully, record failure and stop the held-out claim; do not replace it with hand-picked repositories."
+  ],
+  "eligibility_after_manifest": {
+    "selection_target": "up to four unrelated, pair-eligible public projects",
+    "selection_sort": "ascending lexicographic SHA-256 of lowercase owner/repo@pinned_commit",
+    "pair_task": "at least two inspectable declared numeric scalar metrics or reproducible aggregate definitions with versioned SQL/dbt source",
+    "event_task": "an inspectable adjacent parent-child commit; event ineligibility does not remove a pair-eligible project",
+    "exclude_previous_development_families": [
+      "dbt-labs/jaffle-shop and Jaffle dataset derivatives",
+      "sidequery/jaffle-shop-sidemantic and related submodule/seed families",
+      "jross21/gtm-funnel-analytics and derivatives",
+      "rilldata/rill-examples and related commit families"
+    ],
+    "no_outcome_selection": "Do not require a positive, matching values, successful build, or supported syntax. Record all rejections, forks, mirrors, shared datasets, unsupported cases and replacement steps."
+  },
+  "human_evaluation_budget": {
+    "classification_sample": "up to 25 pairs and 10 adjacent events per selected project by frozen strata/hashes",
+    "retrieval": "exact Recall@k only for completely judged anchor universes; no top-25 proxy",
+    "judgments": "two independent domain-capable humans and a third adjudicator on disagreements, blinded to method predictions"
+  },
+  "holdout_gate": "The current method is GTM-specific; no new repository source will be opened until a generic adapter and its development-only checks are fixed and a complete search-result manifest exists."
+}

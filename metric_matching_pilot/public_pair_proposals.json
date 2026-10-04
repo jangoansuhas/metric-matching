@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "annotation_status": "single_analyst_proposals_not_independent_ground_truth",
+  "labels": ["direct_equivalent", "cross_grain_equivalent", "temporal_or_scope_variant", "related", "conflicting_definition", "non_match", "needs_review"],
+  "pairs": [
+    {
+      "id": "JS-001",
+      "left": {"model": "orders", "metric": "order_total"},
+      "right": {"model": "order_items", "metric": "revenue"},
+      "proposed_label": "related",
+      "reason": "Both concern monetary order activity, but the order-level total includes tax while the item-level revenue sums product prices; no safe substitution or rollup is established.",
+      "evidence": [
+        {"path": "models/marts/orders.yml", "start": 37, "end": 65},
+        {"path": "models/marts/order_items.yml", "start": 39, "end": 45},
+        {"path": "models/marts/orders.sql", "start": 18, "end": 27}
+      ],
+      "open_question": "Confirm tax and item inclusion using compiled SQL or rows before considering any reconciliation."
+    },
+    {
+      "id": "JS-002",
+      "left": {"model": "orders", "metric": "orders"},
+      "right": {"model": "orders", "metric": "new_customer_orders"},
+      "proposed_label": "temporal_or_scope_variant",
+      "reason": "Both sum one per order, but the second has a first-order filter based on customer_order_number.",
+      "evidence": [
+        {"path": "models/marts/orders.yml", "start": 66, "end": 79},
+        {"path": "models/marts/orders.sql", "start": 57, "end": 68}
+      ],
+      "open_question": "The MetricFlow Dimension filter has not been compiled; confirm its binding to the SQL column."
+    },
+    {
+      "id": "JS-003",
+      "left": {"model": "orders", "metric": "orders"},
+      "right": {"model": "orders", "metric": "large_orders"},
+      "proposed_label": "temporal_or_scope_variant",
+      "reason": "Both count order rows, but large_orders keeps only orders whose total dimension meets the threshold.",
+      "evidence": [
+        {"path": "models/marts/orders.yml", "start": 37, "end": 41},
+        {"path": "models/marts/orders.yml", "start": 66, "end": 71},
+        {"path": "models/marts/orders.yml", "start": 80, "end": 87}
+      ],
+      "open_question": "The threshold's semantic dimension and null handling have not been compiled."
+    },
+    {
+      "id": "JS-004",
+      "left": {"model": "order_items", "metric": "revenue"},
+      "right": {"model": "order_items", "metric": "food_revenue"},
+      "proposed_label": "temporal_or_scope_variant",
+      "reason": "Both sum product price at item grain, while food_revenue contributes zero for non-food items.",
+      "evidence": [
+        {"path": "models/marts/order_items.yml", "start": 39, "end": 51},
+        {"path": "models/staging/stg_products.sql", "start": 17, "end": 24}
+      ],
+      "open_question": "CASE semantics are visible in YAML but not yet parsed by the bounded extractor."
+    },
+    {
+      "id": "JS-005",
+      "left": {"model": "order_items", "metric": "food_revenue"},
+      "right": {"model": "order_items", "metric": "drink_revenue"},
+      "proposed_label": "temporal_or_scope_variant",
+      "reason": "The metrics sum the same product price field but use distinct food and drink conditions; they are not interchangeable.",
+      "evidence": [
+        {"path": "models/marts/order_items.yml", "start": 46, "end": 57},
+        {"path": "models/staging/stg_products.sql", "start": 17, "end": 24}
+      ],
+      "open_question": "Do not assume food and drink collectively exhaust all product types."
+    },
+    {
+      "id": "JS-006",
+      "left": {"model": "order_items", "metric": "revenue"},
+      "right": {"model": "order_items", "metric": "median_revenue"},
+      "proposed_label": "related",
+      "reason": "Both use product_price at item grain, but SUM and MEDIAN answer different questions and cannot be reconciled by an ordinary additive rollup.",
+      "evidence": [
+        {"path": "models/marts/order_items.yml", "start": 39, "end": 45},
+        {"path": "models/marts/order_items.yml", "start": 58, "end": 63}
+      ],
+      "open_question": "None for the relationship type, subject to independent annotation."
+    },
+    {
+      "id": "JS-007",
+      "left": {"model": "customers", "metric": "customers"},
+      "right": {"model": "orders", "metric": "orders"},
+      "proposed_label": "related",
+      "reason": "One counts distinct customer IDs and the other counts order rows; a customer may have multiple orders.",
+      "evidence": [
+        {"path": "models/marts/customers.yml", "start": 50, "end": 56},
+        {"path": "models/marts/orders.yml", "start": 66, "end": 71},
+        {"path": "models/marts/customers.sql", "start": 20, "end": 26}
+      ],
+      "open_question": "No equality should be inferred from occasional matching totals."
+    },
+    {
+      "id": "JS-008",
+      "left": {"model": "customers", "metric": "lifetime_spend"},
+      "right": {"model": "customers", "metric": "lifetime_spend_pretax"},
+      "proposed_label": "related",
+      "reason": "Both sum customer lifetime spend at customer grain, but one includes tax and the other excludes it; the model also carries a tax component.",
+      "evidence": [
+        {"path": "models/marts/customers.yml", "start": 7, "end": 10},
+        {"path": "models/marts/customers.yml", "start": 36, "end": 41},
+        {"path": "models/marts/customers.yml", "start": 62, "end": 71},
+        {"path": "models/marts/customers.sql", "start": 24, "end": 26}
+      ],
+      "open_question": "A reviewer may instead use scope_variant for tax inclusion; agree on that taxonomy before scoring."
+    },
+    {
+      "id": "JS-009",
+      "left": {"model": "customers", "metric": "customers"},
+      "right": {"model": "locations", "metric": "average_tax_rate"},
+      "proposed_label": "non_match",
+      "reason": "Distinct-customer count and average tax rate have different entities, units, and aggregation meaning.",
+      "evidence": [
+        {"path": "models/marts/customers.yml", "start": 50, "end": 56},
+        {"path": "models/marts/locations.yml", "start": 1, "end": 26}
+      ],
+      "open_question": "None for the relationship type, subject to independent annotation."
+    },
+    {
+      "id": "JS-010",
+      "left": {"model": "orders", "metric": "order_total"},
+      "right": {"model": "customers", "metric": "lifetime_spend"},
+      "proposed_label": "needs_review",
+      "reason": "Customer lifetime_spend sums order_total across orders for a customer, suggesting a possible all-time customer rollup. However, the metrics' default time dimensions are ordered_at and first_ordered_at, so time-series equality is not established.",
+      "evidence": [
+        {"path": "models/marts/orders.yml", "start": 2, "end": 6},
+        {"path": "models/marts/orders.yml", "start": 60, "end": 65},
+        {"path": "models/marts/customers.yml", "start": 2, "end": 6},
+        {"path": "models/marts/customers.yml", "start": 67, "end": 71},
+        {"path": "models/marts/customers.sql", "start": 15, "end": 30}
+      ],
+      "open_question": "Specify reporting time grain, customer membership, order uniqueness, and null handling before proposing cross-grain equivalence."
+    }
+  ]
+}

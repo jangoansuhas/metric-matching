@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "MDM6UmVmMjg4NTQ4Nzc5OnJlZnMvaGVhZHMvbWFpbg==",
+  "url": "https://api.github.com/repos/fivetran/dbt_ad_reporting/git/refs/heads/main",
+  "object": {
+    "sha": "f84aef71d577f834a1ba63ba9f88b3feac8099c7",
+    "type": "commit",
+    "url": "https://api.github.com/repos/fivetran/dbt_ad_reporting/git/commits/f84aef71d577f834a1ba63ba9f88b3feac8099c7"
+  }
+}

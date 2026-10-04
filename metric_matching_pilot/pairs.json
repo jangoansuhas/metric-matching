@@ -1,0 +1,23 @@
+{
+  "pairs": [
+    {"id": "P1_alias", "left": "booking_alias_a", "right": "booking_alias_b"},
+    {
+      "id": "P2_rollup", "left": "account_arr", "right": "opportunity_arr_rollup",
+      "mapping_check_sql": "SELECT o.opportunity_id AS entity_key, COUNT(h.root_account_id) AS n FROM opportunity_snapshot o LEFT JOIN account_hierarchy h ON h.account_id = o.account_id WHERE o.snapshot_date = '2026-09-26' AND o.stage IN (7,8) AND o.is_fraud = 0 GROUP BY o.opportunity_id ORDER BY o.opportunity_id",
+      "mapping_evidence": "sql/metric_views.sql:crm_revenue_net_rollup"
+    },
+    {"id": "P3_live_vs_booking", "left": "product_live", "right": "product_booked"},
+    {"id": "P4_filter_change", "left": "pipeline_v0", "right": "pipeline_v1"},
+    {
+      "id": "P5_fanout", "left": "account_arr", "right": "opportunity_arr_fanout",
+      "mapping_check_sql": "SELECT o.opportunity_id AS entity_key, COUNT(h.root_account_id) AS n FROM opportunity_snapshot o LEFT JOIN account_hierarchy_bad h ON h.account_id = o.account_id WHERE o.snapshot_date = '2026-09-26' AND o.stage IN (7,8) AND o.is_fraud = 0 GROUP BY o.opportunity_id ORDER BY o.opportunity_id",
+      "mapping_evidence": "sql/metric_views.sql:crm_revenue_net_fanout"
+    },
+    {"id": "P6_missing_time", "left": "account_arr", "right": "account_arr_unknown_time"},
+    {"id": "P7_equal_counts", "left": "customer_count", "right": "product_count"}
+  ],
+  "model_dependencies": {
+    "sales_pipeline_dashboard": ["pipeline_arr"],
+    "executive_forecast": ["sales_pipeline_dashboard"]
+  }
+}

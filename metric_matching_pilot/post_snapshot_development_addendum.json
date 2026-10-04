@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "scope": "post_snapshot_development_addendum_no_heldout_claim",
+  "previous_snapshot_sha256": "176d3b5c275b78f04f36411616fa6d1a055b6454659e5a422ea525c6b8ccad76",
+  "files_sha256": {
+    "freeze_post_snapshot_addendum.py": "461045ebf1954f19b143852a7b7dd1577f342a318edea9c8df3278a265aa35b4",
+    "extract_portable_dbt_yaml.py": "77409e313aa9ed378679e7cdc79f6281876824f569b57cce6f5914cd2bfa0a48",
+    "portable_jaffle_packet.json": "ab52ee843d139dd5dccde3dc04c63dddac6a8e8a4a276f4f5cb465a27dfdf5b6",
+    "portable_jaffle_report.json": "df39a6483a5e6956529a599b331ba76f7102dab3d4f04035d602a1f1233fc8ed",
+    "portable_jaffle_report.md": "6c393d510eecdeb9ec0d2939c20c7e85ce7f5307b60c2daee5a4b30988093c71",
+    "run_portable_development_methods.py": "5f35569c565c0a6cd8c14f841a32d5a5ee912a6cd7d35a3106bdff7da7e56343",
+    "verify_portable_boundary.py": "68f8b8327983b5dcd3e12d65b59204c07972eabb6a6ca874520276c241cd5906",
+    "portable_jaffle_decisions.json": "70a1507153d0981c2f602ec19465711d3c9c3d32134a7a58e8c0d37fb227e527",
+    "portable_jaffle_decisions.md": "8f47489b29d1fd3138157dd6950afd103f0be16e6db1c8f316ec66c963638c10",
+    "ast_source_baseline.py": "1d20f22a8be90ca3e32360435b327b63230d91a71e5c59d49961c2c9cee22305",
+    "ast_source_baseline_report.json": "c772cf4ba97eb676dab4a6789a3ffe9d14b4924061ebb9a91a4f5af3bc2cf30b",
+    "ast_source_baseline_report.md": "2cc48f327a5773ba8a7bc815cecbc846d8c9719b0b70b1b8c69e84a7faa24466",
+    "human_annotation_kit.md": "d77fbe3ba9614f7e8b9a2419444d94799ecf4dbc695f9ff2c9b9b98d4dfe89b7",
+    "heldout_search_precommit.json": "c96e4074a507789a8d24f332ee55a07b31acb4c6c0a09e66e42c438de7852fc1"
+  },
+  "portable_project": "pinned_jaffle_shop_development_source_yaml_only",
+  "portable_cards": 23,
+  "portable_pairs": 253,
+  "ast_input_sha256": "7fffd7366e333f907c70938544b92c07a0fb22c29845b7aaf20c7d319c1d5aed",
+  "checks": [
+    "freeze_development_snapshot.py --check",
+    "verify_portable_boundary.py",
+    "extract_portable_dbt_yaml.py --check on pinned Jaffle Shop",
+    "run_portable_development_methods.py --check",
+    "ast_source_baseline.py --check with sqlglot==30.20.0"
+  ],
+  "holdout_status": "blocked_until_complete_dated_search_frame_and_fixed_generic_compiled_source_adapter",
+  "reason": "Separate portable YAML inventory and AST comparator were built after the original GTM-specific snapshot; retain both revisions and development-only outcomes.",
+  "recorded_at_utc": "2026-09-28T02:08:46+00:00"
+}

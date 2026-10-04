@@ -1,0 +1,13 @@
+⠋ Initiating query…⠙ Initiating query…
+ERROR: Unable to load the semantic manifest.
+  Please ensure that you are running `mf` in the root directory of a dbt project
+  and that the semantic manifest artifact exists. If this is your first time
+  running `mf`, run `dbt parse` or `dbt build` to generate the artifact.
+
+Log File:: /workspace/scratch/e767b9d6f697/metric_matching_dev_build_20260928/source/logs/metricflow.log
+Artifact Path: /workspace/scratch/e767b9d6f697/metric_matching_dev_build_20260928/source/target/semantic_manifest.json
+
+If you think you found a bug, please report it here:
+    https://github.com/dbt-labs/metricflow/issues
+
+

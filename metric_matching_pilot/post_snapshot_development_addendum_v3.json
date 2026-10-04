@@ -1,0 +1,24 @@
+{
+  "schema_version": 3,
+  "scope": "pinned_raw_source_links_development_only_no_heldout_source_or_decisions",
+  "previous_addendum_sha256": "3cdac199f648e5026de2dc5d46b162be8192eb2a08100dd10047662d89b3cf65",
+  "files_sha256": {
+    "freeze_development_revision_v3.py": "8a97e49c406fb5b70f7b6b035b18a20f819d201d1e98ee7892d05b666227565d",
+    "trace_portable_development_evidence.py": "2d1211994ca0968e6f54036e8d7e4eebc0bb25d5a19efb23e4f31bb5fb377ae7",
+    "trace_portable_development_evidence.json": "a1716720030be95732af2e302655005ca878e1db8f3d0d938ea3163da9d01726",
+    "trace_portable_development_evidence.md": "eec7ed2effe006b85af256053a0f6e71e1edde224a2ccb8a6c16e3e697660aec"
+  },
+  "project_commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "packet_sha256": "ab52ee843d139dd5dccde3dc04c63dddac6a8e8a4a276f4f5cb465a27dfdf5b6",
+  "coverage": {
+    "yaml_cards": 23,
+    "direct_source_sql_files": 17,
+    "dependency_sources_only": 6,
+    "verified_compiled": 0,
+    "generated_decisions": 0
+  },
+  "reason": "Trace raw source and YAML dependencies by immutable commit ID after independent review identified mutable HEAD and overbroad provenance wording.",
+  "check": "python3 -B metric_matching_pilot/trace_portable_development_evidence.py --check",
+  "heldout_gate": "blocked_generic_compiled_metric_and_SQL_aggregate_extraction_missing",
+  "recorded_at_utc": "2026-09-28T02:28:29+00:00"
+}

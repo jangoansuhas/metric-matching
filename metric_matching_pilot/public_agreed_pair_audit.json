@@ -1,0 +1,207 @@
+{
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "rows": [
+    {
+      "id": "JS-002",
+      "first_and_second_label": "temporal_or_scope_variant",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "The same order-row count acquires a first-order filter. The model computes a row number per customer.",
+      "execution_limit": "MetricFlow dimension binding and ordering of tied timestamps were not executed.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/orders.yml",
+          "start": 66,
+          "end": 79
+        },
+        {
+          "path": "models/marts/orders.sql",
+          "start": 57,
+          "end": 68
+        }
+      ],
+      "additional_evidence": [
+        {
+          "path": "models/marts/orders.sql",
+          "line": 69,
+          "snippet": "partition by customer_id"
+        },
+        {
+          "path": "models/marts/orders.sql",
+          "line": 71,
+          "snippet": "as customer_order_number"
+        }
+      ]
+    },
+    {
+      "id": "JS-003",
+      "first_and_second_label": "temporal_or_scope_variant",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "The same order-row count acquires a threshold on tax-inclusive order total.",
+      "execution_limit": "The MetricFlow dimension filter, threshold unit conversion, and null behavior were not executed.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/orders.yml",
+          "start": 37,
+          "end": 41
+        },
+        {
+          "path": "models/marts/orders.yml",
+          "start": 66,
+          "end": 71
+        },
+        {
+          "path": "models/marts/orders.yml",
+          "start": 80,
+          "end": 87
+        }
+      ],
+      "additional_evidence": [
+        {
+          "path": "models/marts/orders.yml",
+          "line": 41,
+          "snippet": "name: order_total_dim"
+        },
+        {
+          "path": "models/staging/stg_orders.sql",
+          "line": 24,
+          "snippet": "cents_to_dollars('order_total')"
+        }
+      ]
+    },
+    {
+      "id": "JS-004",
+      "first_and_second_label": "temporal_or_scope_variant",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "The same item price SUM includes every item versus food items with zero for other items.",
+      "execution_limit": "CASE execution and row preservation through the item/product join were not compiled or proven here.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/order_items.yml",
+          "start": 39,
+          "end": 51
+        },
+        {
+          "path": "models/staging/stg_products.sql",
+          "start": 17,
+          "end": 24
+        }
+      ],
+      "additional_evidence": [
+        {
+          "path": "models/marts/order_items.sql",
+          "line": 49,
+          "snippet": "products.product_price"
+        },
+        {
+          "path": "models/marts/order_items.sql",
+          "line": 50,
+          "snippet": "products.is_food_item"
+        },
+        {
+          "path": "models/staging/stg_products.sql",
+          "line": 26,
+          "snippet": "type = 'jaffle'"
+        }
+      ]
+    },
+    {
+      "id": "JS-006",
+      "first_and_second_label": "related",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "Both consume item price, but SUM and MEDIAN are different aggregations.",
+      "execution_limit": "Native median implementation was not run; the distinct aggregation definitions establish the label.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/order_items.yml",
+          "start": 39,
+          "end": 45
+        },
+        {
+          "path": "models/marts/order_items.yml",
+          "start": 58,
+          "end": 63
+        }
+      ],
+      "additional_evidence": []
+    },
+    {
+      "id": "JS-008",
+      "first_and_second_label": "related",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "Customer lifetime totals include versus exclude tax. A separate tax component is summed directly, so location-rate reconstruction is not required.",
+      "execution_limit": "The declared customer-level dbt test was not run; the relationship is supported by visible SQL and the pinned raw-order checks.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/customers.yml",
+          "start": 7,
+          "end": 10
+        },
+        {
+          "path": "models/marts/customers.yml",
+          "start": 36,
+          "end": 41
+        },
+        {
+          "path": "models/marts/customers.yml",
+          "start": 62,
+          "end": 71
+        },
+        {
+          "path": "models/marts/customers.sql",
+          "start": 24,
+          "end": 26
+        }
+      ],
+      "additional_evidence": [
+        {
+          "path": "models/marts/customers.sql",
+          "line": 24,
+          "snippet": "sum(orders.subtotal) as lifetime_spend_pretax"
+        },
+        {
+          "path": "models/marts/customers.sql",
+          "line": 25,
+          "snippet": "sum(orders.tax_paid) as lifetime_tax_paid"
+        },
+        {
+          "path": "models/marts/customers.sql",
+          "line": 26,
+          "snippet": "sum(orders.order_total) as lifetime_spend"
+        },
+        {
+          "path": "models/marts/customers.yml",
+          "line": 10,
+          "snippet": "lifetime_spend_pretax + lifetime_tax_paid = lifetime_spend"
+        }
+      ]
+    },
+    {
+      "id": "JS-009",
+      "first_and_second_label": "non_match",
+      "status": "source_supported_not_executed_or_gold",
+      "reason": "Customer count and average location tax rate differ in entity, unit, and business question.",
+      "execution_limit": "The average-tax-rate metric was not executed; its source field is present in staging SQL.",
+      "proposal_evidence": [
+        {
+          "path": "models/marts/customers.yml",
+          "start": 50,
+          "end": 56
+        },
+        {
+          "path": "models/marts/locations.yml",
+          "start": 1,
+          "end": 26
+        }
+      ],
+      "additional_evidence": [
+        {
+          "path": "models/staging/stg_locations.sql",
+          "line": 20,
+          "snippet": "tax_rate,"
+        }
+      ]
+    }
+  ],
+  "status": "six_source_supported_initial_agreements_not_gold_or_matcher_accuracy"
+}

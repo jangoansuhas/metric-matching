@@ -1,0 +1,708 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "project": "jross21/gtm-funnel-analytics",
+    "commit": "a71232c123a5fb78da9b52d4246950ee48591c00",
+    "source_model": "models/marts/metrics/fct_metric_values.sql",
+    "compiled_model": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+    "dbt_version": "1.11.6",
+    "input_sha256": {
+      "dbt_metric_branches_report.json": "0b3a6a785f38baab97305f8f107f3559eae18d35ab5de3abda90387c70831a6c",
+      "compiled_metric_fields_report.json": "951f90a7750f6298e47752dc002cbb0ef30116104b87edc0ea528a6642c553f3",
+      "source_git_object": "62bac0c881fb4a3956efdcdcc112510614f2e2b9c5a6f223bc6dd45536ead7f5",
+      "manifest": "16c739b2ff2348c0047b564b08a0dac43bcfe4ee25cd3d2a761b912fc646fe95",
+      "compiled_model": "9af5d9c5060209af7af4d0f962b73f5d50a242ec00e6dfc8d605f35c676deb39"
+    },
+    "evidence_scope": "Pinned source branches and local compiled dbt artifacts; no row values or labels"
+  },
+  "cards": [
+    {
+      "id": "avg_sales_cycle_days@window",
+      "metric_name": "avg_sales_cycle_days",
+      "grain": "window",
+      "source_ref": "fct_opportunities",
+      "value_expr": "round(percentile_cont(0.5) within group (order by sales_cycle_days), 1)",
+      "where_expr": "is_won and sales_cycle_days is not null",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": null,
+      "value_input_fields": [
+        "sales_cycle_days"
+      ],
+      "filter_input_fields": [
+        "is_won",
+        "sales_cycle_days"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 65,
+        "end_line": 69
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 67,
+        "end_line": 71
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "mql_to_sal_rate@window",
+      "metric_name": "mql_to_sal_rate",
+      "grain": "window",
+      "source_ref": "fct_funnel_conversion",
+      "value_expr": "conversion_rate",
+      "where_expr": "stage = 'SAL'",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "segment",
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [
+        "conversion_rate"
+      ],
+      "filter_input_fields": [
+        "stage"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 89,
+        "end_line": 90
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 91,
+        "end_line": 92
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "mql_volume@month",
+      "metric_name": "mql_volume",
+      "grain": "month",
+      "source_ref": "fct_mqls",
+      "value_expr": "count(*)::double",
+      "where_expr": null,
+      "period_expr": "cohort_month",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((cohort_month, segment), (cohort_month))",
+      "time_key": "cohort_month",
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 29,
+        "end_line": 32
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 29,
+        "end_line": 32
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "mql_volume@window",
+      "metric_name": "mql_volume",
+      "grain": "window",
+      "source_ref": "fct_mqls",
+      "value_expr": "count(*)::double",
+      "where_expr": null,
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": null,
+      "value_input_fields": [],
+      "filter_input_fields": [],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 35,
+        "end_line": 37
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 35,
+        "end_line": 37
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "pipeline_created@month",
+      "metric_name": "pipeline_created",
+      "grain": "month",
+      "source_ref": "fct_opportunities",
+      "value_expr": "round(sum(opp_amount), 2)",
+      "where_expr": "is_net_new_pipeline and created_month between cast('2025-09-01' as date) and cast('2026-03-31' as date)",
+      "period_expr": "created_month",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((created_month, segment), (created_month))",
+      "time_key": "created_month",
+      "value_input_fields": [
+        "opp_amount"
+      ],
+      "filter_input_fields": [
+        "created_month",
+        "is_net_new_pipeline"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 41,
+        "end_line": 45
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 41,
+        "end_line": 45
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "pipeline_created@window",
+      "metric_name": "pipeline_created",
+      "grain": "window",
+      "source_ref": "fct_opportunities",
+      "value_expr": "round(sum(opp_amount), 2)",
+      "where_expr": "is_net_new_pipeline and created_month between cast('2025-09-01' as date) and cast('2026-03-31' as date)",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": "created_month",
+      "value_input_fields": [
+        "opp_amount"
+      ],
+      "filter_input_fields": [
+        "created_month",
+        "is_net_new_pipeline"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 48,
+        "end_line": 52
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 48,
+        "end_line": 52
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "sal_to_sql_rate@window",
+      "metric_name": "sal_to_sql_rate",
+      "grain": "window",
+      "source_ref": "fct_funnel_conversion",
+      "value_expr": "conversion_rate",
+      "where_expr": "stage = 'SQL'",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "segment",
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [
+        "conversion_rate"
+      ],
+      "filter_input_fields": [
+        "stage"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 92,
+        "end_line": 93
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 94,
+        "end_line": 95
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "sla_compliance@window",
+      "metric_name": "sla_compliance",
+      "grain": "window",
+      "source_ref": "fct_leads",
+      "value_expr": "round(avg(case when met_sla then 1.0 else 0.0 end), 4)",
+      "where_expr": "met_sla is not null",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": null,
+      "value_input_fields": [
+        "met_sla"
+      ],
+      "filter_input_fields": [
+        "met_sla"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 73,
+        "end_line": 77
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 75,
+        "end_line": 79
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "speed_to_lead_median_min@window",
+      "metric_name": "speed_to_lead_median_min",
+      "grain": "window",
+      "source_ref": "fct_leads",
+      "value_expr": "round(percentile_cont(0.5) within group (order by response_minutes), 1)",
+      "where_expr": "response_minutes is not null",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": null,
+      "value_input_fields": [
+        "response_minutes"
+      ],
+      "filter_input_fields": [
+        "response_minutes"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 81,
+        "end_line": 85
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 83,
+        "end_line": 87
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "sql_to_opp_rate@window",
+      "metric_name": "sql_to_opp_rate",
+      "grain": "window",
+      "source_ref": "fct_funnel_conversion",
+      "value_expr": "conversion_rate",
+      "where_expr": "stage = 'Opportunity'",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "segment",
+      "group_by": null,
+      "time_key": null,
+      "value_input_fields": [
+        "conversion_rate"
+      ],
+      "filter_input_fields": [
+        "stage"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 95,
+        "end_line": 96
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 97,
+        "end_line": 98
+      },
+      "review_flags": [
+        "field_lineage_not_traced",
+        "jinja_not_expanded"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    },
+    {
+      "id": "win_rate@window",
+      "metric_name": "win_rate",
+      "grain": "window",
+      "source_ref": "fct_opportunities",
+      "value_expr": "round((count(*) filter (where is_won))::double / nullif(count(*), 0), 4)",
+      "where_expr": "is_closed and opp_amount >= 1000\n      and \n        (date_diff('day', created_date::timestamp, close_date::timestamp ))\n     >= 7",
+      "period_expr": "cast('2025-09-01' as date)",
+      "segment_expr": "coalesce(segment, 'All')",
+      "group_by": "grouping sets ((segment), ())",
+      "time_key": null,
+      "value_input_fields": [
+        "is_won"
+      ],
+      "filter_input_fields": [
+        "close_date",
+        "created_date",
+        "is_closed",
+        "opp_amount"
+      ],
+      "source_location": {
+        "path": "models/marts/metrics/fct_metric_values.sql",
+        "start_line": 56,
+        "end_line": 61
+      },
+      "compiled_location": {
+        "path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+        "start_line": 56,
+        "end_line": 63
+      },
+      "review_flags": [
+        "dbt_macro_not_expanded",
+        "field_lineage_not_traced",
+        "grouping_sets_not_expanded",
+        "grouping_sets_row_groups_not_expanded",
+        "jinja_not_expanded",
+        "source_macro_compiled_expansion_requires_review"
+      ],
+      "unknown_semantics": {
+        "join_cardinality": null,
+        "null_policy": null,
+        "missing_groups": null,
+        "time_zone": null,
+        "units": null,
+        "snapshot": null,
+        "grouping_set_expansion": null
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "mql_to_sal_rate@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "mql_volume@month"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "mql_volume@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "pipeline_created@month"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "pipeline_created@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "avg_sales_cycle_days@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "mql_volume@month"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "mql_volume@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "pipeline_created@month"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "pipeline_created@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "mql_to_sal_rate@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "mql_volume@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "pipeline_created@month"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "pipeline_created@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "mql_volume@month",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "pipeline_created@month"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "pipeline_created@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "mql_volume@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "pipeline_created@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@month",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@window",
+      "right_id": "sal_to_sql_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@window",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "pipeline_created@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "pipeline_created@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "pipeline_created@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "sal_to_sql_rate@window",
+      "right_id": "sla_compliance@window"
+    },
+    {
+      "left_id": "sal_to_sql_rate@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "sal_to_sql_rate@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "sal_to_sql_rate@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "sla_compliance@window",
+      "right_id": "speed_to_lead_median_min@window"
+    },
+    {
+      "left_id": "sla_compliance@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "sla_compliance@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "speed_to_lead_median_min@window",
+      "right_id": "sql_to_opp_rate@window"
+    },
+    {
+      "left_id": "speed_to_lead_median_min@window",
+      "right_id": "win_rate@window"
+    },
+    {
+      "left_id": "sql_to_opp_rate@window",
+      "right_id": "win_rate@window"
+    }
+  ]
+}

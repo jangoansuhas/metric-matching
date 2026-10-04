@@ -1,0 +1,15 @@
+# Comparison with the blind second-agent review
+
+Date: September 27, 2026. Compare the separate AI review in `blind_second_agent_review.md` with the first analyst's decisions frozen before its response in `first_labels_for_second_review.json`. This is a development quality check, not an accuracy score, independent human adjudication, or a representative prevalence estimate.
+
+| ID | First analyst before response | Blind agent | Comparison and disposition |
+| --- | --- | --- | --- |
+| BR-01 | Conditional cross-grain positive control: sum months for matching segment, window, and filters. | `cross_grain_equivalent` after explicit sum and aligned scope. | Compatible. Add its conditions for absent months, cent rounding, and a possible real segment named `All`. The reviewer recomputed 411 eligible opportunities and $6,884,381.39 on raw seeds; a separate read-only query on the dbt-built GTM table returned the same count and sum. |
+| BR-02 | Direct downstream lineage alias for the `All`/window scalar. | `direct_equivalent` for the two scalar value fields; report rows merely `related`. | Compatible at scalar grain. Adopt its sharper row-versus-value distinction and do not claim the full records are interchangeable. |
+| BR-03 | Conditional cross-grain candidate; 483 zero-item order groups require NULL-to-zero handling. | Unqualified `related`, conditionally `cross_grain_equivalent` after explicit mapping and zero handling. | Compatible on the conditional relationship, with an important label-scope distinction. A bare pair must not receive an unconditional equivalent label. |
+| BR-04 | Real Rill denominator guard changes zero-denominator behavior; row impact unmeasured. | `behavior_changing` at zero denominator; row impact unmeasured. | Compatible. DuckDB constructed values are engine-specific illustrations; the agent reviewed source only. |
+| BR-05 | No first label was assigned. | `needs_review` for auction versus bid average floor. | New review-only case, excluded from agreement counts. Separate parquet populations and independent clock shifts block an equivalence inference even though names and formula shape resemble one another. |
+
+The four previously labeled cases have **compatible conditional conclusions**, but this is **not 4/4 classification accuracy**: the categories are nuanced, the examples were selected after inspection, one reviewer is another AI agent, and no human ground truth exists. The blind agent did not query the built DuckDB files. Its source-row observations are distinguished from our earlier model-table execution and from the separate Rill expression fixture. Preserve the original response and the frozen first labels for any later human adjudication.
+
+**Next verification gate:** a domain-aware human reviews at least BR-02's scalar-versus-record scope, BR-03's unqualified label, and BR-05's missing population/time evidence. Then sample new repositories and commits using rules fixed before looking at their results; only those can support a held-out evaluation.

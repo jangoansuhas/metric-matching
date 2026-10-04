@@ -1,0 +1,86 @@
+[
+  {
+    "id": "booking_alias_a", "view": "opportunity_booking_arr_usd", "name": "opportunity_booking_arr_usd",
+    "concept": "opportunity_booking_arr", "source_measure": "opportunity_snapshot.booking_arr_usd",
+    "expression_kind": "passthrough", "grain": "opportunity_id", "filters": "snapshot=2026-09-26;fraud=excluded",
+    "time_rule": "snapshot_2026-09-26", "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:opportunity_booking_arr_usd"
+  },
+  {
+    "id": "booking_alias_b", "view": "total_opportunity_booking_arr_usd", "name": "total_opportunity_booking_arr_usd",
+    "concept": "opportunity_booking_arr", "source_measure": "opportunity_snapshot.booking_arr_usd",
+    "expression_kind": "passthrough", "grain": "opportunity_id", "filters": "snapshot=2026-09-26;fraud=excluded",
+    "time_rule": "snapshot_2026-09-26", "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:total_opportunity_booking_arr_usd"
+  },
+  {
+    "id": "account_arr", "view": "account_net_revenue", "name": "account_net_revenue",
+    "concept": "net_arr", "source_measure": "account_arr_daily_snapshot.net_arr_usd",
+    "expression_kind": "sum", "grain": "root_account_id", "filters": "snapshot=2026-09-26;fraud_accounts=excluded",
+    "time_rule": "snapshot_2026-09-26", "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:account_net_revenue"
+  },
+  {
+    "id": "opportunity_arr_rollup", "view": "crm_revenue_net_rollup", "name": "crm_revenue_net",
+    "concept": "net_arr", "source_measure": "opportunity_snapshot.arr_usd",
+    "expression_kind": "sum", "grain": "root_account_id", "native_grain": "opportunity_id",
+    "filters": "snapshot=2026-09-26;fraud_opps=excluded;stage=7,8",
+    "time_rule": "snapshot_2026-09-26", "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:crm_revenue_net_rollup"
+  },
+  {
+    "id": "opportunity_arr_fanout", "view": "crm_revenue_net_fanout", "name": "crm_revenue_net_bad_mapping",
+    "concept": "net_arr", "source_measure": "opportunity_snapshot.arr_usd",
+    "expression_kind": "sum", "grain": "root_account_id", "native_grain": "opportunity_id",
+    "filters": "snapshot=2026-09-26;fraud_opps=excluded;stage=7,8",
+    "time_rule": "snapshot_2026-09-26", "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:crm_revenue_net_fanout"
+  },
+  {
+    "id": "account_arr_unknown_time", "view": "account_net_revenue_undocumented", "name": "account_net_revenue_undocumented",
+    "concept": "net_arr", "source_measure": "account_arr_daily_snapshot.net_arr_usd",
+    "expression_kind": "sum", "grain": "root_account_id", "filters": "fraud_accounts=excluded",
+    "time_rule": null, "business_state": "booked", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:account_net_revenue_undocumented"
+  },
+  {
+    "id": "product_live", "view": "product_arr_usd", "name": "product_arr_usd",
+    "concept": "product_arr", "source_measure": "product_arr_live.live_arr_usd",
+    "expression_kind": "passthrough", "grain": "product_id", "filters": "all_products",
+    "time_rule": "snapshot_2026-09-26", "business_state": "live_quote", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:product_arr_usd"
+  },
+  {
+    "id": "product_booked", "view": "product_booking_arr_usd", "name": "product_booking_arr_usd",
+    "concept": "product_arr", "source_measure": "product_booking_allocation.booking_arr_usd",
+    "expression_kind": "passthrough", "grain": "product_id", "filters": "booked_products",
+    "time_rule": "booking_event_2026-09-20", "business_state": "frozen_booking", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:product_booking_arr_usd"
+  },
+  {
+    "id": "pipeline_v0", "view": "pipeline_arr_v0", "name": "pipeline_arr", "metric_key": "pipeline_arr", "version": "v0",
+    "concept": "pipeline_arr", "source_measure": "opportunity_snapshot.arr_usd",
+    "expression_kind": "passthrough", "grain": "opportunity_id", "filters": "snapshot=2026-09-26;fraud=excluded;stage=1,2,3,4,5,6",
+    "time_rule": "snapshot_2026-09-26", "business_state": "current_opportunity", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:pipeline_arr_v0"
+  },
+  {
+    "id": "pipeline_v1", "view": "pipeline_arr_v1", "name": "pipeline_arr", "metric_key": "pipeline_arr", "version": "v1",
+    "concept": "pipeline_arr", "source_measure": "opportunity_snapshot.arr_usd",
+    "expression_kind": "passthrough", "grain": "opportunity_id", "filters": "snapshot=2026-09-26;fraud=excluded;stage=1,2,3,4,5,6,7,8",
+    "time_rule": "snapshot_2026-09-26", "business_state": "current_opportunity", "unit": "USD_ARR",
+    "evidence_location": "sql/metric_views.sql:pipeline_arr_v1"
+  },
+  {
+    "id": "customer_count", "view": "number_of_customers", "name": "number_of_customers",
+    "concept": "customer_count", "source_measure": "customer.customer_id", "expression_kind": "count",
+    "grain": "all", "filters": "all_rows", "time_rule": "fixture_current",
+    "business_state": "current", "unit": "count", "evidence_location": "sql/metric_views.sql:number_of_customers"
+  },
+  {
+    "id": "product_count", "view": "num_of_products", "name": "num_of_products",
+    "concept": "product_count", "source_measure": "product.product_id", "expression_kind": "count",
+    "grain": "all", "filters": "all_rows", "time_rule": "fixture_current",
+    "business_state": "current", "unit": "count", "evidence_location": "sql/metric_views.sql:num_of_products"
+  }
+]

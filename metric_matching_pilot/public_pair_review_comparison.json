@@ -1,0 +1,165 @@
+{
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "review_source": {
+    "filename": "Pasted markdown(5).md",
+    "library_file_id": "libfile_2fb3d91e705c8191b72c7842414bde39",
+    "independence": "claimed in submission; not independently verified"
+  },
+  "status": "all_disagreements_author_decided_not_benchmark_ground_truth",
+  "counts": {
+    "disagreement": 4,
+    "agreement": 6
+  },
+  "first_analyst_label_revisions": 1,
+  "author_accepted_disagreements": 4,
+  "unresolved_disagreements": 0,
+  "rows": [
+    {
+      "id": "JS-001",
+      "pair": "orders.order_total / order_items.revenue",
+      "first_label": "related",
+      "second_label": "cross_grain_equivalent",
+      "recommended_label": "related",
+      "agreement": false,
+      "author_decision": {
+        "id": "JS-001",
+        "accepted_label": "related",
+        "decided_by": "paper author in conversation",
+        "date": "2026-09-27",
+        "reason": "The tax-inclusive order total and pretax item revenue are linked monetary measures at order and item grains, but the pinned public seeds show a 3,398,137-cent difference due to tax; an unqualified cross-grain-equivalent label is contradicted by the sample.",
+        "independent_adjudicator_confirmation": "not recorded"
+      },
+      "reason": "Reject unqualified cross-grain equality. Order item prices reconcile to pretax subtotal, while order_total adds tax. The pinned seeds differ by 3,398,137 cents overall, with nonzero tax on 61,465 orders."
+    },
+    {
+      "id": "JS-002",
+      "pair": "orders.orders / orders.new_customer_orders",
+      "first_label": "temporal_or_scope_variant",
+      "second_label": "temporal_or_scope_variant",
+      "recommended_label": "temporal_or_scope_variant",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed: first-customer-order filter restricts the same SUM(1) base order measure."
+    },
+    {
+      "id": "JS-003",
+      "pair": "orders.orders / orders.large_orders",
+      "first_label": "temporal_or_scope_variant",
+      "second_label": "temporal_or_scope_variant",
+      "recommended_label": "temporal_or_scope_variant",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed: order-value threshold restricts the same SUM(1) base order measure."
+    },
+    {
+      "id": "JS-004",
+      "pair": "order_items.revenue / order_items.food_revenue",
+      "first_label": "temporal_or_scope_variant",
+      "second_label": "temporal_or_scope_variant",
+      "recommended_label": "temporal_or_scope_variant",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed: food condition changes the population contributing product price to the same SUM measure."
+    },
+    {
+      "id": "JS-005",
+      "pair": "order_items.food_revenue / order_items.drink_revenue",
+      "first_label": "temporal_or_scope_variant",
+      "second_label": "related",
+      "recommended_label": "temporal_or_scope_variant",
+      "agreement": false,
+      "author_decision": {
+        "id": "JS-005",
+        "accepted_label": "temporal_or_scope_variant",
+        "decided_by": "paper author in conversation",
+        "date": "2026-09-27",
+        "reason": "Food and drink revenue sum the same product_price input at the same item grain, with different category predicates. The taxonomy treats disjoint sibling slices as scope variants; they are not interchangeable.",
+        "independent_adjudicator_confirmation": "not recorded"
+      },
+      "reason": "Apply the scope-variant rule consistently to two sibling category predicates over the same product_price SUM, even when neither category is a subset of the other. They are not interchangeable."
+    },
+    {
+      "id": "JS-006",
+      "pair": "order_items.revenue / order_items.median_revenue",
+      "first_label": "related",
+      "second_label": "related",
+      "recommended_label": "related",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed: SUM versus MEDIAN changes the aggregation function over the same price column."
+    },
+    {
+      "id": "JS-007",
+      "pair": "customers.customers / orders.orders",
+      "first_label": "related",
+      "second_label": "non_match",
+      "recommended_label": "related",
+      "agreement": false,
+      "author_decision": {
+        "id": "JS-007",
+        "accepted_label": "related",
+        "decided_by": "paper author in conversation",
+        "date": "2026-09-27",
+        "reason": "Customer and order counts are different non-substitutable measures, but their entities are linked by the repository's customer-to-order relationship and orders-per-customer derivation. This taxonomy labels such measures related.",
+        "independent_adjudicator_confirmation": "not recorded"
+      },
+      "reason": "The values count different entities, but the repository models a direct customer-to-order relationship and derives orders per customer. Under this taxonomy, that is related, not an unrelated nonmatch."
+    },
+    {
+      "id": "JS-008",
+      "pair": "customers.lifetime_spend / customers.lifetime_spend_pretax",
+      "first_label": "related",
+      "second_label": "related",
+      "recommended_label": "related",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed on distinct tax-inclusive and pretax amounts. The model explicitly sums tax_paid; a location tax-rate reconstruction is unnecessary and has not been validated."
+    },
+    {
+      "id": "JS-009",
+      "pair": "customers.customers / locations.average_tax_rate",
+      "first_label": "non_match",
+      "second_label": "non_match",
+      "recommended_label": "non_match",
+      "agreement": true,
+      "author_decision": null,
+      "reason": "Agreed: customer count and average store tax rate have unrelated entities and units."
+    },
+    {
+      "id": "JS-010",
+      "pair": "orders.order_total / customers.lifetime_spend",
+      "first_label": "needs_review",
+      "second_label": "cross_grain_equivalent",
+      "recommended_label": "temporal_or_scope_variant",
+      "agreement": false,
+      "author_decision": {
+        "id": "JS-010",
+        "accepted_label": "temporal_or_scope_variant",
+        "decided_by": "paper author in conversation",
+        "date": "2026-09-27",
+        "reason": "All-time order totals reconcile with summed customer lifetime spend in the pinned seeds, but the default metric time dimensions ordered_at and first_ordered_at assign values to different dates on every one of the 365 sample dates. The label reflects a time-rule variant; an all-time cross-grain relationship would require explicit time alignment and verified one-customer-per-order mapping.",
+        "independent_adjudicator_confirmation": "not recorded"
+      },
+      "reason": "Revise the first analyst's needs_review label. All-time totals reconcile in the pinned seeds when every order maps to a customer, but default time dimensions are ordered_at versus first_ordered_at; daily values differ on all 365 sample dates. A cross-grain claim is conditional on dropping or aligning time and validating mapping."
+    }
+  ],
+  "seed_evidence": {
+    "js001": {
+      "item_revenue_cents": 63744400,
+      "order_subtotal_cents": 63744400,
+      "order_total_cents": 67142537,
+      "tax_paid_cents": 3398137,
+      "orders_with_nonzero_tax": 61465
+    },
+    "js010": {
+      "all_time_order_total_cents": 67142537,
+      "all_time_customer_lifetime_spend_cents": 67142537,
+      "daily_dates_compared": 365,
+      "daily_dates_with_different_values": 365,
+      "first_different_date": "2024-09-01",
+      "first_different_date_order_total_cents": 49815,
+      "first_different_date_lifetime_spend_cents": 7830698
+    }
+  }
+}

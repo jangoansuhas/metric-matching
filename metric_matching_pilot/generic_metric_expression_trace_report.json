@@ -1,0 +1,3640 @@
+{
+  "coverage": {
+    "compiled_metric_expressions_needs_review": 32,
+    "compiled_metric_expressions_verified": 0,
+    "declarations": 32,
+    "measures": 13,
+    "metrics": 19,
+    "unknown_numeric_eligibility": 10,
+    "with_exact_measure_link": 32,
+    "with_unique_model_candidate": 31
+  },
+  "limits": [
+    "Only pinned public Jaffle development artifacts were read.",
+    "An explicit manifest metric-to-measure dependency is not a pair label.",
+    "SQL projection candidates do not prove field lineage across CTEs, joins, stars, or model build revisions.",
+    "Model compilation does not include compiled MetricFlow metric expressions here.",
+    "Unverified build commit and source checksum mismatch stop every public-corpus expression verification.",
+    "No business equivalence, human gold, accuracy, or method superiority is established."
+  ],
+  "model_provenance_sha256": "cec3f3770a9ddbc97c5b2f309c543953a4cec19e8b62a327968e21469fce1f15",
+  "records": [
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "customer_id"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[0]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "customer_id",
+              "projection_column_refs": [
+                "orders.customer_id"
+              ],
+              "projection_sql": "orders.customer_id",
+              "select_scope_index": 3
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[0]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "count_distinct",
+          "measure_expr": "customer_id",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[0]",
+          "measure_name": "customers",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "customers",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "count_lifetime_orders"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "orders.order_id"
+              ],
+              "projection_sql": "COUNT(DISTINCT orders.order_id) AS count_lifetime_orders",
+              "select_scope_index": 3
+            },
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "customer_orders_summary.count_lifetime_orders"
+              ],
+              "projection_sql": "customer_orders_summary.count_lifetime_orders",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "count_lifetime_orders",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "measure_name": "count_lifetime_orders",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "count_lifetime_orders",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "lifetime_spend_pretax"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "orders.subtotal"
+              ],
+              "projection_sql": "SUM(orders.subtotal) AS lifetime_spend_pretax",
+              "select_scope_index": 3
+            },
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "customer_orders_summary.lifetime_spend_pretax"
+              ],
+              "projection_sql": "customer_orders_summary.lifetime_spend_pretax",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "lifetime_spend_pretax",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "measure_name": "lifetime_spend_pretax",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "lifetime_spend_pretax",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "lifetime_spend"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[3]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "lifetime_spend",
+              "projection_column_refs": [
+                "orders.order_total"
+              ],
+              "projection_sql": "SUM(orders.order_total) AS lifetime_spend",
+              "select_scope_index": 3
+            },
+            {
+              "field": "lifetime_spend",
+              "projection_column_refs": [
+                "customer_orders_summary.lifetime_spend"
+              ],
+              "projection_sql": "customer_orders_summary.lifetime_spend",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[3]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "lifetime_spend",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[3]",
+          "measure_name": "lifetime_spend",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "lifetime_spend",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "tax_rate"
+          ],
+          "field_owner_status": "unresolved",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.locations:measures[0]",
+          "model_id": "model.jaffle_shop.locations",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "missing_explicit_field_projection",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.locations:measures[0]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "average",
+          "measure_expr": "tax_rate",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.locations:measures[0]",
+          "measure_name": "average_tax_rate",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.locations",
+          "semantic_model_id": "semantic_model.jaffle_shop.locations",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "c37a8d20db129a0c11f7e1c0bfb988ac17c07d426953ccd6498ccb13437f2b5f",
+            "path": "models/marts/locations.yml",
+            "pinned_sha256": "c37a8d20db129a0c11f7e1c0bfb988ac17c07d426953ccd6498ccb13437f2b5f"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/locations.sql",
+        "id": "model.jaffle_shop.locations",
+        "manifest_compiled_code_sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+        "manifest_raw_code_sha256": "01e79fced00fb035440afc48077281f3c01163cfb6ae19ccbc4d73cc1ed7d2cf",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "1d3d9ee20be71938907012f387d919a6efd14586ccae6641453266bd5235490d",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/locations.sql",
+        "source_sha256": "a782e7cd9b6ecee5bb0160d08c54af0f8208df1ec41eedcc09fd46d5b811bf04"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/locations.sql",
+          "id": "model.jaffle_shop.locations",
+          "manifest_compiled_code_sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+          "manifest_raw_code_sha256": "01e79fced00fb035440afc48077281f3c01163cfb6ae19ccbc4d73cc1ed7d2cf",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "1d3d9ee20be71938907012f387d919a6efd14586ccae6641453266bd5235490d",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/locations.sql",
+          "source_sha256": "a782e7cd9b6ecee5bb0160d08c54af0f8208df1ec41eedcc09fd46d5b811bf04"
+        }
+      ],
+      "name": "average_tax_rate",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "manifest_source_checksum_mismatch",
+        "missing_explicit_field_projection",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_food_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_food_item",
+              "projection_column_refs": [
+                "products.is_food_item"
+              ],
+              "projection_sql": "products.is_food_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_food_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "measure_name": "food_revenue",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "food_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_drink_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_drink_item",
+              "projection_column_refs": [
+                "products.is_drink_item"
+              ],
+              "projection_sql": "products.is_drink_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_drink_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "measure_name": "drink_revenue",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "drink_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[3]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[3]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "median",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[3]",
+          "measure_name": "median_revenue",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "median_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "order_total"
+          ],
+          "field_owner_status": "unresolved",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[0]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "missing_explicit_field_projection",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[0]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "order_total",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[0]",
+          "measure_name": "order_total",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_total",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "missing_explicit_field_projection",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_count",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "tax_paid"
+          ],
+          "field_owner_status": "unresolved",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[2]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "missing_explicit_field_projection",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[2]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "tax_paid",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[2]",
+          "measure_name": "tax_paid",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "tax_paid",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "missing_explicit_field_projection",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "order_cost"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "supply_cost"
+              ],
+              "projection_sql": "SUM(supply_cost) AS order_cost",
+              "select_scope_index": 3
+            },
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "order_items_summary.order_cost"
+              ],
+              "projection_sql": "order_items_summary.order_cost",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+      "kind": "measure",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "order_cost",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "measure_name": "order_cost",
+          "metric_dependency_path": [],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [],
+      "metric_type": null,
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_cost",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": "lifetime_spend_pretax / count_lifetime_orders",
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "count_lifetime_orders"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "orders.order_id"
+              ],
+              "projection_sql": "COUNT(DISTINCT orders.order_id) AS count_lifetime_orders",
+              "select_scope_index": 3
+            },
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "customer_orders_summary.count_lifetime_orders"
+              ],
+              "projection_sql": "customer_orders_summary.count_lifetime_orders",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        },
+        {
+          "expression_field_refs": [
+            "lifetime_spend_pretax"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "orders.subtotal"
+              ],
+              "projection_sql": "SUM(orders.subtotal) AS lifetime_spend_pretax",
+              "select_scope_index": 3
+            },
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "customer_orders_summary.lifetime_spend_pretax"
+              ],
+              "projection_sql": "customer_orders_summary.lifetime_spend_pretax",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.average_order_value",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "count_lifetime_orders",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "measure_name": "count_lifetime_orders",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.average_order_value",
+            "metric.jaffle_shop.count_lifetime_orders"
+          ],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        },
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "lifetime_spend_pretax",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "measure_name": "lifetime_spend_pretax",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.average_order_value",
+            "metric.jaffle_shop.lifetime_spend_pretax"
+          ],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "metric.jaffle_shop.count_lifetime_orders",
+        "metric.jaffle_shop.lifetime_spend_pretax"
+      ],
+      "metric_type": "derived",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "average_order_value",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "count_lifetime_orders"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "orders.order_id"
+              ],
+              "projection_sql": "COUNT(DISTINCT orders.order_id) AS count_lifetime_orders",
+              "select_scope_index": 3
+            },
+            {
+              "field": "count_lifetime_orders",
+              "projection_column_refs": [
+                "customer_orders_summary.count_lifetime_orders"
+              ],
+              "projection_sql": "customer_orders_summary.count_lifetime_orders",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.count_lifetime_orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "count_lifetime_orders",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[1]",
+          "measure_name": "count_lifetime_orders",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.count_lifetime_orders"
+          ],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.customers"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "count_lifetime_orders",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.cumulative_revenue",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.cumulative_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.order_item"
+      ],
+      "metric_type": "cumulative",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "cumulative_revenue",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": {
+        "where_filters": [
+          {
+            "where_sql_template": "{{ Dimension('order_id__is_drink_order') }} = true\n"
+          }
+        ]
+      },
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.drink_orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.drink_orders"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "drink_orders",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "metric_filter_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_drink_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_drink_item",
+              "projection_column_refs": [
+                "products.is_drink_item"
+              ],
+              "projection_sql": "products.is_drink_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.drink_revenue",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_drink_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "measure_name": "drink_revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.drink_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.order_item"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "drink_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_drink_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_drink_item",
+              "projection_column_refs": [
+                "products.is_drink_item"
+              ],
+              "projection_sql": "products.is_drink_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        },
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.drink_revenue_pct",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_drink_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[2]",
+          "measure_name": "drink_revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.drink_revenue_pct",
+            "metric.jaffle_shop.drink_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        },
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.drink_revenue_pct",
+            "metric.jaffle_shop.revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "metric.jaffle_shop.drink_revenue",
+        "metric.jaffle_shop.revenue"
+      ],
+      "metric_type": "ratio",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "drink_revenue_pct",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": {
+        "where_filters": [
+          {
+            "where_sql_template": "{{ Dimension('order_id__is_food_order') }} = true\n"
+          }
+        ]
+      },
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.food_orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.food_orders"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "food_orders",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "metric_filter_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_food_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_food_item",
+              "projection_column_refs": [
+                "products.is_food_item"
+              ],
+              "projection_sql": "products.is_food_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.food_revenue",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_food_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "measure_name": "food_revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.food_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.order_item"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "food_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "is_food_item",
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "is_food_item",
+              "projection_column_refs": [
+                "products.is_food_item"
+              ],
+              "projection_sql": "products.is_food_item",
+              "select_scope_index": 6
+            },
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        },
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.food_revenue_pct",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "case when is_food_item then product_price else 0 end",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[1]",
+          "measure_name": "food_revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.food_revenue_pct",
+            "metric.jaffle_shop.food_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        },
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.food_revenue_pct",
+            "metric.jaffle_shop.revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "metric.jaffle_shop.food_revenue",
+        "metric.jaffle_shop.revenue"
+      ],
+      "metric_type": "ratio",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "food_revenue_pct",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": {
+        "where_filters": [
+          {
+            "where_sql_template": "{{ Dimension('order_id__order_total_dim') }} >= 20\n"
+          }
+        ]
+      },
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.large_orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.large_orders"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "large_orders",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "metric_filter_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "lifetime_spend_pretax"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "model_id": "model.jaffle_shop.customers",
+          "projection_candidates": [
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "orders.subtotal"
+              ],
+              "projection_sql": "SUM(orders.subtotal) AS lifetime_spend_pretax",
+              "select_scope_index": 3
+            },
+            {
+              "field": "lifetime_spend_pretax",
+              "projection_column_refs": [
+                "customer_orders_summary.lifetime_spend_pretax"
+              ],
+              "projection_sql": "customer_orders_summary.lifetime_spend_pretax",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.lifetime_spend_pretax",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "lifetime_spend_pretax",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.customers:measures[2]",
+          "measure_name": "lifetime_spend_pretax",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.lifetime_spend_pretax"
+          ],
+          "model_id": "model.jaffle_shop.customers",
+          "semantic_model_id": "semantic_model.jaffle_shop.customers",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72",
+            "path": "models/marts/customers.yml",
+            "pinned_sha256": "eb7f2070cc0b2605bd910e5673a10b9bde4a1b2539c853a87b3434130cacea72"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.customers"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+        "id": "model.jaffle_shop.customers",
+        "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+        "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/customers.sql",
+        "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "id": "model.jaffle_shop.customers",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/customers.sql",
+          "source_sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3"
+        }
+      ],
+      "name": "lifetime_spend_pretax",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[3]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.median_revenue",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "median",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[3]",
+          "measure_name": "median_revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.median_revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.order_item"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "median_revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": {
+        "where_filters": [
+          {
+            "where_sql_template": "{{ Dimension('order_id__customer_order_number') }} = 1\n"
+          }
+        ]
+      },
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.new_customer_orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.new_customer_orders"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "new_customer_orders",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "metric_filter_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "order_cost"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "supply_cost"
+              ],
+              "projection_sql": "SUM(supply_cost) AS order_cost",
+              "select_scope_index": 3
+            },
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "order_items_summary.order_cost"
+              ],
+              "projection_sql": "order_items_summary.order_cost",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.order_cost",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "order_cost",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "measure_name": "order_cost",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.order_cost"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_cost",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_projection_candidates",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": "revenue - cost",
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        },
+        {
+          "expression_field_refs": [
+            "order_cost"
+          ],
+          "field_owner_status": "ambiguous",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "supply_cost"
+              ],
+              "projection_sql": "SUM(supply_cost) AS order_cost",
+              "select_scope_index": 3
+            },
+            {
+              "field": "order_cost",
+              "projection_column_refs": [
+                "order_items_summary.order_cost"
+              ],
+              "projection_sql": "order_items_summary.order_cost",
+              "select_scope_index": 4
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "multiple_projection_candidates",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.order_gross_profit",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.order_gross_profit",
+            "metric.jaffle_shop.revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        },
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "order_cost",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[3]",
+          "measure_name": "order_cost",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.order_gross_profit",
+            "metric.jaffle_shop.order_cost"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "metric.jaffle_shop.revenue",
+        "metric.jaffle_shop.order_cost"
+      ],
+      "metric_type": "derived",
+      "model_candidate": null,
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        },
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_gross_profit",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "multiple_model_candidates",
+        "multiple_projection_candidates",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "order_total"
+          ],
+          "field_owner_status": "unresolved",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[0]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "missing_explicit_field_projection",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.order_total",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "order_total",
+          "measure_expr_defaulted_to_name": true,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[0]",
+          "measure_name": "order_total",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.order_total"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "order_total",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "missing_explicit_field_projection",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [],
+          "field_owner_status": "literal_only",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "model_id": "model.jaffle_shop.orders",
+          "projection_candidates": [],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "literal_measure_has_no_field_owner",
+            "unexpanded_select_star",
+            "window_projection_boundary"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.orders",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "1",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.orders:measures[1]",
+          "measure_name": "order_count",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.orders"
+          ],
+          "model_id": "model.jaffle_shop.orders",
+          "semantic_model_id": "semantic_model.jaffle_shop.orders",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391",
+            "path": "models/marts/orders.yml",
+            "pinned_sha256": "223dc461510c54b38681167b85cea019b3919c4a1de8bfac6673d60465ea0391"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.orders"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+        "id": "model.jaffle_shop.orders",
+        "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+        "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/orders.sql",
+        "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "id": "model.jaffle_shop.orders",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/orders.sql",
+          "source_sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b"
+        }
+      ],
+      "name": "orders",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "literal_measure_has_no_field_owner",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star",
+        "window_projection_boundary"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": null,
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.revenue",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "semantic_model.jaffle_shop.order_item"
+      ],
+      "metric_type": "simple",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "revenue",
+      "numeric_eligibility": "eligible",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "model_source_checksum_or_mapping_needs_review",
+        "unexpanded_select_star"
+      ]
+    },
+    {
+      "compiled_metric_expression_status": "needs_review",
+      "declared_metric_expression": "(current_revenue - revenue_prev_month)*100/revenue_prev_month",
+      "declared_metric_filter": null,
+      "field_traces": [
+        {
+          "expression_field_refs": [
+            "product_price"
+          ],
+          "field_owner_status": "candidate_only_complex_sql",
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "model_id": "model.jaffle_shop.order_items",
+          "projection_candidates": [
+            {
+              "field": "product_price",
+              "projection_column_refs": [
+                "products.product_price"
+              ],
+              "projection_sql": "products.product_price",
+              "select_scope_index": 6
+            }
+          ],
+          "stop_reasons": [
+            "cte_projection_boundary",
+            "join_field_owner_ambiguous",
+            "unexpanded_select_star"
+          ]
+        }
+      ],
+      "id": "manifest:metric:metric.jaffle_shop.revenue_growth_mom",
+      "kind": "metric",
+      "measure_links": [
+        {
+          "binding_status": "exact_manifest_resource_and_measure",
+          "measure_agg": "sum",
+          "measure_expr": "product_price",
+          "measure_expr_defaulted_to_name": false,
+          "measure_id": "manifest:measure:semantic_model.jaffle_shop.order_item:measures[0]",
+          "measure_name": "revenue",
+          "metric_dependency_path": [
+            "metric.jaffle_shop.revenue_growth_mom",
+            "metric.jaffle_shop.revenue"
+          ],
+          "model_id": "model.jaffle_shop.order_items",
+          "semantic_model_id": "semantic_model.jaffle_shop.order_item",
+          "semantic_model_source": {
+            "aligned_to_pinned_blob": true,
+            "eligibility_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97",
+            "path": "models/marts/order_items.yml",
+            "pinned_sha256": "81020ca853159b9e33b3f23cb67ab6bf307ff6a5ea516367201ecca4012bbb97"
+          }
+        }
+      ],
+      "metric_manifest_dependencies": [
+        "metric.jaffle_shop.revenue"
+      ],
+      "metric_type": "derived",
+      "model_candidate": {
+        "build_commit_attested": false,
+        "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+        "id": "model.jaffle_shop.order_items",
+        "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+        "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+        "manifest_source_checksum": {
+          "name": "sha256",
+          "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+          "versus_manifest_raw_code": "different",
+          "versus_pinned_blob": "different"
+        },
+        "model_provenance_status": "needs_review",
+        "source_path": "models/marts/order_items.sql",
+        "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+      },
+      "model_candidates": [
+        {
+          "build_commit_attested": false,
+          "compiled_file_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "id": "model.jaffle_shop.order_items",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "model_provenance_status": "needs_review",
+          "source_path": "models/marts/order_items.sql",
+          "source_sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639"
+        }
+      ],
+      "name": "revenue_growth_mom",
+      "numeric_eligibility": "unknown",
+      "stop_reasons": [
+        "build_commit_unverified",
+        "compiled_metric_query_unavailable",
+        "cte_projection_boundary",
+        "join_field_owner_ambiguous",
+        "manifest_source_checksum_mismatch",
+        "metric_transformation_requires_compiled_metric_query",
+        "model_source_checksum_or_mapping_needs_review",
+        "numeric_eligibility_unknown",
+        "unexpanded_select_star"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "scope": "pinned_public_development_only",
+  "source": {
+    "manifest_build_commit_attested": false,
+    "manifest_generated_at": "2026-09-27T17:51:14.701525Z",
+    "manifest_path": "target/manifest.json",
+    "package_lock": {
+      "path": "package-lock.yml",
+      "pinned_sha256": "a1d44d11c893f4d68e722ef8479bd3c4d2f632202f1ef7bd4ade6a14986b50db",
+      "working_differs_from_pin": true,
+      "working_sha256": "67ecfc0a7ebdcc03b8e2f38c86d7b283e72c5d58fb9a7de9b4f30aa2a3a01eef"
+    },
+    "repo_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6"
+  },
+  "source_eligibility_sha256": "0e2d601f1dbde17c62716192f6410d78a28f6b76fe21468cca9b6eb5596b8af7",
+  "source_manifest_sha256": "1467a9a6a71de14f196adbab89927083adcc2b9f680f7e9b6256a0720b40fb24",
+  "sql_parser": {
+    "dialect": "duckdb",
+    "name": "sqlglot",
+    "version": "30.20.0"
+  }
+}

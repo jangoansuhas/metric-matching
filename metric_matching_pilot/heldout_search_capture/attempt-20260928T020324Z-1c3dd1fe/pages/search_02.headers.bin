@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+date: Mon, 28 Sep 2026 02:03:36 GMT
+
+HTTP/2 200 
+date: Mon, 28 Sep 2026 02:03:37 GMT
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+vary: Accept,Accept-Encoding, Accept, X-Requested-With
+x-github-media-type: github.v3; format=json
+link: <https://api.github.com/search/repositories?q=dbt+semantic+model&sort=updated&order=desc&per_page=30&page=2>; rel="next", <https://api.github.com/search/repositories?q=dbt+semantic+model&sort=updated&order=desc&per_page=30&page=3>; rel="last"
+x-github-api-version-selected: 2022-11-28
+access-control-expose-headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset, Warning
+access-control-allow-origin: *
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+x-frame-options: deny
+x-content-type-options: nosniff
+x-xss-protection: 0
+referrer-policy: origin-when-cross-origin, strict-origin-when-cross-origin
+content-security-policy: default-src 'none'
+server: github.com
+accept-ranges: bytes
+x-ratelimit-limit: 10
+x-ratelimit-remaining: 8
+x-ratelimit-used: 2
+x-ratelimit-resource: search
+x-ratelimit-reset: 1790561069
+x-github-request-id: 908C:261A14:1F6000D:254D136:6AB9CAF8
+x-github-edge-region: westus3
+

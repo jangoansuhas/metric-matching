@@ -1,0 +1,36 @@
+{
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "method": "raw CSV integer cents; reproduces simple price/order/customer grouping without compiling dbt or MetricFlow",
+  "row_counts": {
+    "orders": 61948,
+    "customers": 935,
+    "products": 10
+  },
+  "data_quality": {
+    "duplicate_product_skus": 0,
+    "duplicate_customer_ids": 0,
+    "duplicate_order_ids": 0,
+    "missing_product_items": 0,
+    "missing_order_items": 0,
+    "unmapped_customer_orders": 0,
+    "orders_where_item_sum_differs_from_subtotal": 0,
+    "orders_where_subtotal_plus_tax_differs_from_order_total": 0
+  },
+  "js001": {
+    "item_revenue_cents": 63744400,
+    "order_subtotal_cents": 63744400,
+    "order_total_cents": 67142537,
+    "tax_paid_cents": 3398137,
+    "orders_with_nonzero_tax": 61465
+  },
+  "js010": {
+    "all_time_order_total_cents": 67142537,
+    "all_time_customer_lifetime_spend_cents": 67142537,
+    "daily_dates_compared": 365,
+    "daily_dates_with_different_values": 365,
+    "first_different_date": "2024-09-01",
+    "first_different_date_order_total_cents": 49815,
+    "first_different_date_lifetime_spend_cents": 7830698
+  }
+}

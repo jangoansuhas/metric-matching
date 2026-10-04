@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUurQSK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Zahra2105/olist-analytics-dbt/git/refs/heads/main",
+  "object": {
+    "sha": "a4d1b94b764cd1894f10cf5041442257bcea9e84",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Zahra2105/olist-analytics-dbt/git/commits/a4d1b94b764cd1894f10cf5041442257bcea9e84"
+  }
+}

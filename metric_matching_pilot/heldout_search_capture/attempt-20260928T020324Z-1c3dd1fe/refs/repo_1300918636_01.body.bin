@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTYpxbK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/sriramsripada20s/banking-analytics-platform-aws-snowflake/git/refs/heads/main",
+  "object": {
+    "sha": "43fa51e06536567f9347f7a857115b00f74e027b",
+    "type": "commit",
+    "url": "https://api.github.com/repos/sriramsripada20s/banking-analytics-platform-aws-snowflake/git/commits/43fa51e06536567f9347f7a857115b00f74e027b"
+  }
+}

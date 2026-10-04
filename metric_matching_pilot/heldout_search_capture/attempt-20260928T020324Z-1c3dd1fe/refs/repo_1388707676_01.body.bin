@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUsX_XK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/25andresbernal/semantic-model-kit/git/refs/heads/main",
+  "object": {
+    "sha": "37022e7eab950fd962aad548c18845e5eb0d0ca6",
+    "type": "commit",
+    "url": "https://api.github.com/repos/25andresbernal/semantic-model-kit/git/commits/37022e7eab950fd962aad548c18845e5eb0d0ca6"
+  }
+}

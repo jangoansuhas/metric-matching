@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "recorded_date_utc": "2026-09-29",
+  "status": "prospective_for_new_declared_metric_frame_after_disclosed_broad_frame_redesign",
+  "old_frame": {
+    "queue_sha256": "3ffb00fa94642fb27574c156ba0e8412bd493483fda5902602d48ea69119b472",
+    "selected_ranks": [1, 2],
+    "interpretation": "retained_broad_source_output_applicability_screen_not_primary_declared_metric_test"
+  },
+  "search": {
+    "endpoint": "https://api.github.com/search/repositories",
+    "github_api_version": "2022-11-28",
+    "queries_in_order": [
+      "\"dbt semantic layer\" in:name,description,topics is:public archived:false",
+      "metricflow in:name,description,topics is:public archived:false",
+      "topic:dbt topic:semantic-layer is:public archived:false"
+    ],
+    "parameters_per_query": {"sort": "updated", "order": "desc", "per_page": 100, "page": 1},
+    "require_complete_http_200_pages": true,
+    "retain_raw_body_and_headers_sha256": true,
+    "meaning": "bounded_repository_metadata_frame_not_github_wide_census"
+  },
+  "metadata_filter_before_hash_sort": {
+    "public": true,
+    "fork": false,
+    "archived": false,
+    "is_template": false,
+    "mirror_url": null,
+    "recognized_license_spdx_allowlist": ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MPL-2.0", "GPL-3.0", "LGPL-3.0-only"],
+    "license_metadata_is_provisional": true
+  },
+  "dedup_key": "numeric_repository_id",
+  "sort_rule": "ascending_sha256_of_utf8_decimal_repository_id_then_numeric_id",
+  "pinned_prefix_size": 20,
+  "pin_rule": "record_terminal_pinned_commit_or_evidenced_unavailable_status_for_each_first_20_metadata_candidates_before_source_inspection; retain_ref_response_hash_and_failure; unavailable_rows_stay_in_order",
+  "source_screen": {
+    "order": "contiguous_pinned_prefix",
+    "stop": "first_three_independently_eligible_or_rank_20",
+    "project_metric_minimum": 5,
+    "metric_unit": "distinct_enabled_numeric_project_owned_dbt_semantic_layer_metric_declaration_legacy_or_model_colocated",
+    "exclude_from_metric_count": ["semantic_model_only", "measure_only", "raw_sql_aggregate_output", "dependency_metric", "disabled_metric", "hypothetical_runtime_grouping"],
+    "uncertain_count_rule": "quarantine_when_unresolved_declarations_could_change_threshold; never_treat_unsupported_parse_as_zero",
+    "license_rule": "verify_code_license_in_pinned_source_and_record_third_party_data_rights_separately",
+    "family_and_tutorial_rule": "exclude_documented_fork_mirror_copied_template_or_dataset_of_four_development_families_or_two_previously_screened_broad_frame_projects_and_explicit_tutorial_example_only_projects; record_evidence_for_each",
+    "later_pair_draw_after_staffing": "reuse_v1_lexical_lineage_hash_random_repeating_slots_up_to_8_per_project; empty_slots_not_refilled; hash_all_metric_ids_and_unordered_pairs_first",
+    "primary_scope_packet_after_staffing": "coordinator_freezes_prediction_free_pair_request_table_before_methods_or_values; choose_aligned_metric_time_month_if_both_supported_with_verified_business_time_alignment_else_ungrouped_if_both_supported_else_needs_review; no_alternate_dimension_search_for_easy_label; same_packet_to_both_reviewers_and_all_methods",
+    "prohibited_until_frozen_inventory_and_reviewers": ["pair_comparison", "method_execution", "metric_value_execution", "pair_draw", "human_label"],
+    "target_reviewers": "two_qualified_independent_plus_distinct_adjudicator_36_person_hours_for_up_to_3_times_8_pairs"
+  },
+  "frozen_metricflow_adapter_sha256": "7b90ef37dfb1cce9c0a15f211ef89fb56106a0f1eb8817ed0ae405ad05ce09fe",
+  "reporting_limit": "if_fewer_than_three_selected_within_20_report_bounded_failure_no_adoption_prevalence_claim_no_automatic_bridge_or_replacement"
+}

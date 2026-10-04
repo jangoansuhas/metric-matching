@@ -1,0 +1,43 @@
+{
+  "schema_version": 5,
+  "scope": "development_only_dbt_declaration_eligibility_and_compiled_model_artifacts",
+  "previous_addendum_sha256": "f72436b50beb047c8fd4bd00b595a32a720553b52969df4203f4affb1b6a3fe7",
+  "files_sha256": {
+    "freeze_development_revision_v5.py": "5bb5d5b508e5415e3104be455c9b9ef4ae86b4a819b42fed352873f9199893af",
+    "generic_adapter_bridge_contract_20260928.md": "6748ae7264e8c344482ee1d6c542d3d83ab28f6b6f2e250348c71130d0835874",
+    "generic_metric_eligibility.py": "6e849cf0c77318f06fb55e928fddf71aa461d35e8df227627fca0289b74b2e40",
+    "generic_metric_eligibility_negative.yml": "320809e34a2e877224da69ac3a98840188738faa4114619453a51238cf3b49a1",
+    "generic_metric_eligibility_report.json": "5cf6ee06debe9bcc55c2dca5f30db2031438ca50a899bab3694acd13b2665b14",
+    "generic_metric_eligibility_report.md": "3f60d88627de11b08c168f315820ce8ae44bb42695fd99f8956b8f1878578603",
+    "generic_metric_eligibility_manifest_report.json": "0e2d601f1dbde17c62716192f6410d78a28f6b76fe21468cca9b6eb5596b8af7",
+    "generic_metric_eligibility_manifest_report.md": "b339b8c4a6b318a2cc3eeb3a36eb5c613b547d13563de12c345d23b05f2d128e",
+    "generic_compiled_provenance.py": "f423f36ef71d45010b95bc1e0949ec74a76544d8eb6693a20cee2760a5e3f8ef",
+    "generic_compiled_provenance_report.json": "cec3f3770a9ddbc97c5b2f309c543953a4cec19e8b62a327968e21469fce1f15",
+    "generic_compiled_provenance_report.md": "7464101412fab35f3da6590dd2f7e8aa1b853115bd064f73976b412212c6321f",
+    "generic_adapter_parallel_review_20260928.md": "1a75cf3d1544b5c9bdac7c73cff45bde3d715b725bc267de5caad7d58f2fd1db"
+  },
+  "eligibility_source_commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "eligibility_manifest_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+  "eligibility_frames": {
+    "source_yaml": {
+      "metrics": 23,
+      "measures": 0,
+      "all_pairs": 253
+    },
+    "separate_manifest": {
+      "metrics": 19,
+      "measures": 13,
+      "metric_pairs": 171,
+      "all_scalar_pairs": 496
+    }
+  },
+  "compiled_model_artifacts": {
+    "gtm_pass": 33,
+    "jaffle_review": 13,
+    "compiled_files_exact_manifest_code": 46,
+    "metric_expression_lineage": "unverified"
+  },
+  "heldout_gate": "blocked_no_verified_metric_expression_mapping_or_full_same_input_i1_methods",
+  "reason": "Record bounded adapter coverage and independent AI review without inventing human labels, matching accuracy, or a method advantage.",
+  "recorded_at_utc": "2026-09-28T03:40:33+00:00"
+}

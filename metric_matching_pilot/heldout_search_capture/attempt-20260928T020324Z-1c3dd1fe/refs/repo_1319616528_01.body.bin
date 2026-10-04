@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTqfAEK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Vivek-dev-web/dbt_saas_analytics/git/refs/heads/main",
+  "object": {
+    "sha": "c39bf0cb673e2952a5fbc5084c0006983c172b0e",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Vivek-dev-web/dbt_saas_analytics/git/commits/c39bf0cb673e2952a5fbc5084c0006983c172b0e"
+  }
+}

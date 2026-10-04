@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "scope": "development_revision_and_metadata_frame_only_no_heldout_source_or_accuracy",
+  "previous_addendum_sha256": "eb16c8a680448e1a335c6aa88eee0342706416e72edd0352e5d00b5c9d19af27",
+  "original_snapshot_sha256": "176d3b5c275b78f04f36411616fa6d1a055b6454659e5a422ea525c6b8ccad76",
+  "archived_v1_sha256": {
+    "run_portable_development_methods.py": "5f35569c565c0a6cd8c14f841a32d5a5ee912a6cd7d35a3106bdff7da7e56343",
+    "verify_portable_boundary.py": "68f8b8327983b5dcd3e12d65b59204c07972eabb6a6ca874520276c241cd5906",
+    "portable_jaffle_decisions.json": "70a1507153d0981c2f602ec19465711d3c9c3d32134a7a58e8c0d37fb227e527",
+    "portable_jaffle_decisions.md": "8f47489b29d1fd3138157dd6950afd103f0be16e6db1c8f316ec66c963638c10"
+  },
+  "current_files_sha256": {
+    "freeze_development_revision_v2.py": "fd1a2a8930997440beb7af2a88a0fdc13c9e6920727f7655a3c2e864cd940dfd",
+    "run_portable_development_methods.py": "e947aa0e573c3c952bba2465c33438730cfda7aeb19bf731b34db80e5c7997fd",
+    "verify_portable_boundary.py": "8dcd186a7fe4d9e722792a5708bd7d7a1921835f3b811d9eb7ba474b58fa6da7",
+    "portable_jaffle_decisions.json": "d97210f710e976ec5e5c9f5beb2e35be5e67ce9d1dc9ac4a126606b54bfdeac7",
+    "portable_jaffle_decisions.md": "8f47489b29d1fd3138157dd6950afd103f0be16e6db1c8f316ec66c963638c10",
+    "verify_heldout_search_frame.py": "84e7c2840cba74862edfccac35be636b97e3a6d19f7b56fd1d646d53e77fca4a"
+  },
+  "search_frame_manifest_sha256": "6404c6aa719456abb4b28a82198c695f09ded48bbb442347fa0b7fdedc7db10f",
+  "search_frame_report": "heldout_search_capture/attempt-20260928T020324Z-1c3dd1fe/report.md",
+  "reason": "Reviewer found SUM/MEDIAN and forged-compiled-location promotion and nested grouping payload; YAML carrier is now always unresolved and compiled paths are bound to provenance.",
+  "development_checks": [
+    "freeze_development_snapshot.py --check",
+    "verify_portable_boundary.py",
+    "run_portable_development_methods.py --check on pinned Jaffle packet",
+    "ast_source_baseline.py --check with sqlglot==30.20.0",
+    "verify_heldout_search_frame.py on finalized metadata attempt"
+  ],
+  "heldout_gate": "blocked_pending_generic_compiled_source_and_SQL_aggregate_extraction_protocol",
+  "recorded_at_utc": "2026-09-28T02:18:59+00:00"
+}

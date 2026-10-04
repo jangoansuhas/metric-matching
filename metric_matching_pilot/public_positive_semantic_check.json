@@ -1,0 +1,27 @@
+{
+  "candidate_id": "POS-001",
+  "semantic_commit": "8686fe3ea0fd4ceffa08e523a422331bd228ac32",
+  "dbt_submodule_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+  "engine": "Sidemantic unified semantic layer importing MetricFlow and Cube definitions",
+  "engine_version": "0.8.2",
+  "queries": {
+    "orders.subtotal": "SELECT orders.ordered_at, orders.subtotal FROM orders ORDER BY orders.ordered_at",
+    "order_items.revenue": "SELECT order_items.ordered_at, order_items.revenue FROM order_items ORDER BY order_items.ordered_at"
+  },
+  "compiled_sql": {
+    "orders.subtotal": "WITH orders_cte AS (\n  SELECT\n    order_id AS order_id,\n    DATE_TRUNC('DAY', ordered_at) AS ordered_at,\n    subtotal AS subtotal_raw\n  FROM main.orders\n)\nSELECT\n  orders_cte.ordered_at AS ordered_at,\n  SUM(orders_cte.subtotal_raw) AS subtotal\nFROM orders_cte\nGROUP BY\n  1\n-- sidemantic: models=orders metrics=orders.subtotal dimensions=orders.ordered_at",
+    "order_items.revenue": "WITH order_items_cte AS (\n  SELECT\n    order_item_id AS order_item_id,\n    DATE_TRUNC('DAY', ordered_at) AS ordered_at,\n    product_price AS revenue_raw\n  FROM main.order_items\n)\nSELECT\n  order_items_cte.ordered_at AS ordered_at,\n  SUM(order_items_cte.revenue_raw) AS revenue\nFROM order_items_cte\nGROUP BY\n  1\n-- sidemantic: models=order_items metrics=order_items.revenue dimensions=order_items.ordered_at"
+  },
+  "daily": {
+    "dates_compared": 365,
+    "first_date": "2024-09-01",
+    "last_date": "2025-08-31",
+    "dates_missing_from_either": 0,
+    "dates_with_different_values": 0,
+    "example_mismatched_dates": [],
+    "orders_subtotal_dollars": "637444.00",
+    "order_items_revenue_dollars": "637444.00"
+  },
+  "status": "observed_daily_equality_in_unified_engine_conditional_order_grain_not_gold",
+  "limit": "Sidemantic imports both YAML formats into one engine; neither the native MetricFlow nor the native Cube service was run. At order grain 483 zero-item orders have NULL/absent item sums; equality requires an explicit left join and COALESCE. A finite demonstration sample cannot prove future or independent equivalence."
+}

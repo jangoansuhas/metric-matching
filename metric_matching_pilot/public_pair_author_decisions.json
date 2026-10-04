@@ -1,0 +1,38 @@
+{
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "status": "all_disagreements_author_decided_not_benchmark_ground_truth",
+  "decisions": [
+    {
+      "id": "JS-001",
+      "accepted_label": "related",
+      "decided_by": "paper author in conversation",
+      "date": "2026-09-27",
+      "reason": "The tax-inclusive order total and pretax item revenue are linked monetary measures at order and item grains, but the pinned public seeds show a 3,398,137-cent difference due to tax; an unqualified cross-grain-equivalent label is contradicted by the sample.",
+      "independent_adjudicator_confirmation": "not recorded"
+    },
+    {
+      "id": "JS-005",
+      "accepted_label": "temporal_or_scope_variant",
+      "decided_by": "paper author in conversation",
+      "date": "2026-09-27",
+      "reason": "Food and drink revenue sum the same product_price input at the same item grain, with different category predicates. The taxonomy treats disjoint sibling slices as scope variants; they are not interchangeable.",
+      "independent_adjudicator_confirmation": "not recorded"
+    },
+    {
+      "id": "JS-007",
+      "accepted_label": "related",
+      "decided_by": "paper author in conversation",
+      "date": "2026-09-27",
+      "reason": "Customer and order counts are different non-substitutable measures, but their entities are linked by the repository's customer-to-order relationship and orders-per-customer derivation. This taxonomy labels such measures related.",
+      "independent_adjudicator_confirmation": "not recorded"
+    },
+    {
+      "id": "JS-010",
+      "accepted_label": "temporal_or_scope_variant",
+      "decided_by": "paper author in conversation",
+      "date": "2026-09-27",
+      "reason": "All-time order totals reconcile with summed customer lifetime spend in the pinned seeds, but the default metric time dimensions ordered_at and first_ordered_at assign values to different dates on every one of the 365 sample dates. The label reflects a time-rule variant; an all-time cross-grain relationship would require explicit time alignment and verified one-customer-per-order mapping.",
+      "independent_adjudicator_confirmation": "not recorded"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "corpus": "dbt-labs/jaffle-shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "scope": "three selected metric paths in source SQL, without dbt compilation or data reconciliation",
+  "cases": [
+    {
+      "metric": "order_total",
+      "model": "orders",
+      "yaml_evidence": "models/marts/orders.yml",
+      "aggregation": "sum",
+      "metric_expression": "order_total",
+      "filter": null,
+      "measure_lineage": {
+        "status": "candidate_lineage",
+        "origin": "ecom.raw_orders.order_total",
+        "expression_kind": "adapter_dispatched_macro",
+        "computed_expression": null,
+        "steps": [
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "final",
+            "column": "order_total",
+            "expression": "*"
+          },
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "customer_order_count",
+            "column": "order_total",
+            "expression": "*"
+          },
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "compute_booleans",
+            "column": "order_total",
+            "expression": "orders.*"
+          },
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "orders",
+            "column": "order_total",
+            "expression": "*"
+          },
+          {
+            "file": "models/staging/stg_orders.sql",
+            "scope": "final",
+            "column": "order_total",
+            "expression": "*"
+          },
+          {
+            "file": "models/staging/stg_orders.sql",
+            "scope": "renamed",
+            "column": "order_total",
+            "expression": "{{ cents_to_dollars('order_total') }}"
+          },
+          {
+            "file": "models/staging/stg_orders.sql",
+            "scope": "source",
+            "column": "order_total",
+            "expression": "*"
+          }
+        ],
+        "warnings": [
+          "Qualified star crosses a join; row multiplicity has not been validated",
+          "cents_to_dollars is adapter-dispatched; transformation is not compiled or executed"
+        ]
+      },
+      "filter_lineage": null,
+      "relationship_label": "not_evaluated"
+    },
+    {
+      "metric": "revenue",
+      "model": "order_items",
+      "yaml_evidence": "models/marts/order_items.yml",
+      "aggregation": "sum",
+      "metric_expression": "product_price",
+      "filter": null,
+      "measure_lineage": {
+        "status": "candidate_lineage",
+        "origin": "ecom.raw_products.price",
+        "expression_kind": "adapter_dispatched_macro",
+        "computed_expression": null,
+        "steps": [
+          {
+            "file": "models/marts/order_items.sql",
+            "scope": "final",
+            "column": "product_price",
+            "expression": "*"
+          },
+          {
+            "file": "models/marts/order_items.sql",
+            "scope": "joined",
+            "column": "product_price",
+            "expression": "products.product_price",
+            "join_predicate": "order_items.product_id = products.product_id"
+          },
+          {
+            "file": "models/marts/order_items.sql",
+            "scope": "products",
+            "column": "product_price",
+            "expression": "*"
+          },
+          {
+            "file": "models/staging/stg_products.sql",
+            "scope": "final",
+            "column": "product_price",
+            "expression": "*"
+          },
+          {
+            "file": "models/staging/stg_products.sql",
+            "scope": "renamed",
+            "column": "product_price",
+            "expression": "{{ cents_to_dollars('price') }}"
+          },
+          {
+            "file": "models/staging/stg_products.sql",
+            "scope": "source",
+            "column": "price",
+            "expression": "*"
+          }
+        ],
+        "warnings": [
+          "Join key is visible, but one-to-one cardinality was not checked against rows",
+          "cents_to_dollars is adapter-dispatched; transformation is not compiled or executed"
+        ]
+      },
+      "filter_lineage": null,
+      "relationship_label": "not_evaluated"
+    },
+    {
+      "metric": "new_customer_orders",
+      "model": "orders",
+      "yaml_evidence": "models/marts/orders.yml",
+      "aggregation": "sum",
+      "metric_expression": 1,
+      "filter": "{{ Dimension('order_id__customer_order_number') }} = 1\n",
+      "measure_lineage": {
+        "status": "constant_one",
+        "origin": null
+      },
+      "filter_lineage": {
+        "status": "candidate_lineage",
+        "origin": null,
+        "expression_kind": "row_number_window",
+        "computed_expression": "row_number() over ( partition by customer_id order by ordered_at asc )",
+        "steps": [
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "final",
+            "column": "customer_order_number",
+            "expression": "*"
+          },
+          {
+            "file": "models/marts/orders.sql",
+            "scope": "customer_order_count",
+            "column": "customer_order_number",
+            "expression": "row_number() over ( partition by customer_id order by ordered_at asc )"
+          }
+        ],
+        "warnings": [
+          "Window expression inputs and ordering are recorded, not proven by SQL compilation",
+          "MetricFlow Dimension binding was inferred from text, not compiled"
+        ],
+        "unresolved_semantic_filter": "{{ Dimension('order_id__customer_order_number') }} = 1"
+      },
+      "relationship_label": "not_evaluated"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/develop",
+  "node_id": "REF_kwDOUkOEhrJyZWZzL2hlYWRzL2RldmVsb3A",
+  "url": "https://api.github.com/repos/823338779/metric_platform-dbt-infra/git/refs/heads/develop",
+  "object": {
+    "sha": "bd8b10e1f3456f5553760b57779ae621a10eaa45",
+    "type": "commit",
+    "url": "https://api.github.com/repos/823338779/metric_platform-dbt-infra/git/commits/bd8b10e1f3456f5553760b57779ae621a10eaa45"
+  }
+}

@@ -1,0 +1,4415 @@
+{
+  "candidates": [
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "name": "count_lifetime_orders"
+          },
+          {
+            "name": "lifetime_spend_pretax"
+          }
+        ]
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "derived",
+      "name": "average_order_value",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "e880724e92eb18a9d09bc60bdcc26ab5eb688f4c",
+        "line": 74,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "yaml_path": "doc[0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "count_distinct",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "customers",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "e880724e92eb18a9d09bc60bdcc26ab5eb688f4c",
+        "line": 51,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "yaml_path": "doc[0].models[0][0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "count_lifetime_orders",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "e880724e92eb18a9d09bc60bdcc26ab5eb688f4c",
+        "line": 57,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "yaml_path": "doc[0].models[0][0].metrics[0][1]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "lifetime_spend_pretax",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "e880724e92eb18a9d09bc60bdcc26ab5eb688f4c",
+        "line": 62,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "yaml_path": "doc[0].models[0][0].metrics[0][2]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "lifetime_spend",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "e880724e92eb18a9d09bc60bdcc26ab5eb688f4c",
+        "line": 67,
+        "path": "models/marts/customers.yml",
+        "sha256": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+        "yaml_path": "doc[0].models[0][0].metrics[0][3]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "average",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "average_tax_rate",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "3d519166e9b324d72cc3a5f5274e12e939937c62",
+        "line": 21,
+        "path": "models/marts/locations.yml",
+        "sha256": "72f3543ae5a15ad2de7e961dff3646015e8da65cebffbfd0731de89f3f194969",
+        "yaml_path": "doc[0].models[0][0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "denominator": "revenue",
+        "numerator": "food_revenue"
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "ratio",
+      "name": "food_revenue_pct",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 67,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "denominator": "revenue",
+        "numerator": "drink_revenue"
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+      "kind": "metric",
+      "metric_type": "ratio",
+      "name": "drink_revenue_pct",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 73,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].metrics[0][1]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "alias": "current_revenue",
+            "name": "revenue"
+          },
+          {
+            "alias": "revenue_prev_month",
+            "name": "revenue",
+            "offset_window": "1 month"
+          }
+        ]
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+      "kind": "metric",
+      "metric_type": "derived",
+      "name": "revenue_growth_mom",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 81,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].metrics[0][2]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "input_metrics": [
+          {
+            "name": "revenue"
+          },
+          {
+            "alias": "cost",
+            "name": "order_cost"
+          }
+        ]
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+      "kind": "metric",
+      "metric_type": "derived",
+      "name": "order_gross_profit",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 92,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].metrics[0][3]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": null,
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {
+        "input_metric": "revenue"
+      },
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+      "kind": "metric",
+      "metric_type": "cumulative",
+      "name": "cumulative_revenue",
+      "reasons": [
+        "dependency_numeric_type_unverified"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 103,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].metrics[0][4]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "revenue",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 40,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].models[0][0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "food_revenue",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 46,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].models[0][0].metrics[0][1]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "drink_revenue",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 52,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].models[0][0].metrics[0][2]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "median",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "median_revenue",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "4896768d319b92ab97db9d67b386af79f0c6d078",
+        "line": 58,
+        "path": "models/marts/order_items.yml",
+        "sha256": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+        "yaml_path": "doc[0].models[0][0].metrics[0][3]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "order_total",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 61,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][0]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "orders",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 66,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][1]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "new_customer_orders",
+      "reasons": [
+        "jinja"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 72,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][2]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "large_orders",
+      "reasons": [
+        "jinja"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 80,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][3]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "food_orders",
+      "reasons": [
+        "jinja"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 88,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][4]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "unknown",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "drink_orders",
+      "reasons": [
+        "jinja"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 96,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][5]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "tax_paid",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 104,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][6]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    },
+    {
+      "aggregate": "sum",
+      "compiled_provenance": null,
+      "declared_data_type": null,
+      "declared_dependencies": {},
+      "eligibility": "eligible",
+      "id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+      "kind": "metric",
+      "metric_type": "simple",
+      "name": "order_cost",
+      "reasons": [
+        "numeric_aggregate_declaration"
+      ],
+      "source": {
+        "git_blob": "b6e108014493d151da1618b47bbd308b20e62d58",
+        "line": 109,
+        "path": "models/marts/orders.yml",
+        "sha256": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+        "yaml_path": "doc[0].models[0][0].metrics[0][7]"
+      },
+      "unresolved_semantics": [
+        "grain",
+        "time",
+        "null_policy",
+        "join_cardinality",
+        "snapshot"
+      ]
+    }
+  ],
+  "coverage": {
+    "all_declared_scalar_pairs": 253,
+    "all_pair_status": {
+      "eligible": 78,
+      "unknown": 175
+    },
+    "candidate_scalar_definitions": 23,
+    "declared_measures": 0,
+    "declared_metrics": 23,
+    "eligibility_by_kind": {
+      "measure": {},
+      "metric": {
+        "eligible": 13,
+        "unknown": 10
+      },
+      "unresolved": {}
+    },
+    "eligible": 13,
+    "primary_metric_pairs": 253,
+    "primary_pair_status": {
+      "eligible": 78,
+      "unknown": 175
+    },
+    "unknown": 10,
+    "unknown_reasons": {
+      "dependency_numeric_type_unverified": 6,
+      "jinja": 4
+    },
+    "unresolved_scope_placeholders": 0
+  },
+  "frames": {
+    "primary_exposed_metrics": {
+      "candidate_ids": [
+        "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]"
+      ],
+      "pairs": [
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        }
+      ]
+    },
+    "secondary_all_declared_scalars": {
+      "candidate_ids": [
+        "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+        "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]"
+      ],
+      "pairs": [
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/customers.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/locations.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][0]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][1]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/order_items.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][0]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][1]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][2]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][3]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "right_status": "unknown"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][4]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "unknown",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][5]",
+          "left_status": "unknown",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        },
+        {
+          "eligibility": "eligible",
+          "left_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][6]",
+          "left_status": "eligible",
+          "right_id": "yaml:metric:models/marts/orders.yml:doc[0].models[0][0].metrics[0][7]",
+          "right_status": "eligible"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Pair completeness applies only to emitted IDs (including unresolved placeholders) in each frame; invalid YAML/container shapes can hide an unknown number of declarations.",
+    "Declared metrics and measures are distinct scalar definitions with resource-qualified IDs. A metric's measure reference is a dependency, not an equivalence label; same names do not collapse units.",
+    "Dimensions, entity keys and ordinary SQL projections are not declared metric outputs.",
+    "A numeric aggregation is declaration-level type evidence, not verified runtime value or equivalence.",
+    "Derived, ratio, cumulative and unsupported numeric results remain unknown without resolved dependency types.",
+    "YAML source and manifest resources are different inventories; separate revisions/build transformations can change counts.",
+    "A manifest hash and a pinned checkout do not establish that the manifest was built from that commit; compiled provenance and source mapping remain unverified.",
+    "No labels, row outcomes, candidate correctness or method superiority are measured."
+  ],
+  "negative_control": {
+    "declared_metric_statuses": {
+      "declared_total": "eligible",
+      "templated_value": "unknown"
+    },
+    "exact_dependency_manifest_binding": "eligible",
+    "excluded_column_names": [
+      "entity_key",
+      "value"
+    ],
+    "interpretation": "Numeric entity_key and arbitrary value columns are excluded; templated, untyped and malformed metric declarations remain unknown; same-named metric and measure remain distinct; only an exact dependency permits measure-derived eligibility.",
+    "malformed_container_arity": "unknown",
+    "missing_metric_type": "unknown",
+    "name_only_manifest_binding": "unknown",
+    "path": "generic_metric_eligibility_negative.yml",
+    "resource_qualified_candidate_ids": [
+      "yaml:measure:models/fixture.yml:doc[0].models[0][0].measures[0][0]",
+      "yaml:metric:models/fixture.yml:doc[0].models[0][0].metrics[0][0]",
+      "yaml:metric:models/fixture.yml:doc[0].models[0][0].metrics[0][1]"
+    ],
+    "sha256": "320809e34a2e877224da69ac3a98840188738faa4114619453a51238cf3b49a1"
+  },
+  "provenance": {
+    "inputs": {
+      "models/marts/customers.yml": "698f0aef0f2b05076b8ef53c00b21fcae160f075f2d867bf3770a04851d4f4fd",
+      "models/marts/locations.yml": "72f3543ae5a15ad2de7e961dff3646015e8da65cebffbfd0731de89f3f194969",
+      "models/marts/metricflow_time_spine.yml": "89c27b8d89b9df6069f69a3dd5601e0113fac458a8e352490fb2ec917c1715af",
+      "models/marts/order_items.yml": "6a1db5efe79c134073f5ecd7dcd7724541b7e09cae60cc55ccf58531ec6e4a78",
+      "models/marts/orders.yml": "ed9fe782567b5372301f53c7afbf5406ea754ed48fbd66fc04f83bc98c0adcac",
+      "models/marts/products.yml": "acd974cdbbfa7d0b5f5443b1482d3e33a603f0bf35b0b81dd62b52b3173d3026",
+      "models/marts/supplies.yml": "b07abbdb2cb46f918847ab00a3eb2e4a4734ee58d969c263f44e77df24f151a1",
+      "models/staging/__sources.yml": "10adce12d0a2c35b2c4e1e6039b02c903617ada4fc8eacc5a9a6e1cfc14b78dc",
+      "models/staging/stg_customers.yml": "f7d0a82bf5390ec52acf685f97f3586acc01bb3618d00d139c1e3803a87767c2",
+      "models/staging/stg_locations.yml": "3d2415cceb6ee5d9677458ef8c630549b2248fe1e09d8f8e24e3d3f223cd3725",
+      "models/staging/stg_order_items.yml": "9615aa52b7920f63d8c357df21c7f37fbef4259451dd063d7a3552587ec718bf",
+      "models/staging/stg_orders.yml": "65bada56817d47606654c64f33bcaef8e8bfb0a379eb0a4673ac20087e24ab1b",
+      "models/staging/stg_products.yml": "d27d88955037c0e6b2ce54010dcf73aab6e320fa4759e5b4c747019f80705294",
+      "models/staging/stg_supplies.yml": "df15043b6aa5a59497f96ceeaf35ddf112966435084f7a5868bc7c6e8d4d6b87"
+    },
+    "mode": "yaml",
+    "parser": {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    "project": "jaffle_shop",
+    "project_yaml": {
+      "path": "dbt_project.yml",
+      "sha256": "4ef498cd66a1f7badfde6d3d366ed908db07f598b9b63657ee89f7407c47f01c"
+    },
+    "repo_commit": "5beb145b00f5465ec759cfcdd9745e858818cf95"
+  },
+  "reproduce_command": "python3 -B metric_matching_pilot/generic_metric_eligibility.py --repo public_corpus/jaffle-shop --expected-commit 5beb145b00f5465ec759cfcdd9745e858818cf95 --source yaml --output-prefix metric_matching_pilot/generic_metric_eligibility_report --check",
+  "schema_version": 1,
+  "scope": "development_only_declared_dbt_metric_output_inventory",
+  "source_census": {
+    "non_candidate_census": {
+      "dimension_columns": 25,
+      "entity_columns": 10,
+      "ordinary_columns": 13
+    },
+    "yaml_files_outside_model_paths": [
+      ".github/workflows/cd_prod.yml",
+      ".github/workflows/cd_staging.yml",
+      ".github/workflows/ci.yml",
+      ".pre-commit-config.yaml",
+      "Taskfile.yml",
+      "package-lock.yml",
+      "packages.yml"
+    ],
+    "yaml_files_scanned": [
+      "models/marts/customers.yml",
+      "models/marts/locations.yml",
+      "models/marts/metricflow_time_spine.yml",
+      "models/marts/order_items.yml",
+      "models/marts/orders.yml",
+      "models/marts/products.yml",
+      "models/marts/supplies.yml",
+      "models/staging/__sources.yml",
+      "models/staging/stg_customers.yml",
+      "models/staging/stg_locations.yml",
+      "models/staging/stg_order_items.yml",
+      "models/staging/stg_orders.yml",
+      "models/staging/stg_products.yml",
+      "models/staging/stg_supplies.yml"
+    ]
+  }
+}

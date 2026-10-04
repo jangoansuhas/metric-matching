@@ -1,0 +1,36 @@
+{
+  "frozen_before_second_reviewer_response": "2026-09-27",
+  "provenance": "Existing paper outline Sections 19-20 and public audit reports; separate reviewer was instructed not to read this file or those reports.",
+  "cases": [
+    {
+      "id": "BR-01",
+      "first_label": "conditional_cross_grain_equivalent_control",
+      "condition": "Same segment, configured date window and net-new filters; monthly values rolled up to the window value in the built GTM sample.",
+      "limits": "Designed two-branch implementation of one metric; synthetic data and finite row check."
+    },
+    {
+      "id": "BR-02",
+      "first_label": "direct_lineage_alias_control",
+      "condition": "Only the canonical row and its variant_value/canonical_value fields for pipeline_created; source window grain and segment All.",
+      "limits": "The report directly projects the upstream value; this is not independent duplicate calculation."
+    },
+    {
+      "id": "BR-03",
+      "first_label": "conditional_cross_grain_candidate_not_gold",
+      "condition": "Aligned ordered_at daily totals; at order grain left join all orders and COALESCE absent item sums to zero.",
+      "limits": "483 zero-item orders disagree at order grain before NULL-to-zero handling; one translating semantic engine, no independent gold label."
+    },
+    {
+      "id": "BR-04",
+      "first_label": "behavior_changing_on_zero_denominator",
+      "condition": "CTR and eCPM gain NULLIF in the denominator in a real historical commit; change affects zero-denominator inputs in DuckDB 1.4.4.",
+      "limits": "Constructed division check, no Rill source-row or native runtime execution."
+    },
+    {
+      "id": "BR-05",
+      "first_label": null,
+      "condition": null,
+      "limits": "This pair was added to the blind second review without an earlier first-analyst decision; it cannot contribute to an agreement statistic."
+    }
+  ]
+}

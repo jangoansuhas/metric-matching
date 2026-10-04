@@ -1,0 +1,1935 @@
+{
+  "cases": [
+    {
+      "build_event": {
+        "commit_attested_by_build": false,
+        "generated_at": "2026-09-27T18:14:32.653406Z",
+        "invocation_id": "221899e6-70d4-4868-a3cd-62f01372b410",
+        "note": "Manifest generation and checked-out Git commit are separate events."
+      },
+      "checked_out_commit": "a71232c123a5fb78da9b52d4246950ee48591c00",
+      "checked_out_commit_matches_pin": true,
+      "coverage": {
+        "compiled_files_exact_manifest_code": 33,
+        "compiled_files_strip_only_manifest_code": 0,
+        "manifest_raw_code_exact_pinned_blob": 0,
+        "manifest_raw_code_one_trailing_lf_only_pinned_blob": 33,
+        "manifest_raw_code_strip_only_pinned_blob": 0,
+        "manifest_source_checksums_equal_pinned_blob": 0,
+        "manifest_source_checksums_equal_raw_code": 33,
+        "model_artifact_checks_pass": 33,
+        "models_enumerated": 33,
+        "needs_review": 0,
+        "pinned_blob_and_compiled_file_exact_manifest_code": 33,
+        "pinned_source_blobs_read": 33,
+        "source_mapping_needs_review": 0
+      },
+      "expected_commit": "a71232c123a5fb78da9b52d4246950ee48591c00",
+      "expected_dbt_version": "1.11.6",
+      "expected_project": "arcline",
+      "git_root_matches_input": true,
+      "manifest_file": {
+        "bytes": 1178834,
+        "sha256": "16c739b2ff2348c0047b564b08a0dac43bcfe4ee25cd3d2a761b912fc646fe95"
+      },
+      "manifest_metadata": {
+        "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+        "dbt_version": "1.11.6",
+        "project_name": "arcline"
+      },
+      "manifest_path": "target/manifest.json",
+      "nodes": [
+        {
+          "compiled_file": {
+            "bytes": 233,
+            "sha256": "d4bc34e30c9033e89cacc5380a1bc4d729a73cec21f93eb33f547cf9c8718278",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/dim_accounts.sql",
+          "manifest_compiled_code_sha256": "d4bc34e30c9033e89cacc5380a1bc4d729a73cec21f93eb33f547cf9c8718278",
+          "manifest_raw_code_sha256": "83527162ad566c3af3ae187c0e5b4b5bf8d8841bfd652f25629fdfe38bdd2dcb",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "83527162ad566c3af3ae187c0e5b4b5bf8d8841bfd652f25629fdfe38bdd2dcb",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.dim_accounts",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 215,
+            "git_mode": "100644",
+            "git_oid": "8e44212eaa451086511b035c609cc2128753a36b",
+            "sha256": "21a4930f93e1fe9b960417dd7bb269a32b26eb485a1883c680ba31aaacc0361e",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/dim_accounts.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 215,
+            "sha256": "21a4930f93e1fe9b960417dd7bb269a32b26eb485a1883c680ba31aaacc0361e",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1947,
+            "sha256": "5dd5085e4c8ae714c752c2456a8e2800f635ec4f8fb7a67ca2953c5c59be70de",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/dim_date.sql",
+          "manifest_compiled_code_sha256": "5dd5085e4c8ae714c752c2456a8e2800f635ec4f8fb7a67ca2953c5c59be70de",
+          "manifest_raw_code_sha256": "c7b25606bdda0fb480b2a9da9aa38597478f81cf79477c763de57b7bc44c53c9",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "c7b25606bdda0fb480b2a9da9aa38597478f81cf79477c763de57b7bc44c53c9",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.dim_date",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 648,
+            "git_mode": "100644",
+            "git_oid": "1cf8bd01aabbaf813ba8ce92c28976c63e5fc804",
+            "sha256": "ab567e78c63ef9fcb9ac05404e5a1fb68a91c38766f3cd9e9d9f953881369f0d",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/dim_date.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 648,
+            "sha256": "ab567e78c63ef9fcb9ac05404e5a1fb68a91c38766f3cd9e9d9f953881369f0d",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 2826,
+            "sha256": "34e5fd19b328db31c7d07e612d68f18664c13984f137eb08455b5f693187f683",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/metrics/dim_metric_catalog.sql",
+          "manifest_compiled_code_sha256": "34e5fd19b328db31c7d07e612d68f18664c13984f137eb08455b5f693187f683",
+          "manifest_raw_code_sha256": "34e5fd19b328db31c7d07e612d68f18664c13984f137eb08455b5f693187f683",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "34e5fd19b328db31c7d07e612d68f18664c13984f137eb08455b5f693187f683",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.dim_metric_catalog",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 2827,
+            "git_mode": "100644",
+            "git_oid": "0a3ea81b7fc03a09718186e3dc538f8256463b1f",
+            "sha256": "5cfc723fb992548e9e331ae6a9644362f7983910691d48ea0f032796e3f1fe8a",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/metrics/dim_metric_catalog.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 2827,
+            "sha256": "5cfc723fb992548e9e331ae6a9644362f7983910691d48ea0f032796e3f1fe8a",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 190,
+            "sha256": "8272e38935ad8241e9dd3f6d553519be223945b59df3c06afcb1e2b590bc1567",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/dim_users.sql",
+          "manifest_compiled_code_sha256": "8272e38935ad8241e9dd3f6d553519be223945b59df3c06afcb1e2b590bc1567",
+          "manifest_raw_code_sha256": "b3cb2d5f697c8f2d50c13a46f8cbead51379b3e38997ac9ec3b6f745ac1841f3",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "b3cb2d5f697c8f2d50c13a46f8cbead51379b3e38997ac9ec3b6f745ac1841f3",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.dim_users",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 172,
+            "git_mode": "100644",
+            "git_oid": "aeb424977a58f1f827edd6a23bcd9f8d4c4b65e0",
+            "sha256": "45cf47a783093bdf3c0be4d4ebf20e3211e801854fce7c17d1cc758b33357b32",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/dim_users.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 172,
+            "sha256": "45cf47a783093bdf3c0be4d4ebf20e3211e801854fce7c17d1cc758b33357b32",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1454,
+            "sha256": "00b55c6c2fdacbbcbedffd0ec31d50e0c1852242714ea1efb1aea5637ad39f6a",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/attribution/fct_attribution.sql",
+          "manifest_compiled_code_sha256": "00b55c6c2fdacbbcbedffd0ec31d50e0c1852242714ea1efb1aea5637ad39f6a",
+          "manifest_raw_code_sha256": "867d1a62d4166be2dc3ef3ae29c7e820de04ca04d91c49e9042278ef066fb636",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "867d1a62d4166be2dc3ef3ae29c7e820de04ca04d91c49e9042278ef066fb636",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_attribution",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1436,
+            "git_mode": "100644",
+            "git_oid": "ef44d4290a7b8bb0732c0b53008cb4e142e03ea4",
+            "sha256": "fba91e011c477cd39530f1b4a5b93db80b0f72b6a4e99e5c3d0eabc4b4e73352",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/attribution/fct_attribution.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1436,
+            "sha256": "fba91e011c477cd39530f1b4a5b93db80b0f72b6a4e99e5c3d0eabc4b4e73352",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 2633,
+            "sha256": "7822f963ed498b9cb9bc76c374cdfbe64e7c3eaf135cb5ab9d3fdbe3d98cadac",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/funnel/fct_cohort_progression.sql",
+          "manifest_compiled_code_sha256": "7822f963ed498b9cb9bc76c374cdfbe64e7c3eaf135cb5ab9d3fdbe3d98cadac",
+          "manifest_raw_code_sha256": "2ff500f52612b1309fe30ae18d01f3240f1383dc199dde6cd4ab82ac4102b164",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "2ff500f52612b1309fe30ae18d01f3240f1383dc199dde6cd4ab82ac4102b164",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_cohort_progression",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 2512,
+            "git_mode": "100644",
+            "git_oid": "b87ef37324a1e50d578f8b776d3176b34d356550",
+            "sha256": "ec1007ad104bcab253931cbe71ebdb4fde271f8816c8483378cb1f5d4757d448",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/funnel/fct_cohort_progression.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 2512,
+            "sha256": "ec1007ad104bcab253931cbe71ebdb4fde271f8816c8483378cb1f5d4757d448",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1619,
+            "sha256": "2ba7daf5888eed7c58444369810ae434e366fe4e65aef0e1cc04cf4480e67f57",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/funnel/fct_funnel_conversion.sql",
+          "manifest_compiled_code_sha256": "2ba7daf5888eed7c58444369810ae434e366fe4e65aef0e1cc04cf4480e67f57",
+          "manifest_raw_code_sha256": "f0044a3de43846fbb0572a3d4793cfb6251af534be853ff455e479bf3db5e469",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "f0044a3de43846fbb0572a3d4793cfb6251af534be853ff455e479bf3db5e469",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_funnel_conversion",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1601,
+            "git_mode": "100644",
+            "git_oid": "09f1ad21428a813afa65cbb1c31a68e44f8ccdfc",
+            "sha256": "14c041aba5e824f04a0dd712f3c26729579b99c5a6496857d4fe8b6bde5a6513",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/funnel/fct_funnel_conversion.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1601,
+            "sha256": "14c041aba5e824f04a0dd712f3c26729579b99c5a6496857d4fe8b6bde5a6513",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 3301,
+            "sha256": "991849368aff74a0d983998db71642863441d24d5d8866f6a570ab72a974c30e",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/fct_leads.sql",
+          "manifest_compiled_code_sha256": "991849368aff74a0d983998db71642863441d24d5d8866f6a570ab72a974c30e",
+          "manifest_raw_code_sha256": "fd71736f002558c49e766facae4de6cc345ef85f10f72023666473aafd6b1eeb",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "fd71736f002558c49e766facae4de6cc345ef85f10f72023666473aafd6b1eeb",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_leads",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 3174,
+            "git_mode": "100644",
+            "git_oid": "c52efa6a1edaee254363e1c5f16bf752b35a69a4",
+            "sha256": "76e271813dcedff1abc61a9e5d78ef3fe3e62f6a9412bd83864565f8dcc688a8",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/fct_leads.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 3174,
+            "sha256": "76e271813dcedff1abc61a9e5d78ef3fe3e62f6a9412bd83864565f8dcc688a8",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 4100,
+            "sha256": "9af5d9c5060209af7af4d0f962b73f5d50a242ec00e6dfc8d605f35c676deb39",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/metrics/fct_metric_values.sql",
+          "manifest_compiled_code_sha256": "9af5d9c5060209af7af4d0f962b73f5d50a242ec00e6dfc8d605f35c676deb39",
+          "manifest_raw_code_sha256": "644354d617dcf6fc2503a90c7e5dab9e11bc78bd14873a8be3be44e93ba45727",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "644354d617dcf6fc2503a90c7e5dab9e11bc78bd14873a8be3be44e93ba45727",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_metric_values",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 4045,
+            "git_mode": "100644",
+            "git_oid": "d132b0f7bff59efe32f587ff67e6299fa1bad377",
+            "sha256": "62bac0c881fb4a3956efdcdcc112510614f2e2b9c5a6f223bc6dd45536ead7f5",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/metrics/fct_metric_values.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 4045,
+            "sha256": "62bac0c881fb4a3956efdcdcc112510614f2e2b9c5a6f223bc6dd45536ead7f5",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 453,
+            "sha256": "354dc0036b86ba5e28cca9edad0ca0fa939f407cde4d494f3c034216b5257b2c",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/fct_mqls.sql",
+          "manifest_compiled_code_sha256": "354dc0036b86ba5e28cca9edad0ca0fa939f407cde4d494f3c034216b5257b2c",
+          "manifest_raw_code_sha256": "088105c9effb40d866fe31f2dbd9b30156a58747af0290af95d050cfaa540a92",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "088105c9effb40d866fe31f2dbd9b30156a58747af0290af95d050cfaa540a92",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_mqls",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 447,
+            "git_mode": "100644",
+            "git_oid": "488415b8b043c092f4eb5b22922ea68f65ea45df",
+            "sha256": "c6c54ebd7747b5957433a68ba070a7beffd76cca6305dfe1064b3b383b2f71fe",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/fct_mqls.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 447,
+            "sha256": "c6c54ebd7747b5957433a68ba070a7beffd76cca6305dfe1064b3b383b2f71fe",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1173,
+            "sha256": "4f470bb1748ddd188083cbc373b0d5d475f813e5532c35ec30bc45ba52d7d7e1",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/fct_opportunities.sql",
+          "manifest_compiled_code_sha256": "4f470bb1748ddd188083cbc373b0d5d475f813e5532c35ec30bc45ba52d7d7e1",
+          "manifest_raw_code_sha256": "39857e59f23900e8a936849baf2e8d64a436d1de502b0270fcdddc7500835abb",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "39857e59f23900e8a936849baf2e8d64a436d1de502b0270fcdddc7500835abb",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_opportunities",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1129,
+            "git_mode": "100644",
+            "git_oid": "3ffdae887803f58fd566bf74df7b79510209203e",
+            "sha256": "b2ff3b548b53fee7ece7801daec7f31244efbcc90c592774ae67800c314bbd9c",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/fct_opportunities.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1129,
+            "sha256": "b2ff3b548b53fee7ece7801daec7f31244efbcc90c592774ae67800c314bbd9c",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 572,
+            "sha256": "8da845b140ed40546907f154cfaff1fcba3e22c8a8d32b9b5f45fb6487dde6da",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/core/fct_opportunity_stage.sql",
+          "manifest_compiled_code_sha256": "8da845b140ed40546907f154cfaff1fcba3e22c8a8d32b9b5f45fb6487dde6da",
+          "manifest_raw_code_sha256": "2b538fb58d1317f9f6ef07ad1311e6d2a6c7d93dfb8f0af50cfd5b6481fe1a15",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "2b538fb58d1317f9f6ef07ad1311e6d2a6c7d93dfb8f0af50cfd5b6481fe1a15",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_opportunity_stage",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 535,
+            "git_mode": "100644",
+            "git_oid": "745bd2d173ff1b22d12d60425c0d8350112b3753",
+            "sha256": "7386adf6f5a1ec2a492b5c49dc30f98f6c23d3f699528fc2972e66df979eca08",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/core/fct_opportunity_stage.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 535,
+            "sha256": "7386adf6f5a1ec2a492b5c49dc30f98f6c23d3f699528fc2972e66df979eca08",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 774,
+            "sha256": "ca62cb638c9db2294e9e8293120f281e854c9010af83fedf9eaace454f53f393",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/funnel/fct_stage_velocity.sql",
+          "manifest_compiled_code_sha256": "ca62cb638c9db2294e9e8293120f281e854c9010af83fedf9eaace454f53f393",
+          "manifest_raw_code_sha256": "9d06bc814cbfccdb122d10d6faf6bb0a4e098060df073ff2aee49361934597b5",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "9d06bc814cbfccdb122d10d6faf6bb0a4e098060df073ff2aee49361934597b5",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.fct_stage_velocity",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 756,
+            "git_mode": "100644",
+            "git_oid": "7ce05d0d1c21d55c18d18c819182109b0eab69b4",
+            "sha256": "0c0d6c64596135faf31ea7efbfcb0a28fbbaab603cf49103ade908cabbae2580",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/funnel/fct_stage_velocity.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 756,
+            "sha256": "0c0d6c64596135faf31ea7efbfcb0a28fbbaab603cf49103ade908cabbae2580",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 994,
+            "sha256": "f3844774e117a6b7024b01d122ddb4f6ad238a1cdd9be760c0610eb7b782492a",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/intermediate/int_activities__first_touch.sql",
+          "manifest_compiled_code_sha256": "f3844774e117a6b7024b01d122ddb4f6ad238a1cdd9be760c0610eb7b782492a",
+          "manifest_raw_code_sha256": "05781454a09eb69b64fd73714f10cd2d55955cb43f635473334490149048c6bf",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "05781454a09eb69b64fd73714f10cd2d55955cb43f635473334490149048c6bf",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_activities__first_touch",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 948,
+            "git_mode": "100644",
+            "git_oid": "7a2d6322d3dcf8db2291e5fb42dba5bc45a72f23",
+            "sha256": "8d78bdb0911c0beb84683005df987b3096c06ce1633bac4e599a02ff1b12f55a",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/intermediate/int_activities__first_touch.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 948,
+            "sha256": "8d78bdb0911c0beb84683005df987b3096c06ce1633bac4e599a02ff1b12f55a",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1139,
+            "sha256": "c674fe54052ab797e577e064a853fbcd1dd99a2f71f9d9c22cbe76dda8005082",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/attribution/int_attribution__opp_touches.sql",
+          "manifest_compiled_code_sha256": "c674fe54052ab797e577e064a853fbcd1dd99a2f71f9d9c22cbe76dda8005082",
+          "manifest_raw_code_sha256": "9b84c62e2962ef1dd5bc07f02225291435979da6918d821edcec187910e32bff",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "9b84c62e2962ef1dd5bc07f02225291435979da6918d821edcec187910e32bff",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_attribution__opp_touches",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1102,
+            "git_mode": "100644",
+            "git_oid": "407c797d14bc7bcf5ec13601e8d10bc36a2fd64b",
+            "sha256": "e515e37d3da1f153c0fee0251aca9a668a99d627c3757c25afb545c8fa6170a9",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/attribution/int_attribution__opp_touches.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1102,
+            "sha256": "e515e37d3da1f153c0fee0251aca9a668a99d627c3757c25afb545c8fa6170a9",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1251,
+            "sha256": "590b45d1f4b76c623c214768638fd22f85584b1d53c31370c6532b4525fa7e53",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/intermediate/int_leads__lifecycle_events.sql",
+          "manifest_compiled_code_sha256": "590b45d1f4b76c623c214768638fd22f85584b1d53c31370c6532b4525fa7e53",
+          "manifest_raw_code_sha256": "040f76fa1809c8ba3668a50f32ab5e7518eac4f4cb86277d8c110229ac2a32ec",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "040f76fa1809c8ba3668a50f32ab5e7518eac4f4cb86277d8c110229ac2a32ec",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_leads__lifecycle_events",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1244,
+            "git_mode": "100644",
+            "git_oid": "8f5bd27ef7b0028d5b56fb1a429e6801364cfc93",
+            "sha256": "e1dd0b0f83644ad4945d0cbd4a07227bef9387f00d7c7d79b3cb9977648910d5",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/intermediate/int_leads__lifecycle_events.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1244,
+            "sha256": "e1dd0b0f83644ad4945d0cbd4a07227bef9387f00d7c7d79b3cb9977648910d5",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 819,
+            "sha256": "2a8ee86dc581c0bd89f63cfe513634142525813dc5b4be5ff1c3fd2cedd86357",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/intermediate/int_leads__unified.sql",
+          "manifest_compiled_code_sha256": "2a8ee86dc581c0bd89f63cfe513634142525813dc5b4be5ff1c3fd2cedd86357",
+          "manifest_raw_code_sha256": "cd780288198551258731b5ba1f9df51f2bfe7abd8d060d954b59696a0867d242",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "cd780288198551258731b5ba1f9df51f2bfe7abd8d060d954b59696a0867d242",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_leads__unified",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 782,
+            "git_mode": "100644",
+            "git_oid": "385a816b6b6f52e48d27bd6df7fed814a931182d",
+            "sha256": "ed436b6ba7d62e0d745bc5024a122cfe96f4116ebc968694c870f23f436b0c4a",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/intermediate/int_leads__unified.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 782,
+            "sha256": "ed436b6ba7d62e0d745bc5024a122cfe96f4116ebc968694c870f23f436b0c4a",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1571,
+            "sha256": "c5e7d7f1581b84b443764908fabf34b59b25f4626411edda0226cbf8d717cc21",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/intermediate/int_opportunities__enriched.sql",
+          "manifest_compiled_code_sha256": "c5e7d7f1581b84b443764908fabf34b59b25f4626411edda0226cbf8d717cc21",
+          "manifest_raw_code_sha256": "ee95b0449eaf579379816600672272567e9d9d7dba3a82dc4d9260c422bc8590",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "ee95b0449eaf579379816600672272567e9d9d7dba3a82dc4d9260c422bc8590",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_opportunities__enriched",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1539,
+            "git_mode": "100644",
+            "git_oid": "e57485f5c5fed7d2e9f43637900de90d9df73a56",
+            "sha256": "60b99e89056ff67de9fcacaf2857f7e552db143eb16f8080fa4c7dfffea4c121",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/intermediate/int_opportunities__enriched.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1539,
+            "sha256": "60b99e89056ff67de9fcacaf2857f7e552db143eb16f8080fa4c7dfffea4c121",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1593,
+            "sha256": "4c7f9b4fb6424198b89ece7310c04bc84fcaec1977e688841a352a0c650899d9",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/intermediate/int_opportunities__stage_spells.sql",
+          "manifest_compiled_code_sha256": "4c7f9b4fb6424198b89ece7310c04bc84fcaec1977e688841a352a0c650899d9",
+          "manifest_raw_code_sha256": "e257b98bc9b12cbd5d34577f45075cb5cec6323cb53bffb63a7c0159913d8298",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "e257b98bc9b12cbd5d34577f45075cb5cec6323cb53bffb63a7c0159913d8298",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_opportunities__stage_spells",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1550,
+            "git_mode": "100644",
+            "git_oid": "c6d9b25a7b6a85d4ec5d4efb8cb076237493f364",
+            "sha256": "192684c1a8216e06b516f22fbc0d09501528aff815ab368b9138474215390827",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/intermediate/int_opportunities__stage_spells.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1550,
+            "sha256": "192684c1a8216e06b516f22fbc0d09501528aff815ab368b9138474215390827",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 2932,
+            "sha256": "7f14cf22f6343c8e82cba6c2c40362590560285109930261046f156bb3bb2e4d",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/reconciliation/int_pipeline__naive_variants.sql",
+          "manifest_compiled_code_sha256": "7f14cf22f6343c8e82cba6c2c40362590560285109930261046f156bb3bb2e4d",
+          "manifest_raw_code_sha256": "4a88f46ec14a32890e33d583769c8d45eb4cc4c4c93fbb71b1256a1749049805",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "4a88f46ec14a32890e33d583769c8d45eb4cc4c4c93fbb71b1256a1749049805",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.int_pipeline__naive_variants",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 2868,
+            "git_mode": "100644",
+            "git_oid": "a65de2bb8748b11bbc9a247e583ff53fddc99c49",
+            "sha256": "f83a090ec788bfec90196cf761ac1c01a3466525696fc1e03dc7aea798e58892",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/reconciliation/int_pipeline__naive_variants.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 2868,
+            "sha256": "f83a090ec788bfec90196cf761ac1c01a3466525696fc1e03dc7aea798e58892",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 480,
+            "sha256": "8a54636fbfa591c243c1370f7d6987a5e29966f0d2d2b181ef2b36f3cc684e75",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/attribution/rpt_attribution_by_campaign.sql",
+          "manifest_compiled_code_sha256": "8a54636fbfa591c243c1370f7d6987a5e29966f0d2d2b181ef2b36f3cc684e75",
+          "manifest_raw_code_sha256": "6a5ab5949a4aab05f344f09dca1fa5520faafcd6e2151863d413c8e2c0d4d0a9",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "6a5ab5949a4aab05f344f09dca1fa5520faafcd6e2151863d413c8e2c0d4d0a9",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.rpt_attribution_by_campaign",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 462,
+            "git_mode": "100644",
+            "git_oid": "f992600019fce71f2f7b1ce6afc5e71ea7569a96",
+            "sha256": "778386c23e7b2bfc2a8a73744cea7e8427b45dbdc04a9052b0ae355755fa5b04",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/attribution/rpt_attribution_by_campaign.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 462,
+            "sha256": "778386c23e7b2bfc2a8a73744cea7e8427b45dbdc04a9052b0ae355755fa5b04",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 2559,
+            "sha256": "15e418827a721733f3020dc6a4cc03ad66ea172e8934e46649a67ab5a14efed8",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/reconciliation/rpt_metric_reconciliation.sql",
+          "manifest_compiled_code_sha256": "15e418827a721733f3020dc6a4cc03ad66ea172e8934e46649a67ab5a14efed8",
+          "manifest_raw_code_sha256": "f5ffa0512e38c27acc1dc7cc2846883a7dcb09846b253745cd37a706756e506e",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "f5ffa0512e38c27acc1dc7cc2846883a7dcb09846b253745cd37a706756e506e",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.rpt_metric_reconciliation",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 2541,
+            "git_mode": "100644",
+            "git_oid": "61d1635c32c5307cff5d09336d1e3ec1006d38f8",
+            "sha256": "83676fcb43082401b6a18a2833bd73b45b86dde389c2264eb3619768cc2ef672",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/reconciliation/rpt_metric_reconciliation.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 2541,
+            "sha256": "83676fcb43082401b6a18a2833bd73b45b86dde389c2264eb3619768cc2ef672",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 2170,
+            "sha256": "3d2f5d6f231c683c1911a9e67ac3b51efcb33560c93aa9431c986e18436fc6bc",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/marts/monitoring/rpt_source_freshness.sql",
+          "manifest_compiled_code_sha256": "3d2f5d6f231c683c1911a9e67ac3b51efcb33560c93aa9431c986e18436fc6bc",
+          "manifest_raw_code_sha256": "31ccf5cb038381fdd65b3e0bda5623da0adef851ff7959ac6fb3a332f6fd4346",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "31ccf5cb038381fdd65b3e0bda5623da0adef851ff7959ac6fb3a332f6fd4346",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.rpt_source_freshness",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 2103,
+            "git_mode": "100644",
+            "git_oid": "afb4503b1af21473b680dea79f90c99bd50dfb88",
+            "sha256": "2e20dca9ba23e48beb8741040255ac08d4d15646b5280b38987540b078adf9e0",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/monitoring/rpt_source_freshness.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 2103,
+            "sha256": "2e20dca9ba23e48beb8741040255ac08d4d15646b5280b38987540b078adf9e0",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1699,
+            "sha256": "f55a87e4bdc1b65303398e84687efb9253d61730ee6dd80389b834af71c50607",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_hs__contacts.sql",
+          "manifest_compiled_code_sha256": "f55a87e4bdc1b65303398e84687efb9253d61730ee6dd80389b834af71c50607",
+          "manifest_raw_code_sha256": "e3314f927b719ee7573a7b1cfc415ca06140b4d00a5b5f5b404f6b30ab1d2a27",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "e3314f927b719ee7573a7b1cfc415ca06140b4d00a5b5f5b404f6b30ab1d2a27",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_hs__contacts",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1662,
+            "git_mode": "100644",
+            "git_oid": "1cfd686009b3ad66f4a414f863e4a468f89fc734",
+            "sha256": "95f65e2bfc12e73b21eeeeb6d019db9214b09889a4ed45cc465bd40824118887",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_hs__contacts.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1662,
+            "sha256": "95f65e2bfc12e73b21eeeeb6d019db9214b09889a4ed45cc465bd40824118887",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 406,
+            "sha256": "fb67008964e1cbf97c9be68bdc224cfd7a4d4255786f4e7479c8e88b5f2a5891",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_hs__id_crosswalk.sql",
+          "manifest_compiled_code_sha256": "fb67008964e1cbf97c9be68bdc224cfd7a4d4255786f4e7479c8e88b5f2a5891",
+          "manifest_raw_code_sha256": "a8ed2fb778e0038c4150b2480cea79c45648a572d855686ab347b62989463227",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "a8ed2fb778e0038c4150b2480cea79c45648a572d855686ab347b62989463227",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_hs__id_crosswalk",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 388,
+            "git_mode": "100644",
+            "git_oid": "23d9afa3d95162ea139b190fb777c2b0f088605e",
+            "sha256": "8e230112c3b1ff33d0d2c91bba5c319298e1daf79704e631067cd8fdaa2b114b",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_hs__id_crosswalk.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 388,
+            "sha256": "8e230112c3b1ff33d0d2c91bba5c319298e1daf79704e631067cd8fdaa2b114b",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 221,
+            "sha256": "c73ea971775d3c60abce04e55340f629a8dafad2cf62c2df815e96971637c80d",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_hs__lead_score_history.sql",
+          "manifest_compiled_code_sha256": "c73ea971775d3c60abce04e55340f629a8dafad2cf62c2df815e96971637c80d",
+          "manifest_raw_code_sha256": "2e9576b067a55d708b9d4f389d4f7f1417b4955f44801468034bacf88d8a62b3",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "2e9576b067a55d708b9d4f389d4f7f1417b4955f44801468034bacf88d8a62b3",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_hs__lead_score_history",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 203,
+            "git_mode": "100644",
+            "git_oid": "548a18cf42f294376b6cab2f05c7a74c75562da3",
+            "sha256": "45d1ba412496964345864e2d0a17c1bd33c645857c7b22bfbc4d84da004b5a92",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_hs__lead_score_history.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 203,
+            "sha256": "45d1ba412496964345864e2d0a17c1bd33c645857c7b22bfbc4d84da004b5a92",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 162,
+            "sha256": "84b23877928093fba92d6ba4e8cd27807af4849dbe70482131513eb65c56f43f",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_hs__lifecycle_history.sql",
+          "manifest_compiled_code_sha256": "84b23877928093fba92d6ba4e8cd27807af4849dbe70482131513eb65c56f43f",
+          "manifest_raw_code_sha256": "2e51d40d7ce549badc349a31faf09979b7a33a127fc3777f3786e3324e1577df",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "2e51d40d7ce549badc349a31faf09979b7a33a127fc3777f3786e3324e1577df",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_hs__lifecycle_history",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 144,
+            "git_mode": "100644",
+            "git_oid": "699dcc583b80a6c8d8916d28355c81e143b7c0ed",
+            "sha256": "2a4209791216d9599ab18657ad3fa81d5569fa9ca2ea9a2906cdf595f2b47a3f",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_hs__lifecycle_history.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 144,
+            "sha256": "2a4209791216d9599ab18657ad3fa81d5569fa9ca2ea9a2906cdf595f2b47a3f",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 215,
+            "sha256": "1a42fb363905f7ea668496e99df8300932bb59faafdd9ff647495bd216f71776",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_hs__marketing_events.sql",
+          "manifest_compiled_code_sha256": "1a42fb363905f7ea668496e99df8300932bb59faafdd9ff647495bd216f71776",
+          "manifest_raw_code_sha256": "b0f1ea3c344ea43f9f2459fa2a050015668be7a02bd51bc903a12eeb4180cc69",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "b0f1ea3c344ea43f9f2459fa2a050015668be7a02bd51bc903a12eeb4180cc69",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_hs__marketing_events",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 197,
+            "git_mode": "100644",
+            "git_oid": "ffbc42ca585a28f57af07470eb09fce365c68d39",
+            "sha256": "ddcbaa3f9c5ebe54a22b884356a99c87393610ecf75d92d524e612c32414db9f",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_hs__marketing_events.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 197,
+            "sha256": "ddcbaa3f9c5ebe54a22b884356a99c87393610ecf75d92d524e612c32414db9f",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 932,
+            "sha256": "44d9e811b9148835803c52a8d89b2e720a884616170c7fb8d033328d46c16acb",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_sf__accounts.sql",
+          "manifest_compiled_code_sha256": "44d9e811b9148835803c52a8d89b2e720a884616170c7fb8d033328d46c16acb",
+          "manifest_raw_code_sha256": "5f321677a9cf109f82f04a633c686db9bbc1cb6162100c724afe4076f28e1607",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "5f321677a9cf109f82f04a633c686db9bbc1cb6162100c724afe4076f28e1607",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_sf__accounts",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 895,
+            "git_mode": "100644",
+            "git_oid": "d4c7e3f7912762f68040e28c3511bc38834499a8",
+            "sha256": "a68c05cd0f523e8373db91d1ce5f92bd074ea259625cc53fbac76632e3364a91",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_sf__accounts.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 895,
+            "sha256": "a68c05cd0f523e8373db91d1ce5f92bd074ea259625cc53fbac76632e3364a91",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 391,
+            "sha256": "6f02aaec82d2b8dc78f66fa8aa681d10f0bd05c9cb7bb0223d0eaefb39c08ab8",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_sf__activities.sql",
+          "manifest_compiled_code_sha256": "6f02aaec82d2b8dc78f66fa8aa681d10f0bd05c9cb7bb0223d0eaefb39c08ab8",
+          "manifest_raw_code_sha256": "aead52d8ce93f7d350efabc2cf83454c9ed729d01cb21b62d1e4cfe21d518d95",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "aead52d8ce93f7d350efabc2cf83454c9ed729d01cb21b62d1e4cfe21d518d95",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_sf__activities",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 373,
+            "git_mode": "100644",
+            "git_oid": "7bce711e57d23d80c7ae44cad79365c8816d59a3",
+            "sha256": "82de91142e4f877a094a85e6a885cf43b194e56de9acb72c8d9ef5d46196d544",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_sf__activities.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 373,
+            "sha256": "82de91142e4f877a094a85e6a885cf43b194e56de9acb72c8d9ef5d46196d544",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1351,
+            "sha256": "1f36fe1b3fdfb55bdf88f6d01074a2dbe43a1a376e3b8a37d48327f6a70161b0",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_sf__opportunities.sql",
+          "manifest_compiled_code_sha256": "1f36fe1b3fdfb55bdf88f6d01074a2dbe43a1a376e3b8a37d48327f6a70161b0",
+          "manifest_raw_code_sha256": "15868326f30edc39a06f765938c92f725155f925df02408f73547cfc6adda3cf",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "15868326f30edc39a06f765938c92f725155f925df02408f73547cfc6adda3cf",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_sf__opportunities",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1333,
+            "git_mode": "100644",
+            "git_oid": "4745236008a88de0091da4b0e53e90aedb46d1c6",
+            "sha256": "65d2c2213e6a70edd88e7c696d8f2cd13414272031a92fc24cbff1ffe6a6f478",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_sf__opportunities.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1333,
+            "sha256": "65d2c2213e6a70edd88e7c696d8f2cd13414272031a92fc24cbff1ffe6a6f478",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 428,
+            "sha256": "ca2122b8fbb625f367ea7bf838a223c4f89503e42067d4e02a7116fac5aafd94",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_sf__opportunity_stage_history.sql",
+          "manifest_compiled_code_sha256": "ca2122b8fbb625f367ea7bf838a223c4f89503e42067d4e02a7116fac5aafd94",
+          "manifest_raw_code_sha256": "b89b466c67dd02898ee3007e719be532ae13e7c24f9e748c9da60802df27a555",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "b89b466c67dd02898ee3007e719be532ae13e7c24f9e748c9da60802df27a555",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_sf__opportunity_stage_history",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 410,
+            "git_mode": "100644",
+            "git_oid": "2caabdfaf519782bcf19eb5ef65c1f6b4d48e5c5",
+            "sha256": "2406ab6bda07edb91b6360022ff00c65a74456012f83ce9ae489141dde4cbfbe",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_sf__opportunity_stage_history.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 410,
+            "sha256": "2406ab6bda07edb91b6360022ff00c65a74456012f83ce9ae489141dde4cbfbe",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 502,
+            "sha256": "f23189f99e7cdac608769f3afb0c90c4853222be9c0b361154a223c1848420e9",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/arcline/models/staging/stg_sf__users.sql",
+          "manifest_compiled_code_sha256": "f23189f99e7cdac608769f3afb0c90c4853222be9c0b361154a223c1848420e9",
+          "manifest_raw_code_sha256": "7a8f2bdb740ee8ab09191cf99c7b5587d372178de155f0a5b4072e32c6cf19cf",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "7a8f2bdb740ee8ab09191cf99c7b5587d372178de155f0a5b4072e32c6cf19cf",
+            "versus_manifest_raw_code": "exact",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.arcline.stg_sf__users",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 465,
+            "git_mode": "100644",
+            "git_oid": "0e2c2577b0778af4ac467bc24454025a1497c296",
+            "sha256": "caef44a7780063729551e8388dc19403950efccd1ebb157553e75720b3dc3879",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "one_trailing_lf_only",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_sf__users.sql",
+          "status": "model_artifact_checks_pass",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 465,
+            "sha256": "caef44a7780063729551e8388dc19403950efccd1ebb157553e75720b3dc3879",
+            "status": "file_read"
+          }
+        }
+      ],
+      "pinned_project_config": {
+        "bytes": 1353,
+        "declared_name": "arcline",
+        "git_mode": "100644",
+        "git_oid": "5aad8f942521521bf6ff0df8fed8f6d66562951a",
+        "sha256": "3a312bcf89f8694ab264b4f286ff51183882d684b00af8f49cccbe4d0a810b74",
+        "status": "pinned_blob_read"
+      },
+      "reasons": [],
+      "repo_root": "public_corpus/gtm-funnel-analytics",
+      "status": "model_artifact_checks_pass",
+      "universe": "all_manifest_model_nodes"
+    },
+    {
+      "build_event": {
+        "commit_attested_by_build": false,
+        "generated_at": "2026-09-27T17:51:14.701525Z",
+        "invocation_id": "16bb53d7-e069-42f1-941b-5b1617bb77a3",
+        "note": "Manifest generation and checked-out Git commit are separate events."
+      },
+      "checked_out_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+      "checked_out_commit_matches_pin": true,
+      "coverage": {
+        "compiled_files_exact_manifest_code": 13,
+        "compiled_files_strip_only_manifest_code": 0,
+        "manifest_raw_code_exact_pinned_blob": 0,
+        "manifest_raw_code_one_trailing_lf_only_pinned_blob": 13,
+        "manifest_raw_code_strip_only_pinned_blob": 0,
+        "manifest_source_checksums_equal_pinned_blob": 0,
+        "manifest_source_checksums_equal_raw_code": 0,
+        "model_artifact_checks_pass": 0,
+        "models_enumerated": 13,
+        "needs_review": 13,
+        "pinned_blob_and_compiled_file_exact_manifest_code": 13,
+        "pinned_source_blobs_read": 13,
+        "source_mapping_needs_review": 13
+      },
+      "expected_commit": "7be2c5838dbdeca8e915d4e46db70e910753d7f6",
+      "expected_dbt_version": "1.12.5",
+      "expected_project": "jaffle_shop",
+      "git_root_matches_input": true,
+      "manifest_file": {
+        "bytes": 1229078,
+        "sha256": "1467a9a6a71de14f196adbab89927083adcc2b9f680f7e9b6256a0720b40fb24"
+      },
+      "manifest_metadata": {
+        "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+        "dbt_version": "1.12.5",
+        "project_name": "jaffle_shop"
+      },
+      "manifest_path": "target/manifest.json",
+      "nodes": [
+        {
+          "compiled_file": {
+            "bytes": 1293,
+            "sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/customers.sql",
+          "manifest_compiled_code_sha256": "9f1b1a3877d3167d7e401ee99c73004b9d3bc32a52b78dac2d8ff2755b6ca680",
+          "manifest_raw_code_sha256": "664488ec4c2dc2e6b48f35ec05d81258c5c7716af3f044435815046378f1d224",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "99eff7e87bcb1209d406ed442a2b5b957020fc99b0fb7ff7230be09193a7d4c6",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.customers",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1274,
+            "git_mode": "100644",
+            "git_oid": "129eb8ffc6937e4d8c11320ab509d3777789fb3b",
+            "sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/customers.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1274,
+            "sha256": "bd1c178be89d34b01e1ab848e37f1b629512af12a2825f8823b79b52b275dca3",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 104,
+            "sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/locations.sql",
+          "manifest_compiled_code_sha256": "9606befe5f7409cd99bb9710c69799a05483cb0c0b6ba9960c12c8671d301ddc",
+          "manifest_raw_code_sha256": "01e79fced00fb035440afc48077281f3c01163cfb6ae19ccbc4d73cc1ed7d2cf",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "1d3d9ee20be71938907012f387d919a6efd14586ccae6641453266bd5235490d",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.locations",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 95,
+            "git_mode": "100644",
+            "git_oid": "31bbd08ddc27160e5f439a7c843d4089f9b7eb3b",
+            "sha256": "a782e7cd9b6ecee5bb0160d08c54af0f8208df1ec41eedcc09fd46d5b811bf04",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/locations.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 95,
+            "sha256": "a782e7cd9b6ecee5bb0160d08c54af0f8208df1ec41eedcc09fd46d5b811bf04",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 3324,
+            "sha256": "a80c593f8423cc5a2086ad8da2ea948e9070a3681dee61e62ef1e679d668e760",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/metricflow_time_spine.sql",
+          "manifest_compiled_code_sha256": "a80c593f8423cc5a2086ad8da2ea948e9070a3681dee61e62ef1e679d668e760",
+          "manifest_raw_code_sha256": "1c1814c8aaffb1e0562f046f6e8ced94c7eeb536f67a794d4f7a55fa8a1a9109",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "716a5a9638a243a5eb9fa472b4020a9c4bde38dbeb753150ee2af45ce0d9bf10",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.metricflow_time_spine",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 292,
+            "git_mode": "100644",
+            "git_oid": "95be185fc9f3d1b0f7241865ce3f1fce77ec562b",
+            "sha256": "1e8de1247e68fe0f70de20000d0ae5d7ebb60b1e3c56202d233ea96cb8429ecf",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/metricflow_time_spine.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 292,
+            "sha256": "1e8de1247e68fe0f70de20000d0ae5d7ebb60b1e3c56202d233ea96cb8429ecf",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 982,
+            "sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/order_items.sql",
+          "manifest_compiled_code_sha256": "0219d2f61f4b721f24684bc80c10d82e873f6553bb8f3aa4d6bbc9a43b76ac8c",
+          "manifest_raw_code_sha256": "f6268350d0266dc7b23e662349e4c94a9e1d9f4689765055ba7c5ea07d82a06c",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "69ee5eb2cd03225dee211923a154fdfaf43c6fe65185203151afc03dbc88932c",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.order_items",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 943,
+            "git_mode": "100644",
+            "git_oid": "5b7534f083c44f49416a555561773404547809dd",
+            "sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/order_items.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 943,
+            "sha256": "7f39a62b3fcf4ed61a50f9717938e327d35ee6ecb7545bc2870ceec8a10ed639",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 1469,
+            "sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/orders.sql",
+          "manifest_compiled_code_sha256": "1ace38e93327ea86bdb15b334bf052bf67f65bb524d737d7cd6fe508ff3b2fb2",
+          "manifest_raw_code_sha256": "672fab3cb996bc7652da3f751da1f11f2674290bb3fdd3b5ed4fc35b0bbb6460",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "61e17f8b9d80475afa49198ffb4bc2dca193aabf42cb9af3b8d1afcef9ad7b2e",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.orders",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 1450,
+            "git_mode": "100644",
+            "git_oid": "56fdc5912a88222f17de84fca82d0845cfb55f43",
+            "sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/orders.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 1450,
+            "sha256": "a1196f297da67c4a55c1e1011202f4fa7cf29c9ad3a0282970de4f947cc2ef1b",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 101,
+            "sha256": "fef1483a0d452067d4fd1c7d2d271f4f9d1e8ae21ec6fdaa9c484e3e0d9cfd15",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/products.sql",
+          "manifest_compiled_code_sha256": "fef1483a0d452067d4fd1c7d2d271f4f9d1e8ae21ec6fdaa9c484e3e0d9cfd15",
+          "manifest_raw_code_sha256": "b02b440e9c260bbf83dbff957eacc3edf778d197c63a22da56fae7c554462092",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "f8cce79698b13f8a513398ed0fb931879335c4d9b4fdd423f1067bb86ab68143",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.products",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 92,
+            "git_mode": "100644",
+            "git_oid": "f276d292f6a2007b72bcf0e86ad29005e8f57a9d",
+            "sha256": "eb533033f6fb5d6c53bbb598781eed5d00d50d7cbe044d9c7a0c8544e2f54ca5",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/products.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 92,
+            "sha256": "eb533033f6fb5d6c53bbb598781eed5d00d50d7cbe044d9c7a0c8544e2f54ca5",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 252,
+            "sha256": "70a00989811c907d1f4397ed04dac72c215399956c24beb17618c79c429aed56",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_customers.sql",
+          "manifest_compiled_code_sha256": "70a00989811c907d1f4397ed04dac72c215399956c24beb17618c79c429aed56",
+          "manifest_raw_code_sha256": "37b269b48f94b4526ee48b7123397b9a2f457266e97bf5b876b988cbce9eeef6",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "84a0fec373bce260649e3ad0afa4a69501bca8564494f5561c298f5019288f7b",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_customers",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 255,
+            "git_mode": "100644",
+            "git_oid": "2b928df37c4a84fd0d0e0fe639b76d1ce90007c5",
+            "sha256": "dd23b85696edfd88a570941770ff440ebc2998c9926ce1500823fb0761809021",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_customers.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 255,
+            "sha256": "dd23b85696edfd88a570941770ff440ebc2998c9926ce1500823fb0761809021",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 380,
+            "sha256": "08b50b1dde145ebc21d0088b0861ce0c558a4b8d4fd978c0446c3734b91152da",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_locations.sql",
+          "manifest_compiled_code_sha256": "08b50b1dde145ebc21d0088b0861ce0c558a4b8d4fd978c0446c3734b91152da",
+          "manifest_raw_code_sha256": "d631ac43f7759905404a74c4a2f91590e5d2ff141fee6e24471fc94ccdaeb7ae",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "f42df08c1b7dc099e7f25f96a072a996df7da62f07c5f34a621ebbab02958fd3",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_locations",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 395,
+            "git_mode": "100644",
+            "git_oid": "551e1ba2b632dc8e4f9620488015df820cc5abfb",
+            "sha256": "4fa2d23f56fe06816ae55f95d4674b35216a62d27a6182a46aa3bb229ced4d11",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_locations.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 395,
+            "sha256": "4fa2d23f56fe06816ae55f95d4674b35216a62d27a6182a46aa3bb229ced4d11",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 239,
+            "sha256": "72b7d501ac4a47fef0bde6b4ad4129f77ba7032e86d80ffaab84c6f7d1b5a970",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_order_items.sql",
+          "manifest_compiled_code_sha256": "72b7d501ac4a47fef0bde6b4ad4129f77ba7032e86d80ffaab84c6f7d1b5a970",
+          "manifest_raw_code_sha256": "c4551967544f92a36cf257eccdb2c2806343ce82e1c6d96c59adbd9263539ce2",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "3cbe0d9fb05ebdc010ddce01ea426a48aa96207e07dd1d3f8cc5fb06f215c797",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_order_items",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 242,
+            "git_mode": "100644",
+            "git_oid": "5459a84b0b8561550c2d39be159519c3b78ef82d",
+            "sha256": "102a386f0423d233aae94e6312cc028470aacc120df5692532296a2d8ed61b04",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_order_items.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 242,
+            "sha256": "102a386f0423d233aae94e6312cc028470aacc120df5692532296a2d8ed61b04",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 651,
+            "sha256": "11fe97ae3c989e60f5908dc8a162986a271127a4b6e9990dbea73fe391a42716",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_orders.sql",
+          "manifest_compiled_code_sha256": "11fe97ae3c989e60f5908dc8a162986a271127a4b6e9990dbea73fe391a42716",
+          "manifest_raw_code_sha256": "6dddcb97845b3ea5b7390aa17f927087eb490e0bf459b850dc8d271c31da7c35",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "2e6ef255075b7033533a247089e6a2b53f0d003387dc1ba0ac3b360a7abe09f2",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_orders",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 671,
+            "git_mode": "100644",
+            "git_oid": "61408c082bf7ea43d542aff34c24e57aaa4075f7",
+            "sha256": "9b1b41c48e4463f736d9304a898da2d979b29b9377f1576951f959ff5cc7c327",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_orders.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 671,
+            "sha256": "9b1b41c48e4463f736d9304a898da2d979b29b9377f1576951f959ff5cc7c327",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 559,
+            "sha256": "34f0a2beb4c518325020e31c631e53f55803d84171f00f0d8526f699753eccaa",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_products.sql",
+          "manifest_compiled_code_sha256": "34f0a2beb4c518325020e31c631e53f55803d84171f00f0d8526f699753eccaa",
+          "manifest_raw_code_sha256": "238a14164085db08e1dbab99b81403e0c786165eb364a16a1262d3cd4677f1a6",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "e5b7c0e2b9f27c6f73adae81f4389ee951f8977ea259297da5046a115ecd05c5",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_products",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 564,
+            "git_mode": "100644",
+            "git_oid": "0299eed610551b7c0d0fff997684d99feb0819ff",
+            "sha256": "062c753f5014b17e4df4266503cf6f48f191b95aa86f3ddeada063ed844d5cd6",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_products.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 564,
+            "sha256": "062c753f5014b17e4df4266503cf6f48f191b95aa86f3ddeada063ed844d5cd6",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 605,
+            "sha256": "c8f7444d4eb652af61ae4d3bd461b23990aaf30874c0af551519a59b8f03edd2",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/staging/stg_supplies.sql",
+          "manifest_compiled_code_sha256": "c8f7444d4eb652af61ae4d3bd461b23990aaf30874c0af551519a59b8f03edd2",
+          "manifest_raw_code_sha256": "8d346d0f3df3970077f3c92a64d37c26291f7734d5a192479c6f48a89f0f2383",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "07f6e9f96161d194cee53f04a2ba502f4d00b0bb69445087d5f6d2e760fa596a",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.stg_supplies",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 512,
+            "git_mode": "100644",
+            "git_oid": "0f665133b290df90f0f516832d6a09befbbd0e5e",
+            "sha256": "1835f7e81a9116987eedf053b3630e26cff26dbcac38f6a5895c51f181bec5a4",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/staging/stg_supplies.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 512,
+            "sha256": "1835f7e81a9116987eedf053b3630e26cff26dbcac38f6a5895c51f181bec5a4",
+            "status": "file_read"
+          }
+        },
+        {
+          "compiled_file": {
+            "bytes": 101,
+            "sha256": "5ea01d167dcba4d789d2c6cd9a375b53653465c8393ce09dd122a61a064f6072",
+            "status": "file_read"
+          },
+          "compiled_file_vs_manifest_compiled_code": "exact",
+          "compiled_path": "target/compiled/jaffle_shop/models/marts/supplies.sql",
+          "manifest_compiled_code_sha256": "5ea01d167dcba4d789d2c6cd9a375b53653465c8393ce09dd122a61a064f6072",
+          "manifest_raw_code_sha256": "a9fb647ed0dd39f0cee1167fcd0d621fcead71cdd47dd68daef116e81797d7bd",
+          "manifest_source_checksum": {
+            "name": "sha256",
+            "value": "462bb490d361154f566181cc2bce525b9e1d71ff559618a7b54f9ecffc75c2b9",
+            "versus_manifest_raw_code": "different",
+            "versus_pinned_blob": "different"
+          },
+          "metric_expression_lineage": "metric_expression_unverified",
+          "node_id": "model.jaffle_shop.supplies",
+          "pinned_blob_vs_manifest_raw_code": "one_trailing_lf_only",
+          "pinned_source": {
+            "bytes": 92,
+            "git_mode": "100644",
+            "git_oid": "820cb8c52f9519ed5d4cb2dea5e4fea42f80acfd",
+            "sha256": "ebf68fd0f3188dd99339f046eb6dab4dadc504f4bcf6e86824d25038a7fff4d9",
+            "status": "pinned_blob_read"
+          },
+          "reasons": [
+            "manifest_source_checksum_different_vs_raw_code"
+          ],
+          "semantic_equivalence": "not_evaluated",
+          "source_mapping_alignment": "needs_review",
+          "source_mapping_policy": "exact bytes or pinned blob = manifest raw_code UTF-8 + one LF; manifest sha256 checksum must equal raw_code hash",
+          "source_path": "models/marts/supplies.sql",
+          "status": "needs_review",
+          "working_file_vs_pinned_blob": "exact",
+          "working_source": {
+            "bytes": 92,
+            "sha256": "ebf68fd0f3188dd99339f046eb6dab4dadc504f4bcf6e86824d25038a7fff4d9",
+            "status": "file_read"
+          }
+        }
+      ],
+      "pinned_project_config": {
+        "bytes": 682,
+        "declared_name": "jaffle_shop",
+        "git_mode": "100644",
+        "git_oid": "085ef0007ba73f729e3507802e8b0548c80de10c",
+        "sha256": "f71f84b9198be0d30263b350ac278694fd485aa1c5393359a650da5a8b121122",
+        "status": "pinned_blob_read"
+      },
+      "reasons": [],
+      "repo_root": "public_corpus/jaffle-shop-sidemantic/jaffle-shop",
+      "status": "needs_review",
+      "universe": "all_manifest_model_nodes"
+    }
+  ],
+  "limitation": "A compiled MODEL artifact check is not a compiled metric-expression lineage pass; manifest generation has no authenticated Git commit attestation.",
+  "metric_expression_lineage": "metric_expression_unverified",
+  "schema": "generic_compiled_model_provenance_v1",
+  "scope": "development_only",
+  "semantic_equivalence": "not_evaluated"
+}

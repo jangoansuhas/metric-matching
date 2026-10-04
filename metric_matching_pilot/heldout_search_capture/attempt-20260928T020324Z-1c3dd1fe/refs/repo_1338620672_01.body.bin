@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOT8m7AK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/methunt/pbi-bigquery-dbt-cost-observability/git/refs/heads/main",
+  "object": {
+    "sha": "a929583ca764cb40f48cd9c4ac6fd27ebcfb035d",
+    "type": "commit",
+    "url": "https://api.github.com/repos/methunt/pbi-bigquery-dbt-cost-observability/git/commits/a929583ca764cb40f48cd9c4ac6fd27ebcfb035d"
+  }
+}

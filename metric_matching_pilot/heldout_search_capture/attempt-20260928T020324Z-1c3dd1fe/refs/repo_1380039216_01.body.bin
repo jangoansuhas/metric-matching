@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOUkG6MK9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/Lakeonn/people_analytics_pipeline/git/refs/heads/main",
+  "object": {
+    "sha": "2ab1e5b1b47cc2c661025ac7e07383ae484306d9",
+    "type": "commit",
+    "url": "https://api.github.com/repos/Lakeonn/people_analytics_pipeline/git/commits/2ab1e5b1b47cc2c661025ac7e07383ae484306d9"
+  }
+}

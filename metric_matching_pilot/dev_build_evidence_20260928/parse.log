@@ -1,0 +1,4 @@
+[0m14:28:37  Running with dbt=1.12.5
+[0m14:28:37  [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  Could not find profile named 'default'

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "project": "jaffle_shop",
+  "commit": "5beb145b00f5465ec759cfcdd9745e858818cf95",
+  "counts": {
+    "yaml_files_scanned": 14,
+    "yaml_files_with_metrics": 4,
+    "metric_cards": 23,
+    "unordered_pairs": 253,
+    "metric_types": {
+      "cumulative": 1,
+      "derived": 3,
+      "ratio": 2,
+      "simple": 17
+    },
+    "syntactic_status": {
+      "non_simple_unresolved": 6,
+      "simple_bare_field": 4,
+      "simple_implicit_expression": 6,
+      "simple_numeric_constant": 5,
+      "simple_unsupported_expression": 2
+    },
+    "syntactically_supported_simple": 9,
+    "review_flags": {
+      "compiled_sql_unavailable": 23,
+      "declared_time_key_not_period": 17,
+      "expression_requires_parser": 2,
+      "field_absent_from_model_yaml_columns": 3,
+      "field_lineage_not_traced": 23,
+      "filter_not_resolved": 4,
+      "grain_not_verified": 23,
+      "implicit_expression_not_resolved": 6,
+      "metric_dependencies_not_resolved": 6,
+      "period_not_resolved": 23,
+      "source_ref_declared_only": 17,
+      "source_relation_not_resolved": 6,
+      "source_yaml_only": 23
+    },
+    "definitions_excluded": 0
+  },
+  "exclusions": {
+    "yaml_files_without_metric_definitions": [
+      "models/marts/metricflow_time_spine.yml",
+      "models/marts/products.yml",
+      "models/marts/supplies.yml",
+      "models/staging/__sources.yml",
+      "models/staging/stg_customers.yml",
+      "models/staging/stg_locations.yml",
+      "models/staging/stg_order_items.yml",
+      "models/staging/stg_orders.yml",
+      "models/staging/stg_products.yml",
+      "models/staging/stg_supplies.yml"
+    ],
+    "yaml_files_outside_model_paths": [
+      ".github/workflows/cd_prod.yml",
+      ".github/workflows/cd_staging.yml",
+      ".github/workflows/ci.yml",
+      ".pre-commit-config.yaml",
+      "Taskfile.yml",
+      "package-lock.yml",
+      "packages.yml"
+    ],
+    "non_definition_sections": "Saved-query metric references, measures, tests and source rows are not metric definitions",
+    "unread_inputs": "SQL, compiled manifests/artifacts, dependencies outside the pinned Git tree, and warehouse row data; YAML unit-test rows are not constructed"
+  },
+  "limits": [
+    "Recognized definitions under configured model-paths: top-level metrics and metrics directly on models/semantic_models; malformed sequences fail explicitly.",
+    "Source expressions are verbatim declarations; raw filters are in declared_filter while where_expr stays null. Neither is compiled or resolved SQL.",
+    "Bare fields are syntactic names only; primary columns and aggregate time dimensions are declarations, not verified output grain or period.",
+    "Every card requires semantic review; there are no relationship labels, gold pairs or row observations."
+  ]
+}

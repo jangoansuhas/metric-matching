@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTg86ca9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/athmikakavali7/retail-data-engineering-platform/git/refs/heads/main",
+  "object": {
+    "sha": "fa09a9f29bb31dd06b417e8a346fb2bb3cef3d82",
+    "type": "commit",
+    "url": "https://api.github.com/repos/athmikakavali7/retail-data-engineering-platform/git/commits/fa09a9f29bb31dd06b417e8a346fb2bb3cef3d82"
+  }
+}

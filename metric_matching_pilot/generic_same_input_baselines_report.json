@@ -1,0 +1,2082 @@
+{
+  "schema_version": 1,
+  "algorithm_version": "generic_same_input_baselines_v1",
+  "scope": "same_input_development_diagnostic_only",
+  "input": {
+    "path": "generic_sql_inventory_report.json",
+    "sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+    "inventory_source_sha256": "6fe38b9546d251a01a2ed60128733f7267390554b0f49b4e8ba07322c466800b",
+    "evidence_packet_sha256": "6e575c9fd3b8d3021eb6a3adaff1a677a91ad0c8fc47107a41879e5d2219bff9"
+  },
+  "method_inputs": {
+    "raw_exact": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb"
+    },
+    "normalized_name_exact": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb"
+    },
+    "jaro_winkler": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb"
+    },
+    "token_jaccard": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb"
+    },
+    "normalized_ast_source": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb",
+      "evidence_packet_sha256": "6e575c9fd3b8d3021eb6a3adaff1a677a91ad0c8fc47107a41879e5d2219bff9"
+    },
+    "constraint_aware": {
+      "inventory_sha256": "fdb68bd980cb425e39140056b3360952d3ccb77b1545523a07e47fad256abfc7",
+      "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb",
+      "evidence_packet_sha256": "6e575c9fd3b8d3021eb6a3adaff1a677a91ad0c8fc47107a41879e5d2219bff9"
+    }
+  },
+  "raw_inventory": {
+    "emitted_output_ids": 24,
+    "unordered_pairs": 276,
+    "excluded_nonmetric_entity_key_outputs": 12
+  },
+  "pair_universe": {
+    "eligible_scalar_ids": 12,
+    "unordered_pairs": 66,
+    "pair_set_sha256": "4eff0ecb816a0268adef5e285531362b3f6787c86865bdc7765753127a9100fb",
+    "all_methods_same_pair_set": true,
+    "true_projection_arity_known": false,
+    "held_out": false,
+    "eligibility_rule": "Development fixture only: output_alias == value; includes supported and unsupported .value projections."
+  },
+  "coverage": {
+    "i0_scored_pairs_per_method": {
+      "raw_exact": 66,
+      "normalized_name_exact": 66,
+      "jaro_winkler": 66,
+      "token_jaccard": 66
+    },
+    "i1_syntax_signals_per_method": {
+      "normalized_ast_source": {
+        "abstain": 60,
+        "same_source_signature": 1,
+        "source_difference": 5
+      },
+      "constraint_aware": {
+        "abstain": 60,
+        "same_source_signature": 1,
+        "source_difference": 5
+      }
+    },
+    "i1_semantic_abstentions_per_method": {
+      "normalized_ast_source": 66,
+      "constraint_aware": 66
+    },
+    "i1_semantic_decisions_per_method": {
+      "normalized_ast_source": 0,
+      "constraint_aware": 0
+    }
+  },
+  "method_definitions": {
+    "raw_exact": "Case-sensitive equality of view/metric names; sanity reference only because distinct fixture views have unique names.",
+    "normalized_name_exact": "Equality after camel/punctuation splitting and ASCII casefold of view/metric names; binary score.",
+    "jaro_winkler": "Jaro-Winkler over normalized view/metric names; prefix scaling 0.1 when Jaro >= 0.7; rounded to six decimals.",
+    "token_jaccard": "Set Jaccard over normalized view/metric name tokens; rounded to six decimals.",
+    "normalized_ast_source": "Compare AST aggregate operator/argument and source table/WHERE/GROUP BY fields from the same inventory packet; syntax signal only.",
+    "constraint_aware": "Same syntax packet plus grain, time, NULL, join cardinality and snapshot requirements; abstain if missing. No domain constraints supplied."
+  },
+  "rows": [
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "account_net_revenue_undocumented.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.91875,
+        "token_jaccard": 0.75
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "same_source_signature",
+        "reason": "same_source_fields",
+        "differing_fields": [],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "same_source_signature",
+        "reason": "same_source_fields",
+        "differing_fields": [],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_fanout.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.67932,
+        "token_jaccard": 0.4
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.648211,
+        "token_jaccard": 0.4
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "num_of_products.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.526462,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "number_of_customers.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.552632,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.498895,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.540267,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.540267,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.54308,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.510552,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.516215,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_fanout.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.636153,
+        "token_jaccard": 0.333333
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.596591,
+        "token_jaccard": 0.333333
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "num_of_products.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.540846,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "number_of_customers.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.530154,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "ast_operator",
+          "aggregate_argument",
+          "source_table_refs",
+          "where",
+          "group_by"
+        ],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.488218,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.490278,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.490278,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.559722,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.535024,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "account_net_revenue_undocumented.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.485543,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "crm_revenue_net_rollup.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.927273,
+        "token_jaccard": 0.6
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "num_of_products.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.50303,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "number_of_customers.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.617348,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.510522,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.521549,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.521549,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.521549,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.538208,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_fanout.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.469697,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "num_of_products.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.50303,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "number_of_customers.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.604527,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.544893,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.465657,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.465657,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.521549,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.538208,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "crm_revenue_net_rollup.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.494949,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "number_of_customers.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.82341,
+        "token_jaccard": 0.2
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "source_table_refs"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "source_difference",
+        "reason": "different_source_fields",
+        "differing_fields": [
+          "source_table_refs"
+        ],
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "semantic_fields_unknown"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.496296,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.422222,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.422222,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.522222,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.635024,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "num_of_products.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.494613,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.540906,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.405263,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.405263,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.564327,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.564995,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "number_of_customers.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.501063,
+        "token_jaccard": 0.0
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v0.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.545679,
+        "token_jaccard": 0.166667
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.545679,
+        "token_jaccard": 0.166667
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.680152,
+        "token_jaccard": 0.4
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.817575,
+        "token_jaccard": 0.6
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "opportunity_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.797419,
+        "token_jaccard": 0.8
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "pipeline_arr_v1.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.973333,
+        "token_jaccard": 0.5
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.6,
+        "token_jaccard": 0.2
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.48122,
+        "token_jaccard": 0.166667
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v0.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.476094,
+        "token_jaccard": 0.142857
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.6,
+        "token_jaccard": 0.2
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.48122,
+        "token_jaccard": 0.166667
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "pipeline_arr_v1.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.476094,
+        "token_jaccard": 0.142857
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "product_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.910435,
+        "token_jaccard": 0.75
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "product_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.446086,
+        "token_jaccard": 0.333333
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    },
+    {
+      "left_id": "product_booking_arr_usd.value",
+      "right_id": "total_opportunity_booking_arr_usd.value",
+      "i0_scores": {
+        "raw_exact": 0,
+        "normalized_name_exact": 0,
+        "jaro_winkler": 0.722818,
+        "token_jaccard": 0.5
+      },
+      "i1_normalized_ast_source": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      },
+      "i1_constraint_aware": {
+        "syntax_signal": "abstain",
+        "reason": "unsupported_output",
+        "missing_semantic_fields": [
+          "grain",
+          "time",
+          "null_policy",
+          "join_cardinality",
+          "snapshot"
+        ],
+        "semantic_decision": "abstain",
+        "abstention_reason": "unsupported_output"
+      }
+    }
+  ],
+  "limitations": [
+    "The raw inventory has 24 emitted outputs and 276 pairs, including 12 entity_key projections that are not metric scalars. The comparison uses only the 12 .value projections and their 66 pairs.",
+    "The .value alias eligibility rule is specific to this development fixture, not a generic rule for held-out repositories.",
+    "Even the 24/276 raw inventory covers emitted IDs only, not a known full metric universe.",
+    "An aliasless parse failure gets one abstaining placeholder; its true projection arity is unknown.",
+    "Unparseable views receive placeholders, not recovered aliases; their true output count is unknown.",
+    "The SQL inventory is a synthetic development fixture, not compiled dbt or held-out repository evidence.",
+    "I0 scores are uncalibrated retrieval diagnostics, not match predictions or effectiveness metrics.",
+    "I0 scores use view/metric names, never the shared .value suffix; raw_exact is a zero-valued sanity reference across unique fixture view names.",
+    "I1 source sameness is a review signal, not semantic equivalence; source difference is not a semantic contradiction.",
+    "No human gold, candidate Recall@k, classification F1, or method-superiority claim is supported.",
+    "No metric-owner adjudication or null/time/grain/join verification was available."
+  ]
+}

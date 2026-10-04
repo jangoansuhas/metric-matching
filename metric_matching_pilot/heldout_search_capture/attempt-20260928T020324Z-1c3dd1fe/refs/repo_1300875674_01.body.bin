@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOTYnJmq9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/EchoEnv/semanticdf/git/refs/heads/main",
+  "object": {
+    "sha": "3e239a9e6ec3d79d7ffacd1e5e2c2ad3a928253b",
+    "type": "commit",
+    "url": "https://api.github.com/repos/EchoEnv/semanticdf/git/commits/3e239a9e6ec3d79d7ffacd1e5e2c2ad3a928253b"
+  }
+}

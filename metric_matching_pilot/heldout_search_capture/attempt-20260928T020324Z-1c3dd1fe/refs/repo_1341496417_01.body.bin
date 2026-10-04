@@ -1,0 +1,10 @@
+{
+  "ref": "refs/heads/main",
+  "node_id": "REF_kwDOT_WcYa9yZWZzL2hlYWRzL21haW4",
+  "url": "https://api.github.com/repos/skillio-ai/brightfell-dbt/git/refs/heads/main",
+  "object": {
+    "sha": "2effeca749cb1151478e901d389715858a15e916",
+    "type": "commit",
+    "url": "https://api.github.com/repos/skillio-ai/brightfell-dbt/git/commits/2effeca749cb1151478e901d389715858a15e916"
+  }
+}
