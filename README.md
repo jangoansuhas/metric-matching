@@ -39,6 +39,7 @@ Analytics projects built with **dbt** declare named business numbers called *met
 | `practice/` | The original practice packet (3 pairs) and a note on how to use it. Held-out packets will be added later as new folders. |
 | `templates/` | Blank worksheet and decision-record templates to copy |
 | `INSTRUCTIONS_REVIEWER_B.md` | Reviewer B's step-by-step order: practice first (no install), then setup, then the labelling rounds |
+| `INSTRUCTIONS_ADJUDICATOR_C.md` | Adjudicator C's step-by-step order: eligibility, read and set up, then adjudicate when the locked worksheets arrive |
 
 ## Getting a copy of this repository
 
