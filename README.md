@@ -38,6 +38,7 @@ Analytics projects built with **dbt** declare named business numbers called *met
 | `setup/` | One setup sheet per held-out project, two helper scripts in `setup/tools/`, and a fixed data snapshot in `setup/data/` |
 | `practice/` | The original practice packet (3 pairs) and a note on how to use it. Held-out packets will be added later as new folders. |
 | `templates/` | Blank worksheet and decision-record templates to copy |
+| `INSTRUCTIONS_REVIEWER_B.md` | Reviewer B's step-by-step order: practice first (no install), then setup, then the labelling rounds |
 
 ## Getting a copy of this repository
 
