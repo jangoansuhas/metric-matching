@@ -1,0 +1,235 @@
+version: 2
+
+metrics:
+  - name: cm_02eae5dfd3
+    label: "cm_02eae5dfd3"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_gross_margin
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_0fea585ae8
+    label: "cm_0fea585ae8"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: otif_orders_count
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_24363186b9
+    label: "cm_24363186b9"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_gross_margin
+          alias: base_value
+  - name: cm_28bc0e3f7f
+    label: "cm_28bc0e3f7f"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: order_count_total
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_2d5320d433
+    label: "cm_2d5320d433"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: total_gross_margin
+          alias: base_value
+  - name: cm_3e7521fd03
+    label: "cm_3e7521fd03"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: otif_rate
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_42e9c22dd6
+    label: "cm_42e9c22dd6"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: gross_margin
+  - name: cm_55c318e1a5
+    label: "cm_55c318e1a5"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: otif_orders
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_580a21477b
+    label: "cm_580a21477b"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: otif_rate
+          alias: base_value
+  - name: cm_5e91b3d1aa
+    label: "cm_5e91b3d1aa"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_revenue
+          alias: base_value
+  - name: cm_69ba3d3668
+    label: "cm_69ba3d3668"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: otif_orders_count
+          alias: base_value
+  - name: cm_6a2e4a021e
+    label: "cm_6a2e4a021e"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: otif_orders
+  - name: cm_6c18d4edde
+    label: "cm_6c18d4edde"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: order_count_total
+          alias: base_value
+  - name: cm_7cfca7f7e4
+    label: "cm_7cfca7f7e4"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: gross_margin
+  - name: cm_85c13f830b
+    label: "cm_85c13f830b"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_revenue
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_8c6ac6466a
+    label: "cm_8c6ac6466a"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: otif_orders
+  - name: cm_8e8e244762
+    label: "cm_8e8e244762"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: total_revenue
+          alias: base_value
+  - name: cm_9646402204
+    label: "cm_9646402204"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: order_count
+  - name: cm_9c5d0a8a73
+    label: "cm_9c5d0a8a73"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: order_count
+  - name: cm_9fb9ee2c13
+    label: "cm_9fb9ee2c13"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: revenue
+  - name: cm_b02e7e4ab6
+    label: "cm_b02e7e4ab6"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: gross_margin
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_b74f5f3917
+    label: "cm_b74f5f3917"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: otif_orders_count
+          alias: base_value
+  - name: cm_bb7f5f0514
+    label: "cm_bb7f5f0514"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: order_count_total
+          alias: base_value
+  - name: cm_ce10f80d57
+    label: "cm_ce10f80d57"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: revenue
+  - name: cm_d642061b97
+    label: "cm_d642061b97"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: order_count
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_daf35cd276
+    label: "cm_daf35cd276"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: otif_rate
+          alias: base_value
+  - name: cm_fd9fd72c05
+    label: "cm_fd9fd72c05"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: revenue
+        fill_nulls_with: 0
+        join_to_timespine: true

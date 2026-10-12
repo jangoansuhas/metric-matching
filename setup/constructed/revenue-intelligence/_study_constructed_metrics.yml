@@ -1,0 +1,398 @@
+version: 2
+
+metrics:
+  - name: cm_07baa3374d
+    label: "cm_07baa3374d"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ltv
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_12f6e1b096
+    label: "cm_12f6e1b096"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: lifetime_revenue
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_138ae11303
+    label: "cm_138ae11303"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ltv_to_cac
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_15250e4e60
+    label: "cm_15250e4e60"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_mrr
+          alias: base_value
+  - name: cm_15438e2b57
+    label: "cm_15438e2b57"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: avg_revenue_per_customer
+          alias: base_value
+  - name: cm_1f13ba8c8f
+    label: "cm_1f13ba8c8f"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_cac_spend
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_2028ecedb6
+    label: "cm_2028ecedb6"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: customer_count
+          alias: base_value
+  - name: cm_24270fa364
+    label: "cm_24270fa364"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_cac_spend
+          alias: base_value
+  - name: cm_287c9bdeea
+    label: "cm_287c9bdeea"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: lifetime_revenue
+  - name: cm_35c42f5026
+    label: "cm_35c42f5026"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: total_cac_spend
+  - name: cm_378ed839fa
+    label: "cm_378ed839fa"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_revenue
+  - name: cm_3be4cea98e
+    label: "cm_3be4cea98e"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: cac
+          alias: base_value
+  - name: cm_3ca9de2ade
+    label: "cm_3ca9de2ade"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: total_mrr
+          alias: base_value
+  - name: cm_3cea790d62
+    label: "cm_3cea790d62"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: lifetime_revenue
+          alias: base_value
+  - name: cm_4608b908df
+    label: "cm_4608b908df"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: cac
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_4df41fef0d
+    label: "cm_4df41fef0d"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: lifetime_revenue
+          alias: base_value
+  - name: cm_55b191fa53
+    label: "cm_55b191fa53"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: total_revenue
+  - name: cm_55e4fced4d
+    label: "cm_55e4fced4d"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: arr
+          alias: base_value
+  - name: cm_641776ec36
+    label: "cm_641776ec36"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_revenue
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_6451943147
+    label: "cm_6451943147"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: total_cac_spend
+          alias: base_value
+  - name: cm_64e953c1fa
+    label: "cm_64e953c1fa"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: customer_count
+  - name: cm_664240bf47
+    label: "cm_664240bf47"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_revenue
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_669d67b178
+    label: "cm_669d67b178"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: avg_revenue_per_customer
+          alias: base_value
+  - name: cm_7619087d6a
+    label: "cm_7619087d6a"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: arr
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_76c6664706
+    label: "cm_76c6664706"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: avg_revenue_per_customer
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_7731111b75
+    label: "cm_7731111b75"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: total_mrr
+  - name: cm_7bef67438f
+    label: "cm_7bef67438f"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: customer_count
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_809605503b
+    label: "cm_809605503b"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: ltv
+          alias: base_value
+  - name: cm_8160dbfea5
+    label: "cm_8160dbfea5"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_mrr
+  - name: cm_94fb077a3e
+    label: "cm_94fb077a3e"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ltv_to_cac
+          alias: base_value
+  - name: cm_9a373d5dc5
+    label: "cm_9a373d5dc5"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_cac_spend
+  - name: cm_9d622c7efc
+    label: "cm_9d622c7efc"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_mrr
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_9ecc4802c1
+    label: "cm_9ecc4802c1"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: total_revenue
+          alias: base_value
+  - name: cm_a08ad939d8
+    label: "cm_a08ad939d8"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ltv
+          alias: base_value
+  - name: cm_a2b139b4f0
+    label: "cm_a2b139b4f0"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_revenue
+          alias: base_value
+  - name: cm_b2182e978b
+    label: "cm_b2182e978b"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: total_cac_spend
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_b76656d4bd
+    label: "cm_b76656d4bd"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: customer_count
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_d161f67a3a
+    label: "cm_d161f67a3a"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: customer_count
+  - name: cm_d86a9cc1fe
+    label: "cm_d86a9cc1fe"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: ltv_to_cac
+          alias: base_value
+  - name: cm_ddbdb5582d
+    label: "cm_ddbdb5582d"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: arr
+          alias: base_value
+  - name: cm_e86971032f
+    label: "cm_e86971032f"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: customer_count
+          alias: base_value
+  - name: cm_eda655a3d6
+    label: "cm_eda655a3d6"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: total_mrr
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_eef990bca1
+    label: "cm_eef990bca1"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: lifetime_revenue
+  - name: cm_efb7c378e3
+    label: "cm_efb7c378e3"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: lifetime_revenue
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_f2ad263567
+    label: "cm_f2ad263567"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: cac
+          alias: base_value

@@ -1,0 +1,235 @@
+version: 2
+
+metrics:
+  - name: cm_10b6666cbe
+    label: "cm_10b6666cbe"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: subscription_count
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_17dd7c8fc2
+    label: "cm_17dd7c8fc2"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: subscription_count
+          alias: base_value
+  - name: cm_28ba80a362
+    label: "cm_28ba80a362"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: revenue_amount
+  - name: cm_3446797bcf
+    label: "cm_3446797bcf"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: clicked_count
+  - name: cm_36f0132d34
+    label: "cm_36f0132d34"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: delivered_count
+          alias: base_value
+  - name: cm_38635f4a74
+    label: "cm_38635f4a74"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: delivered_count
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_3af2ccd7f5
+    label: "cm_3af2ccd7f5"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: subscription_count
+  - name: cm_55a0b6b749
+    label: "cm_55a0b6b749"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: revenue_amount
+  - name: cm_5705dbc95a
+    label: "cm_5705dbc95a"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: clicked_count
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_5ba889788a
+    label: "cm_5ba889788a"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: delivered_count
+          alias: base_value
+  - name: cm_66af862545
+    label: "cm_66af862545"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: clicked_count
+          alias: base_value
+  - name: cm_6fa245e451
+    label: "cm_6fa245e451"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: delivered_count
+  - name: cm_6fe4573b58
+    label: "cm_6fe4573b58"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: revenue_amount
+          alias: base_value
+  - name: cm_8d59458cb8
+    label: "cm_8d59458cb8"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: subscription_count
+          alias: base_value
+  - name: cm_8e93a9bff5
+    label: "cm_8e93a9bff5"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: clicked_count
+          alias: base_value
+  - name: cm_993ba47e26
+    label: "cm_993ba47e26"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: clicked_count
+  - name: cm_a6e958f592
+    label: "cm_a6e958f592"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ctr
+          alias: base_value
+  - name: cm_aa4a3b7cfe
+    label: "cm_aa4a3b7cfe"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: clicked_count
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_cbc022971a
+    label: "cm_cbc022971a"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: revenue_amount
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_cd7d0b2752
+    label: "cm_cd7d0b2752"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: revenue_amount
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_cf8216e266
+    label: "cm_cf8216e266"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: delivered_count
+  - name: cm_d82af2d25f
+    label: "cm_d82af2d25f"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value * 1
+      metrics:
+        - name: ctr
+          alias: base_value
+  - name: cm_dbf9add6da
+    label: "cm_dbf9add6da"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: ctr
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_e38859f312
+    label: "cm_e38859f312"
+    description: "Study-constructed metric (see packet)."
+    type: simple
+    type_params:
+      measure:
+        name: subscription_count
+        fill_nulls_with: 0
+        join_to_timespine: true
+  - name: cm_e690e35496
+    label: "cm_e690e35496"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: revenue_amount
+          alias: base_value
+  - name: cm_f129a30a66
+    label: "cm_f129a30a66"
+    description: "Study-constructed metric (see packet)."
+    type: derived
+    type_params:
+      expr: base_value
+      metrics:
+        - name: delivered_count
+          alias: base_value
+          offset_window: 1 month
+  - name: cm_f1f2baac6e
+    label: "cm_f1f2baac6e"
+    description: "Study-constructed metric (see packet)."
+    type: cumulative
+    type_params:
+      measure:
+        name: subscription_count
